@@ -1,0 +1,21 @@
+rule_id: data-leakage-alerting
+signal: "[DEFINE_EVENT_SIGNAL]"
+severity: "[low|medium|high|critical]"
+threshold: "[DEFINE_THRESHOLD]"
+owner: "[TEAM_OR_ROLE]"
+evidence_source:
+  - "[AUDIT_LOG_STREAM]"
+  - "[TRACE_SOURCE]"
+response_action:
+  - "[TRIAGE_ACTION]"
+  - "[CONTAINMENT_ACTION]"
+launch_gate_impact: "[hold|conditional_hold|fail|none]"
+audit_trace_event_mapping:
+  required_events:
+    - "[EVENT_NAME_1]"
+    - "[EVENT_NAME_2]"
+  required_fields:
+    - "request_id"
+    - "control_id"
+integration_mode: "documentation_only"
+notes: "No live alert integration is introduced by this template unless already configured in environment."
