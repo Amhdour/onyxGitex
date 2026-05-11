@@ -1,32 +1,42 @@
-# Onyx Risk Register
+# Risk Register
 
-## Purpose
-- Define the objective of this artifact for AI Trust & Security Readiness.
+**Organization:** Atlas Advisory Group (Fictional)  
+**Program:** Internal Company Knowledge Assistant ("Morgan Stanley style")  
+**Artifact Owner:** AI Trust & Security Readiness Engineer  
+**Draft Date:** 2026-05-11  
+**Document Status:** Draft (Readiness Documentation Phase)
 
-## Scope
-- Specify the in-scope systems, teams, environments, and date range.
-- Out-of-scope items:
-  - _Add explicit exclusions._
+## Primary Launch Question
+Can Atlas Advisory Group safely launch an internal knowledge assistant without leaking private documents or giving unsupported answers?
 
 ## Evidence Status
-- **Verified:** _List confirmed controls/findings with linked evidence._
-- **Partially Confirmed:** _List items requiring additional validation._
-- **Unknown:** _List items lacking reliable confirmation._
+- **Not Collected:** Runtime production telemetry, red-team execution logs, and live policy decision logs.
+- **Pending:** Control test execution in staging, dashboard wiring, and launch-gate sign-offs.
+- **Collected:** Repository audit artifacts under `security-readiness/00-repo-audit/` and scoped planning documentation.
+- **Verified:** Only items explicitly traceable to repository files and static architecture assumptions.
 
-## Assumptions
-- _Document assumptions, owners, and confidence level._
+## Current Assurance View
+- **Verified:** Documentation scope and repository audit references are present.
+- **Partially Confirmed:** Design-time controls are defined but not execution-verified.
+- **Unknown:** Runtime effectiveness, false positive/negative rates, and incident response timing.
 
-## Required Inputs
-- _List required source documents, logs, configs, code references, and stakeholders._
+## Key Inputs
+- `security-readiness/00-repo-audit/phase-1-findings.md`
+- `security-readiness/00-repo-audit/onyx-auth-access-paths.md`
+- `security-readiness/00-repo-audit/onyx-retrieval-paths.md`
+- `security-readiness/00-repo-audit/onyx-observability-paths.md`
+- `security-readiness/00-repo-audit/onyx-tool-mcp-paths.md`
 
-## Output Format
-- _Define expected sections, tables, and traceability links for this artifact._
+## Content
+- Draft deliverable populated for Priority 1 with Atlas-specific readiness context.
+- Includes explicit statuses (Not Collected/Pending/Collected/Verified), assumptions, and unresolved unknowns.
+- References repository-audit artifacts for available evidence; avoids unsupported implementation claims.
+- Maintains launch posture as **Draft / Not Yet Approved** until runtime evidence is attached.
 
-## Completion Checklist
-- [ ] Purpose and scope are explicitly documented.
-- [ ] Inputs are identified and sourced.
-- [ ] Evidence links or references are attached.
-- [ ] Unknowns and partial confirmations are labeled.
-- [ ] Residual risks and owners are captured where applicable.
-- [ ] Review date and artifact owner are recorded.
-- [ ] **Do not claim complete until evidence is attached.**
+## Open Unknowns
+1. Unknown: Whether department-level authorization is fail-closed for all retrieval paths in runtime.
+2. Unknown: Whether unsupported-answer suppression consistently triggers under adversarial prompts.
+3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review.
+
+## Next Evidence Step
+Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
