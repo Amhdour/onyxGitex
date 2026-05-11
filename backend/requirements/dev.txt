@@ -1730,9 +1730,9 @@ openai==2.14.0 \
     # via
     #   litellm
     #   onyx
-openapi-generator-cli==7.17.0 \
-    --hash=sha256:00678095abe01d61ddab24d83d5cb34c72ee3ec1e45045200f800c11c183ecba \
-    --hash=sha256:0a6f11e43598ed34c6a20c85dc9f1d4a81fe503a8ebcb58f8661b6f973c24d7b
+openapi-generator-cli==7.22.0 \
+    --hash=sha256:22332d17742576fa04e78a33a20d383351e3bc6d264c7a28d58bfa8a2ac7cb1a \
+    --hash=sha256:9fdcc4206ade29f5d9daf329b8089ad1379fcff3bcb0db0eebdace7c5158296d
     # via onyx-devtools
 packaging==24.2 \
     --hash=sha256:09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759 \
