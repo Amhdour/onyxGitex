@@ -116,3 +116,18 @@ Join our open source community on **[Discord](https://discord.gg/TDJ59cGV2X)**!
 ## 💡 Contributing
 
 Looking to contribute? Please check out the [Contribution Guide](CONTRIBUTING.md) for more details.
+
+---
+
+## 🛡️ AI Trust & Security Readiness Portfolio
+
+This repository also includes a portfolio-style readiness package for a fictional internal company knowledge assistant case study built on Onyx.
+
+Start here:
+- `docs/case-study-internal-company-knowledge-assistant.md`
+- `docs/evidence-gallery.md`
+- `docs/client-demo-pack.md`
+- `docs/github-repository-structure.md`
+- `docs/professional-service-offer.md`
+
+These materials describe scope, controls, evidence, and launch-gate decision framing with explicit boundaries on what is proven versus not proven.
