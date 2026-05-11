@@ -1,0 +1,32 @@
+name: Readiness CI
+
+on:
+  pull_request:
+    paths:
+      - 'security-readiness/**'
+      - '.github/workflows/readiness-ci.yml'
+      - '.github/scripts/readiness_launch_gate_check.sh'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  readiness-checks:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Launch gate documentation check
+        run: .github/scripts/readiness_launch_gate_check.sh
+
+      - name: Upload readiness evidence artifacts
+        if: always()
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # ratchet:actions/upload-artifact@v4
+        with:
+          name: readiness-evidence
+          path: security-readiness/19-ci-cd-secure-delivery/artifacts/
+          retention-days: 14
