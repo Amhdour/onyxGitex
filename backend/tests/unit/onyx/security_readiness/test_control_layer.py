@@ -101,3 +101,35 @@ def test_dashboard_export_json_and_csv(tmp_path: Path) -> None:
     )
     assert json_path.exists()
     assert csv_path.exists()
+
+
+def test_retrieval_guard_missing_policy_map_fails_closed() -> None:
+    guard = RetrievalAuthorizationGuard(PolicyDecisionEngine())
+    with pytest.raises(FailClosedError, match="Missing document policy map"):
+        guard.authorize_document(AuthContext(user_id="u1"), "doc-1", None)
+
+
+def test_tool_router_missing_tool_policy_map_fails_closed() -> None:
+    router = ToolAuthorizationRouter(PolicyDecisionEngine())
+    with pytest.raises(FailClosedError, match="Missing tool policy map"):
+        router.authorize_tool(AuthContext(user_id="u1"), "search", None)
+
+
+def test_tool_router_denied_when_not_authorized() -> None:
+    router = ToolAuthorizationRouter(PolicyDecisionEngine())
+    decision = router.authorize_tool(
+        AuthContext(user_id="u1"),
+        "search",
+        {"search": ToolPolicy(tool_name="search", allowed_users=frozenset({"u2"}))},
+    )
+    assert decision.allowed is False
+
+
+def test_readiness_score_calculation_rejects_zero_total_weight() -> None:
+    with pytest.raises(ValueError, match="Total weight"):
+        ReadinessScoringEngine().calculate({"C53": (0.0, 90.0)})
+
+
+def test_dashboard_export_csv_rejects_empty_rows(tmp_path: Path) -> None:
+    with pytest.raises(ValueError, match="Rows cannot be empty"):
+        DashboardDataExporter().export_csv([], tmp_path / "dashboard.csv")
