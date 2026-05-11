@@ -1,0 +1,31 @@
+{
+  "export_timestamp_utc": "2026-05-11T19:55:04.155557+00:00",
+  "git_commit": "b351fc352601cdc9d01a0cb86076a5087780c9db",
+  "command": "python3 security-readiness/scripts/export-evidence-pack.py",
+  "records": [
+    {
+      "artifact_path": "security-readiness/47-evidence-automation/evidence-collection-pipeline.md",
+      "artifact_hash_sha256": "dfff6a612f293c26cdac9e83d0664f561d478a7e033d19e848831be2c8687170",
+      "timestamp_utc": "2026-05-11T19:54:51Z",
+      "git_commit": "b351fc352601cdc9d01a0cb86076a5087780c9db",
+      "command": "security-readiness/scripts/collect-evidence.sh --output ...",
+      "status": "Verified"
+    },
+    {
+      "artifact_path": "security-readiness/47-evidence-automation/evidence-normalization-schema.md",
+      "artifact_hash_sha256": "84e5467caae12b75a9cf1b9071295a586de025486d6be82a4ca1f169401187e9",
+      "timestamp_utc": "2026-05-11T19:54:51Z",
+      "git_commit": "b351fc352601cdc9d01a0cb86076a5087780c9db",
+      "command": "security-readiness/scripts/collect-evidence.sh --output ...",
+      "status": "Verified"
+    },
+    {
+      "artifact_path": "security-readiness/47-evidence-automation/missing-artifact-example.md",
+      "artifact_hash_sha256": null,
+      "timestamp_utc": "2026-05-11T19:54:51Z",
+      "git_commit": "b351fc352601cdc9d01a0cb86076a5087780c9db",
+      "command": "security-readiness/scripts/collect-evidence.sh --output ...",
+      "status": "Missing"
+    }
+  ]
+}

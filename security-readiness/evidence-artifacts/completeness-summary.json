@@ -1,0 +1,11 @@
+{
+  "total_required": 2,
+  "failures": [
+    {
+      "artifact_path": "security-readiness/47-evidence-automation/missing-artifact-example.md",
+      "status": "Missing",
+      "reason": "Not Verified"
+    }
+  ],
+  "result": "INCOMPLETE"
+}

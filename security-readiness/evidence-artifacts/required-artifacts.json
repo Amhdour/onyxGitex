@@ -1,0 +1,16 @@
+[
+  {
+    "artifact_id": "collection_pipeline_doc",
+    "artifact_path": "security-readiness/47-evidence-automation/evidence-collection-pipeline.md",
+    "required": true,
+    "owner": "AI Trust & Security",
+    "expected_status": "Verified"
+  },
+  {
+    "artifact_id": "nonexistent_control_test",
+    "artifact_path": "security-readiness/47-evidence-automation/missing-artifact-example.md",
+    "required": true,
+    "owner": "AI Trust & Security",
+    "expected_status": "Verified"
+  }
+]
