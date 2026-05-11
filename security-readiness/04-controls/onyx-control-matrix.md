@@ -1,42 +1,20 @@
-# Control Matrix
+# Onyx Control Matrix Update (Priority 2)
 
-**Organization:** Atlas Advisory Group (Fictional)  
-**Program:** Internal Company Knowledge Assistant ("Morgan Stanley style")  
-**Artifact Owner:** AI Trust & Security Readiness Engineer  
-**Draft Date:** 2026-05-11  
-**Document Status:** Draft (Readiness Documentation Phase)
+**Date:** 2026-05-11
 
-## Primary Launch Question
-Can Atlas Advisory Group safely launch an internal knowledge assistant without leaking private documents or giving unsupported answers?
+| Control | Name | Implementation Artifact | Status | Evidence Level |
+|---|---|---|---|---|
+| 53 | Policy Decision Engine | `backend/onyx/security_readiness/control_layer.py` (`PolicyDecisionEngine`) | Implemented (scaffold) | Verified via unit tests |
+| 54 | Retrieval Authorization Guard | `RetrievalAuthorizationGuard` | Implemented (scaffold) | Verified via unit/negative tests |
+| 55 | Tool Authorization Router | `ToolAuthorizationRouter` | Implemented (scaffold) | Verified via unit/negative tests |
+| 56 | Audit Logger | `AuditLogger` | Implemented (scaffold) | Verified via unit tests |
+| 57 | Runtime Tracer | `RuntimeTracer` | Implemented (scaffold) | Verified via unit tests |
+| 58 | Fail-Closed Handler | `FailClosedError`, `fail_closed_if_missing` | Implemented (scaffold) | Verified via fail-closed tests |
+| 59 | Evidence Pack Generator | `EvidencePackGenerator` | Implemented (scaffold) | Verified via unit tests |
+| 60 | Launch Gate Engine | `LaunchGateEngine` | Implemented (scaffold) | Verified via unit tests |
+| 61 | Readiness Scoring Engine | `ReadinessScoringEngine` | Implemented (scaffold) | Verified via unit tests |
+| 62 | Dashboard Data Exporter | `DashboardDataExporter` | Implemented (scaffold) | Verified via unit tests |
 
-## Evidence Status
-- **Not Collected:** Runtime production telemetry, red-team execution logs, and live policy decision logs.
-- **Pending:** Control test execution in staging, dashboard wiring, and launch-gate sign-offs.
-- **Collected:** Repository audit artifacts under `security-readiness/00-repo-audit/` and scoped planning documentation.
-- **Verified:** Only items explicitly traceable to repository files and static architecture assumptions.
-
-## Current Assurance View
-- **Verified:** Documentation scope and repository audit references are present.
-- **Partially Confirmed:** Design-time controls are defined but not execution-verified.
-- **Unknown:** Runtime effectiveness, false positive/negative rates, and incident response timing.
-
-## Key Inputs
-- `security-readiness/00-repo-audit/phase-1-findings.md`
-- `security-readiness/00-repo-audit/onyx-auth-access-paths.md`
-- `security-readiness/00-repo-audit/onyx-retrieval-paths.md`
-- `security-readiness/00-repo-audit/onyx-observability-paths.md`
-- `security-readiness/00-repo-audit/onyx-tool-mcp-paths.md`
-
-## Content
-- Draft deliverable populated for Priority 1 with Atlas-specific readiness context.
-- Includes explicit statuses (Not Collected/Pending/Collected/Verified), assumptions, and unresolved unknowns.
-- References repository-audit artifacts for available evidence; avoids unsupported implementation claims.
-- Maintains launch posture as **Draft / Not Yet Approved** until runtime evidence is attached.
-
-## Open Unknowns
-1. Unknown: Whether department-level authorization is fail-closed for all retrieval paths in runtime.
-2. Unknown: Whether unsupported-answer suppression consistently triggers under adversarial prompts.
-3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review.
-
-## Next Evidence Step
-Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
+## Notes
+- This matrix update reflects scaffold-level implementation only.
+- No production readiness claim is made.

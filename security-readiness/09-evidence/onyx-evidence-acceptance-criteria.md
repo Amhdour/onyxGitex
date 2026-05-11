@@ -1,42 +1,19 @@
-# Evidence Acceptance Criteria
+# Evidence Acceptance Criteria Update (Priority 2)
 
-**Organization:** Atlas Advisory Group (Fictional)  
-**Program:** Internal Company Knowledge Assistant ("Morgan Stanley style")  
-**Artifact Owner:** AI Trust & Security Readiness Engineer  
-**Draft Date:** 2026-05-11  
-**Document Status:** Draft (Readiness Documentation Phase)
+**Date:** 2026-05-11
 
-## Primary Launch Question
-Can Atlas Advisory Group safely launch an internal knowledge assistant without leaking private documents or giving unsupported answers?
+## Required Evidence for Controls 53-62
+1. Source code references for each implemented control in `backend/onyx/security_readiness/control_layer.py`.
+2. Unit test coverage in `backend/tests/unit/onyx/security_readiness/test_control_layer.py`.
+3. Negative/fail-closed test evidence for:
+   - missing identity,
+   - missing policy,
+   - missing document permission,
+   - missing tool authorization.
+4. Test command outputs captured from actual local execution.
+5. Explicit statement that scaffold controls are not equivalent to production launch readiness.
 
-## Evidence Status
-- **Not Collected:** Runtime production telemetry, red-team execution logs, and live policy decision logs.
-- **Pending:** Control test execution in staging, dashboard wiring, and launch-gate sign-offs.
-- **Collected:** Repository audit artifacts under `security-readiness/00-repo-audit/` and scoped planning documentation.
-- **Verified:** Only items explicitly traceable to repository files and static architecture assumptions.
-
-## Current Assurance View
-- **Verified:** Documentation scope and repository audit references are present.
-- **Partially Confirmed:** Design-time controls are defined but not execution-verified.
-- **Unknown:** Runtime effectiveness, false positive/negative rates, and incident response timing.
-
-## Key Inputs
-- `security-readiness/00-repo-audit/phase-1-findings.md`
-- `security-readiness/00-repo-audit/onyx-auth-access-paths.md`
-- `security-readiness/00-repo-audit/onyx-retrieval-paths.md`
-- `security-readiness/00-repo-audit/onyx-observability-paths.md`
-- `security-readiness/00-repo-audit/onyx-tool-mcp-paths.md`
-
-## Content
-- Draft deliverable populated for Priority 1 with Atlas-specific readiness context.
-- Includes explicit statuses (Not Collected/Pending/Collected/Verified), assumptions, and unresolved unknowns.
-- References repository-audit artifacts for available evidence; avoids unsupported implementation claims.
-- Maintains launch posture as **Draft / Not Yet Approved** until runtime evidence is attached.
-
-## Open Unknowns
-1. Unknown: Whether department-level authorization is fail-closed for all retrieval paths in runtime.
-2. Unknown: Whether unsupported-answer suppression consistently triggers under adversarial prompts.
-3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review.
-
-## Next Evidence Step
-Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
+## Acceptance Conditions
+- **Accepted:** All tests pass and results are from real command output.
+- **Partially Confirmed:** Tests pass but control integration into full runtime is incomplete.
+- **Rejected:** Missing fail-closed tests, fabricated output, or unsupported readiness claim.
