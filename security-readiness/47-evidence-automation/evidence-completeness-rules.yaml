@@ -4,6 +4,7 @@
   "description": "Evidence completeness policy for launch gate GO decisions. Any missing or failed critical evidence must block GO.",
   "default_status_when_unsure": "INCOMPLETE",
   "draft_decision_only": true,
+  "launch_mode": "RAG_ONLY",
   "tools": {
     "enabled": null
   },
@@ -82,10 +83,34 @@
       },
       {
         "id": "tool_authorization_tests",
-        "description": "Passing tool authorization tests when tools are enabled",
+        "description": "Passing tool authorization tests for RAG+Tools launch mode",
+        "critical": true,
+        "when": "rag_plus_tools",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-authorization-tests.json",
+        "pass_field": "status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
+        "id": "tool_runtime_wiring_verified",
+        "description": "Tool runtime wiring verification is documented and passing for RAG+Tools mode",
+        "critical": true,
+        "when": "rag_plus_tools",
+        "evidence_file": "security-readiness/evidence-artifacts/tools/tool-runtime-wiring.json",
+        "pass_field": "status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
+        "id": "mcp_tool_hardening_verified",
+        "description": "MCP/tool hardening evidence is present when tools are enabled",
         "critical": true,
         "when": "tools_enabled",
-        "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-authorization-tests.json",
+        "evidence_file": "security-readiness/evidence-artifacts/tools/mcp-tool-hardening.json",
         "pass_field": "status",
         "pass_values": [
           "PASS",

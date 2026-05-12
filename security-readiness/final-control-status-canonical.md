@@ -32,5 +32,8 @@ Tool authorization is **Not Fully Enforced** for the main chat runtime because `
 
 ## Launch decision
 
+- Active launch mode: **RAG_ONLY** (default)
+- Tool authorization evidence in RAG_ONLY: **Explicitly Skipped (tools_enabled=false; documented by validator output)**
+- RAG_PLUS_TOOLS policy: **Missing tool authorization/runtime wiring evidence blocks GO**
 - Current launch decision: **NOT_ENOUGH_EVIDENCE**
 - GO decision: **Blocked** pending Tier 4 evidence for critical runtime controls.
