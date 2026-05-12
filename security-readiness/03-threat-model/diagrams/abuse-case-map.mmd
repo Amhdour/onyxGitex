@@ -1,0 +1,13 @@
+flowchart LR
+  AC1[Abuse Case 1:\nCross-department document access]
+  AC2[Abuse Case 2:\nPrompt injection via retrieved content]
+  AC3[Abuse Case 3:\nUnauthorized tool invocation]
+  AC4[Abuse Case 4:\nMCP token misuse/stale credential]
+
+  AC1 --> CTRL1[ACL filter + permission dependency]
+  AC2 --> CTRL2[Grounding + response constraints]
+  AC3 --> CTRL3[Tool API ownership/admin checks]
+  AC4 --> CTRL4[MCP OAuth handling]
+
+  CTRL2 --> GAP1[Needs Verification: unsupported-answer suppression consistency]
+  CTRL4 --> GAP2[Partially Confirmed: credential rotation/failure semantics]

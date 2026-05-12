@@ -1,0 +1,17 @@
+flowchart LR
+  subgraph Control_Areas
+    CA1[Identity & Permission Controls]
+    CA2[Retrieval Authorization Controls]
+    CA3[Tool/MCP Authorization Controls]
+    CA4[Observability & Evidence Controls]
+  end
+
+  CA1 --> E1[permissions.py / auth users & keys]
+  CA2 --> E2[document_access.py / query filters]
+  CA3 --> E3[tool api + mcp api + tool_runner]
+  CA4 --> E4[logger + tracing + metrics + evidence artifacts]
+
+  E1 --> ST1[Partially Confirmed]
+  E2 --> ST2[Confirmed (static path)]
+  E3 --> ST3[Needs Verification]
+  E4 --> ST4[Partially Confirmed / Unknown at decision granularity]

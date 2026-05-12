@@ -1,0 +1,18 @@
+flowchart LR
+  C1[Control test evidence]
+  C2[Abuse-case test evidence]
+  C3[Audit logging evidence]
+  C4[Runtime tracing evidence]
+  C5[Policy-as-code evidence]
+
+  C1 --> LG[Launch Gate Evaluation]
+  C2 --> LG
+  C3 --> LG
+  C4 --> LG
+  C5 --> LG
+
+  LG --> D1[Decision: Not Ready / Conditionally Ready / Ready]
+  LG --> G1[Residual Risk Register]
+
+  X1[Unknown: evidence sufficiency threshold acceptance by governance]
+  LG -.-> X1

@@ -1,0 +1,10 @@
+flowchart TB
+  T1[Threat: Unauthorized retrieval] --> C1[Control: apply_document_access_filter]
+  T2[Threat: Privilege bypass at API] --> C2[Control: require_permission dependency]
+  T3[Threat: Tool exfiltration] --> C3[Control: tool endpoint ownership/admin checks]
+  T4[Threat: MCP credential abuse] --> C4[Control: MCP API OAuth handling]
+  T5[Threat: Missing forensic trail] --> C5[Control: logging/tracing/metrics surfaces]
+
+  C3 --> S1[Partially Confirmed]
+  C4 --> S2[Needs Verification]
+  C5 --> S3[Unknown: decision-level audit completeness]

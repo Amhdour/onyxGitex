@@ -1,0 +1,11 @@
+flowchart TD
+  T[Control/abuse-case test execution] --> O[Command output + logs/traces]
+  O --> A[Evidence artifact folders]
+  A --> N[Normalization/validation files]
+  N --> P[Evidence pack summary]
+  P --> L[Launch gate inputs/result]
+
+  U1[Unknown: policy decision event completeness]
+  U2[Partially Confirmed: runtime trace propagation across async boundaries]
+  O -.-> U1
+  O -.-> U2

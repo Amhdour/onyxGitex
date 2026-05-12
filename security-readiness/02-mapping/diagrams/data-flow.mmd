@@ -1,0 +1,28 @@
+flowchart TD
+  User[Atlas Advisory Group User Prompt]
+  Auth[AuthN/AuthZ Resolution\nauth/users.py + permissions.py]
+  Query[Query/Chat Request Build]
+  ACL[ACL Filter Application\napply_document_access_filter]
+  Index[Index Retrieval/Search]
+  Citations[Citation Processing]
+  Tools[Tool Calls / MCP Calls]
+  Response[Grounded Response Returned]
+  Logs[Logs + Trace + Metrics]
+
+  User --> Query
+  Query --> Auth
+  Auth -->|allow| ACL
+  Auth -->|deny| Response
+  ACL --> Index
+  Index --> Citations
+  Citations --> Response
+  Query --> Tools
+  Tools --> Response
+  Query --> Logs
+  Tools --> Logs
+  Auth --> Logs
+
+  U1[Unknown: ingestion-to-index ACL consistency]
+  U2[Partially Confirmed: citation completeness for all tool flows]
+  Index -.-> U1
+  Citations -.-> U2
