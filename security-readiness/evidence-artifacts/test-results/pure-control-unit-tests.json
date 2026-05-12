@@ -1,0 +1,14 @@
+{
+  "artifact": "pure-control-unit-tests",
+  "classification": "limited_unit_evidence",
+  "runtime_integration_proven": false,
+  "retrieval_authorization_runtime_status": "UNKNOWN",
+  "retrieval_authorization_tests_json_updated_to_pass": false,
+  "test_command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/pure-control-unit-tests/test_pure_control_layer.py",
+  "result": {
+    "passed": 6,
+    "failed": 0,
+    "status": "PASS"
+  },
+  "launch_gate_status": "NOT_ENOUGH_EVIDENCE"
+}
