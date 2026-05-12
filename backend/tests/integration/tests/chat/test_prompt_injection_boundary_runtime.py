@@ -14,6 +14,7 @@ import pytest
 
 from .tier4_artifact_writer import (
     mark_blocked,
+    mark_failed,
     mark_passed_only_if_assertions_executed,
     write_tier4_result_artifact,
 )
@@ -30,7 +31,6 @@ PROMPT_INJECTION_BOUNDARY_ARTIFACT = Path(
     "prompt-injection-boundary-tests.json"
 )
 FORBIDDEN_MARKERS = ["[RESTRICTED]", "restricted://", "acl:restricted"]
-ASSERTIONS_EXECUTED = False
 REQUIRED_ASSERTION_KEYS = {
     "unauthorized_prompt_does_not_override_retrieval_authz",
     "restricted_document_not_retrieved",
@@ -99,11 +99,9 @@ def tier4_runtime_context() -> dict[str, Any]:
 def test_unauthorized_prompt_does_not_override_retrieval_authz(
     tier4_runtime_context: dict[str, Any],
 ) -> None:
-    global ASSERTIONS_EXECUTED
     result = tier4_runtime_context["run_unauthorized_restricted"]()
     assert result["authorized"] is False
     _mark_assertion_complete("unauthorized_prompt_does_not_override_retrieval_authz")
-    ASSERTIONS_EXECUTED = True
 
 
 def test_restricted_document_not_retrieved(
@@ -196,23 +194,27 @@ def _write_pass_artifact_only_if_assertions_executed() -> None:
         write_tier4_result_artifact(PROMPT_INJECTION_BOUNDARY_ARTIFACT, artifact)
         return
 
-    if ASSERTIONS_EXECUTED:
+    if any(ASSERTION_COMPLETION.values()):
         write_tier4_result_artifact(
             PROMPT_INJECTION_BOUNDARY_ARTIFACT,
-            {
-                **mark_blocked(
-                    suite_id="prompt_injection_boundary_tests",
-                    blockers=[
-                        "Tier 4 PASS prohibited: not all required prompt-injection assertions completed."
-                    ],
-                ),
-                "status": "FAILED",
-                "tests_run": len(completed_assertions),
-                "tests_passed": len(completed_assertions),
-                "tests_failed": len(missing_assertions),
-                "blockers": [
+            mark_failed(
+                suite_id="prompt_injection_boundary_tests",
+                tests_run=len(completed_assertions),
+                tests_failed=len(missing_assertions),
+                blockers=[
                     "Tier 4 PASS prohibited: not all required prompt-injection assertions completed.",
                     f"Missing assertions: {', '.join(missing_assertions)}",
                 ],
-            },
+            ),
         )
+        return
+
+    write_tier4_result_artifact(
+        PROMPT_INJECTION_BOUNDARY_ARTIFACT,
+        mark_blocked(
+            suite_id="prompt_injection_boundary_tests",
+            blockers=[
+                "No Tier 4 runtime assertions executed; runtime fixtures or environment unavailable.",
+            ],
+        ),
+    )
