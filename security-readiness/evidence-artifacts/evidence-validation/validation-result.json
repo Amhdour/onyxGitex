@@ -1,7 +1,7 @@
 {
   "validator": "launch-evidence-completeness",
   "version": 1,
-  "generated_at": "2026-05-12T10:50:06+00:00",
+  "generated_at": "2026-05-12T13:46:03+00:00",
   "rules_file": "security-readiness/47-evidence-automation/evidence-completeness-rules.yaml",
   "status": "FAILED",
   "phases": {
@@ -19,15 +19,26 @@
   "default_status_when_unsure": "INCOMPLETE",
   "tools_enabled": false,
   "counts": {
-    "complete": 7,
+    "complete": 8,
     "missing": 0,
     "failed": 5,
     "skipped": 1,
-    "required_total": 13,
-    "pre_launch_required_total": 10,
+    "required_total": 14,
+    "pre_launch_required_total": 11,
     "post_launch_required_total": 3
   },
   "checked": [
+    {
+      "id": "citation_source_leakage_dependency_light",
+      "phase": "pre_launch_evidence_validation",
+      "status": "COMPLETE",
+      "observed": "PASS",
+      "expected": [
+        "PASS",
+        "PASSED"
+      ],
+      "file": "security-readiness/evidence-artifacts/test-results/citation-source-leakage-tests.json"
+    },
     {
       "id": "pure_control_unit_tests",
       "phase": "pre_launch_evidence_validation",
@@ -83,7 +94,7 @@
       "id": "dashboard_data_generated",
       "phase": "post_launch_output_validation",
       "status": "COMPLETE",
-      "observed": "2026-05-12T10:48:04.828822+00:00",
+      "observed": "2026-05-12T13:46:03.371330+00:00",
       "expected": [],
       "file": "security-readiness/dashboard/dashboard-data.json"
     },
@@ -177,6 +188,7 @@
     }
   ],
   "control_checks": {
-    "pure_control_unit_tests": "PASS"
+    "pure_control_unit_tests": "PASS",
+    "citation_source_leakage_dependency_light": "PASS"
   }
 }

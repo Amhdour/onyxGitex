@@ -34,6 +34,18 @@
         ]
       },
       {
+        "id": "citation_source_leakage_dependency_light",
+        "description": "Passing citation/source leakage dependency-light tests (partial evidence only)",
+        "critical": false,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/citation-source-leakage-tests.json",
+        "pass_field": "dependency_light_status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
         "id": "prompt_injection_boundary_tests",
         "description": "Passing prompt injection boundary tests",
         "critical": true,

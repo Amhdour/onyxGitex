@@ -241,6 +241,7 @@ def main() -> int:
         "skipped": skipped,
         "control_checks": {
             "pure_control_unit_tests": get_control_check_status(checked, failed, missing, "pure_control_unit_tests"),
+            "citation_source_leakage_dependency_light": get_control_check_status(checked, failed, missing, "citation_source_leakage_dependency_light"),
         },
     }
 
