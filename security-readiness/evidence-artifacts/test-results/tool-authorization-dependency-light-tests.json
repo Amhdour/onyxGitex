@@ -1,0 +1,17 @@
+{
+  "artifact": "tool-authorization-dependency-light-tests",
+  "timestamp_utc": "2026-05-12T14:59:20Z",
+  "test_command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/tool-authorization/test_tool_authorization_dependency_light.py",
+  "tests_total": 9,
+  "tests_passed": 9,
+  "tests_failed": 0,
+  "dependency_light_status": "PASS",
+  "runtime_wiring_status": "NOT_PASS",
+  "rag_plus_tools_status": "NOT_READY",
+  "launch_gate": "NOT_ENOUGH_EVIDENCE",
+  "notes": [
+    "Dependency-light helper-based evidence only.",
+    "No claim of full llm_loop.py runtime enforcement.",
+    "No main runtime wiring changes were made in this task."
+  ]
+}

@@ -1,0 +1,1 @@
+PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/tool-authorization/test_tool_authorization_dependency_light.py
