@@ -1,0 +1,2 @@
+{"event":"tool_denied","tool_name":"unknown_tool_example","tool_call_id":"call_unknown","reason":"unknown_tool","risk_level":"unknown","source":"run_tool_calls"}
+{"event":"tool_denied","tool_name":"dummy_low_risk","tool_call_id":"call_dummy_low_risk","reason":"missing_user_identity","risk_level":"unknown","source":"ToolAuthorizationRouter"}

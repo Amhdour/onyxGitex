@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-12",
+  "status": "partially_confirmed",
+  "integration_path": "backend/onyx/tools/tool_runner.py",
+  "implemented_controls": [
+    "unknown_tool_denied",
+    "missing_user_identity_denied",
+    "missing_tool_policy_denied",
+    "high_risk_requires_explicit_approval",
+    "authorized_low_risk_executes",
+    "denied_emits_audit_event",
+    "authorization_runtime_trace_recorded"
+  ],
+  "test_execution": {
+    "command": "pytest -q backend/tests/unit/onyx/tools/test_tool_authorization_runtime.py",
+    "result": "blocked",
+    "reason": "ModuleNotFoundError: fastapi_users"
+  }
+}
