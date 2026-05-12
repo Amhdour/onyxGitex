@@ -40,3 +40,17 @@ Can Atlas Advisory Group safely launch an internal knowledge assistant without l
 
 ## Next Evidence Step
 Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
+
+## Result Entry: RT-PI-BOUNDARY-001 (2026-05-12)
+
+- **Evidence Folder:** `security-readiness/evidence-artifacts/prompt-injection-boundary-001/`
+- **Verification Status:** **Partially Confirmed**
+- **What is Verified:**
+  - Prompt injection retrieval-boundary tests were added to unit suite.
+  - Evidence artifacts (command, output, JSON summary, timestamp) were captured.
+- **What is Unknown:**
+  - Runtime pass/fail outcome for the new tests due to environment dependency failure (`ModuleNotFoundError: fastapi_users`).
+- **Criticality Handling:**
+  - Any confirmed boundary bypass remains categorized as **Critical**.
+- **Next Action:**
+  - Install missing backend test dependencies and rerun the recorded command to complete verification.
