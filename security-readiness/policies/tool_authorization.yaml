@@ -1,0 +1,22 @@
+{
+  "policy_id": "tool-authz-v1",
+  "version": "1.0",
+  "default_effect": "deny",
+  "fail_closed": true,
+  "tools": [
+    {
+      "tool_name": "knowledge_search",
+      "tool_risk_level": "low",
+      "human_approval_required": false,
+      "roles_allowed": ["analyst", "advisor", "compliance"],
+      "roles_denied": ["intern"]
+    },
+    {
+      "tool_name": "portfolio_export",
+      "tool_risk_level": "high",
+      "human_approval_required": true,
+      "roles_allowed": ["advisor", "compliance"],
+      "roles_denied": ["intern", "contractor"]
+    }
+  ]
+}

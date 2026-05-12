@@ -1,0 +1,21 @@
+retrieval_request:
+  subject:
+    user_id: user-123
+    role: advisor
+    department: atlas_advisory
+    tenant_id: atlas-prod
+  document:
+    owner_department: atlas_advisory
+    classification: confidential
+
+tool_request:
+  subject:
+    user_id: user-123
+    role: advisor
+    department: atlas_advisory
+    tenant_id: atlas-prod
+  tool:
+    name: portfolio_export
+    risk_level: high
+  approval:
+    human_approved: true

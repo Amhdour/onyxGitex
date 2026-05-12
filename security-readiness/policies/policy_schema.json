@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/security-readiness/policy-schema.json",
+  "title": "Security Readiness Policy Schema",
+  "type": "object",
+  "required": ["policy_id", "version", "default_effect", "fail_closed"],
+  "properties": {
+    "policy_id": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "default_effect": {"type": "string", "enum": ["deny"]},
+    "fail_closed": {"type": "boolean", "const": true},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "effect", "when"],
+        "properties": {
+          "id": {"type": "string"},
+          "effect": {"type": "string", "enum": ["allow", "deny"]},
+          "description": {"type": "string"},
+          "when": {
+            "type": "object",
+            "properties": {
+              "roles_allowed": {"type": "array", "items": {"type": "string"}},
+              "roles_denied": {"type": "array", "items": {"type": "string"}},
+              "departments_allowed": {"type": "array", "items": {"type": "string"}},
+              "tenant_ids_allowed": {"type": "array", "items": {"type": "string"}},
+              "document_owner_departments_allowed": {"type": "array", "items": {"type": "string"}},
+              "document_classifications_allowed": {"type": "array", "items": {"type": "string"}}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "tool_name",
+          "tool_risk_level",
+          "human_approval_required",
+          "roles_allowed",
+          "roles_denied"
+        ],
+        "properties": {
+          "tool_name": {"type": "string"},
+          "tool_risk_level": {"type": "string", "enum": ["low", "medium", "high"]},
+          "human_approval_required": {"type": "boolean"},
+          "roles_allowed": {"type": "array", "items": {"type": "string"}},
+          "roles_denied": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "anyOf": [
+    {"required": ["rules"]},
+    {"required": ["tools"]}
+  ],
+  "additionalProperties": false
+}

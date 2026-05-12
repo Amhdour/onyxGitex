@@ -1,0 +1,14 @@
+{
+  "run_date_utc": "2026-05-12",
+  "suite": "security-readiness/policies/tests/test_policy_evaluator.py",
+  "results": [
+    "authorized retrieval allowed",
+    "unauthorized retrieval denied",
+    "missing identity denied",
+    "missing document classification denied",
+    "high-risk tool without approval denied",
+    "unknown tool denied"
+  ],
+  "status": "pass",
+  "totals": {"passed": 6, "failed": 0}
+}
