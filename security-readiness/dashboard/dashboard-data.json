@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-12T16:10:28.834395+00:00",
+  "generated_at": "2026-05-12T16:32:27.180793+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
   "active_launch_mode": "RAG_ONLY",
-  "readiness_score": 61.9,
+  "readiness_score": 63.6,
   "evidence_completeness": {
     "status": "FAILED",
     "allow_go": false,
-    "complete": 13,
-    "required_total": 21,
-    "percent": 61.9
+    "complete": 14,
+    "required_total": 22,
+    "percent": 63.6
   },
   "control_status": "Missing",
   "tests": {
@@ -23,6 +23,7 @@
     "tool_runtime_context_guard_dependency_light": "Passed",
     "tool_runtime_wiring_adapter": "Passed",
     "tool_runtime_wiring_main_llm_loop_adjacent": "Passed",
+    "tool_runtime_wiring_research_agent_adjacent": "Passed",
     "tool_runtime_wiring_main_llm_loop": "Not Pass",
     "tool_runtime_wiring_research_agent": "Not Pass",
     "tool_runtime_wiring": "Not Pass",
@@ -91,6 +92,12 @@
       "runtime_proof": "No (runtime-adjacent only; full runtime remains NOT_PASS)",
       "launch_gate_effect": "Non-critical positive signal only; does not satisfy full runtime wiring requirements"
     },
+    "tool_runtime_wiring_research_agent_adjacent": {
+      "status": "Passed",
+      "evidence_type": "runtime-adjacent research_agent.py wiring evidence",
+      "runtime_proof": "No (runtime-adjacent only; full runtime remains NOT_PASS)",
+      "launch_gate_effect": "Non-critical positive signal only; does not satisfy full runtime wiring requirements"
+    },
     "tool_runtime_wiring_main_llm_loop": "Not Pass",
     "tool_runtime_wiring_research_agent": "Not Pass",
     "tool_runtime_wiring": "Not Pass"
@@ -106,8 +113,8 @@
       "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
     ]
   },
-  "last_evidence_timestamp": "2026-05-12T16:10:27+00:00",
-  "git_commit": "5923b2bf24d4d6d80e5ee8a240f9f9591e4bbf09",
+  "last_evidence_timestamp": "2026-05-12T16:32:25+00:00",
+  "git_commit": "1665f5487b23bcd8a3869d6f0f2b604aaee052df",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",

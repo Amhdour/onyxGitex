@@ -120,6 +120,7 @@ payload = {
         "tool_runtime_context_guard_dependency_light": item_status(validation, "tool_runtime_context_guard_dependency_light"),
         "tool_runtime_wiring_adapter": item_status(validation, "tool_runtime_wiring_adjacent"),
         "tool_runtime_wiring_main_llm_loop_adjacent": item_status(validation, "tool_runtime_wiring_main_llm_loop_adjacent"),
+        "tool_runtime_wiring_research_agent_adjacent": item_status(validation, "tool_runtime_wiring_research_agent_adjacent"),
         "tool_runtime_wiring_main_llm_loop": "Not Pass",
         "tool_runtime_wiring_research_agent": "Not Pass",
         "tool_runtime_wiring": "Not Pass",
@@ -127,7 +128,7 @@ payload = {
     },
     "tooling_skip_visibility": [
         item for item in (validation or {}).get("skipped", [])
-        if item.get("id") in {"tool_authorization_tests", "tool_runtime_wiring_adjacent", "tool_runtime_wiring_verified", "mcp_tool_hardening_verified"}
+        if item.get("id") in {"tool_authorization_tests", "tool_runtime_wiring_adjacent", "tool_runtime_wiring_research_agent_adjacent", "tool_runtime_wiring_verified", "mcp_tool_hardening_verified"}
     ],
     "evidence_scope": {
         "pure_control_layer": {
@@ -172,6 +173,12 @@ payload = {
         "tool_runtime_wiring_main_llm_loop_adjacent": {
             "status": item_status(validation, "tool_runtime_wiring_main_llm_loop_adjacent"),
             "evidence_type": "runtime-adjacent main llm_loop.py wiring evidence",
+            "runtime_proof": "No (runtime-adjacent only; full runtime remains NOT_PASS)",
+            "launch_gate_effect": "Non-critical positive signal only; does not satisfy full runtime wiring requirements",
+        },
+        "tool_runtime_wiring_research_agent_adjacent": {
+            "status": item_status(validation, "tool_runtime_wiring_research_agent_adjacent"),
+            "evidence_type": "runtime-adjacent research_agent.py wiring evidence",
             "runtime_proof": "No (runtime-adjacent only; full runtime remains NOT_PASS)",
             "launch_gate_effect": "Non-critical positive signal only; does not satisfy full runtime wiring requirements",
         },
