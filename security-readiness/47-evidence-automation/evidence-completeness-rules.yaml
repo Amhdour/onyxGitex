@@ -106,6 +106,18 @@
         ]
       },
       {
+        "id": "tool_runtime_context_guard_dependency_light",
+        "description": "Passing tool runtime context guard dependency-light tests (partial evidence only)",
+        "critical": false,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-runtime-context-guard-tests.json",
+        "pass_field": "dependency_light_status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
         "id": "tool_runtime_wiring_verified",
         "description": "Tool runtime wiring verification is documented and passing for RAG+Tools mode",
         "critical": true,

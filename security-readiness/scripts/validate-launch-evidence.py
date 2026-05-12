@@ -273,6 +273,7 @@ def main() -> int:
             "citation_source_leakage_dependency_light": get_control_check_status(checked, failed, missing, "citation_source_leakage_dependency_light"),
             "prompt_injection_boundary_dependency_light": get_control_check_status(checked, failed, missing, "prompt_injection_boundary_dependency_light"),
             "tool_authorization_dependency_light": get_control_check_status(checked, failed, missing, "tool_authorization_dependency_light"),
+            "tool_runtime_context_guard_dependency_light": get_control_check_status(checked, failed, missing, "tool_runtime_context_guard_dependency_light"),
         },
     }
 
