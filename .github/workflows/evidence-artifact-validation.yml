@@ -1,0 +1,62 @@
+name: Evidence Artifact Validation
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate-evidence-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate required files
+        run: |
+          set -euo pipefail
+          : > validation.log
+          required=(
+            "security-readiness/evidence-artifacts/runtime-rag-boundary/README.md"
+            "security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json"
+            "security-readiness/evidence-artifacts/runtime-rag-prompt-injection/README.md"
+            "security-readiness/evidence-artifacts/runtime-rag-prompt-injection/final-run-status.json"
+            "agent-security-readiness/17-evidence-artifacts/tool-authorization-runtime/README.md"
+            "agent-security-readiness/17-evidence-artifacts/tool-authorization-runtime/final-run-status.json"
+          )
+          for file in "${required[@]}"; do
+            [[ -f "$file" ]] || { echo "MISSING $file" | tee -a validation.log; exit 1; }
+          done
+
+      - name: Validate JSON files
+        run: |
+          set -euo pipefail
+          python -m json.tool security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json >/dev/null
+          python -m json.tool security-readiness/evidence-artifacts/runtime-rag-prompt-injection/final-run-status.json >/dev/null
+          python -m json.tool agent-security-readiness/17-evidence-artifacts/tool-authorization-runtime/final-run-status.json >/dev/null
+
+      - name: Check NOT_RUN does not claim PASS
+        run: |
+          python - <<'PY'
+          import json
+          for fp in [
+            'security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json',
+            'security-readiness/evidence-artifacts/runtime-rag-prompt-injection/final-run-status.json',
+            'agent-security-readiness/17-evidence-artifacts/tool-authorization-runtime/final-run-status.json'
+          ]:
+            d = json.load(open(fp))
+            if d.get('run_status') == 'NOT_RUN' and d.get('runtime_verified') is True:
+              raise SystemExit(f'Invalid runtime_verified true in {fp}')
+          PY
+
+      - name: Scan forbidden claims
+        run: |
+          set -euo pipefail
+          python scripts/check-evidence-claims.py
+          ! rg -n "runtime verified: true" security-readiness agent-security-readiness portfolio
+          ! rg -n "verified PASS" security-readiness agent-security-readiness portfolio
+
+      - name: Upload validation logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-artifact-validation-logs
+          path: validation.log

@@ -1,0 +1,4 @@
+cd backend
+python -m pytest -xv tests/integration/tests/chat/test_chat_document_set_access.py -k "rag or boundary or document_set"
+STATUS=PATH_NOT_CONFIRMED
+NOTE=Exact test path must be confirmed before execution.

@@ -1,0 +1,43 @@
+{
+  "evidence_package": "tool-authorization-runtime",
+  "control_area": "Agent tool authorization and sensitive tool gating",
+  "run_status": "NOT_RUN",
+  "collection_status": "NO_RUNTIME_COLLECTION",
+  "evidence_status": "NOT_ENOUGH_EVIDENCE",
+  "runtime_verified": false,
+  "claims_allowed": [
+    "Agent tool-authorization evidence package structure exists",
+    "Tool authorization policy artifacts exist if present in repository",
+    "Runtime verification is pending"
+  ],
+  "claims_not_allowed": [
+    "Unauthorized tool calls are blocked at runtime",
+    "Sensitive tools require human approval at runtime",
+    "Fail-closed tool authorization is verified",
+    "Agent runtime is safe to launch"
+  ],
+  "required_artifacts": [
+    "policy-test-output.txt",
+    "allowed-tool-call-log.txt",
+    "denied-tool-call-log.txt",
+    "human-confirmation-log.txt",
+    "fail-closed-log.txt",
+    "runtime-trace.json",
+    "git-commit.txt",
+    "test-command.txt",
+    "timestamp.txt"
+  ],
+  "missing_artifacts": [
+    "policy-test-output.txt",
+    "allowed-tool-call-log.txt",
+    "denied-tool-call-log.txt",
+    "human-confirmation-log.txt",
+    "fail-closed-log.txt",
+    "runtime-trace.json",
+    "git-commit.txt",
+    "test-command.txt",
+    "timestamp.txt"
+  ],
+  "open_blockers": [],
+  "next_required_action": "Execute agent tool-authorization tests and attach real runtime traces before changing status to PASS or FAIL."
+}
