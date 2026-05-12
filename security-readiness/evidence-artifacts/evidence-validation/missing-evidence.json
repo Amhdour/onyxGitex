@@ -1,0 +1,74 @@
+[
+  {
+    "id": "retrieval_authorization_tests",
+    "description": "Passing retrieval authorization tests",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  },
+  {
+    "id": "citation_leakage_tests",
+    "description": "Passing citation leakage tests",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  },
+  {
+    "id": "prompt_injection_boundary_tests",
+    "description": "Passing prompt injection boundary tests",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  },
+  {
+    "id": "audit_events_generated",
+    "description": "Audit events generated",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/audit/audit-events-summary.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  },
+  {
+    "id": "runtime_traces_generated",
+    "description": "Runtime traces generated",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/runtime/runtime-trace-summary.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  },
+  {
+    "id": "no_critical_open_risks",
+    "description": "No critical open risks",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/risk/open-risk-summary.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  },
+  {
+    "id": "residual_risk_documented",
+    "description": "Residual risk documented",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/risk/residual-risk-summary.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  },
+  {
+    "id": "evidence_pack_complete",
+    "description": "Evidence pack complete",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  },
+  {
+    "id": "launch_gate_result_generated",
+    "description": "Launch gate result generated",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json",
+    "status": "INCOMPLETE",
+    "reason": "Required evidence artifact is missing"
+  }
+]

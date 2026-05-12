@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "gate": "launch_go_evidence_completeness",
+  "description": "Evidence completeness policy for launch gate GO decisions. Any missing or failed critical evidence must block GO.",
+  "default_status_when_unsure": "INCOMPLETE",
+  "draft_decision_only": true,
+  "tools": {
+    "enabled": null
+  },
+  "required_evidence": [
+    {
+      "id": "retrieval_authorization_tests",
+      "description": "Passing retrieval authorization tests",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
+      "pass_field": "status",
+      "pass_values": ["PASS", "PASSED"]
+    },
+    {
+      "id": "citation_leakage_tests",
+      "description": "Passing citation leakage tests",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
+      "pass_field": "status",
+      "pass_values": ["PASS", "PASSED"]
+    },
+    {
+      "id": "prompt_injection_boundary_tests",
+      "description": "Passing prompt injection boundary tests",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
+      "pass_field": "status",
+      "pass_values": ["PASS", "PASSED"]
+    },
+    {
+      "id": "tool_authorization_tests",
+      "description": "Passing tool authorization tests when tools are enabled",
+      "critical": true,
+      "when": "tools_enabled",
+      "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-authorization-tests.json",
+      "pass_field": "status",
+      "pass_values": ["PASS", "PASSED"]
+    },
+    {
+      "id": "audit_events_generated",
+      "description": "Audit events generated",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/audit/audit-events-summary.json",
+      "pass_field": "generated",
+      "pass_values": [true]
+    },
+    {
+      "id": "runtime_traces_generated",
+      "description": "Runtime traces generated",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/runtime/runtime-trace-summary.json",
+      "pass_field": "generated",
+      "pass_values": [true]
+    },
+    {
+      "id": "no_critical_open_risks",
+      "description": "No critical open risks",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/risk/open-risk-summary.json",
+      "pass_field": "critical_open_risks",
+      "pass_values": [0]
+    },
+    {
+      "id": "residual_risk_documented",
+      "description": "Residual risk documented",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/risk/residual-risk-summary.json",
+      "pass_field": "documented",
+      "pass_values": [true]
+    },
+    {
+      "id": "evidence_pack_complete",
+      "description": "Evidence pack complete",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
+      "pass_field": "complete",
+      "pass_values": [true]
+    },
+    {
+      "id": "launch_gate_result_generated",
+      "description": "Launch gate result generated",
+      "critical": true,
+      "when": "always",
+      "evidence_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json",
+      "pass_field": "generated",
+      "pass_values": [true]
+    }
+  ]
+}
