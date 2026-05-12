@@ -1,0 +1,21 @@
+{
+  "policy_id": "retrieval-authz-v1",
+  "version": "1.0",
+  "default_effect": "deny",
+  "fail_closed": true,
+  "rules": [
+    {
+      "id": "retrieval-department-classification-allow",
+      "effect": "allow",
+      "description": "Allow retrieval when subject role is approved, role is not denied, tenant matches, and the document owner department and classification are permitted.",
+      "when": {
+        "roles_allowed": ["analyst", "advisor", "compliance"],
+        "roles_denied": ["intern", "contractor"],
+        "departments_allowed": ["atlas_advisory", "compliance"],
+        "tenant_ids_allowed": ["atlas-prod"],
+        "document_owner_departments_allowed": ["atlas_advisory", "compliance"],
+        "document_classifications_allowed": ["internal", "confidential"]
+      }
+    }
+  ]
+}
