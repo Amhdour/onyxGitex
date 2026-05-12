@@ -130,6 +130,18 @@
         ]
       },
       {
+        "id": "tool_runtime_wiring_main_llm_loop_adjacent",
+        "description": "Main llm_loop.py tool runtime-adjacent wiring evidence is present (non-critical positive signal)",
+        "critical": false,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-main-llm-loop-tests.json",
+        "pass_field": "main_llm_loop_runtime_adjacent_status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
         "id": "tool_runtime_wiring_verified",
         "description": "Tool runtime wiring verification is documented and passing for RAG+Tools mode",
         "critical": true,

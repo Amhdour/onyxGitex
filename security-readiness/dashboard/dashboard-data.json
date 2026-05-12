@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-12T15:52:38.254005+00:00",
+  "generated_at": "2026-05-12T16:10:28.834395+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
   "active_launch_mode": "RAG_ONLY",
-  "readiness_score": 60.0,
+  "readiness_score": 61.9,
   "evidence_completeness": {
     "status": "FAILED",
     "allow_go": false,
-    "complete": 12,
-    "required_total": 20,
-    "percent": 60.0
+    "complete": 13,
+    "required_total": 21,
+    "percent": 61.9
   },
   "control_status": "Missing",
   "tests": {
@@ -22,10 +22,11 @@
     "tool_authorization": "Skipped",
     "tool_runtime_context_guard_dependency_light": "Passed",
     "tool_runtime_wiring_adapter": "Passed",
-    "tool_runtime_wiring_main_llm_loop": "Blocked",
-    "tool_runtime_wiring_research_agent": "Blocked",
-    "tool_runtime_wiring": "Skipped",
-    "mcp_tool_hardening": "Skipped"
+    "tool_runtime_wiring_main_llm_loop_adjacent": "Passed",
+    "tool_runtime_wiring_main_llm_loop": "Not Pass",
+    "tool_runtime_wiring_research_agent": "Not Pass",
+    "tool_runtime_wiring": "Not Pass",
+    "mcp_tool_hardening": "Missing / Not Pass"
   },
   "tooling_skip_visibility": [
     {
@@ -84,9 +85,15 @@
       "runtime_proof": "No (adapter-only; production llm_loop.py wiring still NOT_PASS)",
       "launch_gate_effect": "Non-critical positive signal only; does not satisfy full runtime wiring requirements"
     },
-    "tool_runtime_wiring_main_llm_loop": "Skipped",
-    "tool_runtime_wiring_research_agent": "Blocked",
-    "tool_runtime_wiring": "Skipped"
+    "tool_runtime_wiring_main_llm_loop_adjacent": {
+      "status": "Passed",
+      "evidence_type": "runtime-adjacent main llm_loop.py wiring evidence",
+      "runtime_proof": "No (runtime-adjacent only; full runtime remains NOT_PASS)",
+      "launch_gate_effect": "Non-critical positive signal only; does not satisfy full runtime wiring requirements"
+    },
+    "tool_runtime_wiring_main_llm_loop": "Not Pass",
+    "tool_runtime_wiring_research_agent": "Not Pass",
+    "tool_runtime_wiring": "Not Pass"
   },
   "audit_logging_status": "Passed",
   "runtime_tracing_status": "Passed",
@@ -99,8 +106,8 @@
       "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
     ]
   },
-  "last_evidence_timestamp": "2026-05-12T15:52:35+00:00",
-  "git_commit": "6427d2f837c638a24567a7d58821b96bb287c121",
+  "last_evidence_timestamp": "2026-05-12T16:10:27+00:00",
+  "git_commit": "5923b2bf24d4d6d80e5ee8a240f9f9591e4bbf09",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",
