@@ -1,0 +1,61 @@
+name: Security Readiness CI (Non-Destructive)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security-readiness-checks:
+    name: Security Readiness Checks
+    runs-on: [runs-on, runner=2cpu-linux-arm64, "run-id=${{ github.run_id }}-security-readiness"]
+    timeout-minutes: 45
+    continue-on-error: true
+    env:
+      PYTHONPATH: ./backend
+      DISABLE_TELEMETRY: "true"
+      LICENSE_ENFORCEMENT_ENABLED: "false"
+
+    steps:
+      - uses: runs-on/action@742bf56072eb4845a0f94b3394673e4903c90ff0
+
+      - name: Checkout code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # ratchet:actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Setup Python and install backend dependencies
+        uses: ./.github/actions/setup-python-and-install-dependencies
+        with:
+          requirements: |
+            backend/requirements/default.txt
+            backend/requirements/dev.txt
+            backend/requirements/model_server.txt
+            backend/requirements/ee.txt
+
+      - name: Run readiness unit tests
+        run: py.test -q backend/tests/unit/onyx/security_readiness
+
+      - name: Run RAG boundary tests (if available)
+        run: py.test -q backend/tests/unit/onyx/security_readiness -k rag_boundary
+
+      - name: Run policy-as-code tests
+        run: py.test -q security-readiness/policies/tests
+
+      - name: Run evidence validation
+        run: python3 security-readiness/scripts/validate-launch-evidence.py
+
+      - name: Run launch gate in evidence mode
+        run: python3 security-readiness/scripts/run-launch-gate.py
+
+      - name: Upload security readiness evidence artifacts
+        if: always()
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # ratchet:actions/upload-artifact@v4
+        with:
+          name: security-readiness-evidence-${{ github.run_id }}
+          path: |
+            security-readiness/evidence-artifacts/
+            security-readiness/19-ci-cd-secure-delivery/artifacts/
+          if-no-files-found: warn
+          retention-days: 14
