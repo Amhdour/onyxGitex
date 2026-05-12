@@ -1,21 +1,21 @@
 {
-  "test_id": "runtime-adjacent-retrieval-guard-tests",
-  "timestamp_utc": "2026-05-12T10:57:49Z",
-  "evidence_type": "runtime-adjacent",
+  "artifact": "runtime-adjacent-retrieval-guard-tests",
+  "date_utc": "2026-05-12",
+  "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/runtime-adjacent-retrieval-guard/isolated_test_pipeline_guard.py",
+  "scope": "runtime-adjacent only",
   "status": "BLOCKED",
-  "target": "backend/onyx/context/search/pipeline.py::_build_index_filters",
-  "command": "pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
-  "summary": "Blocked by missing backend dependency during test harness import: fastapi_users.",
-  "details": {
-    "blocked_stage": "import",
-    "blocking_module": "fastapi_users",
-    "traceback_recorded": true,
-    "test_output_path": "security-readiness/evidence-artifacts/runtime-adjacent-retrieval-guard/test-output.txt"
+  "runtime_adjacent_evidence": "BLOCKED",
+  "full_runtime_evidence": "NOT_PASS",
+  "retrieval_authorization_tests": "NOT_PASS",
+  "launch_gate": "NOT_ENOUGH_EVIDENCE",
+  "blocker": {
+    "type": "missing_dependency",
+    "module": "fastapi_users_db_sqlalchemy",
+    "observed_in": "backend/onyx/db/models.py",
+    "phase": "pytest collection/import"
   },
-  "controls_matrix": {
-    "pure_control_evidence": "PASS",
-    "runtime_adjacent_evidence": "BLOCKED",
-    "full_runtime_evidence": "BLOCKED"
-  },
-  "launch_decision": "NOT_ENOUGH_EVIDENCE"
+  "notes": [
+    "Isolated test path outside backend/tests avoided backend/tests/conftest.py load.",
+    "Execution remains blocked by backend import chain requiring fastapi_users_db_sqlalchemy."
+  ]
 }
