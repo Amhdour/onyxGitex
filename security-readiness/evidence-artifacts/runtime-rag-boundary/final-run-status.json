@@ -1,0 +1,38 @@
+{
+  "evidence_package": "runtime-rag-boundary",
+  "control_area": "RAG retrieval boundary and restricted content leakage prevention",
+  "run_status": "NOT_RUN",
+  "collection_status": "NO_RUNTIME_COLLECTION",
+  "evidence_status": "NOT_ENOUGH_EVIDENCE",
+  "runtime_verified": false,
+  "claims_allowed": [
+    "Readiness artifacts exist for RAG retrieval-boundary testing",
+    "Evidence package structure exists",
+    "Runtime verification is pending"
+  ],
+  "claims_not_allowed": [
+    "RAG boundary control passed",
+    "Restricted content leakage is prevented",
+    "Runtime enforcement is verified",
+    "System is safe to launch"
+  ],
+  "required_artifacts": [
+    "pytest-output.txt",
+    "backend-logs.txt",
+    "docker-compose-ps.txt",
+    "env-manifest-redacted.txt",
+    "git-commit.txt",
+    "test-command.txt",
+    "timestamp.txt"
+  ],
+  "missing_artifacts": [
+    "pytest-output.txt",
+    "backend-logs.txt",
+    "docker-compose-ps.txt",
+    "env-manifest-redacted.txt",
+    "git-commit.txt",
+    "timestamp.txt"
+  ],
+  "open_blockers": [],
+  "next_required_action": "Execute runtime RAG boundary tests and attach real logs before changing status to PASS or FAIL."
+}
