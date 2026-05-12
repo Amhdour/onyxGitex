@@ -21,8 +21,19 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v3
 
+      - name: Initialize Tier 4 evidence placeholders
+        run: |
+          mkdir -p security-readiness/evidence-artifacts/tier4-ci-collection
+          echo "UNAVAILABLE: install step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/dependency-install.log
+          echo "UNAVAILABLE: dependency import step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/dependency-import-check.log
+          echo "UNAVAILABLE: pytest collection step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
+          echo "UNAVAILABLE: runtime test step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/runtime-test.log
+
       - name: Install backend and dev dependencies (Python 3.11)
-        run: uv sync --python 3.11 --no-default-groups --group backend --group dev
+        run: |
+          set -o pipefail
+          uv sync --python 3.11 --no-default-groups --group backend --group dev \
+            | tee security-readiness/evidence-artifacts/tier4-ci-collection/dependency-install.log
 
       - name: Verify fastapi-users imports
         run: |
@@ -56,7 +67,9 @@ jobs:
         with:
           name: tier4-runtime-collection
           path: |
+            security-readiness/evidence-artifacts/tier4-ci-collection/dependency-install.log
             security-readiness/evidence-artifacts/tier4-ci-collection/dependency-import-check.log
             security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
+            security-readiness/evidence-artifacts/tier4-ci-collection/runtime-test.log
             security-readiness/evidence-artifacts/tier4-ci-collection/collection-status.txt
           if-no-files-found: warn
