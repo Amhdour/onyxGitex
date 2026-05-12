@@ -43,17 +43,41 @@ def extract_bullets(path: Path, heading: str):
     return out
 
 
+def map_failed_item_status(item: dict) -> str:
+    evidence_file = item.get("expected_file")
+    if evidence_file and not (ROOT / evidence_file).exists():
+        return "Missing"
+
+    observed = str(item.get("observed", "")).strip().upper()
+    if observed == "BLOCKED":
+        return "Blocked"
+    if observed == "FAILED" or item.get("status") == "FAILED":
+        return "Failed"
+    if observed == "PARTIAL":
+        return "Partial"
+    return "Failed"
+
+
 def item_status(validation, item_id):
     if not validation:
         return "Missing"
-    for grp in ("checked", "missing", "failed", "skipped"):
-        for item in validation.get(grp, []):
-            if item.get("id") == item_id:
-                if grp == "checked":
-                    return "Passed"
-                if grp == "skipped":
-                    return "Skipped"
-                return "Missing"
+
+    for item in validation.get("checked", []):
+        if item.get("id") == item_id:
+            return "Passed"
+
+    for item in validation.get("skipped", []):
+        if item.get("id") == item_id:
+            return "Skipped"
+
+    for item in validation.get("failed", []):
+        if item.get("id") == item_id:
+            return map_failed_item_status(item)
+
+    for item in validation.get("missing", []):
+        if item.get("id") == item_id:
+            return "Missing"
+
     return "Missing"
 
 
@@ -89,7 +113,7 @@ payload = {
     },
     "audit_logging_status": item_status(validation, "audit_events_generated"),
     "runtime_tracing_status": item_status(validation, "runtime_traces_generated"),
-    "open_critical_risks": "Missing" if item_status(validation, "no_critical_open_risks") != "Passed" else "Verified",
+    "open_critical_risks": "Verified" if item_status(validation, "no_critical_open_risks") == "Passed" else "Open",
     "residual_risks": {
         "status": item_status(validation, "residual_risk_documented"),
         "open_unknowns": unknowns,

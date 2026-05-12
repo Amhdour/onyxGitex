@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T10:19:26.707823+00:00",
+  "generated_at": "2026-05-12T10:24:49.933598+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
   "readiness_score": 50.0,
   "evidence_completeness": {
@@ -11,14 +11,14 @@
   },
   "control_status": "Missing",
   "tests": {
-    "retrieval_authorization": "Missing",
-    "citation_leakage": "Missing",
-    "prompt_injection": "Missing",
+    "retrieval_authorization": "Blocked",
+    "citation_leakage": "Blocked",
+    "prompt_injection": "Blocked",
     "tool_authorization": "Skipped"
   },
   "audit_logging_status": "Passed",
   "runtime_tracing_status": "Passed",
-  "open_critical_risks": "Missing",
+  "open_critical_risks": "Open",
   "residual_risks": {
     "status": "Passed",
     "open_unknowns": [
@@ -28,7 +28,7 @@
     ]
   },
   "last_evidence_timestamp": "2026-05-12T10:19:19+00:00",
-  "git_commit": "32ac01bf178bec5a713a36c268045bae7f6fdbc0",
+  "git_commit": "ef0c16d93a1e43385dcedc68f8f06bc7c40f9af6",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",
