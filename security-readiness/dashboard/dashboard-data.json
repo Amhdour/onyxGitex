@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-05-12T09:07:17.963591+00:00",
+  "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
+  "readiness_score": 0.0,
+  "evidence_completeness": {
+    "status": "INCOMPLETE",
+    "allow_go": false,
+    "complete": 0,
+    "required_total": 10,
+    "percent": 0.0
+  },
+  "control_status": "Missing",
+  "tests": {
+    "retrieval_authorization": "Missing",
+    "citation_leakage": "Missing",
+    "prompt_injection": "Missing",
+    "tool_authorization": "Skipped"
+  },
+  "audit_logging_status": "Missing",
+  "runtime_tracing_status": "Missing",
+  "open_critical_risks": "Missing",
+  "residual_risks": {
+    "status": "Missing",
+    "open_unknowns": [
+      "1. Unknown: Whether department-level authorization is fail-closed for all retrieval paths in runtime.",
+      "2. Unknown: Whether unsupported-answer suppression consistently triggers under adversarial prompts.",
+      "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
+    ]
+  },
+  "last_evidence_timestamp": "2026-05-12T08:57:44+00:00",
+  "git_commit": "4d7ac4998ae6c9d03a804fdedd7d0d107efe056e",
+  "explanation": {
+    "status": "NOT_ENOUGH_EVIDENCE",
+    "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",
+    "reasons": [
+      "Missing fail-closed identity/retrieval authorization evidence.",
+      "Missing fail-closed identity/retrieval authorization evidence."
+    ],
+    "required_actions": [
+      "1. Provide missing retrieval/identity fail-closed test artifacts required by the validator.",
+      "2. Re-run evidence completeness validation and confirm `status=COMPLETE` with `allow_go=true`.",
+      "3. Re-run `security-readiness/scripts/run-launch-gate.py` to regenerate a new decision from updated evidence."
+    ]
+  }
+}
