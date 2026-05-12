@@ -1,0 +1,2 @@
+Scan target: security-readiness/evidence-artifacts/rag-boundary-002/pytest-output.txt
+No leak markers found in pytest output.
