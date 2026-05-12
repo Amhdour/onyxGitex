@@ -15,6 +15,14 @@ Required runtime prerequisites (not yet available in current host):
 
 import pytest
 
+from .tier4_artifact_writer import mark_blocked
+from .tier4_runtime_fixtures import authorized_user
+
+TIER4_SCAFFOLD_BLOCKED = mark_blocked(
+    suite_id="tier4_runtime_scaffold",
+    blockers=["Runtime fixtures are scaffolded but not implemented."],
+)
+TIER4_AUTHORIZED_USER_FIXTURE = authorized_user()
 
 pytestmark = pytest.mark.skip(
     reason="Tier 4 runtime environment/fixtures not available yet"
