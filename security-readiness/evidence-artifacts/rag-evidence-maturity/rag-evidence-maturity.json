@@ -67,6 +67,14 @@
       "launch_gate_impact": "Partial positive signal only; RAG_PLUS_TOOLS remains blocked and launch stays NOT_ENOUGH_EVIDENCE"
     },
     {
+      "control": "ToolRuntimeWiringAdapter",
+      "tier_achieved": 3,
+      "evidence_file": "backend/onyx/security_readiness/tool_runtime_wiring_adapter.py; security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-adjacent-tests.json; security-readiness/final-control-status-canonical.md",
+      "current_status": "Runtime-adjacent adapter wiring evidence PASS; production llm_loop.py and research-agent runtime wiring remain NOT_PASS",
+      "missing": "Full runtime wiring PASS in llm_loop.py and research-agent execution paths, plus full tool runtime authorization evidence",
+      "launch_gate_impact": "Non-critical Tier 3 signal only; RAG_PLUS_TOOLS remains NOT_READY and launch stays NOT_ENOUGH_EVIDENCE"
+    },
+    {
       "control": "ToolRuntimeContextGuard",
       "tier_achieved": 2,
       "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-runtime-context-guard-tests.json; security-readiness/final-control-status-canonical.md",

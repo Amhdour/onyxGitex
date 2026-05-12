@@ -118,12 +118,15 @@ payload = {
         "tool_authorization_dependency_light": item_status(validation, "tool_authorization_dependency_light"),
         "tool_authorization": item_status(validation, "tool_authorization_tests"),
         "tool_runtime_context_guard_dependency_light": item_status(validation, "tool_runtime_context_guard_dependency_light"),
+        "tool_runtime_wiring_adapter": item_status(validation, "tool_runtime_wiring_adjacent"),
+        "tool_runtime_wiring_main_llm_loop": ("Blocked" if item_status(validation, "tool_runtime_wiring_verified") in {"Skipped", "Missing", "Failed", "Blocked"} else item_status(validation, "tool_runtime_wiring_verified")),
+        "tool_runtime_wiring_research_agent": "Blocked" if item_status(validation, "tool_runtime_wiring_verified") in {"Skipped", "Failed", "Blocked", "Missing"} else "Not Pass",
         "tool_runtime_wiring": item_status(validation, "tool_runtime_wiring_verified"),
         "mcp_tool_hardening": item_status(validation, "mcp_tool_hardening_verified"),
     },
     "tooling_skip_visibility": [
         item for item in (validation or {}).get("skipped", [])
-        if item.get("id") in {"tool_authorization_tests", "tool_runtime_wiring_verified", "mcp_tool_hardening_verified"}
+        if item.get("id") in {"tool_authorization_tests", "tool_runtime_wiring_adjacent", "tool_runtime_wiring_verified", "mcp_tool_hardening_verified"}
     ],
     "evidence_scope": {
         "pure_control_layer": {
@@ -159,6 +162,14 @@ payload = {
             "runtime_proof": "No",
             "launch_gate_effect": "Partial positive evidence only; RAG_PLUS_TOOLS remains blocked until runtime wiring in llm_loop.py and research-agent paths is PASS",
         },
+        "tool_runtime_wiring_adapter": {
+            "status": item_status(validation, "tool_runtime_wiring_adjacent"),
+            "evidence_type": "runtime-adjacent adapter evidence",
+            "runtime_proof": "No (adapter-only; production llm_loop.py wiring still NOT_PASS)",
+            "launch_gate_effect": "Non-critical positive signal only; does not satisfy full runtime wiring requirements",
+        },
+        "tool_runtime_wiring_main_llm_loop": item_status(validation, "tool_runtime_wiring_verified"),
+        "tool_runtime_wiring_research_agent": "Blocked" if item_status(validation, "tool_runtime_wiring_verified") in {"Skipped", "Failed", "Blocked", "Missing"} else "Not Pass",
         "tool_runtime_wiring": item_status(validation, "tool_runtime_wiring_verified"),
     },
     "audit_logging_status": item_status(validation, "audit_events_generated"),

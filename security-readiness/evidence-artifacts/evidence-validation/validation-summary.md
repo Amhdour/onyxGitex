@@ -1,6 +1,6 @@
 # Launch Evidence Validation Summary
 
-- Generated at: `2026-05-12T15:23:19+00:00`
+- Generated at: `2026-05-12T15:52:35+00:00`
 - Overall status: **FAILED**
 - Allow GO: **False**
 - Pre-launch status: **FAILED**
@@ -10,7 +10,7 @@
 - Tools enabled: **False**
 
 ## Counts
-- Complete: 11
+- Complete: 12
 - Missing: 0
 - Failed: 5
 - Skipped: 3
