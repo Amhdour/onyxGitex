@@ -9,7 +9,7 @@
 
 | Gap | Current Status | Required Evidence | Owner | Launch Impact | Next Action |
 |---|---|---|---|---|---|
-| RAG retrieval-boundary runtime test not fully verified. | NOT_ENOUGH_EVIDENCE | Executed pytest output + logs + trace | Security Readiness Engineering | Cannot claim boundary enforcement | Run runtime-rag-boundary collection script and commit artifacts |
+| RAG retrieval-boundary runtime test not fully verified. | BLOCKED_DEPENDENCY | Executed pytest output captured; test blocked by missing `fastapi_users`; backend logs still missing | Security Readiness Engineering | Cannot claim boundary enforcement | Install backend test dependencies and rerun runtime-rag-boundary collection script |
 | Restricted document leakage prevention not fully verified. | NOT_ENOUGH_EVIDENCE | Unauthorized access denial evidence | Security Readiness Engineering | Leakage-prevention claim blocked | Execute unauthorized retrieval scenarios and collect logs |
 | RAG prompt-injection test logs missing. | NOT_ENOUGH_EVIDENCE | Prompt-injection runtime output and trace | Security Readiness Engineering | Injection resilience unverified | Run prompt-injection scenarios and archive outputs |
 | Agent tool-authorization runtime traces missing. | NOT_ENOUGH_EVIDENCE | Allowed/denied tool-call traces | Agent Security Engineering | Authorization enforcement unverified | Execute tool runtime checks and capture traces |
