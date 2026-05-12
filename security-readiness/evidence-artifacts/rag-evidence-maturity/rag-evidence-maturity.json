@@ -1,0 +1,94 @@
+{
+  "generated_at_utc": "2026-05-12",
+  "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
+  "tiers": {
+    "0": "Documentation only",
+    "1": "Control code exists",
+    "2": "Dependency-light tests pass",
+    "3": "Runtime-adjacent tests pass",
+    "4": "Full backend/runtime tests pass",
+    "5": "Client-specific production evidence exists"
+  },
+  "controls": [
+    {
+      "control": "RetrievalAuthorizationGuard",
+      "tier_achieved": 3,
+      "evidence_file": "security-readiness/final-control-status-canonical.md",
+      "current_status": "Runtime-adjacent retrieval-path evidence PASS; full runtime verification blocked",
+      "missing": "Full backend/runtime retrieval authorization PASS artifact in supported environment",
+      "launch_gate_impact": "Blocks GO; core fail-closed retrieval evidence is incomplete"
+    },
+    {
+      "control": "RetrievalGuardAdapter",
+      "tier_achieved": 3,
+      "evidence_file": "security-readiness/final-control-status-canonical.md",
+      "current_status": "Retrieval adapter/path evidence PASS; runtime-complete path still blocked",
+      "missing": "Full runtime integration PASS proving adapter behavior in backend execution",
+      "launch_gate_impact": "Partial confidence only; cannot unblock GO"
+    },
+    {
+      "control": "BypassACLContract",
+      "tier_achieved": 2,
+      "evidence_file": "security-readiness/evidence-artifacts/pure-control-unit-tests/test_pure_control_layer.py",
+      "current_status": "Dependency-light bypass ACL evidence PASS",
+      "missing": "Runtime-adjacent and full runtime ACL bypass proof across live retrieval flows",
+      "launch_gate_impact": "Partial confidence only; remains under NOT_ENOUGH_EVIDENCE"
+    },
+    {
+      "control": "TrustedSystemContextInputBoundary",
+      "tier_achieved": 2,
+      "evidence_file": "security-readiness/evidence-artifacts/trusted-system-context-input/schema-injection-evidence-summary.md",
+      "current_status": "Schema-boundary dependency-light evidence PASS",
+      "missing": "Runtime invocation evidence showing same boundary in live runtime prompt construction",
+      "launch_gate_impact": "Partial confidence only; does not satisfy runtime gating"
+    },
+    {
+      "control": "CitationSourceLeakageFilter",
+      "tier_achieved": 2,
+      "evidence_file": "security-readiness/final-control-status-canonical.md",
+      "current_status": "Citation/source leakage dependency-light evidence PASS",
+      "missing": "Full runtime citation leakage PASS with backend retrieval and citation pipeline",
+      "launch_gate_impact": "GO remains blocked until runtime citation leakage evidence passes"
+    },
+    {
+      "control": "PromptInjectionBoundary",
+      "tier_achieved": 2,
+      "evidence_file": "security-readiness/final-control-status-canonical.md",
+      "current_status": "Prompt-injection boundary dependency-light evidence PASS",
+      "missing": "Full runtime prompt-injection + red-team PASS in supported backend runtime",
+      "launch_gate_impact": "GO remains blocked until runtime prompt-injection evidence passes"
+    },
+    {
+      "control": "ToolAuthorizationRouter",
+      "tier_achieved": 1,
+      "evidence_file": "security-readiness/final-control-status-canonical.md",
+      "current_status": "Control implementation exists; runtime enforcement path incomplete/blocked",
+      "missing": "Main chat runtime wiring plus passing runtime tests",
+      "launch_gate_impact": "Critical for tool-misuse boundary; current gap contributes to NOT_ENOUGH_EVIDENCE"
+    },
+    {
+      "control": "AuditLogger",
+      "tier_achieved": 3,
+      "evidence_file": "security-readiness/evidence-artifacts/audit-logging-001/evidence-summary.md",
+      "current_status": "Runtime-adjacent evidence PASS; broader end-to-end runtime proof still incomplete",
+      "missing": "Additional full runtime runs proving reliable on-demand audit event generation",
+      "launch_gate_impact": "Supports traceability, but does not overcome blocked critical controls"
+    },
+    {
+      "control": "RuntimeTracer",
+      "tier_achieved": 3,
+      "evidence_file": "security-readiness/final-control-status-canonical.md",
+      "current_status": "Runtime-adjacent evidence PASS; full backend runtime trace coverage incomplete",
+      "missing": "Full runtime retrieval/tool trace PASS evidence in supported environment",
+      "launch_gate_impact": "Improves observability confidence; GO still blocked by control evidence gaps"
+    },
+    {
+      "control": "LaunchGateEngine",
+      "tier_achieved": 3,
+      "evidence_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-summary.md",
+      "current_status": "Launch-gate logic executes and returns NOT_ENOUGH_EVIDENCE",
+      "missing": "Upstream required runtime evidence to allow transition from NOT_ENOUGH_EVIDENCE",
+      "launch_gate_impact": "Correctly fail-closed; must remain NOT_ENOUGH_EVIDENCE until blockers are closed"
+    }
+  ]
+}
