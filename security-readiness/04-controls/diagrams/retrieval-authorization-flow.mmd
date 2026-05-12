@@ -1,0 +1,21 @@
+sequenceDiagram
+  participant U as User
+  participant API as Query/Chat API
+  participant PERM as require_permission
+  participant ACL as document_access filter
+  participant IDX as Search/Index
+
+  U->>API: Ask question
+  API->>PERM: Evaluate effective permissions
+  alt Denied
+    PERM-->>API: Deny
+    API-->>U: Fail-closed denial
+  else Allowed
+    PERM-->>API: Allow
+    API->>ACL: Apply document ACL filters
+    ACL->>IDX: Execute filtered retrieval
+    IDX-->>API: Authorized chunks
+    API-->>U: Response with permitted context
+  end
+
+  Note over ACL,IDX: Unknown: full coverage across all alternate retrieval surfaces

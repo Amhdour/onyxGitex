@@ -1,0 +1,30 @@
+flowchart LR
+  U[Atlas Advisory Group Employee]
+  A[Onyx Web UI/API Gateway]
+  Q[Query Backend\nquery_backend.py]
+  C[Chat Backend\nchat_backend.py]
+  P[Permission Dependencies\nrequire_permission(...)]
+  D[Document Access Filter\ndb/document_access.py]
+  I[Index/Search Layers\nfeatures/search + context/search]
+  T[Tool APIs + Runner\nfeatures/tool/api.py + tool_runner.py]
+  M[MCP APIs + MCP Client\nfeatures/mcp/api.py + mcp_client.py]
+  O[Observability\nlogger + tracing + metrics]
+
+  U --> A
+  A --> C
+  A --> Q
+  C --> P
+  Q --> P
+  Q --> D
+  D --> I
+  C --> T
+  C --> M
+  C --> O
+  Q --> O
+  T --> O
+  M --> O
+
+  X1[Unknown: full runtime enforcement across all retrieval modes]
+  X2[Needs Verification: tool/MCP boundary behavior under abuse cases]
+  I -.-> X1
+  M -.-> X2

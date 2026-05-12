@@ -40,3 +40,8 @@ Can Atlas Advisory Group safely launch an internal knowledge assistant without l
 
 ## Next Evidence Step
 Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
+
+
+## Diagram Reference
+- `security-readiness/09-evidence/diagrams/evidence-flow.mmd`
+- `security-readiness/09-evidence/diagrams/launch-gate-evidence-map.mmd`

@@ -16,3 +16,9 @@
 
 ## Integration Note
 These points are implemented as adapters/scaffolds and are not wired into all production runtime paths yet.
+
+
+## Diagram Reference
+- `security-readiness/04-controls/diagrams/control-coverage-map.mmd`
+- `security-readiness/04-controls/diagrams/retrieval-authorization-flow.mmd`
+- `security-readiness/04-controls/diagrams/tool-authorization-flow.mmd`

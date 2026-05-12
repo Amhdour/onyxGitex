@@ -1,0 +1,25 @@
+sequenceDiagram
+  participant U as Atlas User
+  participant API as Onyx API
+  participant AUTH as Auth/Permissions
+  participant RET as Retrieval Path
+  participant TOOL as Tool/MCP Path
+  participant OBS as Logging/Tracing
+
+  U->>API: Submit prompt
+  API->>AUTH: Resolve user + permissions
+  AUTH-->>API: Allow or Deny
+  alt Deny
+    API-->>U: Fail-closed denial
+    API->>OBS: Emit deny event (Partially Confirmed)
+  else Allow
+    API->>RET: Build query + apply ACL filter
+    RET-->>API: Return candidate context
+    API->>TOOL: Optional tool/MCP invocation
+    TOOL-->>API: Tool result (Needs Verification)
+    API-->>U: Final grounded response
+    API->>OBS: Emit logs/trace/metrics
+  end
+
+  Note over RET: Unknown: complete ACL consistency across modalities
+  Note over OBS: Unknown: policy decision log completeness in runtime

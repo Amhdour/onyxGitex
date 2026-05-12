@@ -1,0 +1,38 @@
+flowchart LR
+  subgraph TB1[Boundary 1: Atlas User Zone]
+    U[Authenticated Internal User]
+  end
+
+  subgraph TB2[Boundary 2: Onyx App/API Zone]
+    API[API Endpoints]
+    Auth[Auth Dependencies]
+    Chat[Chat/Query Services]
+  end
+
+  subgraph TB3[Boundary 3: Data & Search Zone]
+    DB[(DB Models + ACL Metadata)]
+    IDX[(Index/Search Stores)]
+  end
+
+  subgraph TB4[Boundary 4: External Tool/MCP Zone]
+    MCP[MCP Servers/OAuth Integrations]
+    TOOL[Built-in and Custom Tools]
+  end
+
+  subgraph TB5[Boundary 5: Observability & Evidence Zone]
+    OBS[Logs/Traces/Metrics]
+    EVD[Evidence Artifacts]
+  end
+
+  U --> API
+  API --> Auth --> Chat
+  Chat --> DB
+  Chat --> IDX
+  Chat --> MCP
+  Chat --> TOOL
+  Chat --> OBS --> EVD
+
+  UV[Unknown: end-to-end deny enforcement at each cross-boundary hop]
+  NV[Needs Verification: OAuth credential lifecycle robustness for MCP]
+  MCP -.-> NV
+  API -.-> UV

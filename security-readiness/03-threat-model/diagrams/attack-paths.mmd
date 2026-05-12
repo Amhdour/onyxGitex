@@ -1,0 +1,15 @@
+flowchart TD
+  A[Attacker/User with prompt access] --> B[Prompt manipulation / indirect injection]
+  B --> C[Attempt unauthorized retrieval]
+  C --> D[Attempt tool/MCP misuse]
+  D --> E[Attempt data exfiltration in response]
+
+  C --> C1[Control: permissions.py + document_access.py]
+  D --> D1[Control: tool/api.py ownership/admin constraints]
+  D --> D2[Control: mcp/api.py connection + OAuth handling]
+  E --> E1[Control: citation processing + response pipeline]
+
+  V1[Partially Confirmed: Tool runner enforcement depth]
+  V2[Unknown: runtime policy decision audit completeness]
+  D -.-> V1
+  E -.-> V2

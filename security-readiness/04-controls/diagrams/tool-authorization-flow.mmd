@@ -1,0 +1,19 @@
+sequenceDiagram
+  participant U as User
+  participant CHAT as Chat Backend
+  participant TAPI as Tool API/Registry
+  participant TRUN as Tool Runner
+  participant MCP as MCP API/Client
+
+  U->>CHAT: Prompt requiring tool action
+  CHAT->>TAPI: Resolve available tool
+  TAPI-->>CHAT: Allowed tool set (owner/admin constrained)
+  CHAT->>TRUN: Execute tool call
+  opt MCP-backed tool
+    TRUN->>MCP: Discover/connect tool server
+    MCP-->>TRUN: Tool capability + auth context
+  end
+  TRUN-->>CHAT: Tool output
+  CHAT-->>U: Final response
+
+  Note over TRUN,MCP: Needs Verification: deny behavior and credential failure semantics
