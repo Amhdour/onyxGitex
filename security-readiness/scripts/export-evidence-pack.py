@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 import argparse
 import datetime as dt
+import hashlib
 import json
+import os
+import re
+import shutil
 import subprocess
 from pathlib import Path
+
+SECRET_NAME_RE = re.compile(r"(KEY|TOKEN|SECRET|PASSWORD|PWD)", re.IGNORECASE)
 
 
 def git_commit() -> str:
@@ -11,26 +17,59 @@ def git_commit() -> str:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Export evidence pack")
-    parser.add_argument("--input", required=True)
-    parser.add_argument("--output", required=True)
-    parser.add_argument("--command", default="python3 security-readiness/scripts/export-evidence-pack.py")
-    return parser.parse_args()
+    p = argparse.ArgumentParser(description="Export normalized evidence into structured evidence pack")
+    p.add_argument("--input", required=True, help="Normalized evidence JSON")
+    p.add_argument("--output-dir", required=True, help="Output directory for evidence pack")
+    p.add_argument("--manifest-name", default="evidence-pack-manifest.json")
+    return p.parse_args()
+
+
+def redact_environment() -> dict:
+    redacted = {}
+    for k, v in os.environ.items():
+        redacted[k] = "[REDACTED]" if SECRET_NAME_RE.search(k) else v
+    return redacted
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def main() -> int:
     args = parse_args()
     records = json.loads(Path(args.input).read_text(encoding="utf-8"))
-    payload = {
-        "export_timestamp_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+
+    out_dir = Path(args.output_dir)
+    artifacts_dir = out_dir / "artifacts"
+    artifacts_dir.mkdir(parents=True, exist_ok=True)
+
+    exported = []
+    for rec in records:
+        rec_copy = dict(rec)
+        src = Path(rec["artifact_path"])
+        if rec.get("status") == "Present" and src.exists() and src.is_file():
+            dst = artifacts_dir / src.name
+            shutil.copy2(src, dst)
+            rec_copy["exported_artifact_path"] = str(dst)
+        else:
+            rec_copy["exported_artifact_path"] = None
+        exported.append(rec_copy)
+
+    env_manifest = out_dir / "environment-manifest-redacted.json"
+    env_manifest.write_text(json.dumps(redact_environment(), indent=2) + "\n", encoding="utf-8")
+
+    manifest = {
+        "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "git_commit": git_commit(),
-        "command": args.command,
-        "records": records,
+        "input_normalized": args.input,
+        "environment_manifest": str(env_manifest),
+        "environment_manifest_sha256": sha256(env_manifest),
+        "records": exported,
     }
-    out = Path(args.output)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-    print(f"exported {len(records)} records to {out}")
+
+    manifest_path = out_dir / args.manifest_name
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    print(f"exported evidence pack to {out_dir}")
     return 0
 
 
