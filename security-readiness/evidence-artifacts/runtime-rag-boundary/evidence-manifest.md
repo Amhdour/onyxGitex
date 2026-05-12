@@ -13,3 +13,15 @@
 | final-run-status.json | CI_NOT_RUN | CI metadata defined; workflow not yet executed. |
 | backend-logs.txt | MISSING | Runtime test execution evidence missing. |
 | docker-compose-ps.txt | NOT_AVAILABLE | Docker unavailable locally. |
+
+| ci-run-precheck.md | PRESENT | CI run precheck recorded for this execution context. |
+| ci-trigger-output.txt | CI_TRIGGER_UNAVAILABLE | gh CLI unavailable; workflow trigger could not be executed. |
+| ci-run-list.txt | CI_TRIGGER_UNAVAILABLE | gh CLI unavailable; workflow run list unavailable. |
+| ci-run-summary.md | CI_NOT_RUN | No CI run could be verified from this environment. |
+| ci-run-log.txt | NOT_AVAILABLE | No run ID available to retrieve logs. |
+| ci-run-metadata.json | NOT_AVAILABLE | No run ID available to retrieve metadata. |
+| ci-artifact-download-output.txt | CI_NOT_RUN | No run ID available; artifact download not attempted. |
+| ci-artifact-file-list.txt | CI_NOT_RUN | No artifact downloaded in this run. |
+| ci-artifact-analysis.md | CI_NOT_RUN | No artifact available to analyze. |
+| ci-downloaded-artifact/ | CI_NOT_RUN | No downloaded artifact directory populated in this run. |
+| ci-result-summary.md | PRESENT | CI result summary added with evidence-limited conclusion. |

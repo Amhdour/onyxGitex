@@ -85,3 +85,16 @@ Decision remains: **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**.
   - artifact upload alone does not verify control effectiveness;
   - PASS requires pytest execution and pass;
   - Full GO remains prohibited until critical controls are verified.
+
+
+## RAG Boundary CI Review Update (2026-05-12)
+- workflow path: `.github/workflows/rag-boundary-runtime-evidence.yml`
+- run id/url: not available from this environment
+- artifact name: `rag-boundary-runtime-evidence`
+- artifact status: `CI_NOT_RUN`
+- CI result classification: `CI_TRIGGER_UNAVAILABLE` / `CI_NOT_RUN`
+- runtime status: `NOT_AVAILABLE_FROM_CI`
+- dependency sync status: `NOT_AVAILABLE_FROM_CI`
+- pytest status: `NOT_AVAILABLE_FROM_CI`
+- evidence conclusion: `CI_NOT_RUN`
+- launch-gate impact: remains `NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH`; full GO remains prohibited.
