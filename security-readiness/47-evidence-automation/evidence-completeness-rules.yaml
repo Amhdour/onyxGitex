@@ -118,6 +118,18 @@
         ]
       },
       {
+        "id": "tool_runtime_wiring_adjacent",
+        "description": "Tool runtime wiring adapter runtime-adjacent evidence is present (non-critical positive signal)",
+        "critical": false,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-adjacent-tests.json",
+        "pass_field": "runtime_adjacent_status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
         "id": "tool_runtime_wiring_verified",
         "description": "Tool runtime wiring verification is documented and passing for RAG+Tools mode",
         "critical": true,

@@ -274,6 +274,7 @@ def main() -> int:
             "prompt_injection_boundary_dependency_light": get_control_check_status(checked, failed, missing, "prompt_injection_boundary_dependency_light"),
             "tool_authorization_dependency_light": get_control_check_status(checked, failed, missing, "tool_authorization_dependency_light"),
             "tool_runtime_context_guard_dependency_light": get_control_check_status(checked, failed, missing, "tool_runtime_context_guard_dependency_light"),
+            "tool_runtime_wiring_adjacent": get_control_check_status(checked, failed, missing, "tool_runtime_wiring_adjacent"),
         },
     }
 
