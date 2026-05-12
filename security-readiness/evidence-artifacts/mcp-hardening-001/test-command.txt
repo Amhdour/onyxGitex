@@ -1,0 +1,1 @@
+pytest -q backend/tests/integration/tests/mcp/test_mcp_server_auth.py
