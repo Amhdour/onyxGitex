@@ -1,9 +1,19 @@
 {
-  "control": "RetrievalAuthorizationGuard",
+  "audit_events": [],
+  "blockers": [
+    "Test environment could not import integration conftest (missing dependency: fastapi_users).",
+    "Tier 4 runtime fixtures remain unavailable; assertions did not execute."
+  ],
+  "forbidden_markers_checked": [],
+  "forbidden_markers_found": [],
+  "generated_at_utc": "2026-05-12T20:00:18.691221+00:00",
+  "git_commit": "42725fd13ce9a1b607aa09cb865ab384ecdd3a45",
+  "launch_posture": "NOT_ENOUGH_EVIDENCE",
+  "runtime_level": "TIER_4",
+  "runtime_traces": [],
   "status": "BLOCKED",
-  "suite": "backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
-  "command": "pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
-  "result": "blocked",
-  "reason": "No executable pytest output captured for this suite in current evidence artifacts; backend test environment blockers are documented separately.",
-  "evidence_source": "security-readiness/evidence-artifacts/rag-boundary-001/evidence-summary.md"
+  "suite_id": "retrieval_authorization_tests",
+  "tests_failed": 0,
+  "tests_passed": 0,
+  "tests_run": 0
 }
