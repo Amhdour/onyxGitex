@@ -1,0 +1,21 @@
+{
+  "test_id": "runtime-adjacent-retrieval-guard-tests",
+  "timestamp_utc": "2026-05-12T10:57:49Z",
+  "evidence_type": "runtime-adjacent",
+  "status": "BLOCKED",
+  "target": "backend/onyx/context/search/pipeline.py::_build_index_filters",
+  "command": "pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
+  "summary": "Blocked by missing backend dependency during test harness import: fastapi_users.",
+  "details": {
+    "blocked_stage": "import",
+    "blocking_module": "fastapi_users",
+    "traceback_recorded": true,
+    "test_output_path": "security-readiness/evidence-artifacts/runtime-adjacent-retrieval-guard/test-output.txt"
+  },
+  "controls_matrix": {
+    "pure_control_evidence": "PASS",
+    "runtime_adjacent_evidence": "BLOCKED",
+    "full_runtime_evidence": "BLOCKED"
+  },
+  "launch_decision": "NOT_ENOUGH_EVIDENCE"
+}
