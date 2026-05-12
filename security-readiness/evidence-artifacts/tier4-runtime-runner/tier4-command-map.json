@@ -1,0 +1,49 @@
+{
+  "generated_at_utc": "2026-05-12T00:00:00Z",
+  "launch_gate": "NOT_ENOUGH_EVIDENCE",
+  "suites": [
+    {
+      "suite_id": "retrieval_authorization_tests",
+      "exact_test_path": "backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
+      "pytest_command": "pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
+      "required_services": ["none (unit-level)"],
+      "required_fixtures": [
+        "backend/tests/conftest.py fixtures",
+        "test-local fixtures in backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py"
+      ],
+      "expected_output_artifact": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
+      "current_test_exists": true,
+      "test_file_to_create_if_missing": null,
+      "reason_cannot_run_yet": "Full Tier 4 runtime prerequisites remain blocked in this host; command is dependency-light evidence only."
+    },
+    {
+      "suite_id": "citation_leakage_tests",
+      "exact_test_path": null,
+      "pytest_command": "TODO: pytest -q backend/tests/integration/tests/chat/test_citation_leakage_runtime.py",
+      "required_services": ["docker", "docker compose", "postgres", "redis", "vespa/opensearch", "backend API stack"],
+      "required_fixtures": [
+        "backend/tests/integration/conftest.py integration fixtures",
+        "seeded multi-user/multi-document ACL fixtures"
+      ],
+      "expected_output_artifact": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
+      "current_test_exists": false,
+      "test_file_to_create_if_missing": "backend/tests/integration/tests/chat/test_citation_leakage_runtime.py",
+      "reason_cannot_run_yet": "Exact Tier 4 runtime integration test file is not present in backend integration tests."
+    },
+    {
+      "suite_id": "prompt_injection_boundary_tests",
+      "exact_test_path": null,
+      "pytest_command": "TODO: pytest -q backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py",
+      "required_services": ["docker", "docker compose", "postgres", "redis", "vespa/opensearch", "backend API stack"],
+      "required_fixtures": [
+        "backend/tests/integration/conftest.py integration fixtures",
+        "adversarial prompt corpus fixtures",
+        "retrieval ACL + audit-log capture fixtures"
+      ],
+      "expected_output_artifact": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
+      "current_test_exists": false,
+      "test_file_to_create_if_missing": "backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py",
+      "reason_cannot_run_yet": "Exact Tier 4 runtime integration test file is not present in backend integration tests."
+    }
+  ]
+}

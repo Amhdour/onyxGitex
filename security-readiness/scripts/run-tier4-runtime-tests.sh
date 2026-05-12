@@ -84,9 +84,9 @@ for path in \
 done
 
 # Candidate commands can be overridden by env vars
-RETRIEVAL_CMD="${RETRIEVAL_CMD:-python -m dotenv -f .vscode/.env run -- pytest backend/tests/integration/tests/permissions -k retrieval -xv}"
-CITATION_CMD="${CITATION_CMD:-python -m dotenv -f .vscode/.env run -- pytest backend/tests/integration -k citation -xv}"
-PROMPT_INJECTION_CMD="${PROMPT_INJECTION_CMD:-python -m dotenv -f .vscode/.env run -- pytest backend/tests/integration -k 'prompt and injection' -xv}"
+RETRIEVAL_CMD="${RETRIEVAL_CMD:-pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py}"
+CITATION_CMD="${CITATION_CMD:-TODO: pytest -q backend/tests/integration/tests/chat/test_citation_leakage_runtime.py}"
+PROMPT_INJECTION_CMD="${PROMPT_INJECTION_CMD:-TODO: pytest -q backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py}"
 
 if run_and_capture "retrieval_authorization" "${RETRIEVAL_CMD}"; then
   status_retrieval="PASS"
@@ -94,17 +94,15 @@ else
   status_retrieval="BLOCKED"
 fi
 
-if run_and_capture "citation_leakage" "${CITATION_CMD}"; then
-  status_citation="PASS"
-else
-  status_citation="BLOCKED"
-fi
+log "citation_leakage_tests exact runtime test status: MISSING"
+log "COMMAND citation_leakage: ${CITATION_CMD}"
+log "EXIT citation_leakage: BLOCKED (missing exact runtime test file)"
+status_citation="BLOCKED"
 
-if run_and_capture "prompt_injection_boundary" "${PROMPT_INJECTION_CMD}"; then
-  status_prompt="PASS"
-else
-  status_prompt="BLOCKED"
-fi
+log "prompt_injection_boundary_tests exact runtime test status: MISSING"
+log "COMMAND prompt_injection_boundary: ${PROMPT_INJECTION_CMD}"
+log "EXIT prompt_injection_boundary: BLOCKED (missing exact runtime test file)"
+status_prompt="BLOCKED"
 
 {
   echo "## Suite outcomes"
