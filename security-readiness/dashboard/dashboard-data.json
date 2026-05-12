@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-12T16:54:12.798508+00:00",
+  "generated_at": "2026-05-12T19:49:27.779506+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
   "active_launch_mode": "RAG_ONLY",
-  "readiness_score": 65.2,
+  "readiness_score": 66.7,
   "evidence_completeness": {
     "status": "FAILED",
     "allow_go": false,
-    "complete": 15,
-    "required_total": 23,
-    "percent": 65.2
+    "complete": 16,
+    "required_total": 24,
+    "percent": 66.7
   },
   "control_status": "Missing",
   "tests": {
@@ -25,11 +25,14 @@
     "tool_runtime_wiring_main_llm_loop_adjacent": "Passed",
     "tool_runtime_wiring_research_agent_adjacent": "Passed",
     "mcp_deny_before_dispatch_runtime_adjacent": "Passed",
+    "tier4_artifact_writer_scaffold": "Passed",
     "tool_runtime_wiring_main_llm_loop": "Not Pass",
     "tool_runtime_wiring_research_agent": "Not Pass",
     "tool_runtime_wiring": "Not Pass",
     "full_mcp_runtime_hardening": "Not Pass",
-    "mcp_tool_hardening": "Missing / Not Pass"
+    "evidence_pack": "Incomplete",
+    "mcp_tool_hardening": "Missing / Not Pass",
+    "tier4_runtime_execution": "Not Pass / Blocked"
   },
   "tooling_skip_visibility": [
     {
@@ -106,10 +109,17 @@
       "runtime_proof": "No (runtime-adjacent only; full MCP/runtime hardening remains NOT_PASS)",
       "launch_gate_effect": "Non-critical positive signal only; does not satisfy full MCP/runtime or tool hardening requirements"
     },
+    "tier4_artifact_writer_scaffold": {
+      "status": "Passed",
+      "evidence_type": "artifact writer scaffold test evidence",
+      "runtime_proof": "No (scaffold-only; tier4_runtime_status remains NOT_PASS)",
+      "launch_gate_effect": "Non-critical scaffold signal only; does not satisfy Tier 4 runtime blockers for retrieval/citation/prompt controls"
+    },
     "tool_runtime_wiring_main_llm_loop": "Not Pass",
     "tool_runtime_wiring_research_agent": "Not Pass",
     "tool_runtime_wiring": "Not Pass",
-    "full_mcp_runtime_hardening": "Not Pass"
+    "full_mcp_runtime_hardening": "Not Pass",
+    "evidence_pack": "Incomplete"
   },
   "audit_logging_status": "Passed",
   "runtime_tracing_status": "Passed",
@@ -122,8 +132,8 @@
       "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
     ]
   },
-  "last_evidence_timestamp": "2026-05-12T16:54:10+00:00",
-  "git_commit": "e7845b925858412f60fb4c7a642c91ec9139a26f",
+  "last_evidence_timestamp": "2026-05-12T19:49:26+00:00",
+  "git_commit": "128d77abeb5bceeb09bf5d56523cb93365a6d2e2",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",
