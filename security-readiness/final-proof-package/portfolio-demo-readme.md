@@ -90,6 +90,12 @@ These controls are represented in project artifacts and mapped to launch criteri
 - **Current decision:** `NOT_ENOUGH_EVIDENCE`.
 - **Why this is correct:** fail-closed gate policy requires complete critical evidence; unresolved critical gaps must block GO.
 
+## Tier 4 Runtime Collection CI Visibility
+
+[![Tier 4 Runtime Collection](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml)
+
+This badge is CI visibility evidence only. It does **not** constitute Tier 4 runtime PASS evidence and does **not** change launch posture from **NOT_ENOUGH_EVIDENCE**.
+
 ## 10) Professional Positioning
 
 This portfolio demonstrates practical capability in:
