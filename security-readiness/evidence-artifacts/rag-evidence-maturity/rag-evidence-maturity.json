@@ -67,6 +67,14 @@
       "launch_gate_impact": "Partial positive signal only; RAG_PLUS_TOOLS remains blocked and launch stays NOT_ENOUGH_EVIDENCE"
     },
     {
+      "control": "ToolRuntimeContextGuard",
+      "tier_achieved": 2,
+      "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-runtime-context-guard-tests.json; security-readiness/final-control-status-canonical.md",
+      "current_status": "Dependency-light tool runtime context guard evidence PASS; runtime wiring remains NOT_PASS",
+      "missing": "Runtime wiring proof through llm_loop.py and research-agent execution paths",
+      "launch_gate_impact": "Partial positive signal only; RAG_PLUS_TOOLS remains NOT_READY and launch stays NOT_ENOUGH_EVIDENCE"
+    },
+    {
       "control": "AuditLogger",
       "tier_achieved": 3,
       "evidence_file": "security-readiness/evidence-artifacts/audit-logging-001/evidence-summary.md",

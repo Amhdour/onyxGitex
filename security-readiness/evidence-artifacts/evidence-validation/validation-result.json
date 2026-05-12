@@ -1,7 +1,7 @@
 {
   "validator": "launch-evidence-completeness",
   "version": 1,
-  "generated_at": "2026-05-12T15:06:58+00:00",
+  "generated_at": "2026-05-12T15:23:19+00:00",
   "rules_file": "security-readiness/47-evidence-automation/evidence-completeness-rules.yaml",
   "status": "FAILED",
   "phases": {
@@ -20,12 +20,12 @@
   "tools_enabled": false,
   "active_launch_mode": "RAG_ONLY",
   "counts": {
-    "complete": 10,
+    "complete": 11,
     "missing": 0,
     "failed": 5,
     "skipped": 3,
-    "required_total": 18,
-    "pre_launch_required_total": 15,
+    "required_total": 19,
+    "pre_launch_required_total": 16,
     "post_launch_required_total": 3
   },
   "checked": [
@@ -73,6 +73,17 @@
       "file": "security-readiness/evidence-artifacts/test-results/tool-authorization-dependency-light-tests.json"
     },
     {
+      "id": "tool_runtime_context_guard_dependency_light",
+      "phase": "pre_launch_evidence_validation",
+      "status": "COMPLETE",
+      "observed": "PASS",
+      "expected": [
+        "PASS",
+        "PASSED"
+      ],
+      "file": "security-readiness/evidence-artifacts/test-results/tool-runtime-context-guard-tests.json"
+    },
+    {
       "id": "audit_events_generated",
       "phase": "pre_launch_evidence_validation",
       "status": "COMPLETE",
@@ -116,7 +127,7 @@
       "id": "dashboard_data_generated",
       "phase": "post_launch_output_validation",
       "status": "COMPLETE",
-      "observed": "2026-05-12T15:06:13.416009+00:00",
+      "observed": "2026-05-12T15:22:19.856989+00:00",
       "expected": [],
       "file": "security-readiness/dashboard/dashboard-data.json"
     },
@@ -223,6 +234,7 @@
     "pure_control_unit_tests": "PASS",
     "citation_source_leakage_dependency_light": "PASS",
     "prompt_injection_boundary_dependency_light": "PASS",
-    "tool_authorization_dependency_light": "PASS"
+    "tool_authorization_dependency_light": "PASS",
+    "tool_runtime_context_guard_dependency_light": "PASS"
   }
 }
