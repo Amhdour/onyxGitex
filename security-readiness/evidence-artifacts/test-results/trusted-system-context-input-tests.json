@@ -1,0 +1,13 @@
+{
+  "assessment_date_utc": "2026-05-12T13:23:10Z",
+  "schema_injection_status": "PASS",
+  "full_route_status": "NOT_PASS_BLOCKED",
+  "launch_gate": "NOT_ENOUGH_EVIDENCE",
+  "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/trusted-system-context-input/test_trusted_context_schema_injection.py",
+  "tests_file": "security-readiness/evidence-artifacts/trusted-system-context-input/test_trusted_context_schema_injection.py",
+  "notes": [
+    "Schema-level checks passed via source-level model boundary tests.",
+    "Runtime Pydantic import path is blocked by missing dependency fastapi_users_db_sqlalchemy in this environment.",
+    "No full backend route integration tests were executed in this evidence artifact."
+  ]
+}
