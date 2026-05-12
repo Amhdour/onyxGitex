@@ -45,3 +45,11 @@ Launch gate posture: **NOT_ENOUGH_EVIDENCE**
 - Validator blockers are not closed by these skeletons.
 - Launch gate remains **NOT_ENOUGH_EVIDENCE**.
 - Status is not upgraded to GO without real runtime assertions and evidence artifacts.
+
+
+## Tier 4 Runtime Environment Repair (2026-05-12)
+- Backend auth modules (`fastapi-users`, `fastapi-users-db-sqlalchemy`) are provided by root `pyproject.toml` backend dependency group.
+- Repo-supported dependency setup command identified from `backend/requirements/README.md`: `uv sync --no-default-groups --group backend --group dev`.
+- In this host, dependency sync remained blocked (cp314 wheel mismatch for `onnxruntime`, and follow-up `--python 3.11` runtime download tunnel failure).
+- Collection-only command remained pre-collection blocked due missing `dotenv` in system interpreter environment.
+- Launch gate remains **NOT_ENOUGH_EVIDENCE**; no Tier 4 suite PASS claim.

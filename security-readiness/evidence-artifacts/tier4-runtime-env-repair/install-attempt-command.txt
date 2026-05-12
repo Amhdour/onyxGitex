@@ -1,0 +1,1 @@
+uv sync --no-default-groups --group backend --group dev
