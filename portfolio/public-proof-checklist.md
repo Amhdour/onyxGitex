@@ -1,3 +1,5 @@
+Runtime artifact logs status (2026-05-12): PRESENT (`runtime-status.txt`, `pytest-output.txt`, `git-commit.txt`, `timestamp.txt`, `test-command.txt`, `env-manifest-redacted.txt`, `docker-compose-ps.txt`).
+
 Screenshots, sanitized evidence, public README, architecture diagram, threat model, control matrix, launch gate example, CI artifact example, demo script, recruiter explanation, client explanation.
 
 ## Runtime Evidence Proof Items (TODO until artifacts exist)
