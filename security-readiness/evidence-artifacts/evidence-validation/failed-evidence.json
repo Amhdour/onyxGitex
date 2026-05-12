@@ -35,7 +35,7 @@
     "expected_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
     "status": "FAILED",
     "reason": "Evidence artifact does not meet pass criteria",
-    "observed": "BLOCKED",
+    "observed": null,
     "expected": [
       "PASS",
       "PASSED"

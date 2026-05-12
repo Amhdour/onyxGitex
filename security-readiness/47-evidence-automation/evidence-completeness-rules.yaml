@@ -58,6 +58,17 @@
         ]
       },
       {
+        "id": "prompt_injection_boundary_dependency_light",
+        "description": "Passing prompt-injection boundary dependency-light tests (partial evidence only)",
+        "critical": false,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
+        "pass_field": "result.tests_failed",
+        "pass_values": [
+          0
+        ]
+      },
+      {
         "id": "pure_control_unit_tests",
         "description": "Passing pure control-layer unit tests (limited unit evidence only)",
         "critical": false,
