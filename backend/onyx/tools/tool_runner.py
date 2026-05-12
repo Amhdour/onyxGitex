@@ -22,6 +22,7 @@ from onyx.tools.models import ToolCallKickoff
 from onyx.tools.models import ToolExecutionException
 from onyx.tools.models import ToolResponse
 from onyx.tools.models import WebSearchToolOverrideKwargs
+from onyx.tools.tool_authorization_router import ToolAuthorizationRouter
 from onyx.tools.tool_implementations.coding_agent.coding_agent_tool import (
     CodingAgentTool,
 )
@@ -115,6 +116,12 @@ def _safe_run_single_tool(
     tool: Tool,
     tool_call: ToolCallKickoff,
     override_kwargs: Any,
+    authorization_router: ToolAuthorizationRouter | None = None,
+    user_id: str | None = None,
+    tool_policy: dict[str, Any] | None = None,
+    approval_id: str | None = None,
+    audit_events: list[dict[str, Any]] | None = None,
+    runtime_trace: list[dict[str, Any]] | None = None,
 ) -> ToolResponse:
     """Execute a single tool and return its response.
 
@@ -130,6 +137,23 @@ def _safe_run_single_tool(
     - tool_call is set on the response for downstream processing
     """
     tool_response: ToolResponse | None = None
+
+    if authorization_router is not None:
+        decision = authorization_router.authorize(
+            tool_name=tool.name,
+            user_id=user_id,
+            policy=tool_policy,
+            approval_id=approval_id,
+        )
+        if runtime_trace is not None:
+            runtime_trace.append({"event": "tool_authorization", "tool_name": tool.name, "tool_call_id": tool_call.tool_call_id, "allowed": decision.allowed, "reason": decision.reason, "risk_level": decision.risk_level})
+        if not decision.allowed:
+            if audit_events is not None:
+                audit_events.append({"event": "tool_denied", "tool_name": tool.name, "tool_call_id": tool_call.tool_call_id, "reason": decision.reason, "risk_level": decision.risk_level})
+            tool.emitter.emit(Packet(placement=tool_call.placement, obj=SectionEnd()))
+            denied = ToolResponse(rich_response=None, llm_facing_response=GENERIC_TOOL_ERROR_MESSAGE.format(error=f"Authorization denied: {decision.reason}"))
+            denied.tool_call = tool_call
+            return denied
 
     with function_span(tool.name) as span_fn:
         span_fn.span_data.input = str(tool_call.tool_args)
@@ -246,6 +270,12 @@ def run_tool_calls(
     # When False, don't pass memory context to search tools for query expansion
     # (but still pass it to the memory tool for persistence)
     inject_memories_in_prompt: bool = True,
+    authorization_router: ToolAuthorizationRouter | None = None,
+    user_id: str | None = None,
+    tool_policy: dict[str, Any] | None = None,
+    approval_id: str | None = None,
+    audit_events: list[dict[str, Any]] | None = None,
+    runtime_trace: list[dict[str, Any]] | None = None,
 ) -> ParallelToolCallResponse:
     """Run (optionally merged) tool calls in parallel and update citation mappings.
 
@@ -300,6 +330,10 @@ def run_tool_calls(
     for tool_call in merged_tool_calls:
         if tool_call.tool_name not in tools_by_name:
             logger.warning("Tool %s not found in tools list", tool_call.tool_name)
+            if audit_events is not None:
+                audit_events.append({"event": "tool_denied", "tool_name": tool_call.tool_name, "tool_call_id": tool_call.tool_call_id, "reason": "unknown_tool", "risk_level": "unknown"})
+            if runtime_trace is not None:
+                runtime_trace.append({"event": "tool_authorization", "tool_name": tool_call.tool_name, "tool_call_id": tool_call.tool_call_id, "allowed": False, "reason": "unknown_tool", "risk_level": "unknown"})
             continue
         filtered_tool_calls.append(tool_call)
 
@@ -418,7 +452,7 @@ def run_tool_calls(
 
     # Run all tools in parallel
     functions_with_args = [
-        (_safe_run_single_tool, (tool, tool_call, override_kwargs))
+        (_safe_run_single_tool, (tool, tool_call, override_kwargs, authorization_router, user_id, tool_policy, approval_id, audit_events, runtime_trace))
         for tool, tool_call, override_kwargs in tool_run_params
     ]
 

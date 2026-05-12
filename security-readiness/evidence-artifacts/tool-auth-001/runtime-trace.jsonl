@@ -1,0 +1,3 @@
+{"event":"tool_authorization","tool_name":"unknown_tool_example","tool_call_id":"call_unknown","allowed":false,"reason":"unknown_tool","risk_level":"unknown"}
+{"event":"tool_authorization","tool_name":"dummy_low_risk","tool_call_id":"call_dummy_low_risk","allowed":false,"reason":"missing_user_identity","risk_level":"unknown"}
+{"event":"tool_authorization","tool_name":"dummy_low_risk","tool_call_id":"call_dummy_low_risk","allowed":true,"reason":"authorized","risk_level":"low"}
