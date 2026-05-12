@@ -1,0 +1,15 @@
+{
+  "recorded_at_utc": "2026-05-12",
+  "evidence_phase": "FINAL_WORKFLOW_RESULT",
+  "workflow_run_url": "https://github.com/Amhdour/onyxGitex/actions/runs/25761491028",
+  "run_status": "COMPLETED",
+  "run_conclusion": "FAILURE",
+  "job_name": "tier4-runtime-collection",
+  "job_status": "completed",
+  "job_conclusion": "failure",
+  "failure_classification": "FAILED_UNKNOWN_NO_LOGS",
+  "dependency_import_status": "UNKNOWN_UNTIL_LOG_REVIEW",
+  "pytest_collection_status": "UNKNOWN_UNTIL_LOG_REVIEW",
+  "launch_posture": "NOT_ENOUGH_EVIDENCE",
+  "capture_time_artifact_preserved": "security-readiness/evidence-artifacts/tier4-ci-collection/ci-run-status.json"
+}
