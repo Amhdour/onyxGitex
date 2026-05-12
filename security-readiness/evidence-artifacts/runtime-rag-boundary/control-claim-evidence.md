@@ -1,8 +1,8 @@
-| Control Claim | Evidence Required | Current Evidence | Status | Launch Implication |
+| Claim | Required runtime evidence | Latest observed evidence | Status | Notes |
 |---|---|---|---|---|
-| Document-set retrieval boundary is enforced. | Runtime test logs showing allowed and denied retrieval by identity/document set. | Runtime test execution still blocked before collection due to missing `fastapi_users` after incomplete sync. | BLOCKED_DEPENDENCY | Cannot claim control enforcement. |
-| Restricted documents are not exposed to unauthorized users. | Unauthorized retrieval denial output and citation-safe responses. | No scenario executed because dependency import failure persists. | NOT_ENOUGH_EVIDENCE | Launch remains NO-GO. |
-| Prompt-injected retrieved content cannot override access policy. | Injection scenario outputs with policy-deny evidence. | Not executed in this package during latest rerun. | NOT_ENOUGH_EVIDENCE | No runtime override-resistance claim permitted. |
-| Responses are grounded in authorized sources only. | Runtime outputs with source attribution and authorization checks. | No executed response artifacts due to dependency blocker. | BLOCKED_DEPENDENCY | Cannot claim source-grounding enforcement. |
-| Unauthorized retrieval attempts are logged. | Backend/audit logs with denied retrieval events. | `backend-logs.txt` missing; no denied retrieval log captured. | NOT_ENOUGH_EVIDENCE | Audit completeness unverified. |
-| Fail-closed behavior occurs when authorization state is uncertain. | Runtime logs showing deny-on-uncertainty behavior. | No fail-closed runtime artifact captured in this execution attempt. | NOT_ENOUGH_EVIDENCE | Fail-closed enforcement unverified. |
+| Document-set retrieval boundary is enforced. | Passing runtime boundary pytest execution. | Runtime test execution blocked before collection. | BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD | No runtime PASS evidence. |
+| Restricted documents are not exposed to unauthorized users. | Unauthorized retrieval deny evidence from executed test/logs. | Not executed due dependency sync blocker. | NOT_ENOUGH_EVIDENCE | Unverified. |
+| Prompt-injected retrieved content cannot override access policy. | Prompt-injection runtime test evidence. | Not in scope for this PR. | NOT_ENOUGH_EVIDENCE | Unverified. |
+| Responses are grounded in authorized sources only. | Runtime/source assertions from executed tests. | Not executed due blocker. | NOT_ENOUGH_EVIDENCE | Unverified. |
+| Unauthorized retrieval attempts are logged. | Backend audit/runtime denied retrieval logs. | backend-logs artifact missing. | NOT_ENOUGH_EVIDENCE | Unverified. |
+| Fail-closed behavior occurs when authorization state is uncertain. | Runtime deny-on-uncertainty evidence. | Not executed due blocker. | NOT_ENOUGH_EVIDENCE | Unverified. |

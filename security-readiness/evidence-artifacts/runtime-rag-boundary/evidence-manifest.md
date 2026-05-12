@@ -1,20 +1,25 @@
-| Artifact | Required | Present | Status | Notes |
-|---|---|---|---|---|
-| python-runtime-precheck.md | Yes | Yes | PRESENT | Python compatibility precheck completed. |
-| runtime-environment.md | Yes | Yes | PRESENT | Selected Python runtime and commands documented. |
-| python-version.txt | Yes | Yes | PRESENT | Runner captured active interpreter details. |
-| python-runtime-sync-output.txt | Yes | Yes | BLOCKED | `uv sync --python 3.12` failed downloading `numpy==2.4.1` (tunnel error). |
-| dependency-precheck.md | Yes | Yes | PRESENT | Dependency declaration/import precheck retained. |
-| dependency-resolution.md | Yes | Yes | PARTIAL | Updated with Python runtime follow-up. |
-| dependency-install-output.txt | Yes | Yes | BLOCKED_PACKAGE_RESOLUTION | Prior cp314 blocker evidence retained. |
-| pytest-output.txt | Yes | Yes | BLOCKED | Pytest still blocked at import (`fastapi_users` missing). |
-| backend-logs.txt | Yes | No | MISSING | Test did not execute. |
-| docker-compose-ps.txt | Yes | Yes | NOT_AVAILABLE | Docker unavailable in this environment. |
-| env-manifest-redacted.txt | Yes | Yes | PRESENT | Redacted env manifest captured. |
-| git-commit.txt | Yes | Yes | PRESENT | Current commit captured at run time. |
-| test-command.txt | Yes | Yes | PRESENT | Exact command captured. |
-| timestamp.txt | Yes | Yes | PRESENT | UTC timestamp captured. |
-| runtime-status.txt | Yes | Yes | BLOCKED | Current status `DEPENDENCY_FAILURE`. |
-| execution-precheck.md | Yes | Yes | PARTIAL | Precheck exists; runtime still blocked. |
-| runtime-execution-report.md | Yes | Yes | PARTIAL | Includes Python runtime compatibility attempt. |
-| final-run-status.json | Yes | Yes | BLOCKED | Valid JSON, evidence still blocked. |
+| Artifact | Status | Notes |
+|---|---|---|
+| dependency-sync-precheck.md | PRESENT | Precheck captured with command evidence. |
+| dependency-sync-analysis.md | PRESENT | Dependency source and blocker classification documented. |
+| dependency-sync-output.txt | BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD | uv sync failed on PyPI wheel download tunnel errors. |
+| dependency-sync-status.txt | BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD | Classified from sync output. |
+| dependency-import-check.txt | BLOCKED | Not produced by sync script because sync failed; independent check append attempted. |
+| python-runtime-precheck.md | PRESENT | Existing artifact retained. |
+| runtime-environment.md | PRESENT | Existing artifact retained. |
+| python-version.txt | PRESENT | Latest runner interpreter capture. |
+| python-runtime-sync-output.txt | PRESENT | Prior runtime sync record retained. |
+| dependency-precheck.md | PRESENT | Existing artifact retained. |
+| dependency-resolution.md | PARTIAL | Updated with sync stabilization follow-up. |
+| dependency-install-output.txt | PRESENT | Existing artifact retained. |
+| pytest-output.txt | BLOCKED | pytest run blocked by dependency sync/network issue. |
+| backend-logs.txt | MISSING | Runtime test did not execute. |
+| docker-compose-ps.txt | NOT_AVAILABLE | Docker unavailable. |
+| env-manifest-redacted.txt | PRESENT | Captured. |
+| git-commit.txt | PRESENT | Captured. |
+| test-command.txt | PRESENT | Captured. |
+| timestamp.txt | PRESENT | Captured. |
+| runtime-status.txt | BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD | Latest runtime blocker. |
+| execution-precheck.md | PRESENT | Existing artifact retained. |
+| runtime-execution-report.md | PARTIAL | Includes dependency sync stabilization attempt section. |
+| final-run-status.json | PRESENT | Updated and valid JSON. |

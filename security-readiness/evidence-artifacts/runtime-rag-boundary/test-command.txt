@@ -1,1 +1,1 @@
-cd backend && python -m pytest -xv tests/integration/tests/chat/test_chat_document_set_access.py -k "rag or boundary or document_set or access"
+cd backend && uv run --python 3.12 python -m pytest -xv tests/integration/tests/chat/test_chat_document_set_access.py -k "rag or boundary or document_set or access"
