@@ -1,17 +1,18 @@
 {
-  "generated_at": "2026-05-12T10:50:08.327031+00:00",
+  "generated_at": "2026-05-12T13:46:03.371330+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
-  "readiness_score": 53.8,
+  "readiness_score": 57.1,
   "evidence_completeness": {
     "status": "FAILED",
     "allow_go": false,
-    "complete": 7,
-    "required_total": 13,
-    "percent": 53.8
+    "complete": 8,
+    "required_total": 14,
+    "percent": 57.1
   },
   "control_status": "Missing",
   "tests": {
     "pure_control_layer": "Passed",
+    "citation_source_leakage_dependency_light": "Passed",
     "retrieval_authorization": "Blocked",
     "citation_leakage": "Blocked",
     "prompt_injection": "Blocked",
@@ -24,7 +25,14 @@
       "runtime_proof": "No",
       "launch_gate_effect": "Improves confidence but does not unblock GO"
     },
-    "runtime_retrieval_authorization": "Blocked"
+    "runtime_retrieval_authorization": "Blocked",
+    "citation_source_leakage_dependency_light": {
+      "status": "Passed",
+      "evidence_type": "dependency-light test evidence",
+      "runtime_proof": "No",
+      "launch_gate_effect": "Partial positive evidence only; GO remains blocked without full runtime citation leakage PASS"
+    },
+    "full_runtime_citation_leakage": "Blocked"
   },
   "audit_logging_status": "Passed",
   "runtime_tracing_status": "Passed",
@@ -37,8 +45,8 @@
       "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
     ]
   },
-  "last_evidence_timestamp": "2026-05-12T10:50:06+00:00",
-  "git_commit": "6578277e35aa49bb98cc33a9c68f4142c0fa5a51",
+  "last_evidence_timestamp": "2026-05-12T13:45:55+00:00",
+  "git_commit": "68cfe1b958e52cd2e34e849b766c5304620d5b2d",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",

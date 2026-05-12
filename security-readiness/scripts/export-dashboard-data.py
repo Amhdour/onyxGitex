@@ -107,6 +107,7 @@ payload = {
     "control_status": "Missing" if completeness_pct < 100 else "Verified",
     "tests": {
         "pure_control_layer": item_status(validation, "pure_control_unit_tests"),
+        "citation_source_leakage_dependency_light": item_status(validation, "citation_source_leakage_dependency_light"),
         "retrieval_authorization": item_status(validation, "retrieval_authorization_tests"),
         "citation_leakage": item_status(validation, "citation_leakage_tests"),
         "prompt_injection": item_status(validation, "prompt_injection_boundary_tests"),
@@ -120,6 +121,13 @@ payload = {
             "launch_gate_effect": "Improves confidence but does not unblock GO",
         },
         "runtime_retrieval_authorization": item_status(validation, "retrieval_authorization_tests"),
+        "citation_source_leakage_dependency_light": {
+            "status": item_status(validation, "citation_source_leakage_dependency_light"),
+            "evidence_type": "dependency-light test evidence",
+            "runtime_proof": "No",
+            "launch_gate_effect": "Partial positive evidence only; GO remains blocked without full runtime citation leakage PASS",
+        },
+        "full_runtime_citation_leakage": item_status(validation, "citation_leakage_tests"),
     },
     "audit_logging_status": item_status(validation, "audit_events_generated"),
     "runtime_tracing_status": item_status(validation, "runtime_traces_generated"),
