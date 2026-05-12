@@ -106,6 +106,18 @@
         ]
       },
       {
+        "id": "tier4_artifact_writer_scaffold",
+        "description": "Tier 4 artifact writer scaffold evidence is present (non-critical scaffold signal)",
+        "critical": false,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/tier4-artifact-writer-tests.json",
+        "pass_field": "artifact_writer_status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
         "id": "tool_runtime_context_guard_dependency_light",
         "description": "Passing tool runtime context guard dependency-light tests (partial evidence only)",
         "critical": false,

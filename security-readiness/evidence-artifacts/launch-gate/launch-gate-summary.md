@@ -1,7 +1,7 @@
 # Launch Gate Summary
 
-- Generated at (UTC): `2026-05-12T16:54:11+00:00`
-- Git commit: `e7845b925858412f60fb4c7a642c91ec9139a26f`
+- Generated at (UTC): `2026-05-12T19:49:26+00:00`
+- Git commit: `128d77abeb5bceeb09bf5d56523cb93365a6d2e2`
 - Decision: **NOT_ENOUGH_EVIDENCE**
 - Active launch mode: **RAG_ONLY**
 

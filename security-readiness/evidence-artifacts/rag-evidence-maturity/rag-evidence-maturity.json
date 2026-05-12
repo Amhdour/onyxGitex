@@ -83,6 +83,14 @@
       "launch_gate_impact": "Partial positive signal only; RAG_PLUS_TOOLS remains NOT_READY and launch stays NOT_ENOUGH_EVIDENCE"
     },
     {
+      "control": "Tier4ArtifactWriterScaffold",
+      "tier_achieved": 2,
+      "evidence_file": "backend/onyx/security_readiness/tier4_artifact_writer.py; security-readiness/evidence-artifacts/test-results/tier4-artifact-writer-tests.json; security-readiness/final-control-status-canonical.md",
+      "current_status": "Artifact writer scaffold evidence PASS (artifact_writer_status=PASS) while tier4_runtime_status remains NOT_PASS",
+      "missing": "Full Tier 4 runtime execution PASS for retrieval/citation/prompt controls in supported backend runtime",
+      "launch_gate_impact": "Non-critical scaffold signal only; launch remains NOT_ENOUGH_EVIDENCE until critical Tier 4 runtime blockers close"
+    },
+    {
       "control": "AuditLogger",
       "tier_achieved": 3,
       "evidence_file": "security-readiness/evidence-artifacts/audit-logging-001/evidence-summary.md",
