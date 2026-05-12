@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Security Readiness Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background:#f7f8fa; color:#1f2937; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+    .card { background:white; border:1px solid #e5e7eb; border-radius:10px; padding:14px; }
+    .status { font-weight:700; }
+    .missing { color:#b91c1c; }
+    .passed { color:#166534; }
+    .skipped { color:#92400e; }
+    code { background:#eef2ff; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <h1>AI Trust & Security Readiness Dashboard</h1>
+  <p id="meta"></p>
+  <div class="grid" id="cards"></div>
+  <h2>Launch explanation</h2>
+  <div class="card">
+    <p id="explanation"></p>
+    <ul id="reasons"></ul>
+    <h3>Required actions</h3>
+    <ul id="actions"></ul>
+  </div>
+<script>
+async function load() {
+  const res = await fetch('./dashboard-data.json');
+  const d = await res.json();
+  document.getElementById('meta').innerHTML = `Last evidence timestamp: <code>${d.last_evidence_timestamp}</code> | Git commit: <code>${d.git_commit}</code>`;
+
+  const items = [
+    ['Overall launch gate decision', d.overall_launch_gate_decision],
+    ['Readiness score', d.readiness_score + '%'],
+    ['Evidence completeness', `${d.evidence_completeness.status} (${d.evidence_completeness.complete}/${d.evidence_completeness.required_total})`],
+    ['Control status', d.control_status],
+    ['Retrieval authorization test', d.tests.retrieval_authorization],
+    ['Citation leakage test', d.tests.citation_leakage],
+    ['Prompt injection test', d.tests.prompt_injection],
+    ['Tool authorization test', d.tests.tool_authorization],
+    ['Audit logging status', d.audit_logging_status],
+    ['Runtime tracing status', d.runtime_tracing_status],
+    ['Open critical risks', d.open_critical_risks],
+    ['Residual risks', d.residual_risks.status]
+  ];
+
+  const cards = document.getElementById('cards');
+  items.forEach(([k,v]) => {
+    const c = document.createElement('div'); c.className='card';
+    const cls = String(v).toLowerCase().includes('pass') || String(v).toLowerCase().includes('verified') ? 'passed' :
+      String(v).toLowerCase().includes('skip') ? 'skipped' : 'missing';
+    c.innerHTML = `<div>${k}</div><div class="status ${cls}">${v}</div>`;
+    cards.appendChild(c);
+  });
+
+  document.getElementById('explanation').textContent = d.explanation.summary;
+  d.explanation.reasons.forEach(r => { const li=document.createElement('li'); li.textContent=r; reasons.appendChild(li); });
+  d.explanation.required_actions.forEach(a => { const li=document.createElement('li'); li.textContent=a; actions.appendChild(li); });
+}
+load();
+</script>
+</body>
+</html>

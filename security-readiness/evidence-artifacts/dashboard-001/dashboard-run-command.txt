@@ -1,0 +1,2 @@
+python3 security-readiness/scripts/export-dashboard-data.py
+python3 -m http.server 8765 --directory security-readiness/dashboard
