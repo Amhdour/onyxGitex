@@ -1,0 +1,14 @@
+{
+  "control": "CitationSourceLeakageDependencyLight",
+  "suite": "citation-source-leakage",
+  "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/citation-source-leakage/test_citation_source_leakage.py",
+  "dependency_light_status": "PASS",
+  "full_runtime_status": "NOT_PASS_BLOCKED",
+  "launch_gate": "NOT_ENOUGH_EVIDENCE",
+  "global_citation_leakage_tests": "PARTIAL_PASS_DEPENDENCY_LIGHT_ONLY",
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "risk": "HIGH",
+  "timestamp": "2026-05-12T13:38:30Z",
+  "evidence_source": "security-readiness/evidence-artifacts/citation-source-leakage/evidence-summary.md"
+}
