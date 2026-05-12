@@ -159,7 +159,7 @@
         "critical": false,
         "when": "always",
         "evidence_file": "security-readiness/evidence-artifacts/test-results/mcp-deny-before-dispatch-tests.json",
-        "pass_field": "mcp_deny_before_dispatch_adjacent_status",
+        "pass_field": "status.mcp_deny_before_dispatch_adjacent_status",
         "pass_values": [
           "PASS",
           "PASSED"
