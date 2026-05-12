@@ -2,7 +2,7 @@
 
 Date: 2026-05-12
 
-[![Tier 4 Runtime Collection](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml)
+[![Tier 4 Runtime Collection](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml)
 
 > Badge interpretation: CI visibility evidence only. It does **not** claim Tier 4 runtime PASS and does **not** imply GO. Launch posture remains **NOT_ENOUGH_EVIDENCE**.
 

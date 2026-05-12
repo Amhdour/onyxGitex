@@ -92,7 +92,7 @@ These controls are represented in project artifacts and mapped to launch criteri
 
 ## Tier 4 Runtime Collection CI Visibility
 
-[![Tier 4 Runtime Collection](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml)
+[![Tier 4 Runtime Collection](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml)
 
 This badge is CI visibility evidence only. It does **not** constitute Tier 4 runtime PASS evidence and does **not** change launch posture from **NOT_ENOUGH_EVIDENCE**.
 
