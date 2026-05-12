@@ -14,6 +14,7 @@ import pytest
 
 from .tier4_artifact_writer import (
     mark_blocked,
+    mark_failed,
     mark_passed_only_if_assertions_executed,
     write_tier4_result_artifact,
 )
@@ -30,7 +31,6 @@ CITATION_LEAKAGE_ARTIFACT = Path(
     "citation-leakage-tests.json"
 )
 FORBIDDEN_MARKERS = ["[RESTRICTED]", "restricted://", "acl:restricted"]
-ASSERTIONS_EXECUTED = False
 REQUIRED_ASSERTION_KEYS = {
     "allowed_citation_present",
     "restricted_citation_absent",
@@ -96,11 +96,9 @@ def tier4_runtime_context() -> dict[str, Any]:
 
 
 def test_allowed_citation_present(tier4_runtime_context: dict[str, Any]) -> None:
-    global ASSERTIONS_EXECUTED
     citations = tier4_runtime_context["capture_citation_metadata"]()
     assert len(citations) > 0
     assert citations[0].get("authorized") is True
-    ASSERTIONS_EXECUTED = True
     _mark_assertion_complete("allowed_citation_present")
 
 
@@ -174,23 +172,27 @@ def _write_pass_artifact_only_if_assertions_executed() -> None:
         write_tier4_result_artifact(CITATION_LEAKAGE_ARTIFACT, artifact)
         return
 
-    if ASSERTIONS_EXECUTED:
+    if any(ASSERTION_COMPLETION.values()):
         write_tier4_result_artifact(
             CITATION_LEAKAGE_ARTIFACT,
-            {
-                **mark_blocked(
-                    suite_id="citation_leakage_tests",
-                    blockers=[
-                        "Tier 4 PASS prohibited: not all required citation leakage assertions completed."
-                    ],
-                ),
-                "status": "FAILED",
-                "tests_run": len(completed_assertions),
-                "tests_passed": len(completed_assertions),
-                "tests_failed": len(missing_assertions),
-                "blockers": [
+            mark_failed(
+                suite_id="citation_leakage_tests",
+                tests_run=len(completed_assertions),
+                tests_failed=len(missing_assertions),
+                blockers=[
                     "Tier 4 PASS prohibited: not all required citation leakage assertions completed.",
                     f"Missing assertions: {', '.join(missing_assertions)}",
                 ],
-            },
+            ),
         )
+        return
+
+    write_tier4_result_artifact(
+        CITATION_LEAKAGE_ARTIFACT,
+        mark_blocked(
+            suite_id="citation_leakage_tests",
+            blockers=[
+                "No Tier 4 runtime assertions executed; runtime fixtures or environment unavailable.",
+            ],
+        ),
+    )
