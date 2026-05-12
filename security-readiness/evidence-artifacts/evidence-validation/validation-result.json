@@ -1,23 +1,36 @@
 {
   "validator": "launch-evidence-completeness",
   "version": 1,
-  "generated_at": "2026-05-12T10:07:17+00:00",
+  "generated_at": "2026-05-12T10:19:19+00:00",
   "rules_file": "security-readiness/47-evidence-automation/evidence-completeness-rules.yaml",
   "status": "FAILED",
+  "phases": {
+    "pre_launch_evidence_validation": {
+      "status": "FAILED",
+      "blocking_issues": 5
+    },
+    "post_launch_output_validation": {
+      "status": "COMPLETE",
+      "blocking_issues": 0
+    }
+  },
   "allow_go": false,
   "draft_decision_only": true,
   "default_status_when_unsure": "INCOMPLETE",
   "tools_enabled": false,
   "counts": {
-    "complete": 3,
+    "complete": 6,
     "missing": 0,
-    "failed": 6,
+    "failed": 5,
     "skipped": 1,
-    "required_total": 10
+    "required_total": 12,
+    "pre_launch_required_total": 9,
+    "post_launch_required_total": 3
   },
   "checked": [
     {
       "id": "audit_events_generated",
+      "phase": "pre_launch_evidence_validation",
       "status": "COMPLETE",
       "observed": true,
       "expected": [
@@ -27,6 +40,7 @@
     },
     {
       "id": "runtime_traces_generated",
+      "phase": "pre_launch_evidence_validation",
       "status": "COMPLETE",
       "observed": true,
       "expected": [
@@ -36,18 +50,48 @@
     },
     {
       "id": "residual_risk_documented",
+      "phase": "pre_launch_evidence_validation",
       "status": "COMPLETE",
       "observed": true,
       "expected": [
         true
       ],
       "file": "security-readiness/evidence-artifacts/risk/residual-risk-summary.json"
+    },
+    {
+      "id": "launch_gate_result_generated",
+      "phase": "post_launch_output_validation",
+      "status": "COMPLETE",
+      "observed": true,
+      "expected": [
+        true
+      ],
+      "file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json"
+    },
+    {
+      "id": "dashboard_data_generated",
+      "phase": "post_launch_output_validation",
+      "status": "COMPLETE",
+      "observed": "2026-05-12T10:18:57.899756+00:00",
+      "expected": [],
+      "file": "security-readiness/dashboard/dashboard-data.json"
+    },
+    {
+      "id": "final_summaries_updated",
+      "phase": "post_launch_output_validation",
+      "status": "COMPLETE",
+      "observed": true,
+      "expected": [
+        true
+      ],
+      "file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-summary.md"
     }
   ],
   "missing": [],
   "failed": [
     {
       "id": "retrieval_authorization_tests",
+      "phase": "pre_launch_evidence_validation",
       "description": "Passing retrieval authorization tests",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
@@ -61,6 +105,7 @@
     },
     {
       "id": "citation_leakage_tests",
+      "phase": "pre_launch_evidence_validation",
       "description": "Passing citation leakage tests",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
@@ -74,6 +119,7 @@
     },
     {
       "id": "prompt_injection_boundary_tests",
+      "phase": "pre_launch_evidence_validation",
       "description": "Passing prompt injection boundary tests",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
@@ -87,6 +133,7 @@
     },
     {
       "id": "no_critical_open_risks",
+      "phase": "pre_launch_evidence_validation",
       "description": "No critical open risks",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/risk/open-risk-summary.json",
@@ -99,6 +146,7 @@
     },
     {
       "id": "evidence_pack_complete",
+      "phase": "pre_launch_evidence_validation",
       "description": "Evidence pack complete",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
@@ -108,23 +156,12 @@
       "expected": [
         true
       ]
-    },
-    {
-      "id": "launch_gate_result_generated",
-      "description": "Launch gate result generated",
-      "critical": true,
-      "expected_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json",
-      "status": "FAILED",
-      "reason": "Evidence artifact does not meet pass criteria",
-      "observed": null,
-      "expected": [
-        true
-      ]
     }
   ],
   "skipped": [
     {
       "id": "tool_authorization_tests",
+      "phase": "pre_launch_evidence_validation",
       "reason": "Skipped because tools are disabled"
     }
   ]

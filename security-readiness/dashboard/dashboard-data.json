@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-05-12T10:07:19.608665+00:00",
+  "generated_at": "2026-05-12T10:19:26.707823+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
-  "readiness_score": 30.0,
+  "readiness_score": 50.0,
   "evidence_completeness": {
     "status": "FAILED",
     "allow_go": false,
-    "complete": 3,
-    "required_total": 10,
-    "percent": 30.0
+    "complete": 6,
+    "required_total": 12,
+    "percent": 50.0
   },
   "control_status": "Missing",
   "tests": {
@@ -27,8 +27,8 @@
       "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
     ]
   },
-  "last_evidence_timestamp": "2026-05-12T10:07:17+00:00",
-  "git_commit": "0930b96f28295fc1c7dfb0433ddea1656ba66c44",
+  "last_evidence_timestamp": "2026-05-12T10:19:19+00:00",
+  "git_commit": "32ac01bf178bec5a713a36c268045bae7f6fdbc0",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",

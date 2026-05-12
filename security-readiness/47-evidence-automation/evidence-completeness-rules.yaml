@@ -7,8 +7,9 @@
   "tools": {
     "enabled": null
   },
-  "required_evidence": [
-    {
+  "phases": {
+    "pre_launch_evidence_validation": [
+      {
       "id": "retrieval_authorization_tests",
       "description": "Passing retrieval authorization tests",
       "critical": true,
@@ -17,7 +18,7 @@
       "pass_field": "status",
       "pass_values": ["PASS", "PASSED"]
     },
-    {
+      {
       "id": "citation_leakage_tests",
       "description": "Passing citation leakage tests",
       "critical": true,
@@ -26,7 +27,7 @@
       "pass_field": "status",
       "pass_values": ["PASS", "PASSED"]
     },
-    {
+      {
       "id": "prompt_injection_boundary_tests",
       "description": "Passing prompt injection boundary tests",
       "critical": true,
@@ -35,7 +36,7 @@
       "pass_field": "status",
       "pass_values": ["PASS", "PASSED"]
     },
-    {
+      {
       "id": "tool_authorization_tests",
       "description": "Passing tool authorization tests when tools are enabled",
       "critical": true,
@@ -44,7 +45,7 @@
       "pass_field": "status",
       "pass_values": ["PASS", "PASSED"]
     },
-    {
+      {
       "id": "audit_events_generated",
       "description": "Audit events generated",
       "critical": true,
@@ -53,7 +54,7 @@
       "pass_field": "generated",
       "pass_values": [true]
     },
-    {
+      {
       "id": "runtime_traces_generated",
       "description": "Runtime traces generated",
       "critical": true,
@@ -62,7 +63,7 @@
       "pass_field": "generated",
       "pass_values": [true]
     },
-    {
+      {
       "id": "no_critical_open_risks",
       "description": "No critical open risks",
       "critical": true,
@@ -71,7 +72,7 @@
       "pass_field": "critical_open_risks",
       "pass_values": [0]
     },
-    {
+      {
       "id": "residual_risk_documented",
       "description": "Residual risk documented",
       "critical": true,
@@ -80,7 +81,7 @@
       "pass_field": "documented",
       "pass_values": [true]
     },
-    {
+      {
       "id": "evidence_pack_complete",
       "description": "Evidence pack complete",
       "critical": true,
@@ -88,15 +89,39 @@
       "evidence_file": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
       "pass_field": "complete",
       "pass_values": [true]
-    },
-    {
-      "id": "launch_gate_result_generated",
-      "description": "Launch gate result generated",
-      "critical": true,
-      "when": "always",
-      "evidence_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json",
-      "pass_field": "generated",
-      "pass_values": [true]
     }
-  ]
+    ],
+    "post_launch_output_validation": [
+      {
+        "id": "launch_gate_result_generated",
+        "phase": "post_launch_output_validation",
+        "description": "Launch gate result generated",
+        "critical": true,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json",
+        "pass_field": "generated",
+        "pass_values": [true]
+      },
+      {
+        "id": "dashboard_data_generated",
+        "phase": "post_launch_output_validation",
+        "description": "Dashboard data generated",
+        "critical": true,
+        "when": "always",
+        "evidence_file": "security-readiness/dashboard/dashboard-data.json",
+        "pass_field": "generated_at",
+        "pass_values": []
+      },
+      {
+        "id": "final_summaries_updated",
+        "phase": "post_launch_output_validation",
+        "description": "Final launch summaries updated",
+        "critical": true,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-summary.md",
+        "pass_field": "generated",
+        "pass_values": [true]
+      }
+    ]
+  }
 }
