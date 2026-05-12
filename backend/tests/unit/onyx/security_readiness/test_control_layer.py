@@ -65,6 +65,38 @@ def test_audit_logger_emits_event() -> None:
     assert logger.events
 
 
+def test_retrieval_allow_emits_structured_audit_event() -> None:
+    logger = AuditLogger()
+    event = logger.emit_authorization_event(
+        action_type="retrieval.allow",
+        decision="allow",
+        reason="Policy allow",
+        actor_id="u1",
+        resource_type="document",
+        resource_id="doc-1",
+        policy_id="retrieval_policy_v1",
+    )
+    payload = event["payload"]
+    assert payload["action_type"] == "retrieval.allow"
+    assert payload["decision"] == "allow"
+
+
+def test_retrieval_deny_missing_identity_emits_fail_closed_event() -> None:
+    logger = AuditLogger()
+    event = logger.emit_authorization_event(
+        action_type="policy.missing_context",
+        decision="deny",
+        reason="Missing identity context",
+        actor_id=None,
+        resource_type="document",
+        resource_id="doc-1",
+        fail_closed=True,
+    )
+    payload = event["payload"]
+    assert payload["actor_id"] == "anonymous/missing"
+    assert payload["fail_closed"] is True
+
+
 def test_runtime_tracer_emits_event() -> None:
     tracer = RuntimeTracer()
     event = tracer.emit("retrieval.authorization", {"decision": "deny"})
