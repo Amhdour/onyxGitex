@@ -1,0 +1,19 @@
+{
+  "recorded_at_utc": "2026-05-12",
+  "workflow_name": "tier4-runtime-collection",
+  "workflow_file": ".github/workflows/tier4-runtime-collection.yml",
+  "workflow_run_url": null,
+  "commit_sha": null,
+  "run_status": "unknown",
+  "collection_status": "unknown",
+  "dependencies_installed": "unknown",
+  "pytest_collection_reached_three_tier4_files": "unknown",
+  "failure_detail": null,
+  "launch_posture": "NOT_ENOUGH_EVIDENCE",
+  "non_claims": {
+    "runtime_pass": false,
+    "launch_go": false,
+    "blocker_closure": false
+  },
+  "evidence_confidence": "Unknown"
+}

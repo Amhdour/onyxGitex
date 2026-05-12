@@ -1,0 +1,3 @@
+[NO_CI_LOG_CAPTURED]
+No GitHub Actions pytest collection log was available in this local repository context.
+Expected source: artifact from a manual run of .github/workflows/tier4-runtime-collection.yml.
