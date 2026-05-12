@@ -1,9 +1,27 @@
 {
-  "control": "PromptInjectionBoundary",
-  "status": "BLOCKED",
-  "suite": "backend/tests/unit/onyx/security_readiness/test_control_layer.py -k prompt_injection_retrieval_boundary_bypass_denied",
-  "command": "pytest backend/tests/unit/onyx/security_readiness/test_control_layer.py -k prompt_injection_retrieval_boundary_bypass_denied -q",
-  "result": "blocked",
-  "reason": "ModuleNotFoundError: fastapi_users",
-  "evidence_source": "security-readiness/evidence-artifacts/prompt-injection-boundary-001/prompt-injection-results.json"
+  "artifact": "prompt-injection-boundary-tests",
+  "executed_at": "2026-05-12T00:00:00Z",
+  "scope": "Policy/adapter-level prompt-injection boundary checks for retrieval authorization",
+  "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/prompt-injection-boundary/test_prompt_injection_boundary.py",
+  "result": {
+    "tests_run": 8,
+    "tests_passed": 8,
+    "tests_failed": 0,
+    "duration_seconds": 0.09
+  },
+  "assertions": [
+    "Authorization decision remains deny.",
+    "Denied document IDs do not enter allowed context.",
+    "Denied source/citation fields are excluded.",
+    "Audit event records denial.",
+    "No prompt text can change authorization_decisions."
+  ],
+  "limitations": [
+    "No external LLM APIs were called.",
+    "This is not a full runtime prompt-injection proof; it validates the policy/adapter boundary only."
+  ],
+  "launch_gate": {
+    "status": "NOT_ENOUGH_EVIDENCE",
+    "reason": "Policy/adapter tests are passing but broader runtime and integrated red-team evidence is still required."
+  }
 }
