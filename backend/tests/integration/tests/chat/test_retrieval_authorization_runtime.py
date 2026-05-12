@@ -31,6 +31,26 @@ RETRIEVAL_AUTHORIZATION_ARTIFACT = Path(
 )
 FORBIDDEN_MARKERS = ["[RESTRICTED]", "restricted://", "acl:restricted"]
 ASSERTIONS_EXECUTED = False
+REQUIRED_ASSERTION_KEYS = {
+    "authorized_allowed",
+    "unauthorized_restricted_denied",
+    "answer_text_no_restricted_markers",
+    "snippets_no_restricted_markers",
+    "citations_no_restricted_markers",
+    "audit_event_captured",
+    "runtime_trace_captured",
+}
+ASSERTION_COMPLETION = {key: False for key in REQUIRED_ASSERTION_KEYS}
+
+
+def _mark_assertion_complete(assertion_key: str) -> None:
+    if assertion_key not in ASSERTION_COMPLETION:
+        raise ValueError(f"Unknown Tier 4 assertion key: {assertion_key}")
+    ASSERTION_COMPLETION[assertion_key] = True
+
+
+def _all_required_assertions_completed() -> bool:
+    return all(ASSERTION_COMPLETION.values())
 
 
 def _any_blocked(fixtures: dict[str, Any]) -> list[str]:
@@ -77,10 +97,11 @@ def test_authorized_user_retrieves_allowed_document(
     tier4_runtime_context: dict[str, Any],
 ) -> None:
     global ASSERTIONS_EXECUTED
-    ASSERTIONS_EXECUTED = True
     result = tier4_runtime_context["run_authorized_allowed"]()
     assert result["authorized"] is True
     assert result["allowed_doc_retrieved"] is True
+    ASSERTIONS_EXECUTED = True
+    _mark_assertion_complete("authorized_allowed")
 
 
 def test_unauthorized_user_cannot_retrieve_restricted_document(
@@ -89,6 +110,7 @@ def test_unauthorized_user_cannot_retrieve_restricted_document(
     result = tier4_runtime_context["run_unauthorized_restricted"]()
     assert result["authorized"] is False
     assert result["restricted_doc_retrieved"] is False
+    _mark_assertion_complete("unauthorized_restricted_denied")
 
 
 def test_restricted_markers_absent_from_answer_text(
@@ -97,6 +119,7 @@ def test_restricted_markers_absent_from_answer_text(
     answer_text = tier4_runtime_context["capture_answer_text"]()
     for marker in FORBIDDEN_MARKERS:
         assert marker not in answer_text
+    _mark_assertion_complete("answer_text_no_restricted_markers")
 
 
 def test_restricted_markers_absent_from_retrieved_snippets(
@@ -106,6 +129,7 @@ def test_restricted_markers_absent_from_retrieved_snippets(
     for snippet in snippets:
         for marker in FORBIDDEN_MARKERS:
             assert marker not in snippet
+    _mark_assertion_complete("snippets_no_restricted_markers")
 
 
 def test_restricted_markers_absent_from_citations_metadata(
@@ -116,27 +140,57 @@ def test_restricted_markers_absent_from_citations_metadata(
         serialized = str(citation)
         for marker in FORBIDDEN_MARKERS:
             assert marker not in serialized
+    _mark_assertion_complete("citations_no_restricted_markers")
 
 
 def test_audit_event_captured(tier4_runtime_context: dict[str, Any]) -> None:
     event = tier4_runtime_context["capture_audit_event"]()
     assert event.get("status") == "captured"
+    _mark_assertion_complete("audit_event_captured")
 
 
 def test_runtime_trace_captured(tier4_runtime_context: dict[str, Any]) -> None:
     trace = tier4_runtime_context["capture_runtime_trace"]()
     assert trace.get("status") == "captured"
+    _mark_assertion_complete("runtime_trace_captured")
 
 
 @pytest.fixture(scope="module", autouse=True)
 def _write_pass_artifact_only_if_assertions_executed() -> None:
     yield
-    if ASSERTIONS_EXECUTED:
+    completed_assertions = sorted(
+        [key for key, completed in ASSERTION_COMPLETION.items() if completed]
+    )
+    missing_assertions = sorted(REQUIRED_ASSERTION_KEYS - set(completed_assertions))
+
+    if _all_required_assertions_completed():
         artifact = mark_passed_only_if_assertions_executed(
             suite_id="retrieval_authorization_tests",
             assertions_executed=True,
-            tests_run=7,
+            tests_run=len(REQUIRED_ASSERTION_KEYS),
             forbidden_markers_checked=FORBIDDEN_MARKERS,
             forbidden_markers_found=[],
         )
         write_tier4_result_artifact(RETRIEVAL_AUTHORIZATION_ARTIFACT, artifact)
+        return
+
+    if ASSERTIONS_EXECUTED:
+        write_tier4_result_artifact(
+            RETRIEVAL_AUTHORIZATION_ARTIFACT,
+            {
+                **mark_blocked(
+                    suite_id="retrieval_authorization_tests",
+                    blockers=[
+                        "Tier 4 PASS prohibited: not all required retrieval assertions completed."
+                    ],
+                ),
+                "status": "FAILED",
+                "tests_run": len(completed_assertions),
+                "tests_passed": len(completed_assertions),
+                "tests_failed": len(missing_assertions),
+                "blockers": [
+                    "Tier 4 PASS prohibited: not all required retrieval assertions completed.",
+                    f"Missing assertions: {', '.join(missing_assertions)}",
+                ],
+            },
+        )
