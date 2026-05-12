@@ -1,12 +1,12 @@
 {
   "suite": "tool-runtime-wiring-adjacent",
-  "date_utc": "2026-05-12T15:32:26Z",
+  "date_utc": "2026-05-12T15:40:03Z",
   "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/tool-runtime-wiring/test_llm_loop_tool_runtime_context.py",
   "status": "PASS",
-  "tests_passed": 8,
+  "tests_passed": 9,
   "tests_failed": 0,
   "runtime_adjacent_status": "PASS",
   "full_runtime_status": "NOT_PASS",
-  "rag_plus_tools": "NOT_READY",
+  "RAG_PLUS_TOOLS": "NOT_READY",
   "launch_gate": "NOT_ENOUGH_EVIDENCE"
 }
