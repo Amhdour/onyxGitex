@@ -1,42 +1,35 @@
-# Launch Gate Worksheet
+# Onyx Launch Gate Worksheet
 
-**Organization:** Atlas Advisory Group (Fictional)  
-**Program:** Internal Company Knowledge Assistant ("Morgan Stanley style")  
-**Artifact Owner:** AI Trust & Security Readiness Engineer  
-**Draft Date:** 2026-05-11  
-**Document Status:** Draft (Readiness Documentation Phase)
+**Generated:** 2026-05-12 (UTC)  
+**Decision Engine:** `security-readiness/scripts/run-launch-gate.py`  
+**Decision:** **NOT_ENOUGH_EVIDENCE**
 
-## Primary Launch Question
-Can Atlas Advisory Group safely launch an internal knowledge assistant without leaking private documents or giving unsupported answers?
+## Evidence-Driven Inputs
+- Evidence registry: `security-readiness/47-evidence-automation/evidence-artifact-registry.json`
+- Evidence completeness validation: `security-readiness/evidence-artifacts/evidence-validation/validation-result.json`
+- Control test results: `security-readiness/evidence-artifacts/control-layer-unit-tests/control-layer-summary.md`
+- Red-team results: `security-readiness/09-evidence/onyx-red-team-results.md`
+- Residual risk register: `security-readiness/10-decision/onyx-residual-risk-register.md`
+- Critical findings: `security-readiness/01-assessment/onyx-initial-risk-register.md`
+- Evidence pack: `security-readiness/evidence-artifacts/evidence-pack.json`
 
-## Evidence Status
-- **Not Collected:** Runtime production telemetry, red-team execution logs, and live policy decision logs.
-- **Pending:** Control test execution in staging, dashboard wiring, and launch-gate sign-offs.
-- **Collected:** Repository audit artifacts under `security-readiness/00-repo-audit/` and scoped planning documentation.
-- **Verified:** Only items explicitly traceable to repository files and static architecture assumptions.
+## Rule Evaluation
+1. Any critical retrieval leak = NO_GO → **Not triggered**.
+2. Missing identity fail-closed test = NOT_ENOUGH_EVIDENCE or NO_GO → **Triggered**.
+3. Missing evidence pack = NOT_ENOUGH_EVIDENCE → **Not triggered**.
+4. Critical open risk without remediation = NO_GO → **Not triggered by current parsing evidence**.
+5. Passing core tests but medium residual risks = CONDITIONAL_GO → **Not eligible**.
+6. All required evidence present and no critical open risk = GO → **Not eligible** (`validation status = INCOMPLETE`).
+7. Unknown runtime integration = NOT_ENOUGH_EVIDENCE → **Not directly triggered in this run**, but overall completeness remains incomplete.
 
-## Current Assurance View
-- **Verified:** Documentation scope and repository audit references are present.
-- **Partially Confirmed:** Design-time controls are defined but not execution-verified.
-- **Unknown:** Runtime effectiveness, false positive/negative rates, and incident response timing.
+## Decision Rationale
+- Decision set to **NOT_ENOUGH_EVIDENCE** because required fail-closed identity/retrieval authorization evidence is missing in validator output (`retrieval_authorization_tests`).
+- Evidence completeness validator status is **INCOMPLETE** and `allow_go=false`, preventing GO.
+- Uncertainty is intentionally preserved; no launch approval is inferred from assumptions.
 
-## Key Inputs
-- `security-readiness/00-repo-audit/phase-1-findings.md`
-- `security-readiness/00-repo-audit/onyx-auth-access-paths.md`
-- `security-readiness/00-repo-audit/onyx-retrieval-paths.md`
-- `security-readiness/00-repo-audit/onyx-observability-paths.md`
-- `security-readiness/00-repo-audit/onyx-tool-mcp-paths.md`
-
-## Content
-- Draft deliverable populated for Priority 1 with Atlas-specific readiness context.
-- Includes explicit statuses (Not Collected/Pending/Collected/Verified), assumptions, and unresolved unknowns.
-- References repository-audit artifacts for available evidence; avoids unsupported implementation claims.
-- Maintains launch posture as **Draft / Not Yet Approved** until runtime evidence is attached.
-
-## Open Unknowns
-1. Unknown: Whether department-level authorization is fail-closed for all retrieval paths in runtime.
-2. Unknown: Whether unsupported-answer suppression consistently triggers under adversarial prompts.
-3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review.
-
-## Next Evidence Step
-Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
+## Evidence Artifacts Produced
+- `security-readiness/evidence-artifacts/launch-gate/decision-inputs.json`
+- `security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json`
+- `security-readiness/evidence-artifacts/launch-gate/launch-gate-summary.md`
+- `security-readiness/evidence-artifacts/launch-gate/timestamp.txt`
+- `security-readiness/evidence-artifacts/launch-gate/git-commit.txt`
