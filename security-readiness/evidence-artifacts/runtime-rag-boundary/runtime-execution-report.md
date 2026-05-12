@@ -108,3 +108,20 @@ Conclusion: **BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD**
 - Current CI status: `CI_WORKFLOW_DEFINED / CI_NOT_RUN`
 - Current runtime status: preserve latest known `BLOCKED / PARTIAL_COLLECTION / NOT_ENOUGH_EVIDENCE` until CI run evidence exists.
 - Next required action: trigger workflow and review/download uploaded artifact package before updating launch-gate conclusions.
+
+
+## GitHub Actions Runtime Evidence Run
+
+- Workflow path: `.github/workflows/rag-boundary-runtime-evidence.yml`
+- Run trigger method: attempted via `gh workflow run` from Codex environment
+- Run ID: Not available
+- Run URL: Not available
+- Artifact name: `rag-boundary-runtime-evidence`
+- Artifact download status: Not attempted (no CI run ID available)
+- Dependency sync status from CI: `NOT_AVAILABLE_FROM_CI`
+- Runtime status from CI: `NOT_AVAILABLE_FROM_CI`
+- Pytest status from CI: `NOT_AVAILABLE_FROM_CI`
+- Pytest collection/execution advanced: Unknown (no CI run evidence)
+- Evidence conclusion: `CI_NOT_RUN`
+- Remaining blockers: `CI_TRIGGER_OR_RUN_UNAVAILABLE`
+- Launch-gate impact: remains `NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH`.
