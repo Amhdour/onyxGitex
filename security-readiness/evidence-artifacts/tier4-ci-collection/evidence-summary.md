@@ -7,15 +7,18 @@ Date: 2026-05-12
 > Badge interpretation: CI visibility evidence only. It does **not** claim Tier 4 runtime PASS and does **not** imply GO. Launch posture remains **NOT_ENOUGH_EVIDENCE**.
 
 ## Scope
-This evidence package documents creation of a CI collection pathway for Tier 4 backend runtime test files under Python 3.11.
+This evidence package documents a CI collection pathway for Tier 4 backend runtime test files under Python 3.11 with an explicit backend dependency import pre-check.
 
-## What Was Added
-- GitHub Actions workflow:
-  - `.github/workflows/tier4-runtime-collection.yml`
-- Evidence planning artifacts:
-  - `security-readiness/evidence-artifacts/tier4-ci-collection/tier4-ci-collection-plan.md`
-  - `security-readiness/evidence-artifacts/tier4-ci-collection/expected-workflow-command.md`
-  - `security-readiness/evidence-artifacts/tier4-ci-collection/evidence-summary.md`
+## Workflow Evidence Intent
+The workflow is configured to:
+1. Use Python 3.11.
+2. Install backend and dev dependencies with the repo-supported uv sync command.
+3. Verify `fastapi_users` and `fastapi_users_db_sqlalchemy` imports before pytest collection.
+4. Run `pytest --collect-only` for the three Tier 4 runtime files.
+5. Upload:
+   - `dependency-import-check.log`
+   - `pytest-collect.log`
+   - `collection-status.txt`
 
 ## Evidence Classification
 - CI workflow definition present in repository: **Verified**.
@@ -28,4 +31,4 @@ This evidence package documents creation of a CI collection pathway for Tier 4 b
 - Workflow records posture metadata file with:
   - `tier4_status=COLLECTED_SKIPPED`
   - `launch_posture=NOT_ENOUGH_EVIDENCE`
-- This task provides reproducible collection evidence path and does not alter launch readiness conclusions.
+- This task is limited to collection-path readiness evidence and does not close blockers or assert evidence-pack completion.

@@ -24,6 +24,13 @@ jobs:
       - name: Install backend and dev dependencies (Python 3.11)
         run: uv sync --python 3.11 --no-default-groups --group backend --group dev
 
+      - name: Verify fastapi-users imports
+        run: |
+          set -o pipefail
+          mkdir -p security-readiness/evidence-artifacts/tier4-ci-collection
+          uv run --python 3.11 python -c "import fastapi_users; import fastapi_users_db_sqlalchemy; print('fastapi-users imports ok')" \
+            | tee security-readiness/evidence-artifacts/tier4-ci-collection/dependency-import-check.log
+
       - name: Collect Tier 4 backend runtime tests only
         run: |
           set -o pipefail
@@ -49,6 +56,7 @@ jobs:
         with:
           name: tier4-runtime-collection
           path: |
+            security-readiness/evidence-artifacts/tier4-ci-collection/dependency-import-check.log
             security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
             security-readiness/evidence-artifacts/tier4-ci-collection/collection-status.txt
           if-no-files-found: warn
