@@ -1,7 +1,7 @@
 {
   "validator": "launch-evidence-completeness",
   "version": 1,
-  "generated_at": "2026-05-12T10:19:19+00:00",
+  "generated_at": "2026-05-12T10:50:06+00:00",
   "rules_file": "security-readiness/47-evidence-automation/evidence-completeness-rules.yaml",
   "status": "FAILED",
   "phases": {
@@ -19,15 +19,26 @@
   "default_status_when_unsure": "INCOMPLETE",
   "tools_enabled": false,
   "counts": {
-    "complete": 6,
+    "complete": 7,
     "missing": 0,
     "failed": 5,
     "skipped": 1,
-    "required_total": 12,
-    "pre_launch_required_total": 9,
+    "required_total": 13,
+    "pre_launch_required_total": 10,
     "post_launch_required_total": 3
   },
   "checked": [
+    {
+      "id": "pure_control_unit_tests",
+      "phase": "pre_launch_evidence_validation",
+      "status": "COMPLETE",
+      "observed": "PASS",
+      "expected": [
+        "PASS",
+        "PASSED"
+      ],
+      "file": "security-readiness/evidence-artifacts/test-results/pure-control-unit-tests.json"
+    },
     {
       "id": "audit_events_generated",
       "phase": "pre_launch_evidence_validation",
@@ -72,7 +83,7 @@
       "id": "dashboard_data_generated",
       "phase": "post_launch_output_validation",
       "status": "COMPLETE",
-      "observed": "2026-05-12T10:18:57.899756+00:00",
+      "observed": "2026-05-12T10:48:04.828822+00:00",
       "expected": [],
       "file": "security-readiness/dashboard/dashboard-data.json"
     },
@@ -164,5 +175,8 @@
       "phase": "pre_launch_evidence_validation",
       "reason": "Skipped because tools are disabled"
     }
-  ]
+  ],
+  "control_checks": {
+    "pure_control_unit_tests": "PASS"
+  }
 }
