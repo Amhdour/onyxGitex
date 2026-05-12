@@ -18,6 +18,8 @@ from typing import Any
 
 
 VALID_STATUSES = {"COMPLETE", "INCOMPLETE", "FAILED", "STALE"}
+PRE_LAUNCH_PHASE = "pre_launch_evidence_validation"
+POST_LAUNCH_PHASE = "post_launch_output_validation"
 
 
 def parse_args() -> argparse.Namespace:
@@ -70,6 +72,12 @@ def read_json_file(path: Path) -> Any:
         return json.load(f)
 
 
+def read_evidence_payload(path: Path) -> Any:
+    if path.suffix.lower() == ".json":
+        return read_json_file(path)
+    return {"generated": path.exists() and path.stat().st_size > 0}
+
+
 def get_nested_value(obj: Any, dotted_field: str) -> Any:
     current = obj
     for key in dotted_field.split("."):
@@ -90,16 +98,21 @@ def main() -> int:
         default_status = "INCOMPLETE"
 
     tools_enabled = resolve_tools_enabled(args.tools_enabled, rules)
-    required = rules.get("required_evidence") or []
+    phase_rules = rules.get("phases") or {}
+    pre_launch_required = phase_rules.get(PRE_LAUNCH_PHASE) or []
+    post_launch_required = phase_rules.get(POST_LAUNCH_PHASE) or []
+    required = [*pre_launch_required, *post_launch_required]
 
     now = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     checked, missing, failed, skipped = [], [], [], []
 
     for item in required:
         when = item.get("when", "always")
+        phase = item.get("phase", PRE_LAUNCH_PHASE)
         if when == "tools_enabled" and not tools_enabled:
             skipped.append({
                 "id": item.get("id"),
+                "phase": phase,
                 "reason": "Skipped because tools are disabled",
             })
             continue
@@ -112,6 +125,7 @@ def main() -> int:
         if not evidence_path.exists():
             missing.append({
                 "id": item.get("id"),
+                "phase": phase,
                 "description": item.get("description"),
                 "critical": bool(item.get("critical", True)),
                 "expected_file": evidence_file,
@@ -121,10 +135,11 @@ def main() -> int:
             continue
 
         try:
-            payload = read_json_file(evidence_path)
+            payload = read_evidence_payload(evidence_path)
         except Exception as exc:
             failed.append({
                 "id": item.get("id"),
+                "phase": phase,
                 "description": item.get("description"),
                 "critical": bool(item.get("critical", True)),
                 "expected_file": evidence_file,
@@ -134,9 +149,11 @@ def main() -> int:
             continue
 
         observed = get_nested_value(payload, pass_field)
-        if observed in pass_values:
+        passes = (observed in pass_values) if pass_values else observed is not None
+        if passes:
             checked.append({
                 "id": item.get("id"),
+                "phase": phase,
                 "status": "COMPLETE",
                 "observed": observed,
                 "expected": pass_values,
@@ -145,6 +162,7 @@ def main() -> int:
         else:
             failed.append({
                 "id": item.get("id"),
+                "phase": phase,
                 "description": item.get("description"),
                 "critical": bool(item.get("critical", True)),
                 "expected_file": evidence_file,
@@ -154,13 +172,24 @@ def main() -> int:
                 "expected": pass_values,
             })
 
+    def phase_items(items: list[dict[str, Any]], phase: str) -> list[dict[str, Any]]:
+        return [i for i in items if i.get("phase") == phase]
+
+    pre_missing = phase_items(missing, PRE_LAUNCH_PHASE)
+    pre_failed = [f for f in phase_items(failed, PRE_LAUNCH_PHASE) if f.get("critical", True)]
+    pre_blocking_issues = [*pre_missing, *pre_failed]
+    pre_launch_status = "COMPLETE" if not pre_blocking_issues else ("FAILED" if pre_failed else default_status)
+
+    post_missing = phase_items(missing, POST_LAUNCH_PHASE)
+    post_failed = [f for f in phase_items(failed, POST_LAUNCH_PHASE) if f.get("critical", True)]
+    post_blocking_issues = [*post_missing, *post_failed]
+    post_launch_status = "COMPLETE" if not post_blocking_issues else ("FAILED" if post_failed else default_status)
+
     blocking_issues = [*missing, *[f for f in failed if f.get("critical", True)]]
-    final_status = "COMPLETE" if not blocking_issues else default_status
-
-    if failed:
-        final_status = "FAILED"
-
-    allow_go = final_status == "COMPLETE" and not blocking_issues
+    final_status = "COMPLETE" if pre_launch_status == "COMPLETE" and post_launch_status == "COMPLETE" else (
+        "FAILED" if failed else default_status
+    )
+    allow_go = pre_launch_status == "COMPLETE" and not pre_blocking_issues
 
     output_dir = repo_root / args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -171,6 +200,16 @@ def main() -> int:
         "generated_at": now,
         "rules_file": args.rules,
         "status": final_status,
+        "phases": {
+            PRE_LAUNCH_PHASE: {
+                "status": pre_launch_status,
+                "blocking_issues": len(pre_blocking_issues),
+            },
+            POST_LAUNCH_PHASE: {
+                "status": post_launch_status,
+                "blocking_issues": len(post_blocking_issues),
+            },
+        },
         "allow_go": allow_go,
         "draft_decision_only": bool(rules.get("draft_decision_only", True)),
         "default_status_when_unsure": default_status,
@@ -181,6 +220,8 @@ def main() -> int:
             "failed": len(failed),
             "skipped": len(skipped),
             "required_total": len(required),
+            "pre_launch_required_total": len(pre_launch_required),
+            "post_launch_required_total": len(post_launch_required),
         },
         "checked": checked,
         "missing": missing,
@@ -199,6 +240,8 @@ def main() -> int:
             f"- Generated at: `{now}`",
             f"- Overall status: **{final_status}**",
             f"- Allow GO: **{allow_go}**",
+            f"- Pre-launch status: **{pre_launch_status}**",
+            f"- Post-launch status: **{post_launch_status}**",
             f"- Draft decision only: **{bool(rules.get('draft_decision_only', True))}**",
             f"- Tools enabled: **{tools_enabled}**",
             "",

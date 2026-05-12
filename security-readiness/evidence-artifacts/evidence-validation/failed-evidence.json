@@ -1,6 +1,7 @@
 [
   {
     "id": "retrieval_authorization_tests",
+    "phase": "pre_launch_evidence_validation",
     "description": "Passing retrieval authorization tests",
     "critical": true,
     "expected_file": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
@@ -14,6 +15,7 @@
   },
   {
     "id": "citation_leakage_tests",
+    "phase": "pre_launch_evidence_validation",
     "description": "Passing citation leakage tests",
     "critical": true,
     "expected_file": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
@@ -27,6 +29,7 @@
   },
   {
     "id": "prompt_injection_boundary_tests",
+    "phase": "pre_launch_evidence_validation",
     "description": "Passing prompt injection boundary tests",
     "critical": true,
     "expected_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
@@ -40,6 +43,7 @@
   },
   {
     "id": "no_critical_open_risks",
+    "phase": "pre_launch_evidence_validation",
     "description": "No critical open risks",
     "critical": true,
     "expected_file": "security-readiness/evidence-artifacts/risk/open-risk-summary.json",
@@ -52,24 +56,13 @@
   },
   {
     "id": "evidence_pack_complete",
+    "phase": "pre_launch_evidence_validation",
     "description": "Evidence pack complete",
     "critical": true,
     "expected_file": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
     "status": "FAILED",
     "reason": "Evidence artifact does not meet pass criteria",
     "observed": false,
-    "expected": [
-      true
-    ]
-  },
-  {
-    "id": "launch_gate_result_generated",
-    "description": "Launch gate result generated",
-    "critical": true,
-    "expected_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json",
-    "status": "FAILED",
-    "reason": "Evidence artifact does not meet pass criteria",
-    "observed": null,
     "expected": [
       true
     ]
