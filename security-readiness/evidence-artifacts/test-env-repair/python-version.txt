@@ -1,0 +1,6 @@
+Supported Python version for backend tests: 3.11.x
+Evidence:
+- pyproject.toml requires-python >=3.11
+- backend/uv.lock requires-python >=3.11
+- backend/Dockerfile base image python:3.11-slim
+- local available interpreter used: 3.11.15 (pyenv)
