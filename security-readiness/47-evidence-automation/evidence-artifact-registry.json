@@ -1,0 +1,92 @@
+[
+  {
+    "artifact_id": "EV-UNIT-001",
+    "control_id": "CTRL-TEST-UNIT",
+    "artifact_path": "security-readiness/evidence-artifacts/unit-tests.log",
+    "artifact_type": "unit_test_output",
+    "generated_by_command": "pytest -q tests/unit",
+    "related_test": "unit test suite",
+    "related_control": "Automated unit-test verification",
+    "launch_gate_relevance": "Required"
+  },
+  {
+    "artifact_id": "EV-INT-001",
+    "control_id": "CTRL-TEST-INTEG",
+    "artifact_path": "security-readiness/evidence-artifacts/integration-tests.log",
+    "artifact_type": "integration_test_output",
+    "generated_by_command": "pytest -q tests/integration",
+    "related_test": "integration test suite",
+    "related_control": "Automated integration verification",
+    "launch_gate_relevance": "Required"
+  },
+  {
+    "artifact_id": "EV-AUDIT-001",
+    "control_id": "CTRL-AUDIT-LOG",
+    "artifact_path": "security-readiness/evidence-artifacts/audit-events.log",
+    "artifact_type": "audit_log",
+    "generated_by_command": "cat runtime/audit.log",
+    "related_test": "audit event coverage",
+    "related_control": "Audit logging",
+    "launch_gate_relevance": "Required"
+  },
+  {
+    "artifact_id": "EV-TRACE-001",
+    "control_id": "CTRL-RUNTIME-TRACE",
+    "artifact_path": "security-readiness/evidence-artifacts/runtime-trace.json",
+    "artifact_type": "runtime_trace",
+    "generated_by_command": "python scripts/export_trace.py",
+    "related_test": "trace validation",
+    "related_control": "Runtime tracing",
+    "launch_gate_relevance": "Supporting"
+  },
+  {
+    "artifact_id": "EV-POLICY-001",
+    "control_id": "CTRL-POLICY-DECISION",
+    "artifact_path": "security-readiness/evidence-artifacts/policy-decisions.jsonl",
+    "artifact_type": "policy_decision_log",
+    "generated_by_command": "python scripts/export_policy_decisions.py",
+    "related_test": "policy decision test",
+    "related_control": "Policy decision logging",
+    "launch_gate_relevance": "Required"
+  },
+  {
+    "artifact_id": "EV-LEAK-001",
+    "control_id": "CTRL-DLP-SCAN",
+    "artifact_path": "security-readiness/evidence-artifacts/leak-marker-scan.txt",
+    "artifact_type": "leak_marker_scan",
+    "generated_by_command": "python scripts/scan_leak_markers.py",
+    "related_test": "leak marker scan",
+    "related_control": "Data leak controls",
+    "launch_gate_relevance": "Required"
+  },
+  {
+    "artifact_id": "EV-DASH-001",
+    "control_id": "CTRL-DASHBOARD-EXPORT",
+    "artifact_path": "security-readiness/evidence-artifacts/dashboard-export.json",
+    "artifact_type": "dashboard_export",
+    "generated_by_command": "python scripts/export_dashboard.py",
+    "related_test": "dashboard export check",
+    "related_control": "Readiness dashboard evidence",
+    "launch_gate_relevance": "Supporting"
+  },
+  {
+    "artifact_id": "EV-GATE-001",
+    "control_id": "CTRL-LAUNCH-GATE",
+    "artifact_path": "security-readiness/evidence-artifacts/launch-gate-result.json",
+    "artifact_type": "launch_gate_result",
+    "generated_by_command": "python scripts/run_launch_gate.py",
+    "related_test": "launch gate decision test",
+    "related_control": "Launch gate decision",
+    "launch_gate_relevance": "Required"
+  },
+  {
+    "artifact_id": "EV-ENV-001",
+    "control_id": "CTRL-ENV-MANIFEST",
+    "artifact_path": "security-readiness/evidence-artifacts/environment-manifest-redacted.json",
+    "artifact_type": "environment_manifest_redacted",
+    "generated_by_command": "python security-readiness/scripts/export-evidence-pack.py --redact-env",
+    "related_test": "environment manifest redaction check",
+    "related_control": "Secret redaction",
+    "launch_gate_relevance": "Required"
+  }
+]

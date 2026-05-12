@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/security-readiness/evidence-normalization-schema.json",
+  "title": "Evidence Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_id",
+    "control_id",
+    "artifact_path",
+    "artifact_type",
+    "generated_by_command",
+    "timestamp",
+    "git_commit",
+    "hash_sha256",
+    "status",
+    "related_test",
+    "related_control",
+    "launch_gate_relevance"
+  ],
+  "properties": {
+    "artifact_id": {"type": "string", "minLength": 1},
+    "control_id": {"type": "string", "minLength": 1},
+    "artifact_path": {"type": "string", "minLength": 1},
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "unit_test_output",
+        "integration_test_output",
+        "audit_log",
+        "runtime_trace",
+        "policy_decision_log",
+        "leak_marker_scan",
+        "dashboard_export",
+        "launch_gate_result",
+        "environment_manifest_redacted"
+      ]
+    },
+    "generated_by_command": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "git_commit": {"type": "string", "minLength": 7},
+    "hash_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "status": {"type": "string", "enum": ["Present", "Missing", "Failed", "Stale"]},
+    "related_test": {"type": "string"},
+    "related_control": {"type": "string"},
+    "launch_gate_relevance": {"type": "string", "enum": ["Required", "Supporting", "Informational"]},
+    "notes": {"type": "string"}
+  }
+}
