@@ -1,96 +1,127 @@
 {
   "validator": "launch-evidence-completeness",
   "version": 1,
-  "generated_at": "2026-05-12T08:57:44+00:00",
+  "generated_at": "2026-05-12T10:07:17+00:00",
   "rules_file": "security-readiness/47-evidence-automation/evidence-completeness-rules.yaml",
-  "status": "INCOMPLETE",
+  "status": "FAILED",
   "allow_go": false,
   "draft_decision_only": true,
   "default_status_when_unsure": "INCOMPLETE",
   "tools_enabled": false,
   "counts": {
-    "complete": 0,
-    "missing": 9,
-    "failed": 0,
+    "complete": 3,
+    "missing": 0,
+    "failed": 6,
     "skipped": 1,
     "required_total": 10
   },
-  "checked": [],
-  "missing": [
+  "checked": [
+    {
+      "id": "audit_events_generated",
+      "status": "COMPLETE",
+      "observed": true,
+      "expected": [
+        true
+      ],
+      "file": "security-readiness/evidence-artifacts/audit/audit-events-summary.json"
+    },
+    {
+      "id": "runtime_traces_generated",
+      "status": "COMPLETE",
+      "observed": true,
+      "expected": [
+        true
+      ],
+      "file": "security-readiness/evidence-artifacts/runtime/runtime-trace-summary.json"
+    },
+    {
+      "id": "residual_risk_documented",
+      "status": "COMPLETE",
+      "observed": true,
+      "expected": [
+        true
+      ],
+      "file": "security-readiness/evidence-artifacts/risk/residual-risk-summary.json"
+    }
+  ],
+  "missing": [],
+  "failed": [
     {
       "id": "retrieval_authorization_tests",
       "description": "Passing retrieval authorization tests",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
+      "status": "FAILED",
+      "reason": "Evidence artifact does not meet pass criteria",
+      "observed": "BLOCKED",
+      "expected": [
+        "PASS",
+        "PASSED"
+      ]
     },
     {
       "id": "citation_leakage_tests",
       "description": "Passing citation leakage tests",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
+      "status": "FAILED",
+      "reason": "Evidence artifact does not meet pass criteria",
+      "observed": "BLOCKED",
+      "expected": [
+        "PASS",
+        "PASSED"
+      ]
     },
     {
       "id": "prompt_injection_boundary_tests",
       "description": "Passing prompt injection boundary tests",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
-    },
-    {
-      "id": "audit_events_generated",
-      "description": "Audit events generated",
-      "critical": true,
-      "expected_file": "security-readiness/evidence-artifacts/audit/audit-events-summary.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
-    },
-    {
-      "id": "runtime_traces_generated",
-      "description": "Runtime traces generated",
-      "critical": true,
-      "expected_file": "security-readiness/evidence-artifacts/runtime/runtime-trace-summary.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
+      "status": "FAILED",
+      "reason": "Evidence artifact does not meet pass criteria",
+      "observed": "BLOCKED",
+      "expected": [
+        "PASS",
+        "PASSED"
+      ]
     },
     {
       "id": "no_critical_open_risks",
       "description": "No critical open risks",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/risk/open-risk-summary.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
-    },
-    {
-      "id": "residual_risk_documented",
-      "description": "Residual risk documented",
-      "critical": true,
-      "expected_file": "security-readiness/evidence-artifacts/risk/residual-risk-summary.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
+      "status": "FAILED",
+      "reason": "Evidence artifact does not meet pass criteria",
+      "observed": 1,
+      "expected": [
+        0
+      ]
     },
     {
       "id": "evidence_pack_complete",
       "description": "Evidence pack complete",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
+      "status": "FAILED",
+      "reason": "Evidence artifact does not meet pass criteria",
+      "observed": false,
+      "expected": [
+        true
+      ]
     },
     {
       "id": "launch_gate_result_generated",
       "description": "Launch gate result generated",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json",
-      "status": "INCOMPLETE",
-      "reason": "Required evidence artifact is missing"
+      "status": "FAILED",
+      "reason": "Evidence artifact does not meet pass criteria",
+      "observed": null,
+      "expected": [
+        true
+      ]
     }
   ],
-  "failed": [],
   "skipped": [
     {
       "id": "tool_authorization_tests",

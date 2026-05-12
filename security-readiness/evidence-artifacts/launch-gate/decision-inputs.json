@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-12T09:02:26+00:00",
-  "git_commit": "5807c9f2e0f408cfea104ddfe64bc9766f799ab9",
+  "generated_at": "2026-05-12T10:07:18+00:00",
+  "git_commit": "0930b96f28295fc1c7dfb0433ddea1656ba66c44",
   "inputs": {
     "evidence_registry": "security-readiness/47-evidence-automation/evidence-artifact-registry.json",
     "evidence_validation": "security-readiness/evidence-artifacts/evidence-validation/validation-result.json",
@@ -19,25 +19,15 @@
     "critical_findings": true,
     "evidence_pack": true
   },
-  "validation_status": "INCOMPLETE",
+  "validation_status": "FAILED",
   "validation_allow_go": false,
-  "missing_evidence_ids": [
-    "retrieval_authorization_tests",
-    "citation_leakage_tests",
-    "prompt_injection_boundary_tests",
-    "audit_events_generated",
-    "runtime_traces_generated",
-    "no_critical_open_risks",
-    "residual_risk_documented",
-    "evidence_pack_complete",
-    "launch_gate_result_generated"
-  ],
+  "missing_evidence_ids": [],
   "derived_flags": {
     "critical_retrieval_leak": false,
-    "missing_identity_fail_closed_test": true,
+    "missing_identity_fail_closed_test": false,
     "evidence_pack_missing": false,
     "critical_open_risk": false,
     "medium_residual_risk": false,
-    "runtime_integration_unknown": true
+    "runtime_integration_unknown": false
   }
 }

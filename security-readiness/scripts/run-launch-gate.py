@@ -144,6 +144,7 @@ def main() -> int:
     }
 
     result = {
+        "generated": True,
         "generated_at": now,
         "git_commit": commit,
         "decision": decision,

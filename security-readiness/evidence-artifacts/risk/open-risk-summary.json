@@ -1,0 +1,6 @@
+{
+  "critical_open_risks": 1,
+  "status": "OPEN",
+  "source": "security-readiness/final-gap-register-v2.md",
+  "note": "P0 launch-blocking gaps remain open."
+}

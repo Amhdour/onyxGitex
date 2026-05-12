@@ -1,0 +1,9 @@
+{
+  "control": "CitationLeakageBoundary",
+  "status": "BLOCKED",
+  "suite": "citation-boundary-001",
+  "command": "pytest (see security-readiness/evidence-artifacts/citation-boundary-001/test-command.txt)",
+  "result": "blocked",
+  "reason": "No executable pytest output captured in citation-boundary-001/pytest-output.txt.",
+  "evidence_source": "security-readiness/evidence-artifacts/citation-boundary-001/evidence-summary.md"
+}
