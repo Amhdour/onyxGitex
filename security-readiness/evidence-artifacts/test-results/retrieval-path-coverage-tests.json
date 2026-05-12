@@ -1,0 +1,29 @@
+{
+  "name": "retrieval-path-coverage-tests",
+  "date": "2026-05-12",
+  "launch_gate": "NOT_ENOUGH_EVIDENCE",
+  "full_runtime_retrieval": "NOT_PASS_BLOCKED",
+  "adapter_tests": {
+    "target_file": "backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
+    "status": "BLOCKED",
+    "command": "pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
+    "blocker": "ModuleNotFoundError: No module named 'fastapi_users'",
+    "new_test_cases": [
+      "mixed_document_sets_one_unauthorized",
+      "partial_access_filter_mixed_allow_deny",
+      "audit_allow_deny_events_mixed_document_sets",
+      "authorize_document_fail_closed_error"
+    ]
+  },
+  "path_status": {
+    "base_filters_document_set": "Covered",
+    "persona_document_sets": "Partially Covered",
+    "attached_document_ids": "Unknown",
+    "hierarchy_node_ids": "Unknown",
+    "acl_filters": "Partially Covered",
+    "bypass_acl": "Not Covered",
+    "federated_retrieval": "Partially Covered",
+    "citation_source_construction": "Unknown",
+    "post_query_censoring": "Unknown"
+  }
+}
