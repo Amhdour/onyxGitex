@@ -20,3 +20,11 @@ Screenshots, sanitized evidence, public README, architecture diagram, threat mod
 - [ ] Screenshot of denied unauthorized tool call. (TODO)
 - [ ] Screenshot of launch-gate decision page. (TODO)
 - [ ] Screenshot of gap tracker showing honest limitations. (TODO)
+
+
+Dependency sync precheck artifact status (2026-05-12): PRESENT (`dependency-sync-precheck.md`).
+Dependency sync analysis artifact status (2026-05-12): PRESENT (`dependency-sync-analysis.md`).
+Dependency sync output artifact status (2026-05-12): BLOCKED (`dependency-sync-output.txt`).
+Dependency import-check artifact status (2026-05-12): BLOCKED (`dependency-import-check.txt` not produced due sync failure).
+Runtime logs artifact status (2026-05-12): PRESENT (`runtime-status.txt`, `pytest-output.txt`, `test-command.txt`, `timestamp.txt`).
+Screenshots TODO: remain TODO (no screenshots created in this run).

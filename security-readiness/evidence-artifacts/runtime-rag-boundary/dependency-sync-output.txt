@@ -1,0 +1,23 @@
+timestamp=2026-05-12T23:10:49Z
+git_commit=2925d8ee2387bb43fe7ca1937161e22743be83a2
+uv_version=uv 0.7.22
+python_version=Python 3.12.13
+selected_python_version=3.12
+command_attempted=uv sync --python 3.12 --group backend --group dev
+
+Using CPython 3.12.13 interpreter at: /root/.pyenv/versions/3.12.13/bin/python3.12
+Removed virtual environment at: .venv
+Creating virtual environment at: .venv
+Resolved 444 packages in 6ms
+   Building onyx @ file:///workspace/onyxGitex
+  × Failed to download `nvidia-cudnn-cu12==9.10.2.21`
+  ├─▶ Failed to fetch:
+  │   `https://files.pythonhosted.org/packages/ba/51/e123d997aa098c61d029f76663dedbfb9bc8dcf8c60cbd6adbe42f76d049/nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl`
+  ├─▶ Request failed after 3 retries
+  ├─▶ error sending request for url
+  │   (https://files.pythonhosted.org/packages/ba/51/e123d997aa098c61d029f76663dedbfb9bc8dcf8c60cbd6adbe42f76d049/nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_x86_64.whl)
+  ├─▶ client error (Connect)
+  ╰─▶ tunnel error: unsuccessful
+  help: `nvidia-cudnn-cu12` (v9.10.2.21) was included because
+        `onyx:model-server` (v0.0.0) depends on `torch` (v2.9.1) which depends
+        on `nvidia-cudnn-cu12`

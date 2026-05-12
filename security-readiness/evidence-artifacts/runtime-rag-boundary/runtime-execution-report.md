@@ -81,3 +81,18 @@ Conclusion: **BLOCKED_PACKAGE_RESOLUTION**
 - Next action: restore dependency download connectivity, rerun sync under Python 3.12, then rerun runtime boundary script.
 
 Conclusion: **BLOCKED_DEPENDENCY**
+
+## Dependency Sync Stabilization Attempt
+
+- Previous blocker: Python 3.12 sync advanced past onnxruntime but failed downloading numpy==2.4.1.
+- numpy direct/transitive: direct dependency (also used transitively).
+- Failure type: network/download tunnel error while fetching wheels.
+- Sync command: `uv sync --python 3.12 --group backend --group dev`.
+- Sync result: `BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD`.
+- Import-check result: fastapi_users/numpy/onnxruntime/pytest = blocked (uv run unavailable because sync incomplete).
+- Pytest collection beyond conftest: No.
+- Latest runtime status: `BLOCKED`.
+- Current blocker: `BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD`.
+- Next action: restore dependency download connectivity and rerun sync + runtime script.
+
+Conclusion: **BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD**
