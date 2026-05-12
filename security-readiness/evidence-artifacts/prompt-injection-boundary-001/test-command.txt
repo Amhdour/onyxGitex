@@ -1,0 +1,1 @@
+pytest backend/tests/unit/onyx/security_readiness/test_control_layer.py -k prompt_injection_retrieval_boundary_bypass_denied -q
