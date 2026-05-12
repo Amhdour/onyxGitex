@@ -1,7 +1,7 @@
 {
   "validator": "launch-evidence-completeness",
   "version": 1,
-  "generated_at": "2026-05-12T16:47:50+00:00",
+  "generated_at": "2026-05-12T16:54:10+00:00",
   "rules_file": "security-readiness/47-evidence-automation/evidence-completeness-rules.yaml",
   "status": "FAILED",
   "phases": {
@@ -20,9 +20,9 @@
   "tools_enabled": false,
   "active_launch_mode": "RAG_ONLY",
   "counts": {
-    "complete": 14,
+    "complete": 15,
     "missing": 0,
-    "failed": 6,
+    "failed": 5,
     "skipped": 3,
     "required_total": 23,
     "pre_launch_required_total": 20,
@@ -117,6 +117,17 @@
       "file": "security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-research-agent-tests.json"
     },
     {
+      "id": "mcp_deny_before_dispatch_adjacent",
+      "phase": "pre_launch_evidence_validation",
+      "status": "COMPLETE",
+      "observed": "PASS",
+      "expected": [
+        "PASS",
+        "PASSED"
+      ],
+      "file": "security-readiness/evidence-artifacts/test-results/mcp-deny-before-dispatch-tests.json"
+    },
+    {
       "id": "audit_events_generated",
       "phase": "pre_launch_evidence_validation",
       "status": "COMPLETE",
@@ -160,7 +171,7 @@
       "id": "dashboard_data_generated",
       "phase": "post_launch_output_validation",
       "status": "COMPLETE",
-      "observed": "2026-05-12T16:46:50.385264+00:00",
+      "observed": "2026-05-12T16:53:35.634025+00:00",
       "expected": [],
       "file": "security-readiness/dashboard/dashboard-data.json"
     },
@@ -211,20 +222,6 @@
       "description": "Passing prompt injection boundary tests",
       "critical": true,
       "expected_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
-      "status": "FAILED",
-      "reason": "Evidence artifact does not meet pass criteria",
-      "observed": null,
-      "expected": [
-        "PASS",
-        "PASSED"
-      ]
-    },
-    {
-      "id": "mcp_deny_before_dispatch_adjacent",
-      "phase": "pre_launch_evidence_validation",
-      "description": "MCP deny-before-dispatch runtime-adjacent evidence is present (non-critical positive signal)",
-      "critical": false,
-      "expected_file": "security-readiness/evidence-artifacts/test-results/mcp-deny-before-dispatch-tests.json",
       "status": "FAILED",
       "reason": "Evidence artifact does not meet pass criteria",
       "observed": null,
@@ -285,6 +282,6 @@
     "tool_runtime_context_guard_dependency_light": "PASS",
     "tool_runtime_wiring_adjacent": "PASS",
     "tool_runtime_wiring_research_agent_adjacent": "PASS",
-    "mcp_deny_before_dispatch_adjacent": "FAILED"
+    "mcp_deny_before_dispatch_adjacent": "PASS"
   }
 }
