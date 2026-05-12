@@ -272,6 +272,7 @@ def main() -> int:
             "pure_control_unit_tests": get_control_check_status(checked, failed, missing, "pure_control_unit_tests"),
             "citation_source_leakage_dependency_light": get_control_check_status(checked, failed, missing, "citation_source_leakage_dependency_light"),
             "prompt_injection_boundary_dependency_light": get_control_check_status(checked, failed, missing, "prompt_injection_boundary_dependency_light"),
+            "tool_authorization_dependency_light": get_control_check_status(checked, failed, missing, "tool_authorization_dependency_light"),
         },
     }
 

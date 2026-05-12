@@ -82,6 +82,18 @@
         ]
       },
       {
+        "id": "tool_authorization_dependency_light",
+        "description": "Passing tool authorization dependency-light tests (partial evidence only)",
+        "critical": false,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-authorization-dependency-light-tests.json",
+        "pass_field": "dependency_light_status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
         "id": "tool_authorization_tests",
         "description": "Passing tool authorization tests for RAG+Tools launch mode",
         "critical": true,
