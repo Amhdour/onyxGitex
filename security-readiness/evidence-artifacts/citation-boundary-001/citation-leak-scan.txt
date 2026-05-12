@@ -1,0 +1,6 @@
+Command:
+rg 'RESTRICTED-DOC-009|Executive Acquisition Plan|executive/acquisition-plan|non-public M&A terms' security-readiness/evidence-artifacts/citation-boundary-001/pytest-output.txt
+
+Result:
+No matches found in pytest-output.txt (expected, because test run failed before executing due to missing dependency).
+No matches.

@@ -40,3 +40,13 @@ Can Atlas Advisory Group safely launch an internal knowledge assistant without l
 
 ## Next Evidence Step
 Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
+
+## Verification Update — Citation Boundary 001 (2026-05-12)
+
+- **Control Area:** Retrieval authorization + citation boundary leakage prevention.
+- **Implementation Evidence:** `backend/tests/unit/onyx/security_readiness/test_control_layer.py` includes `test_citation_leakage_boundary_controls` with explicit assertions against restricted title/path/snippet/metadata/source leakage and prompt-injection citation forcing.
+- **Execution Evidence:** `security-readiness/evidence-artifacts/citation-boundary-001/pytest-output.txt`.
+- **Leak Scan Evidence:** `security-readiness/evidence-artifacts/citation-boundary-001/citation-leak-scan.txt`.
+- **Status:** **Partially Confirmed**.
+- **Reason:** pytest execution blocked at import time due to missing dependency `fastapi_users`; therefore control logic is code-verified but not runtime-verified in this container.
+- **Residual Risk:** Runtime behavior remains **Unknown** until dependency-complete test execution is captured.

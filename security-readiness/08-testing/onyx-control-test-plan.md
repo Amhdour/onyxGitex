@@ -40,3 +40,20 @@ Can Atlas Advisory Group safely launch an internal knowledge assistant without l
 
 ## Next Evidence Step
 Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
+
+## Control Test Addendum — Citation Boundary 001 (2026-05-12)
+
+- **Control Objective:** Verify unauthorized documents are never exposed through citation structures (title, URL/path, snippet, metadata, source IDs/references) and that authorized citations remain available.
+- **Test Implementation:** `test_citation_leakage_boundary_controls` in `backend/tests/unit/onyx/security_readiness/test_control_layer.py`.
+- **Evidence Artifact Folder:** `security-readiness/evidence-artifacts/citation-boundary-001/`.
+- **Requested Cases Covered:**
+  1. Unauthorized document title not shown.
+  2. Unauthorized document URL/path not shown.
+  3. Unauthorized snippet not shown.
+  4. Unauthorized metadata not shown.
+  5. Unauthorized document not cited as source.
+  6. Authorized document cited normally.
+  7. Prompt injection cannot force hidden sources.
+  8. Refusal text does not reveal restricted document names.
+- **Dataset/Sensitivity Handling:** Uses fictional documents and redacted restricted values only.
+- **Current Verification State:** **Partially Confirmed** (test exists; runtime execution blocked by missing dependency `fastapi_users` in this environment).
