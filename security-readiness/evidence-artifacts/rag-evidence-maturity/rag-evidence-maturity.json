@@ -69,9 +69,9 @@
     {
       "control": "ToolRuntimeWiringAdapter",
       "tier_achieved": 3,
-      "evidence_file": "backend/onyx/security_readiness/tool_runtime_wiring_adapter.py; security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-adjacent-tests.json; security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-main-llm-loop-tests.json; security-readiness/final-control-status-canonical.md",
-      "current_status": "Runtime-adjacent adapter wiring PASS and main llm_loop.py runtime-adjacent wiring PASS; full runtime and research-agent runtime wiring remain NOT_PASS",
-      "missing": "Full runtime wiring PASS in llm_loop.py and research-agent execution paths, plus full tool runtime authorization evidence",
+      "evidence_file": "backend/onyx/security_readiness/tool_runtime_wiring_adapter.py; security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-adjacent-tests.json; security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-main-llm-loop-tests.json; security-readiness/evidence-artifacts/test-results/tool-runtime-wiring-research-agent-tests.json; security-readiness/final-control-status-canonical.md",
+      "current_status": "Runtime-adjacent adapter wiring PASS, main llm_loop.py runtime-adjacent wiring PASS, and research-agent runtime-adjacent wiring PASS; full runtime and MCP hardening remain NOT_PASS/MISSING",
+      "missing": "Full runtime wiring PASS in llm_loop.py and research-agent execution paths, MCP deny-before-dispatch hardening PASS, plus full tool runtime authorization evidence",
       "launch_gate_impact": "Non-critical Tier 3 signal only; RAG_PLUS_TOOLS remains NOT_READY and launch stays NOT_ENOUGH_EVIDENCE"
     },
     {
