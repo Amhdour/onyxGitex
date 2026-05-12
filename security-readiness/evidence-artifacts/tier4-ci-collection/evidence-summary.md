@@ -2,6 +2,10 @@
 
 Date: 2026-05-12
 
+[![Tier 4 Runtime Collection](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml)
+
+> Badge interpretation: CI visibility evidence only. It does **not** claim Tier 4 runtime PASS and does **not** imply GO. Launch posture remains **NOT_ENOUGH_EVIDENCE**.
+
 ## Scope
 This evidence package documents creation of a CI collection pathway for Tier 4 backend runtime test files under Python 3.11.
 
