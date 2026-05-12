@@ -1,0 +1,9 @@
+{
+  "control": "RetrievalAuthorizationGuard",
+  "status": "BLOCKED",
+  "suite": "backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
+  "command": "pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
+  "result": "blocked",
+  "reason": "No executable pytest output captured for this suite in current evidence artifacts; backend test environment blockers are documented separately.",
+  "evidence_source": "security-readiness/evidence-artifacts/rag-boundary-001/evidence-summary.md"
+}

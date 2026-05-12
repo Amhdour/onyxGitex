@@ -1,0 +1,9 @@
+{
+  "generated": true,
+  "status": "PARTIAL",
+  "sources": [
+    "security-readiness/evidence-artifacts/runtime-tracing-001/runtime-trace.jsonl",
+    "security-readiness/evidence-artifacts/tool-auth-001/runtime-trace.jsonl"
+  ],
+  "note": "Runtime trace artifacts are present; full end-to-end verification remains partial due to blocked suites."
+}

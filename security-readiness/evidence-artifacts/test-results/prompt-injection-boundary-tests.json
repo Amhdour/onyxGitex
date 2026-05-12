@@ -1,0 +1,9 @@
+{
+  "control": "PromptInjectionBoundary",
+  "status": "BLOCKED",
+  "suite": "backend/tests/unit/onyx/security_readiness/test_control_layer.py -k prompt_injection_retrieval_boundary_bypass_denied",
+  "command": "pytest backend/tests/unit/onyx/security_readiness/test_control_layer.py -k prompt_injection_retrieval_boundary_bypass_denied -q",
+  "result": "blocked",
+  "reason": "ModuleNotFoundError: fastapi_users",
+  "evidence_source": "security-readiness/evidence-artifacts/prompt-injection-boundary-001/prompt-injection-results.json"
+}

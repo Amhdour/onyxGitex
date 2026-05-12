@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-05-12T09:02:26+00:00",
-  "git_commit": "5807c9f2e0f408cfea104ddfe64bc9766f799ab9",
+  "generated": true,
+  "generated_at": "2026-05-12T10:07:18+00:00",
+  "git_commit": "0930b96f28295fc1c7dfb0433ddea1656ba66c44",
   "decision": "NOT_ENOUGH_EVIDENCE",
   "reasons": [
-    "Missing fail-closed identity/retrieval authorization evidence."
+    "Evidence completeness validator does not allow GO."
   ],
   "uncertainty_preserved": true,
-  "validation_status": "INCOMPLETE"
+  "validation_status": "FAILED"
 }

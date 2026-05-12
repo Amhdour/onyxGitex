@@ -1,0 +1,9 @@
+{
+  "generated": true,
+  "status": "PARTIAL",
+  "sources": [
+    "security-readiness/evidence-artifacts/audit-logging-001/audit-events.jsonl",
+    "security-readiness/evidence-artifacts/tool-auth-001/audit-events.jsonl"
+  ],
+  "note": "Audit artifacts exist, but linked test suites include blocked execution evidence."
+}

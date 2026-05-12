@@ -1,1 +1,77 @@
-[]
+[
+  {
+    "id": "retrieval_authorization_tests",
+    "description": "Passing retrieval authorization tests",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
+    "status": "FAILED",
+    "reason": "Evidence artifact does not meet pass criteria",
+    "observed": "BLOCKED",
+    "expected": [
+      "PASS",
+      "PASSED"
+    ]
+  },
+  {
+    "id": "citation_leakage_tests",
+    "description": "Passing citation leakage tests",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
+    "status": "FAILED",
+    "reason": "Evidence artifact does not meet pass criteria",
+    "observed": "BLOCKED",
+    "expected": [
+      "PASS",
+      "PASSED"
+    ]
+  },
+  {
+    "id": "prompt_injection_boundary_tests",
+    "description": "Passing prompt injection boundary tests",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
+    "status": "FAILED",
+    "reason": "Evidence artifact does not meet pass criteria",
+    "observed": "BLOCKED",
+    "expected": [
+      "PASS",
+      "PASSED"
+    ]
+  },
+  {
+    "id": "no_critical_open_risks",
+    "description": "No critical open risks",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/risk/open-risk-summary.json",
+    "status": "FAILED",
+    "reason": "Evidence artifact does not meet pass criteria",
+    "observed": 1,
+    "expected": [
+      0
+    ]
+  },
+  {
+    "id": "evidence_pack_complete",
+    "description": "Evidence pack complete",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
+    "status": "FAILED",
+    "reason": "Evidence artifact does not meet pass criteria",
+    "observed": false,
+    "expected": [
+      true
+    ]
+  },
+  {
+    "id": "launch_gate_result_generated",
+    "description": "Launch gate result generated",
+    "critical": true,
+    "expected_file": "security-readiness/evidence-artifacts/launch-gate/launch-gate-result.json",
+    "status": "FAILED",
+    "reason": "Evidence artifact does not meet pass criteria",
+    "observed": null,
+    "expected": [
+      true
+    ]
+  }
+]
