@@ -1,7 +1,7 @@
 # Developer Control Training Guide
 
 ## Purpose
-Train developers to implement and maintain secure, auditable controls for the internal knowledge assistant without introducing unsupported or unverified behavior.
+Train developers to implement and maintain readiness-reviewed, auditable controls for the internal knowledge assistant without introducing unsupported or unverified behavior.
 
 ## Audience
 - Application developers

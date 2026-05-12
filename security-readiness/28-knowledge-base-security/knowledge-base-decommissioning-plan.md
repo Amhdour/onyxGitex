@@ -3,7 +3,7 @@
 Date: 2026-05-11
 
 ## Scope
-Define secure decommissioning steps for knowledge bases, connectors, indexes, and derived artifacts.
+Define readiness-reviewed decommissioning steps for knowledge bases, connectors, indexes, and derived artifacts.
 
 ## Decommission workflow
 1. Inventory target knowledge base assets (documents, chunks, vectors, caches, backups).

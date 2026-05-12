@@ -2,14 +2,14 @@
 
 _Last updated: 2026-05-11_
 
-## 1) Is the AI assistant "secure"?
+## 1) Is the AI assistant readiness-reviewed?
 We describe the program as **evidence-backed readiness**, not guaranteed safety. Security is treated as an ongoing control-and-verification process with known residual risks.
 
 ## 2) Do you guarantee zero data leakage?
 No. We do not claim zero risk. We design for prevention, detection, and response, including authorization boundaries, fail-closed behaviors, and audit evidence.
 
 ## 3) How do you prevent users from seeing unauthorized documents?
-Primary approach: retrieval authorization controls aligned to identity and entitlements, plus verification testing and logging. Any unverified control area is explicitly labeled as Partially Confirmed or Unknown.
+Primary approach: retrieval authorization controls aligned to identity and entitlements, plus verification testing and logging designed to reduce leakage risk. Any unverified control area is explicitly labeled as Partially Confirmed or Unknown.
 
 ## 4) Do model responses always reflect source truth?
 Not always. The system is designed to improve grounding to source data, but unsupported outputs remain a known model risk category. We monitor and test for this failure mode.
