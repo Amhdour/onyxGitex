@@ -1,0 +1,1 @@
+PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/tier4-fixture-implementation/test_tier4_artifact_writer.py
