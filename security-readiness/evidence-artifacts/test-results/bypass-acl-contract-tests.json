@@ -3,17 +3,27 @@
   "date": "2026-05-12",
   "status": "Partially Confirmed",
   "launch_gate": "NOT_ENOUGH_EVIDENCE",
+  "dependency_light_status": "PASS",
+  "backend_harness_status": "BLOCKED",
   "commands": [
     {
       "command": "pytest -q backend/tests/unit/onyx/security_readiness/test_bypass_acl_contract.py",
       "result": "blocked",
       "error": "ModuleNotFoundError: No module named 'fastapi_users'"
+    },
+    {
+      "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/bypass-acl-contract/test_bypass_acl_contract.py",
+      "result": "pass",
+      "output_file": "security-readiness/evidence-artifacts/bypass-acl-contract/dependency-light-test-output.txt"
     }
   ],
   "assertions": {
-    "requires_trusted_system_context": "Defined in code; execution blocked",
-    "fails_closed_without_trusted_context": "Defined in code; execution blocked",
-    "emits_audit_event": "Defined in code; execution blocked",
-    "normal_user_cannot_enable": "Defined in code; execution blocked"
+    "requires_trusted_system_context": "Verified in dependency-light evidence tests",
+    "fails_closed_without_trusted_context": "Verified in dependency-light evidence tests",
+    "emits_deny_audit_event": "Verified in dependency-light evidence tests",
+    "allows_trusted_system_bypass": "Verified in dependency-light evidence tests",
+    "emits_allow_audit_event": "Verified in dependency-light evidence tests",
+    "preserves_actor_id_in_audit": "Verified in dependency-light evidence tests",
+    "normal_user_cannot_enable": "Verified in dependency-light evidence tests"
   }
 }

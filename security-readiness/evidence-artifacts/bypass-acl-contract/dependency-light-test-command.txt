@@ -1,0 +1,1 @@
+PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/bypass-acl-contract/test_bypass_acl_contract.py
