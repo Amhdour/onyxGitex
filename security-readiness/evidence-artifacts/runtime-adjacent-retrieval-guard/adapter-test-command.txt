@@ -1,0 +1,1 @@
+PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/runtime-adjacent-retrieval-guard/test_retrieval_guard_adapter.py

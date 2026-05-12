@@ -25,12 +25,11 @@ from onyx.llm.interfaces import LLM
 from onyx.natural_language_processing.english_stopwords import strip_stopwords
 from onyx.natural_language_processing.search_nlp_models import EmbeddingModel
 from onyx.security_readiness.control_layer import AuditLogger
-from onyx.security_readiness.control_layer import AuthContext
-from onyx.security_readiness.control_layer import FailClosedError
 from onyx.security_readiness.control_layer import PolicyDecisionEngine
-from onyx.security_readiness.control_layer import ResourcePolicy
 from onyx.security_readiness.control_layer import RetrievalAuthorizationGuard
 from onyx.security_readiness.control_layer import RuntimeTracer
+from onyx.security_readiness.retrieval_guard_adapter import RetrievalGuardDependencies
+from onyx.security_readiness.retrieval_guard_adapter import enforce_retrieval_authorization
 from onyx.secondary_llm_flows.source_filter import extract_source_filter
 from onyx.secondary_llm_flows.time_filter import extract_time_filter
 from onyx.utils.logger import setup_logger
@@ -72,83 +71,22 @@ def _build_index_filters(
     base_filters = user_provided_filters or BaseFilters()
 
     if base_filters.document_set is not None and not bypass_acl:
-        if user is None or user.id is None:
-            raise OnyxError(
-                OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
-                "Missing identity context for retrieval authorization.",
-            )
-        if db_session is None:
-            raise OnyxError(
-                OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
-                "Missing document permission context for retrieval authorization.",
-            )
-
-        accessible_names = filter_document_set_names_by_user_access(
-            db_session=db_session,
-            document_set_names=base_filters.document_set,
+        enforce_retrieval_authorization(
+            document_sets=base_filters.document_set,
+            user_id=str(user.id) if user is not None and user.id is not None else None,
             user=user,
+            db_session=db_session,
+            dependencies=RetrievalGuardDependencies(
+                access_filter_fn=lambda db_session, document_set_names, user: filter_document_set_names_by_user_access(
+                    db_session=db_session,
+                    document_set_names=document_set_names,
+                    user=user,
+                ),
+                authorize_document_fn=_retrieval_auth_guard.authorize_document,
+                audit_logger=_retrieval_audit_logger,
+                runtime_tracer=_retrieval_runtime_tracer,
+            ),
         )
-        policy_map = {
-            name: ResourcePolicy(
-                resource_id=name,
-                allowed_users=frozenset({str(user.id)}),
-            )
-            for name in accessible_names
-        }
-        auth_context = AuthContext(user_id=str(user.id))
-
-        for document_set_name in base_filters.document_set:
-            try:
-                decision = _retrieval_auth_guard.authorize_document(
-                    auth_context=auth_context,
-                    document_id=document_set_name,
-                    policy_map=policy_map,
-                )
-                _retrieval_audit_logger.emit_authorization_event(
-                    action_type="retrieval.allow" if decision.allowed else "retrieval.deny",
-                    decision="allow" if decision.allowed else "deny",
-                    reason=decision.reason,
-                    actor_id=str(user.id),
-                    resource_type="document_set",
-                    resource_id=document_set_name,
-                    policy_id="document_set_access_policy",
-                )
-                _retrieval_runtime_tracer.emit(
-                    "retrieval.authorization",
-                    {
-                        "document_set": document_set_name,
-                        "decision": "allow" if decision.allowed else "deny",
-                    },
-                )
-                if not decision.allowed:
-                    raise OnyxError(
-                        OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
-                        f"User does not have access to document set: {document_set_name}",
-                    )
-            except FailClosedError as e:
-                _retrieval_audit_logger.emit_authorization_event(
-                    action_type="policy.missing_context",
-                    decision="deny",
-                    reason=str(e),
-                    actor_id=str(user.id) if user is not None and user.id is not None else None,
-                    resource_type="document_set",
-                    resource_id=document_set_name,
-                    policy_id="document_set_access_policy",
-                    fail_closed=True,
-                    evidence_status="Partially Confirmed",
-                )
-                _retrieval_runtime_tracer.emit(
-                    "retrieval.authorization",
-                    {
-                        "document_set": document_set_name,
-                        "decision": "deny",
-                        "reason": str(e),
-                    },
-                )
-                raise OnyxError(
-                    OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
-                    str(e),
-                ) from e
 
     # When the caller supplies document set names, enforce that the user has view
     # access to each one. This closes the API-layer bypass where a user could
