@@ -1,0 +1,1 @@
+pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py backend/tests/unit/onyx/tools/test_tool_authorization_runtime.py

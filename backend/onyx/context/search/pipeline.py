@@ -104,14 +104,14 @@ def _build_index_filters(
                     document_id=document_set_name,
                     policy_map=policy_map,
                 )
-                _retrieval_audit_logger.emit(
-                    "retrieval_authorization_decision",
-                    {
-                        "document_set": document_set_name,
-                        "user_id": str(user.id),
-                        "decision": "allow" if decision.allowed else "deny",
-                        "reason": decision.reason,
-                    },
+                _retrieval_audit_logger.emit_authorization_event(
+                    action_type="retrieval.allow" if decision.allowed else "retrieval.deny",
+                    decision="allow" if decision.allowed else "deny",
+                    reason=decision.reason,
+                    actor_id=str(user.id),
+                    resource_type="document_set",
+                    resource_id=document_set_name,
+                    policy_id="document_set_access_policy",
                 )
                 _retrieval_runtime_tracer.emit(
                     "retrieval.authorization",
@@ -126,14 +126,16 @@ def _build_index_filters(
                         f"User does not have access to document set: {document_set_name}",
                     )
             except FailClosedError as e:
-                _retrieval_audit_logger.emit(
-                    "retrieval_authorization_decision",
-                    {
-                        "document_set": document_set_name,
-                        "user_id": str(user.id),
-                        "decision": "deny",
-                        "reason": str(e),
-                    },
+                _retrieval_audit_logger.emit_authorization_event(
+                    action_type="policy.missing_context",
+                    decision="deny",
+                    reason=str(e),
+                    actor_id=str(user.id) if user is not None and user.id is not None else None,
+                    resource_type="document_set",
+                    resource_id=document_set_name,
+                    policy_id="document_set_access_policy",
+                    fail_closed=True,
+                    evidence_status="Partially Confirmed",
                 )
                 _retrieval_runtime_tracer.emit(
                     "retrieval.authorization",

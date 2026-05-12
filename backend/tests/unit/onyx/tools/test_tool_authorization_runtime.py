@@ -77,7 +77,9 @@ def test_denied_call_emits_audit_and_trace() -> None:
 
     assert len(resp.tool_responses) == 1
     assert tool.executed is False
+    assert audit_events[0]["action_type"] == "tool.deny"
     assert audit_events[0]["reason"] == "missing_user_identity"
+    assert audit_events[0]["decision"] == "deny"
     assert runtime_trace[0]["event"] == "tool_authorization"
 
 

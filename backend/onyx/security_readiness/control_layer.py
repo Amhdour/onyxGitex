@@ -4,6 +4,7 @@ import csv
 import json
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
+from uuid import uuid4
 from pathlib import Path
 from typing import Any
 
@@ -103,6 +104,44 @@ class AuditLogger:
         }
         self.events.append(event)
         return event
+
+    def emit_authorization_event(
+        self,
+        *,
+        action_type: str,
+        decision: str,
+        reason: str,
+        actor_id: str | None = None,
+        actor_role: str | None = None,
+        actor_department: str | None = None,
+        resource_type: str,
+        resource_id: str,
+        resource_classification: str | None = None,
+        policy_id: str | None = None,
+        request_id: str | None = None,
+        trace_id: str | None = None,
+        evidence_status: str = "Verified",
+        fail_closed: bool = False,
+    ) -> dict[str, Any]:
+        payload = {
+            "event_id": str(uuid4()),
+            "timestamp": datetime.now(UTC).isoformat(),
+            "actor_id": actor_id or "anonymous/missing",
+            "actor_role": actor_role or "unknown",
+            "actor_department": actor_department or "unknown",
+            "action_type": action_type,
+            "resource_type": resource_type,
+            "resource_id": resource_id,
+            "resource_classification": resource_classification or "unknown",
+            "decision": decision,
+            "reason": reason,
+            "policy_id": policy_id or "unknown",
+            "request_id": request_id or "unknown",
+            "trace_id": trace_id or "unknown",
+            "evidence_status": evidence_status,
+            "fail_closed": fail_closed,
+        }
+        return self.emit("authorization.audit", payload)
 
 
 class RuntimeTracer:

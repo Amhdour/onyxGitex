@@ -10,6 +10,7 @@ from onyx.db.memory import UserMemoryContext
 from onyx.server.query_and_chat.streaming_models import Packet
 from onyx.server.query_and_chat.streaming_models import PacketException
 from onyx.server.query_and_chat.streaming_models import SectionEnd
+from onyx.security_readiness.control_layer import AuditLogger
 from onyx.tools.interface import Tool
 from onyx.tools.models import ChatFile
 from onyx.tools.models import ChatMinimalTextMessage
@@ -41,6 +42,7 @@ from onyx.utils.logger import setup_logger
 from onyx.utils.threadpool_concurrency import run_functions_tuples_in_parallel
 
 logger = setup_logger()
+_tool_audit_logger = AuditLogger()
 
 QUERIES_FIELD = "queries"
 URLS_FIELD = "urls"
@@ -149,7 +151,18 @@ def _safe_run_single_tool(
             runtime_trace.append({"event": "tool_authorization", "tool_name": tool.name, "tool_call_id": tool_call.tool_call_id, "allowed": decision.allowed, "reason": decision.reason, "risk_level": decision.risk_level})
         if not decision.allowed:
             if audit_events is not None:
-                audit_events.append({"event": "tool_denied", "tool_name": tool.name, "tool_call_id": tool_call.tool_call_id, "reason": decision.reason, "risk_level": decision.risk_level})
+                _event = _tool_audit_logger.emit_authorization_event(
+                    action_type="tool.deny",
+                    decision="deny",
+                    reason=decision.reason,
+                    actor_id=user_id,
+                    resource_type="tool",
+                    resource_id=tool.name,
+                    resource_classification=decision.risk_level,
+                    policy_id="tool_execution_policy",
+                    fail_closed=decision.reason == "missing_user_identity",
+                )
+                audit_events.append(_event["payload"])
             tool.emitter.emit(Packet(placement=tool_call.placement, obj=SectionEnd()))
             denied = ToolResponse(rich_response=None, llm_facing_response=GENERIC_TOOL_ERROR_MESSAGE.format(error=f"Authorization denied: {decision.reason}"))
             denied.tool_call = tool_call
@@ -331,7 +344,8 @@ def run_tool_calls(
         if tool_call.tool_name not in tools_by_name:
             logger.warning("Tool %s not found in tools list", tool_call.tool_name)
             if audit_events is not None:
-                audit_events.append({"event": "tool_denied", "tool_name": tool_call.tool_name, "tool_call_id": tool_call.tool_call_id, "reason": "unknown_tool", "risk_level": "unknown"})
+                _event = _tool_audit_logger.emit_authorization_event(action_type="tool.deny", decision="deny", reason="unknown_tool", actor_id=user_id, resource_type="tool", resource_id=tool_call.tool_name, resource_classification="unknown", policy_id="tool_execution_policy", fail_closed=True)
+                audit_events.append(_event["payload"])
             if runtime_trace is not None:
                 runtime_trace.append({"event": "tool_authorization", "tool_name": tool_call.tool_name, "tool_call_id": tool_call.tool_call_id, "allowed": False, "reason": "unknown_tool", "risk_level": "unknown"})
             continue
