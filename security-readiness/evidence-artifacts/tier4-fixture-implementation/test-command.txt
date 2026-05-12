@@ -1,0 +1,1 @@
+PYTHONPATH=backend pytest -q backend/tests/integration/tests/chat/test_retrieval_authorization_runtime.py backend/tests/integration/tests/chat/test_citation_leakage_runtime.py backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py
