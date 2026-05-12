@@ -62,6 +62,8 @@ from onyx.tools.tool_implementations.python.python_tool import PythonTool
 from onyx.tools.tool_implementations.search.search_tool import SearchTool
 from onyx.tools.tool_implementations.web_search.utils import extract_url_snippet_map
 from onyx.tools.tool_implementations.web_search.web_search_tool import WebSearchTool
+from onyx.security_readiness.tool_runtime_wiring_adapter import run_tool_calls_with_runtime_context
+from onyx.tools.tool_authorization_router import ToolAuthorizationRouter
 from onyx.tools.tool_runner import run_tool_calls
 from onyx.tracing.framework.create import trace
 from onyx.utils.logger import setup_logger
@@ -641,6 +643,12 @@ def run_llm_loop(
     include_citations: bool = True,
     all_injected_file_metadata: dict[str, FileToolMetadata] | None = None,
     inject_memories_in_prompt: bool = True,
+    tool_runtime_enforcement_mode: Literal["DISABLED", "RAG_ONLY", "RAG_PLUS_TOOLS"] = "DISABLED",
+    tool_authorization_router: ToolAuthorizationRouter | None = None,
+    tool_policy: dict[str, Any] | None = None,
+    tool_runtime_approval_id: str | None = None,
+    tool_runtime_audit_events: list[dict[str, Any]] | None = None,
+    tool_runtime_trace: list[dict[str, Any]] | None = None,
 ) -> None:
     with trace(
         "run_llm_loop",
@@ -921,20 +929,38 @@ def run_llm_loop(
             # in-flight citations
             # It can be cleaned up but not super trivial or worthwhile right now
             just_ran_web_search = False
-            parallel_tool_call_results = run_tool_calls(
-                tool_calls=tool_calls,
-                tools=final_tools,
-                message_history=truncated_message_history,
-                user_memory_context=user_memory_context,
-                user_info=None,  # TODO, this is part of memories right now, might want to separate it out
-                citation_mapping=citation_mapping,
-                next_citation_num=citation_processor.get_next_citation_number(),
-                max_concurrent_tools=None,
-                skip_search_query_expansion=has_called_search_tool,
-                chat_files=chat_files,
-                url_snippet_map=extract_url_snippet_map(gathered_documents or []),
-                inject_memories_in_prompt=inject_memories_in_prompt,
-            )
+            tool_runner_kwargs = {
+                "tools": final_tools,
+                "message_history": truncated_message_history,
+                "user_memory_context": user_memory_context,
+                "user_info": None,  # TODO, this is part of memories right now, might want to separate it out
+                "citation_mapping": citation_mapping,
+                "next_citation_num": citation_processor.get_next_citation_number(),
+                "max_concurrent_tools": None,
+                "skip_search_query_expansion": has_called_search_tool,
+                "chat_files": chat_files,
+                "url_snippet_map": extract_url_snippet_map(gathered_documents or []),
+                "inject_memories_in_prompt": inject_memories_in_prompt,
+            }
+
+            if tool_runtime_enforcement_mode == "DISABLED":
+                parallel_tool_call_results = run_tool_calls(
+                    tool_calls=tool_calls,
+                    **tool_runner_kwargs,
+                )
+            else:
+                parallel_tool_call_results = run_tool_calls_with_runtime_context(
+                    launch_mode=tool_runtime_enforcement_mode,
+                    tool_calls=tool_calls,
+                    run_tool_calls_fn=run_tool_calls,
+                    authorization_router=tool_authorization_router,
+                    user_id=(str(user_identity.id) if user_identity and user_identity.id else None),
+                    tool_policy=tool_policy,
+                    approval_id=tool_runtime_approval_id,
+                    audit_events=tool_runtime_audit_events,
+                    runtime_trace=tool_runtime_trace,
+                    **tool_runner_kwargs,
+                )
             tool_responses = parallel_tool_call_results.tool_responses
             citation_mapping = parallel_tool_call_results.updated_citation_mapping
 
