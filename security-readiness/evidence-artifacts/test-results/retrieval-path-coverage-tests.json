@@ -3,6 +3,7 @@
   "date": "2026-05-12",
   "launch_gate": "NOT_ENOUGH_EVIDENCE",
   "full_runtime_retrieval": "NOT_PASS_BLOCKED",
+  "retrieval_authorization_tests": "NOT_PASS",
   "adapter_tests": {
     "target_file": "backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py",
     "status": "BLOCKED",
@@ -13,6 +14,21 @@
       "partial_access_filter_mixed_allow_deny",
       "audit_allow_deny_events_mixed_document_sets",
       "authorize_document_fail_closed_error"
+    ]
+  },
+  "adapter_path_tests": {
+    "target_file": "security-readiness/evidence-artifacts/retrieval-path-coverage/test_retrieval_guard_adapter_path_cases.py",
+    "status": "PASS",
+    "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/retrieval-path-coverage/test_retrieval_guard_adapter_path_cases.py",
+    "result": "7 passed in 1.15s",
+    "cases": [
+      "multiple_document_sets_one_unauthorized",
+      "partial_access_filter",
+      "mixed_allow_and_deny_audit_events",
+      "mixed_allow_and_deny_runtime_traces",
+      "authorize_document_fail_closed_error_to_onyx_error",
+      "missing_identity_fail_closed",
+      "missing_permission_context_fail_closed"
     ]
   },
   "path_status": {
