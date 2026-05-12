@@ -1,0 +1,87 @@
+{
+  "generated_at_utc": "2026-05-12",
+  "launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
+  "validator_complete_checks": 15,
+  "blockers": [
+    {
+      "id": "retrieval_authorization_tests",
+      "current_observed_value": "BLOCKED",
+      "expected_value": ["PASS", "PASSED"],
+      "current_evidence_file": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
+      "root_cause": "Missing validated Tier 4 full backend/runtime pass artifact.",
+      "exact_command_or_test_needed": "Run full backend/runtime retrieval authorization suite; then run python security-readiness/scripts/run-evidence-validation.py",
+      "dependencies": [
+        "Backend runtime environment available",
+        "Identity and ACL fixtures provisioned",
+        "Artifact output path writable"
+      ],
+      "artifact_to_generate": "security-readiness/evidence-artifacts/test-results/retrieval-authorization-tests.json",
+      "can_close_without_full_backend_runtime": false,
+      "risk_if_unresolved": "Runtime authorization boundaries remain unproven; fail-closed launch remains blocked."
+    },
+    {
+      "id": "citation_leakage_tests",
+      "current_observed_value": "BLOCKED",
+      "expected_value": ["PASS", "PASSED"],
+      "current_evidence_file": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
+      "root_cause": "Current evidence is dependency-light/partial, not full runtime validated.",
+      "exact_command_or_test_needed": "Run full backend/runtime citation leakage suite; then run python security-readiness/scripts/run-evidence-validation.py",
+      "dependencies": [
+        "Backend runtime environment available",
+        "Citation-leakage test corpus staged",
+        "Integrated response path instrumentation present"
+      ],
+      "artifact_to_generate": "security-readiness/evidence-artifacts/test-results/citation-leakage-tests.json",
+      "can_close_without_full_backend_runtime": false,
+      "risk_if_unresolved": "Citation/source leakage prevention remains unverified in end-to-end execution."
+    },
+    {
+      "id": "prompt_injection_boundary_tests",
+      "current_observed_value": null,
+      "expected_value": ["PASS", "PASSED"],
+      "current_evidence_file": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
+      "root_cause": "Missing full-runtime red-team PASS evidence artifact.",
+      "exact_command_or_test_needed": "Run full backend/runtime prompt-injection boundary and red-team suite; then run python security-readiness/scripts/run-evidence-validation.py",
+      "dependencies": [
+        "Backend runtime environment available",
+        "Adversarial prompt scenario pack available",
+        "Policy decision logging and trace IDs enabled"
+      ],
+      "artifact_to_generate": "security-readiness/evidence-artifacts/test-results/prompt-injection-boundary-tests.json",
+      "can_close_without_full_backend_runtime": false,
+      "risk_if_unresolved": "Prompt-injection resilience cannot be proven for launch decision."
+    },
+    {
+      "id": "no_critical_open_risks",
+      "current_observed_value": 1,
+      "expected_value": [0],
+      "current_evidence_file": "security-readiness/evidence-artifacts/risk/open-risk-summary.json",
+      "root_cause": "Critical risk remains open pending runtime evidence closure and risk owner sign-off.",
+      "exact_command_or_test_needed": "Update risk register after runtime evidence generation, regenerate open-risk summary, then run python security-readiness/scripts/run-evidence-validation.py",
+      "dependencies": [
+        "Runtime blocker evidence generated",
+        "Risk owner decision documented",
+        "Risk summary regenerated"
+      ],
+      "artifact_to_generate": "security-readiness/evidence-artifacts/risk/open-risk-summary.json",
+      "can_close_without_full_backend_runtime": false,
+      "risk_if_unresolved": "Critical risk criterion fails launch gate regardless of other signals."
+    },
+    {
+      "id": "evidence_pack_complete",
+      "current_observed_value": false,
+      "expected_value": [true],
+      "current_evidence_file": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
+      "root_cause": "Evidence pack lacks required final full-runtime artifacts and completeness markers.",
+      "exact_command_or_test_needed": "Ingest runtime artifacts into evidence pack, regenerate evidence-pack-status.json, then run python security-readiness/scripts/run-evidence-validation.py",
+      "dependencies": [
+        "All blocker artifacts produced",
+        "Evidence pack index/checklist updated",
+        "Validator path consistency"
+      ],
+      "artifact_to_generate": "security-readiness/evidence-artifacts/evidence-pack/evidence-pack-status.json",
+      "can_close_without_full_backend_runtime": false,
+      "risk_if_unresolved": "Launch validator remains fail-closed due to incomplete evidence package."
+    }
+  ]
+}
