@@ -106,10 +106,20 @@ payload = {
     },
     "control_status": "Missing" if completeness_pct < 100 else "Verified",
     "tests": {
+        "pure_control_layer": item_status(validation, "pure_control_unit_tests"),
         "retrieval_authorization": item_status(validation, "retrieval_authorization_tests"),
         "citation_leakage": item_status(validation, "citation_leakage_tests"),
         "prompt_injection": item_status(validation, "prompt_injection_boundary_tests"),
         "tool_authorization": item_status(validation, "tool_authorization_tests"),
+    },
+    "evidence_scope": {
+        "pure_control_layer": {
+            "status": item_status(validation, "pure_control_unit_tests"),
+            "evidence_type": "limited unit evidence",
+            "runtime_proof": "No",
+            "launch_gate_effect": "Improves confidence but does not unblock GO",
+        },
+        "runtime_retrieval_authorization": item_status(validation, "retrieval_authorization_tests"),
     },
     "audit_logging_status": item_status(validation, "audit_events_generated"),
     "runtime_tracing_status": item_status(validation, "runtime_traces_generated"),

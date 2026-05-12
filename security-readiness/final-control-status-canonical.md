@@ -5,6 +5,7 @@ Date (UTC): 2026-05-12
 | Control | Code path | Runtime wired | Test exists | Test passes | Evidence artifact exists | Evidence recognized by validator | Launch gate impact | Exact next action |
 |---|---|---|---|---|---|---|---|---|
 | RetrievalAuthorizationGuard | `backend/onyx/context/search/pipeline.py` | Yes | Yes | Blocked | Yes | No | Blocks GO as fail-closed retrieval evidence is not passing | Run `pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py` in supported backend env and publish PASS JSON artifact. |
+| PureControlLayerUnitTests | `security-readiness/evidence-artifacts/pure-control-unit-tests/test_pure_control_layer.py` | No (unit only) | Yes | PASS | Yes | Yes | Improves confidence only; does not unblock GO and does not prove runtime enforcement | Keep as limited unit evidence and pair with runtime retrieval/tool-path integration tests before GO. |
 | ToolAuthorizationRouter | `backend/onyx/tools/tool_runner.py` | Partial | Yes | Blocked | Yes | No | Not fully enforced in main runtime path and not validator-passing | Pass authorization context from `backend/onyx/chat/llm_loop.py` into `run_tool_calls` and execute tool runtime tests in supported env. |
 | Policy-as-Code evaluator | `onyx/security_readiness/control_layer` + policy tests artifact | Partial | Yes | Blocked | Yes | No | Cannot claim full policy enforcement readiness | Add runtime invocation evidence from retrieval + tool paths and re-run policy-related suites. |
 | AuditLogger | `backend/onyx/context/search/pipeline.py`, `backend/onyx/tools/tool_runner.py` | Yes | Yes | Blocked | Yes | Yes | Still blocked by other critical evidence failures | Keep artifacts; add passing test execution proof that generated events were created in run. |
@@ -16,3 +17,11 @@ Date (UTC): 2026-05-12
 ## Runtime enforcement note
 
 Tool authorization is **Not Fully Enforced** for the main chat runtime because `backend/onyx/chat/llm_loop.py` currently calls `run_tool_calls` without `authorization_router`, `user_id`, and `tool_policy` inputs.
+
+## Limited unit evidence note
+
+- Pure control-layer unit tests: **PASS**
+- Evidence type: **limited unit evidence**
+- Runtime proof: **No**
+- Launch gate effect: **improves confidence but does not unblock GO**
+

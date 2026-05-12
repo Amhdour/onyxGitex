@@ -87,6 +87,16 @@ def get_nested_value(obj: Any, dotted_field: str) -> Any:
     return current
 
 
+
+def get_control_check_status(checked: list[dict[str, Any]], failed: list[dict[str, Any]], missing: list[dict[str, Any]], item_id: str) -> str:
+    if any(item.get("id") == item_id for item in checked):
+        return "PASS"
+    if any(item.get("id") == item_id for item in failed):
+        return "FAILED"
+    if any(item.get("id") == item_id for item in missing):
+        return "MISSING"
+    return "UNKNOWN"
+
 def main() -> int:
     args = parse_args()
     repo_root = Path.cwd()
@@ -191,6 +201,8 @@ def main() -> int:
     )
     allow_go = pre_launch_status == "COMPLETE" and not pre_blocking_issues
 
+
+
     output_dir = repo_root / args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -227,6 +239,9 @@ def main() -> int:
         "missing": missing,
         "failed": failed,
         "skipped": skipped,
+        "control_checks": {
+            "pure_control_unit_tests": get_control_check_status(checked, failed, missing, "pure_control_unit_tests"),
+        },
     }
 
     (output_dir / "validation-result.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

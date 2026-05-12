@@ -1,20 +1,30 @@
 {
-  "generated_at": "2026-05-12T10:24:49.933598+00:00",
+  "generated_at": "2026-05-12T10:50:08.327031+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
-  "readiness_score": 50.0,
+  "readiness_score": 53.8,
   "evidence_completeness": {
     "status": "FAILED",
     "allow_go": false,
-    "complete": 6,
-    "required_total": 12,
-    "percent": 50.0
+    "complete": 7,
+    "required_total": 13,
+    "percent": 53.8
   },
   "control_status": "Missing",
   "tests": {
+    "pure_control_layer": "Passed",
     "retrieval_authorization": "Blocked",
     "citation_leakage": "Blocked",
     "prompt_injection": "Blocked",
     "tool_authorization": "Skipped"
+  },
+  "evidence_scope": {
+    "pure_control_layer": {
+      "status": "Passed",
+      "evidence_type": "limited unit evidence",
+      "runtime_proof": "No",
+      "launch_gate_effect": "Improves confidence but does not unblock GO"
+    },
+    "runtime_retrieval_authorization": "Blocked"
   },
   "audit_logging_status": "Passed",
   "runtime_tracing_status": "Passed",
@@ -27,8 +37,8 @@
       "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
     ]
   },
-  "last_evidence_timestamp": "2026-05-12T10:19:19+00:00",
-  "git_commit": "ef0c16d93a1e43385dcedc68f8f06bc7c40f9af6",
+  "last_evidence_timestamp": "2026-05-12T10:50:06+00:00",
+  "git_commit": "6578277e35aa49bb98cc33a9c68f4142c0fa5a51",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",
