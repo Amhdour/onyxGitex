@@ -133,5 +133,5 @@ Start here:
 These materials describe scope, controls, evidence, and launch-gate decision framing with explicit boundaries on what is proven versus not proven.
 
 Tier 4 Runtime Collection CI visibility:
-- [![Tier 4 Runtime Collection](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/onyx-dot-app/onyx/actions/workflows/tier4-runtime-collection.yml)
+- [![Tier 4 Runtime Collection](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml)
 - Badge is CI visibility evidence only; it does **not** claim runtime PASS, does **not** claim GO, and launch posture remains **NOT_ENOUGH_EVIDENCE**.
