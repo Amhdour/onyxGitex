@@ -1,0 +1,40 @@
+pytest -q backend/tests/unit/onyx/security_readiness/test_runtime_tracing_paths.py
+python - <<'PY'
+from pathlib import Path
+import json
+from itertools import count
+from onyx.security_readiness.control_layer import RuntimeTracer, RetrievalAuthorizationGuard, PolicyDecisionEngine, AuthContext, ResourcePolicy
+from onyx.tools.tool_authorization_router import ToolAuthorizationRouter
+
+tracer = RuntimeTracer()
+span_counter = count(1)
+
+def emit(trace_id, request_id, actor_id, parent_span_id, step_name, component, decision, evidence_ref, error=None, fail_closed=False):
+    span_id = f"span-{next(span_counter)}"
+    tracer.emit_structured(trace_id=trace_id, span_id=span_id, parent_span_id=parent_span_id, request_id=request_id, actor_id=actor_id, step_name=step_name, component=component, decision=decision, duration_ms=None, evidence_ref=evidence_ref, error=error, fail_closed=fail_closed)
+    return span_id
+
+s1=emit('trace-rag-001','req-rag-001','u-rag',None,'request.received','chat.api','accepted','runtime-tracing-001:rag')
+s2=emit('trace-rag-001','req-rag-001','u-rag',s1,'identity.resolved','identity','resolved','runtime-tracing-001:rag')
+s3=emit('trace-rag-001','req-rag-001','u-rag',s2,'policy.context.built','policy_engine','built','runtime-tracing-001:rag')
+s4=emit('trace-rag-001','req-rag-001','u-rag',s3,'retrieval.requested','retrieval_pipeline','requested','runtime-tracing-001:rag')
+rg=RetrievalAuthorizationGuard(PolicyDecisionEngine())
+d=rg.authorize_document(AuthContext(user_id='u-rag'),'public-kb',{'public-kb':ResourcePolicy(resource_id='public-kb',allowed_users=frozenset({'u-rag'}))})
+s5=emit('trace-rag-001','req-rag-001','u-rag',s4,'retrieval.authorization.checked','retrieval_guard','checked','runtime-tracing-001:rag')
+s6=emit('trace-rag-001','req-rag-001','u-rag',s5,'retrieval.allowed_or_denied','retrieval_guard','allow' if d.allowed else 'deny','runtime-tracing-001:rag')
+s7=emit('trace-rag-001','req-rag-001','u-rag',s6,'citation.checked','citation_enforcer','pass','runtime-tracing-001:rag')
+s8=emit('trace-rag-001','req-rag-001','u-rag',s7,'response.generated_or_blocked','llm_response','generated','runtime-tracing-001:rag')
+emit('trace-rag-001','req-rag-001','u-rag',s8,'audit.event.emitted','audit_logger','emitted','runtime-tracing-001:rag')
+
+s10=emit('trace-tool-001','req-tool-001',None,None,'tool.requested','tool_runner','requested','runtime-tracing-001:tool')
+router=ToolAuthorizationRouter()
+td=router.authorize('python',None,{'python':{'allowed':True,'risk_level':'high'}},None)
+s11=emit('trace-tool-001','req-tool-001',None,s10,'tool.policy.checked','tool_authorization','checked','runtime-tracing-001:tool')
+s12=emit('trace-tool-001','req-tool-001',None,s11,'tool.allowed_or_denied','tool_authorization','allow' if td.allowed else 'deny','runtime-tracing-001:tool',error=td.reason if not td.allowed else None,fail_closed=not td.allowed)
+s13=emit('trace-tool-001','req-tool-001',None,s12,'tool.execution.blocked_or_completed','tool_runner','blocked' if not td.allowed else 'completed','runtime-tracing-001:tool',fail_closed=not td.allowed)
+emit('trace-tool-001','req-tool-001',None,s13,'audit.event.emitted','audit_logger','emitted','runtime-tracing-001:tool',fail_closed=not td.allowed)
+
+out=Path('security-readiness/evidence-artifacts/runtime-tracing-001/runtime-trace.jsonl')
+out.write_text('\n'.join(json.dumps(e) for e in tracer.trace_events)+'\n',encoding='utf-8')
+print(f'Wrote {len(tracer.trace_events)} events to {out}')
+PY

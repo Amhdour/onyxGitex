@@ -157,6 +157,40 @@ class RuntimeTracer:
         self.trace_events.append(event)
         return event
 
+    def emit_structured(
+        self,
+        *,
+        trace_id: str,
+        span_id: str,
+        parent_span_id: str | None,
+        request_id: str,
+        actor_id: str | None,
+        step_name: str,
+        component: str,
+        decision: str,
+        evidence_ref: str,
+        error: str | None = None,
+        fail_closed: bool = False,
+        duration_ms: int | None = None,
+    ) -> dict[str, Any]:
+        event = {
+            "trace_id": trace_id,
+            "span_id": span_id,
+            "parent_span_id": parent_span_id,
+            "timestamp": datetime.now(UTC).isoformat(),
+            "request_id": request_id,
+            "actor_id": actor_id,
+            "step_name": step_name,
+            "component": component,
+            "decision": decision,
+            "duration_ms": duration_ms,
+            "evidence_ref": evidence_ref,
+            "error": error,
+            "fail_closed": fail_closed,
+        }
+        self.trace_events.append(event)
+        return event
+
 
 def fail_closed_if_missing(value: Any, missing_message: str) -> Any:
     if value is None:
