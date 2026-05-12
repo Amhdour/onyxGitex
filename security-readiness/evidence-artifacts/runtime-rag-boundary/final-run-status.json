@@ -5,11 +5,17 @@
   "collection_status": "PARTIAL_COLLECTION",
   "evidence_status": "NOT_ENOUGH_EVIDENCE",
   "runtime_verified": false,
-  "blocker_type": "BLOCKED_PACKAGE_RESOLUTION",
-  "timestamp": "2026-05-12T21:58:04Z",
-  "git_commit": "76d3b85c23c470b6f5d5ec3884eb723ab937bf23",
+  "blocker_type": "DEPENDENCY_FAILURE",
+  "timestamp": "2026-05-12T22:09:35Z",
+  "git_commit": "9c8d58132ad571835434cd392ba425313c6d81d3",
+  "python_version": "Python 3.12.13",
+  "selected_python_version": "3.12",
   "test_command": "cd backend && python -m pytest -xv tests/integration/tests/chat/test_chat_document_set_access.py -k \"rag or boundary or document_set or access\"",
   "artifacts_present": [
+    "python-runtime-precheck.md",
+    "runtime-environment.md",
+    "python-version.txt",
+    "python-runtime-sync-output.txt",
     "dependency-precheck.md",
     "dependency-resolution.md",
     "dependency-install-output.txt",
@@ -28,22 +34,11 @@
     "backend-logs.txt"
   ],
   "open_blockers": [
-    "uv sync --group backend --group dev failed: onnxruntime==1.20.1 has no cp314 wheel/sdist for current platform",
+    "uv sync --python 3.12 --group backend --group dev failed due to network tunnel error downloading numpy==2.4.1",
     "fastapi_users remains unavailable in active runtime",
-    "Pytest import still fails before test collection with ModuleNotFoundError: fastapi_users"
+    "Pytest import still fails before collection with ModuleNotFoundError: fastapi_users"
   ],
-  "next_required_action": "Use a supported Python version for repository dependencies (e.g., cp311/cp312/cp313), run uv sync for backend/dev, then rerun runtime-rag-boundary script.",
-  "claims_allowed": [
-    "RAG boundary runtime execution was attempted",
-    "Dependency failure evidence was captured",
-    "Launch decision remains NO-GO pending runtime verification"
-  ],
-  "claims_not_allowed": [
-    "RAG boundary control passed",
-    "Restricted content leakage is prevented",
-    "Runtime enforcement is verified",
-    "System is safe to launch"
-  ],
-  "previous_blocker": "DEPENDENCY_FAILURE: fastapi_users missing during pytest startup",
-  "current_blocker": "BLOCKED_PACKAGE_RESOLUTION: uv sync blocked by onnxruntime wheel incompatibility on CPython 3.14; fastapi_users unresolved"
+  "next_required_action": "Restore package download connectivity, rerun uv sync with Python 3.12, validate fastapi_users import, and rerun runtime boundary script.",
+  "previous_blocker": "BLOCKED_PACKAGE_RESOLUTION: uv sync blocked by onnxruntime wheel incompatibility on CPython 3.14; fastapi_users unresolved",
+  "current_blocker": "DEPENDENCY_FAILURE: uv sync advanced past onnxruntime under Python 3.12, but environment still lacks fastapi_users after numpy download tunnel failure"
 }

@@ -43,12 +43,15 @@ Use evidence-limited wording; do not state runtime PASS or launch approval.
 
 
 ## 13. Latest RAG runtime boundary execution attempt (2026-05-12)
-- Latest execution attempt date: **2026-05-12T21:58:04Z**
-- Latest git commit: **76d3b85c23c470b6f5d5ec3884eb723ab937bf23**
-- Previous blocker: **DEPENDENCY_FAILURE (`fastapi_users` missing at pytest startup)**
-- Current blocker: **BLOCKED_PACKAGE_RESOLUTION (`uv sync` blocked by `onnxruntime==1.20.1` wheel incompatibility on CPython 3.14; `fastapi_users` remains unavailable)**
-- Dependency issue resolved: **No**
-- Latest runtime status: **BLOCKED (PARTIAL_COLLECTION / NOT_ENOUGH_EVIDENCE)**
+- Latest execution attempt date: **2026-05-12T22:09:35Z**
+- Latest git commit: **9c8d58132ad571835434cd392ba425313c6d81d3**
+- Previous blocker: **BLOCKED_PACKAGE_RESOLUTION (CPython 3.14 + onnxruntime==1.20.1 incompatibility)**
+- Selected Python version: **3.12**
+- Current Python/runtime blocker: **DEPENDENCY_FAILURE** (`numpy==2.4.1` download tunnel failure prevented complete sync; `fastapi_users` still unavailable)
+- onnxruntime resolution advanced: **Yes**
+- fastapi_users became available: **No**
+- pytest collection advanced: **No**
+- Runtime status: **BLOCKED (PARTIAL_COLLECTION / NOT_ENOUGH_EVIDENCE)**
 - Evidence package path: `security-readiness/evidence-artifacts/runtime-rag-boundary/`
 - Launch-gate impact: Runtime RAG boundary evidence remains insufficient; decision stays **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**.
 

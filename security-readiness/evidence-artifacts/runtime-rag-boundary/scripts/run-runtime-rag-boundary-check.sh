@@ -7,6 +7,8 @@ STATUS_FILE="$OUT_DIR/runtime-status.txt"
 PYTEST_OUT="$OUT_DIR/pytest-output.txt"
 DOCKER_PS_OUT="$OUT_DIR/docker-compose-ps.txt"
 ENV_OUT="$OUT_DIR/env-manifest-redacted.txt"
+PYTHON_VERSION_OUT="$OUT_DIR/python-version.txt"
+SELECTED_PYTHON="3.12"
 
 mkdir -p "$OUT_DIR"
 
@@ -44,6 +46,21 @@ BEGIN { IGNORECASE=1 }
 if ! command -v python >/dev/null 2>&1; then
   echo "PYTHON_NOT_AVAILABLE" > "$STATUS_FILE"
   echo "python command not available" > "$PYTEST_OUT"
+  exit 1
+fi
+
+python --version > "$PYTHON_VERSION_OUT" 2>&1 || true
+python -c 'import sys; print(sys.version); print(sys.executable)' >> "$PYTHON_VERSION_OUT" 2>&1 || true
+
+python_major_minor="$(python -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')"
+if [[ "$python_major_minor" != "$SELECTED_PYTHON" ]]; then
+  echo "UNSUPPORTED_PYTHON_VERSION" > "$STATUS_FILE"
+  {
+    echo "UNSUPPORTED_PYTHON_VERSION"
+    echo "Selected runtime: $SELECTED_PYTHON"
+    echo "Detected runtime: $python_major_minor"
+    echo "CPython 3.14 is blocked for this evidence package due to onnxruntime==1.20.1 incompatibility."
+  } > "$PYTEST_OUT"
   exit 1
 fi
 

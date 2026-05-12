@@ -35,3 +35,11 @@ Observed facts supporting classification:
 
 ## 8) Launch-gate implication
 Runtime RAG boundary evidence remains **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**. No runtime pass claim is supported.
+
+## Python Runtime Follow-Up
+- `fastapi_users` was not the root declaration issue; it is declared in project dependencies but unavailable because environment sync remained incomplete.
+- CPython 3.14 blocked prior `uv sync` because `onnxruntime==1.20.1` lacks a compatible cp314 distribution in this environment.
+- Selected Python version: `3.12`.
+- `uv sync` retried with selected version: **Yes** (`uv sync --python 3.12 --group backend --group dev`).
+- Result: resolver advanced past onnxruntime mismatch, but install failed on `numpy==2.4.1` download (`tunnel error: unsuccessful`).
+- Remaining blocker: dependency installation incomplete; `fastapi_users` import remains unavailable; pytest still blocked during conftest import.

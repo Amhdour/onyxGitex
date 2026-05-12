@@ -1,8 +1,12 @@
-Dependency precheck artifact status (2026-05-12): PRESENT (`security-readiness/evidence-artifacts/runtime-rag-boundary/dependency-precheck.md`).
+Python runtime precheck artifact status (2026-05-12): PRESENT (`security-readiness/evidence-artifacts/runtime-rag-boundary/python-runtime-precheck.md`).
 
-Dependency resolution artifact status (2026-05-12): PRESENT, outcome BLOCKED_PACKAGE_RESOLUTION (`security-readiness/evidence-artifacts/runtime-rag-boundary/dependency-resolution.md`).
+Runtime environment artifact status (2026-05-12): PRESENT (`security-readiness/evidence-artifacts/runtime-rag-boundary/runtime-environment.md`).
 
-Runtime artifact logs status (2026-05-12): PRESENT (`runtime-status.txt`, `pytest-output.txt`, `git-commit.txt`, `timestamp.txt`, `test-command.txt`, `env-manifest-redacted.txt`, `docker-compose-ps.txt`, `dependency-install-output.txt`).
+Python version artifact status (2026-05-12): PRESENT (`security-readiness/evidence-artifacts/runtime-rag-boundary/python-version.txt`).
+
+Dependency sync artifact status (2026-05-12): BLOCKED (`security-readiness/evidence-artifacts/runtime-rag-boundary/python-runtime-sync-output.txt`, numpy download tunnel failure).
+
+Runtime artifact logs status (2026-05-12): PRESENT (`runtime-status.txt`, `pytest-output.txt`, `git-commit.txt`, `timestamp.txt`, `test-command.txt`, `env-manifest-redacted.txt`, `docker-compose-ps.txt`).
 
 Screenshots, sanitized evidence, public README, architecture diagram, threat model, control matrix, launch gate example, CI artifact example, demo script, recruiter explanation, client explanation.
 

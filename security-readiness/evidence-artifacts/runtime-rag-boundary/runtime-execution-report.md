@@ -66,3 +66,18 @@ Install backend/integration test dependencies, rerun the runtime boundary script
 - Current blocker: package resolution/install blocked because `onnxruntime==1.20.1` has no wheel/sdist for CPython 3.14, leaving `fastapi_users` unavailable.
 
 Conclusion: **BLOCKED_PACKAGE_RESOLUTION**
+
+## Python Runtime Compatibility Attempt
+- Previous blocker: `BLOCKED_PACKAGE_RESOLUTION` from CPython 3.14 and `onnxruntime==1.20.1` wheel incompatibility.
+- Supported Python version discovered/inferred: repo metadata supports `>=3.11`; Docker baseline is Python 3.11.
+- Selected evidence runtime: Python 3.12 (available locally and compatible with onnxruntime wheel tags).
+- Runtime configuration changes made: pinned `.python-version` to `3.12`, added runtime precheck and runtime-environment documentation, added interpreter guard in runner.
+- Dependency sync command attempted: `uv sync --python 3.12 --group backend --group dev`.
+- Dependency sync advanced past onnxruntime: **Yes** (onnxruntime cp314 mismatch no longer the immediate blocker).
+- fastapi_users availability: **No** (sync aborted before completion due to numpy download tunnel error).
+- Pytest collection advanced beyond previous conftest failure: **No** (`ModuleNotFoundError: fastapi_users` remains).
+- Latest runtime status: `BLOCKED / PARTIAL_COLLECTION / NOT_ENOUGH_EVIDENCE`.
+- Current blocker: `DEPENDENCY_FAILURE` (effective root issue: incomplete dependency install after network tunnel failure).
+- Next action: restore dependency download connectivity, rerun sync under Python 3.12, then rerun runtime boundary script.
+
+Conclusion: **BLOCKED_DEPENDENCY**
