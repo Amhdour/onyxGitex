@@ -66,5 +66,12 @@
       "test_file_to_create_if_missing": null,
       "reason_cannot_run_yet": "Tier 4 runtime environment/fixtures not available yet; suite remains blocked/skipped until runtime dependencies are provisioned."
     }
-  ]
+  ],
+  "env_repair_2026_05_12": {
+    "dependency_group_for_fastapi_users": "backend",
+    "supported_env_setup_command": "uv sync --no-default-groups --group backend --group dev",
+    "collection_command": "python -m dotenv -f .vscode/.env run -- pytest --collect-only backend/tests/integration/tests/chat/test_retrieval_authorization_runtime.py backend/tests/integration/tests/chat/test_citation_leakage_runtime.py backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py",
+    "status": "BLOCKED_PRECOLLECTION",
+    "launch_gate": "NOT_ENOUGH_EVIDENCE"
+  }
 }
