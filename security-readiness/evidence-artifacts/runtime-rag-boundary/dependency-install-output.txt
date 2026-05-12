@@ -1,0 +1,8 @@
+$ uv sync --group backend --group dev
+Resolved 444 packages in 9ms
+error: Distribution `onnxruntime==1.20.1 @ registry+https://pypi.org/simple` can't be installed because it doesn't have a source distribution or wheel for the current platform
+
+hint: You're using CPython 3.14 (`cp314`), but `onnxruntime` (v1.20.1) only has wheels with the following Python ABI tags: `cp311`, `cp312`, `cp313`, `cp313t`
+$ python - <<\"PY\"
+fastapi_users_available= False
+exit_code=0

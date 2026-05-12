@@ -52,3 +52,17 @@ Launch decision remains **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**.
 
 ## 11. Next action
 Install backend/integration test dependencies, rerun the runtime boundary script, and capture backend logs alongside pytest output.
+
+## Dependency Resolution Attempt
+- Previous blocker: missing `fastapi_users` during pytest startup.
+- Dependency manager detected: `uv` (root `pyproject.toml` with `[dependency-groups]` and `uv.lock`).
+- Fix attempted: validated declaration and ran `uv sync --group backend --group dev`.
+- Files changed: dependency precheck/resolution docs, status JSON, and evidence index artifacts in this package.
+- Install/validation commands run:
+  - `uv sync --group backend --group dev`
+  - Python import validation for `fastapi_users`
+- New runtime status: script rerun still ended with `DEPENDENCY_FAILURE` in `runtime-status.txt` and pytest import failure.
+- Pytest collection advanced beyond previous failure: **No**.
+- Current blocker: package resolution/install blocked because `onnxruntime==1.20.1` has no wheel/sdist for CPython 3.14, leaving `fastapi_users` unavailable.
+
+Conclusion: **BLOCKED_PACKAGE_RESOLUTION**
