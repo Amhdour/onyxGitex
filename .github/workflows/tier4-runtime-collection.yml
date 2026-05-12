@@ -13,6 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Initialize Tier 4 evidence placeholders
+        run: |
+          mkdir -p security-readiness/evidence-artifacts/tier4-ci-collection
+          echo "UNAVAILABLE: install step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/dependency-install.log
+          echo "UNAVAILABLE: dependency import step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/dependency-import-check.log
+          echo "UNAVAILABLE: pytest collection step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
+          echo "NOT_RUN: Tier 4 runtime execution is outside this collection-only workflow. No runtime PASS is asserted." > security-readiness/evidence-artifacts/tier4-ci-collection/runtime-test.log
+
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
@@ -21,36 +29,20 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v3
 
-      - name: Initialize Tier 4 evidence placeholders
-        run: |
-          mkdir -p security-readiness/evidence-artifacts/tier4-ci-collection
-          echo "UNAVAILABLE: install step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/dependency-install.log
-          echo "UNAVAILABLE: dependency import step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/dependency-import-check.log
-          echo "UNAVAILABLE: pytest collection step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
-          echo "UNAVAILABLE: runtime test step did not complete or log was not captured." > security-readiness/evidence-artifacts/tier4-ci-collection/runtime-test.log
-
       - name: Install backend and dev dependencies (Python 3.11)
         run: |
           set -o pipefail
-          uv sync --python 3.11 --no-default-groups --group backend --group dev \
-            | tee security-readiness/evidence-artifacts/tier4-ci-collection/dependency-install.log
+          uv sync --python 3.11 --no-default-groups --group backend --group dev 2>&1             | tee security-readiness/evidence-artifacts/tier4-ci-collection/dependency-install.log
 
       - name: Verify fastapi-users imports
         run: |
           set -o pipefail
-          mkdir -p security-readiness/evidence-artifacts/tier4-ci-collection
-          uv run --python 3.11 python -c "import fastapi_users; import fastapi_users_db_sqlalchemy; print('fastapi-users imports ok')" \
-            | tee security-readiness/evidence-artifacts/tier4-ci-collection/dependency-import-check.log
+          uv run --python 3.11 python -c "import fastapi_users; import fastapi_users_db_sqlalchemy; print('fastapi-users imports ok')" 2>&1             | tee security-readiness/evidence-artifacts/tier4-ci-collection/dependency-import-check.log
 
       - name: Collect Tier 4 backend runtime tests only
         run: |
           set -o pipefail
-          mkdir -p security-readiness/evidence-artifacts/tier4-ci-collection
-          uv run --python 3.11 python -m dotenv -f .vscode/.env run -- pytest --collect-only \
-            backend/tests/integration/tests/chat/test_retrieval_authorization_runtime.py \
-            backend/tests/integration/tests/chat/test_citation_leakage_runtime.py \
-            backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py \
-            | tee security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
+          uv run --python 3.11 python -m dotenv -f .vscode/.env run -- pytest --collect-only             backend/tests/integration/tests/chat/test_retrieval_authorization_runtime.py             backend/tests/integration/tests/chat/test_citation_leakage_runtime.py             backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py 2>&1             | tee security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
 
       - name: Record collection posture metadata
         if: always()
