@@ -167,3 +167,19 @@ No runtime code changes were made.
 - **Launch gate**: **NOT_ENOUGH_EVIDENCE**.
 
 Rationale: runtime gate exists but is not yet consistently wired/enforced in the primary and secondary tool execution call sites.
+
+## 2026-05-12 Addendum — MCP deny-before-dispatch runtime-adjacent evidence
+
+New runtime-adjacent evidence artifacts were added under:
+
+- `security-readiness/evidence-artifacts/mcp-deny-before-dispatch/`
+- `security-readiness/evidence-artifacts/test-results/mcp-deny-before-dispatch-tests.json`
+
+Outcome of this evidence bundle:
+
+- `mcp_deny_before_dispatch_adjacent_status`: **PASS**
+- `full_mcp_runtime_status`: **NOT_PASS** (unchanged)
+- `RAG_PLUS_TOOLS`: **NOT_READY** (unchanged)
+- `launch_gate`: **NOT_ENOUGH_EVIDENCE** (unchanged)
+
+This addendum remains runtime-adjacent and does not claim complete production MCP hardening.

@@ -1,0 +1,22 @@
+{
+  "artifact": "mcp-deny-before-dispatch-tests",
+  "date_utc": "2026-05-12",
+  "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/mcp-deny-before-dispatch/test_mcp_deny_before_dispatch.py",
+  "results": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "status": {
+    "mcp_deny_before_dispatch_adjacent_status": "PASS",
+    "full_mcp_runtime_status": "NOT_PASS",
+    "RAG_PLUS_TOOLS": "NOT_READY",
+    "launch_gate": "NOT_ENOUGH_EVIDENCE"
+  },
+  "notes": [
+    "Runtime-adjacent harness validates deny-before-dispatch policy decisions.",
+    "No live MCP server was contacted in this evidence run."
+  ]
+}
