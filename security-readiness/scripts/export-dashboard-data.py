@@ -51,6 +51,8 @@ def map_failed_item_status(item: dict) -> str:
     observed = str(item.get("observed", "")).strip().upper()
     if observed == "BLOCKED":
         return "Blocked"
+    if item.get("id") == "prompt_injection_boundary_tests" and observed in {"", "NONE", "NULL"}:
+        return "Blocked"
     if observed == "FAILED" or item.get("status") == "FAILED":
         return "Failed"
     if observed == "PARTIAL":
@@ -110,7 +112,8 @@ payload = {
         "citation_source_leakage_dependency_light": item_status(validation, "citation_source_leakage_dependency_light"),
         "retrieval_authorization": item_status(validation, "retrieval_authorization_tests"),
         "citation_leakage": item_status(validation, "citation_leakage_tests"),
-        "prompt_injection": item_status(validation, "prompt_injection_boundary_tests"),
+        "prompt_injection_dependency_light_boundary": item_status(validation, "prompt_injection_boundary_dependency_light"),
+        "prompt_injection_full_runtime_red_team": item_status(validation, "prompt_injection_boundary_tests"),
         "tool_authorization": item_status(validation, "tool_authorization_tests"),
     },
     "evidence_scope": {
@@ -128,6 +131,13 @@ payload = {
             "launch_gate_effect": "Partial positive evidence only; GO remains blocked without full runtime citation leakage PASS",
         },
         "full_runtime_citation_leakage": item_status(validation, "citation_leakage_tests"),
+        "prompt_injection_dependency_light_boundary": {
+            "status": item_status(validation, "prompt_injection_boundary_dependency_light"),
+            "evidence_type": "dependency-light boundary test evidence",
+            "runtime_proof": "No",
+            "launch_gate_effect": "Partial positive evidence only; GO remains blocked until full runtime prompt-injection/red-team evidence is PASS",
+        },
+        "full_runtime_prompt_injection_red_team": item_status(validation, "prompt_injection_boundary_tests"),
     },
     "audit_logging_status": item_status(validation, "audit_events_generated"),
     "runtime_tracing_status": item_status(validation, "runtime_traces_generated"),
