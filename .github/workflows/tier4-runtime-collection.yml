@@ -1,0 +1,54 @@
+name: Tier 4 Runtime Collection
+
+on:
+  workflow_dispatch:
+
+jobs:
+  tier4-runtime-collection:
+    runs-on: ubuntu-latest
+    env:
+      TIER4_STATUS: COLLECTED_SKIPPED
+      LAUNCH_POSTURE: NOT_ENOUGH_EVIDENCE
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install backend and dev dependencies (Python 3.11)
+        run: uv sync --python 3.11 --no-default-groups --group backend --group dev
+
+      - name: Collect Tier 4 backend runtime tests only
+        run: |
+          set -o pipefail
+          mkdir -p security-readiness/evidence-artifacts/tier4-ci-collection
+          uv run --python 3.11 python -m dotenv -f .vscode/.env run -- pytest --collect-only \
+            backend/tests/integration/tests/chat/test_retrieval_authorization_runtime.py \
+            backend/tests/integration/tests/chat/test_citation_leakage_runtime.py \
+            backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py \
+            | tee security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
+
+      - name: Record collection posture metadata
+        if: always()
+        run: |
+          {
+            echo "tier4_status=${TIER4_STATUS}"
+            echo "launch_posture=${LAUNCH_POSTURE}"
+            echo "note=Collection-only workflow. Runtime PASS/GO is intentionally not asserted."
+          } > security-readiness/evidence-artifacts/tier4-ci-collection/collection-status.txt
+
+      - name: Upload Tier 4 collection artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tier4-runtime-collection
+          path: |
+            security-readiness/evidence-artifacts/tier4-ci-collection/pytest-collect.log
+            security-readiness/evidence-artifacts/tier4-ci-collection/collection-status.txt
+          if-no-files-found: warn
