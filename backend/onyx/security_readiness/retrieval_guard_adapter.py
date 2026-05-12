@@ -101,3 +101,43 @@ def enforce_retrieval_authorization(
                 },
             )
             raise OnyxError(OnyxErrorCode.INSUFFICIENT_PERMISSIONS, str(e)) from e
+
+
+def enforce_bypass_acl_contract(
+    *,
+    bypass_acl: bool,
+    trusted_system_context: bool,
+    actor_id: str | None,
+    audit_logger: Any,
+) -> None:
+    """Fail closed unless bypass ACL is explicitly trusted system context."""
+    if not bypass_acl:
+        return
+
+    if not trusted_system_context:
+        audit_logger.emit_authorization_event(
+            action_type="retrieval.bypass_acl.deny",
+            decision="deny",
+            reason="bypass_acl requires trusted system context",
+            actor_id=actor_id,
+            resource_type="retrieval_acl",
+            resource_id="global",
+            policy_id="bypass_acl_trusted_system_context",
+            fail_closed=True,
+            evidence_status="Verified",
+        )
+        raise OnyxError(
+            OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
+            "bypass_acl requires trusted_system_context=True",
+        )
+
+    audit_logger.emit_authorization_event(
+        action_type="retrieval.bypass_acl.allow",
+        decision="allow",
+        reason="trusted system context asserted",
+        actor_id=actor_id,
+        resource_type="retrieval_acl",
+        resource_id="global",
+        policy_id="bypass_acl_trusted_system_context",
+        evidence_status="Verified",
+    )

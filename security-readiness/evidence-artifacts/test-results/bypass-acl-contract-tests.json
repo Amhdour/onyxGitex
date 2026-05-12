@@ -1,0 +1,19 @@
+{
+  "artifact": "bypass-acl-contract-tests",
+  "date": "2026-05-12",
+  "status": "Partially Confirmed",
+  "launch_gate": "NOT_ENOUGH_EVIDENCE",
+  "commands": [
+    {
+      "command": "pytest -q backend/tests/unit/onyx/security_readiness/test_bypass_acl_contract.py",
+      "result": "blocked",
+      "error": "ModuleNotFoundError: No module named 'fastapi_users'"
+    }
+  ],
+  "assertions": {
+    "requires_trusted_system_context": "Defined in code; execution blocked",
+    "fails_closed_without_trusted_context": "Defined in code; execution blocked",
+    "emits_audit_event": "Defined in code; execution blocked",
+    "normal_user_cannot_enable": "Defined in code; execution blocked"
+  }
+}

@@ -118,6 +118,8 @@ class ChunkSearchRequest(BasicChunkRequest):
 
     # Use with caution!
     bypass_acl: bool = False
+    # Must be explicitly set by trusted internal callers when bypass_acl=True
+    trusted_system_context: bool = False
 
 
 # From the Chat Session we know what project (if any) this search should include
