@@ -15,7 +15,7 @@ Provide a narrow, dependency-light proof that the llm loop tool call contract ca
 - RAG_PLUS_TOOLS + missing router => deny.
 - RAG_PLUS_TOOLS + missing user_id => deny.
 - RAG_PLUS_TOOLS + missing tool_policy => deny.
-- RAG_PLUS_TOOLS + complete context => pass `authorization_router`, `user_id`, `tool_policy`, `approval_id` into runner.
+- RAG_PLUS_TOOLS + complete context => pass `authorization_router`, `user_id`, `tool_policy`, `approval_id` into runner, including `audit_events` and `runtime_trace`.
 - High-risk tool + no approval => deny via mocked router/runner path.
 - Deny path emits audit event.
 - Deny path emits runtime trace event.

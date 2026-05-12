@@ -36,8 +36,6 @@ def test_rag_only_denies_tool_calls_before_run_tool_calls(fake_call: dict[str, A
             launch_mode="RAG_ONLY",
             tool_calls=[fake_call],
             run_tool_calls_fn=_should_not_run,
-            tools=[],
-            msg_history=[],
             authorization_router=ToolAuthorizationRouter(),
             user_id="user-1",
             tool_policy={"python": {"allowed": True, "risk_level": "low"}},
@@ -52,8 +50,6 @@ def test_rag_plus_tools_missing_router_fails_closed(fake_call: dict[str, Any]) -
             launch_mode="RAG_PLUS_TOOLS",
             tool_calls=[fake_call],
             run_tool_calls_fn=lambda **_: None,
-            tools=[],
-            msg_history=[],
             authorization_router=None,
             user_id="user-1",
             tool_policy={"python": {"allowed": True, "risk_level": "low"}},
@@ -66,8 +62,6 @@ def test_rag_plus_tools_missing_identity_fails_closed(fake_call: dict[str, Any])
             launch_mode="RAG_PLUS_TOOLS",
             tool_calls=[fake_call],
             run_tool_calls_fn=lambda **_: None,
-            tools=[],
-            msg_history=[],
             authorization_router=ToolAuthorizationRouter(),
             user_id=None,
             tool_policy={"python": {"allowed": True, "risk_level": "low"}},
@@ -80,15 +74,34 @@ def test_rag_plus_tools_missing_policy_fails_closed(fake_call: dict[str, Any]) -
             launch_mode="RAG_PLUS_TOOLS",
             tool_calls=[fake_call],
             run_tool_calls_fn=lambda **_: None,
-            tools=[],
-            msg_history=[],
             authorization_router=ToolAuthorizationRouter(),
             user_id="user-1",
             tool_policy=None,
         )
 
 
-def test_rag_plus_tools_full_context_passes_router_user_policy_to_runner(
+def test_rag_plus_tools_full_context_calls_mock_runner(fake_call: dict[str, Any]) -> None:
+    called = False
+
+    def _mock_run_tool_calls(**_: Any) -> str:
+        nonlocal called
+        called = True
+        return "ok"
+
+    result = run_tool_calls_with_runtime_context(
+        launch_mode="RAG_PLUS_TOOLS",
+        tool_calls=[fake_call],
+        run_tool_calls_fn=_mock_run_tool_calls,
+        authorization_router=ToolAuthorizationRouter(),
+        user_id="user-1",
+        tool_policy={"python": {"allowed": True, "risk_level": "low"}},
+    )
+
+    assert called is True
+    assert result == "ok"
+
+
+def test_rag_plus_tools_full_context_forwards_required_authorization_fields(
     fake_call: dict[str, Any],
 ) -> None:
     captured: dict[str, Any] = {}
@@ -99,25 +112,28 @@ def test_rag_plus_tools_full_context_passes_router_user_policy_to_runner(
 
     policy = {"python": {"allowed": True, "risk_level": "low"}}
     router = ToolAuthorizationRouter()
+    audit_events: list[dict[str, Any]] = []
+    runtime_trace: list[dict[str, Any]] = []
 
     result = run_tool_calls_with_runtime_context(
         launch_mode="RAG_PLUS_TOOLS",
         tool_calls=[fake_call],
         run_tool_calls_fn=_mock_run_tool_calls,
-        tools=["fake-tool"],
-        msg_history=["m1"],
         authorization_router=router,
         user_id="user-1",
         tool_policy=policy,
         approval_id="approval-123",
-        audit_events=[],
-        runtime_trace=[],
+        audit_events=audit_events,
+        runtime_trace=runtime_trace,
     )
 
     assert result == "ok"
     assert captured["authorization_router"] is router
     assert captured["user_id"] == "user-1"
     assert captured["tool_policy"] == policy
+    assert captured["approval_id"] == "approval-123"
+    assert captured["audit_events"] is audit_events
+    assert captured["runtime_trace"] is runtime_trace
 
 
 def test_high_risk_tool_without_approval_is_denied_by_mocked_router_runner(
@@ -136,8 +152,6 @@ def test_high_risk_tool_without_approval_is_denied_by_mocked_router_runner(
         launch_mode="RAG_PLUS_TOOLS",
         tool_calls=[fake_call],
         run_tool_calls_fn=_mock_run_tool_calls,
-        tools=[],
-        msg_history=[],
         authorization_router=ToolAuthorizationRouter(),
         user_id="user-1",
         tool_policy={"python": {"allowed": True, "risk_level": "high"}},
@@ -155,8 +169,6 @@ def test_deny_path_emits_audit_event_on_guard_failure(fake_call: dict[str, Any])
             launch_mode="RAG_PLUS_TOOLS",
             tool_calls=[fake_call],
             run_tool_calls_fn=lambda **_: None,
-            tools=[],
-            msg_history=[],
             authorization_router=ToolAuthorizationRouter(),
             user_id=None,
             tool_policy={"python": {"allowed": True, "risk_level": "low"}},
@@ -177,8 +189,6 @@ def test_deny_path_emits_runtime_trace_on_guard_failure(fake_call: dict[str, Any
             launch_mode="RAG_PLUS_TOOLS",
             tool_calls=[fake_call],
             run_tool_calls_fn=lambda **_: None,
-            tools=[],
-            msg_history=[],
             authorization_router=ToolAuthorizationRouter(),
             user_id="user-1",
             tool_policy=None,
