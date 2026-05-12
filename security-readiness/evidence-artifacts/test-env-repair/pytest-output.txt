@@ -1,0 +1,34 @@
+Attempt 1:
+$ cd backend && uv run --python 3.11 --frozen pytest tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py -q
+error: Failed to download https://github.com/astral-sh/python-build-standalone/releases/download/20250712/cpython-3.11.13%2B20250712-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz
+  Caused by: Request failed after 3 retries
+  Caused by: error sending request for url (https://github.com/astral-sh/python-build-standalone/releases/download/20250712/cpython-3.11.13%2B20250712-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz)
+  Caused by: client error (Connect)
+  Caused by: tunnel error: unsuccessful
+
+Attempt 2:
+$ cd backend && PYENV_VERSION=3.11.15 uv run --python 3.11.15 --frozen pytest tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py -q
+Using CPython 3.11.15 interpreter at: /root/.pyenv/versions/3.11.15/bin/python3.11
+Removed virtual environment at: /workspace/onyxGitex/.venv
+Creating virtual environment at: /workspace/onyxGitex/.venv
+   Building onyx @ file:///workspace/onyxGitex
+  × Failed to download `pillow==12.2.0`
+  ├─▶ Failed to fetch:
+  │   `https://files.pythonhosted.org/packages/e9/bd/e51a61b1054f09437acfbc2ff9106c30d1eb76bc1453d428399946781253/pillow-12.2.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl`
+  ├─▶ Request failed after 3 retries
+  ├─▶ error sending request for url
+  │   (https://files.pythonhosted.org/packages/e9/bd/e51a61b1054f09437acfbc2ff9106c30d1eb76bc1453d428399946781253/pillow-12.2.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl)
+  ├─▶ client error (Connect)
+  ╰─▶ tunnel error: unsuccessful
+
+Attempt 3 (minimal group strategy):
+$ cd backend && PYENV_VERSION=3.11.15 uv run --python 3.11.15 --frozen --no-default-groups --group backend --with pytest pytest tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py -q
+   Building onyx @ file:///workspace/onyxGitex
+  × Failed to download `kubernetes==31.0.0`
+  ├─▶ Failed to fetch:
+  │   `https://files.pythonhosted.org/packages/fb/a8/17f5e28cecdbd6d48127c22abdb794740803491f422a11905c4569d8e139/kubernetes-31.0.0-py2.py3-none-any.whl`
+  ├─▶ Request failed after 3 retries
+  ├─▶ error sending request for url
+  │   (https://files.pythonhosted.org/packages/fb/a8/17f5e28cecdbd6d48127c22abdb794740803491f422a11905c4569d8e139/kubernetes-31.0.0-py2.py3-none-any.whl)
+  ├─▶ client error (Connect)
+  ╰─▶ tunnel error: unsuccessful

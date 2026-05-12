@@ -1,0 +1,1 @@
+cd backend && PYENV_VERSION=3.11.15 uv run --python 3.11.15 --frozen --no-default-groups --group backend --with pytest pytest tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py -q
