@@ -1,0 +1,18 @@
+$ uv python pin 3.12
+Pinned `.python-version` to `3.12`
+$ uv sync --python 3.12 --group backend --group dev
+Using CPython 3.12.13 interpreter at: /root/.pyenv/versions/3.12.13/bin/python3.12
+Removed virtual environment at: .venv
+Creating virtual environment at: .venv
+Resolved 444 packages in 6ms
+   Building onyx @ file:///workspace/onyxGitex
+  × Failed to download `numpy==2.4.1`
+  ├─▶ Failed to fetch:
+  │   `https://files.pythonhosted.org/packages/d9/7d/9c8a781c88933725445a859cac5d01b5871588a15969ee6aeb618ba99eee/numpy-2.4.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl`
+  ├─▶ Request failed after 3 retries
+  ├─▶ error sending request for url
+  │   (https://files.pythonhosted.org/packages/d9/7d/9c8a781c88933725445a859cac5d01b5871588a15969ee6aeb618ba99eee/numpy-2.4.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl)
+  ├─▶ client error (Connect)
+  ╰─▶ tunnel error: unsuccessful
+  help: `numpy` (v2.4.1) was included because `onyx:model-server` (v0.0.0)
+        depends on `numpy`
