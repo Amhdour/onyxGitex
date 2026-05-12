@@ -29,6 +29,7 @@ from onyx.security_readiness.control_layer import PolicyDecisionEngine
 from onyx.security_readiness.control_layer import RetrievalAuthorizationGuard
 from onyx.security_readiness.control_layer import RuntimeTracer
 from onyx.security_readiness.retrieval_guard_adapter import RetrievalGuardDependencies
+from onyx.security_readiness.retrieval_guard_adapter import enforce_bypass_acl_contract
 from onyx.security_readiness.retrieval_guard_adapter import enforce_retrieval_authorization
 from onyx.secondary_llm_flows.source_filter import extract_source_filter
 from onyx.secondary_llm_flows.time_filter import extract_time_filter
@@ -59,6 +60,7 @@ def _build_index_filters(
     query: str | None = None,
     llm: LLM | None = None,
     bypass_acl: bool = False,
+    trusted_system_context: bool = False,
     # Assistant knowledge filters
     attached_document_ids: list[str] | None = None,
     hierarchy_node_ids: list[int] | None = None,
@@ -69,6 +71,13 @@ def _build_index_filters(
         raise RuntimeError("LLM and query are required for auto detect filters")
 
     base_filters = user_provided_filters or BaseFilters()
+
+    enforce_bypass_acl_contract(
+        bypass_acl=bypass_acl,
+        trusted_system_context=trusted_system_context,
+        actor_id=str(user.id) if user is not None and user.id is not None else None,
+        audit_logger=_retrieval_audit_logger,
+    )
 
     if base_filters.document_set is not None and not bypass_acl:
         enforce_retrieval_authorization(
@@ -339,6 +348,7 @@ def search_pipeline(
         query=chunk_search_request.query,
         llm=llm,
         bypass_acl=chunk_search_request.bypass_acl,
+        trusted_system_context=chunk_search_request.trusted_system_context,
         attached_document_ids=attached_document_ids,
         hierarchy_node_ids=hierarchy_node_ids,
         acl_filters=acl_filters,
