@@ -24,6 +24,13 @@ from onyx.federated_connectors.federated_retrieval import FederatedRetrievalInfo
 from onyx.llm.interfaces import LLM
 from onyx.natural_language_processing.english_stopwords import strip_stopwords
 from onyx.natural_language_processing.search_nlp_models import EmbeddingModel
+from onyx.security_readiness.control_layer import AuditLogger
+from onyx.security_readiness.control_layer import AuthContext
+from onyx.security_readiness.control_layer import FailClosedError
+from onyx.security_readiness.control_layer import PolicyDecisionEngine
+from onyx.security_readiness.control_layer import ResourcePolicy
+from onyx.security_readiness.control_layer import RetrievalAuthorizationGuard
+from onyx.security_readiness.control_layer import RuntimeTracer
 from onyx.secondary_llm_flows.source_filter import extract_source_filter
 from onyx.secondary_llm_flows.time_filter import extract_time_filter
 from onyx.utils.logger import setup_logger
@@ -35,6 +42,9 @@ from shared_configs.configs import MULTI_TENANT
 from shared_configs.contextvars import get_current_tenant_id
 
 logger = setup_logger()
+_retrieval_auth_guard = RetrievalAuthorizationGuard(PolicyDecisionEngine())
+_retrieval_audit_logger = AuditLogger()
+_retrieval_runtime_tracer = RuntimeTracer()
 
 
 @log_function_time(print_only=True)
@@ -61,16 +71,89 @@ def _build_index_filters(
 
     base_filters = user_provided_filters or BaseFilters()
 
+    if base_filters.document_set is not None and not bypass_acl:
+        if user is None or user.id is None:
+            raise OnyxError(
+                OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
+                "Missing identity context for retrieval authorization.",
+            )
+        if db_session is None:
+            raise OnyxError(
+                OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
+                "Missing document permission context for retrieval authorization.",
+            )
+
+        accessible_names = filter_document_set_names_by_user_access(
+            db_session=db_session,
+            document_set_names=base_filters.document_set,
+            user=user,
+        )
+        policy_map = {
+            name: ResourcePolicy(
+                resource_id=name,
+                allowed_users=frozenset({str(user.id)}),
+            )
+            for name in accessible_names
+        }
+        auth_context = AuthContext(user_id=str(user.id))
+
+        for document_set_name in base_filters.document_set:
+            try:
+                decision = _retrieval_auth_guard.authorize_document(
+                    auth_context=auth_context,
+                    document_id=document_set_name,
+                    policy_map=policy_map,
+                )
+                _retrieval_audit_logger.emit(
+                    "retrieval_authorization_decision",
+                    {
+                        "document_set": document_set_name,
+                        "user_id": str(user.id),
+                        "decision": "allow" if decision.allowed else "deny",
+                        "reason": decision.reason,
+                    },
+                )
+                _retrieval_runtime_tracer.emit(
+                    "retrieval.authorization",
+                    {
+                        "document_set": document_set_name,
+                        "decision": "allow" if decision.allowed else "deny",
+                    },
+                )
+                if not decision.allowed:
+                    raise OnyxError(
+                        OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
+                        f"User does not have access to document set: {document_set_name}",
+                    )
+            except FailClosedError as e:
+                _retrieval_audit_logger.emit(
+                    "retrieval_authorization_decision",
+                    {
+                        "document_set": document_set_name,
+                        "user_id": str(user.id),
+                        "decision": "deny",
+                        "reason": str(e),
+                    },
+                )
+                _retrieval_runtime_tracer.emit(
+                    "retrieval.authorization",
+                    {
+                        "document_set": document_set_name,
+                        "decision": "deny",
+                        "reason": str(e),
+                    },
+                )
+                raise OnyxError(
+                    OnyxErrorCode.INSUFFICIENT_PERMISSIONS,
+                    str(e),
+                ) from e
+
     # When the caller supplies document set names, enforce that the user has view
     # access to each one. This closes the API-layer bypass where a user could
     # override the persona's configured document sets with arbitrary names.
     # Skipped when bypass_acl is set (system callers) or when no db_session is
     # available for the lookup.
-    if (
-        base_filters.document_set is not None
-        and not bypass_acl
-        and db_session is not None
-    ):
+    if base_filters.document_set is not None and not bypass_acl and db_session is not None:
         accessible_names = filter_document_set_names_by_user_access(
             db_session=db_session,
             document_set_names=base_filters.document_set,

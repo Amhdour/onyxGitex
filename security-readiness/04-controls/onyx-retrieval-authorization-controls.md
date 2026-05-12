@@ -1,42 +1,35 @@
 # Retrieval Authorization Controls
 
-**Organization:** Atlas Advisory Group (Fictional)  
-**Program:** Internal Company Knowledge Assistant ("Morgan Stanley style")  
-**Artifact Owner:** AI Trust & Security Readiness Engineer  
-**Draft Date:** 2026-05-11  
-**Document Status:** Draft (Readiness Documentation Phase)
+Date: 2026-05-11
+Status: Partially Confirmed
 
-## Primary Launch Question
-Can Atlas Advisory Group safely launch an internal knowledge assistant without leaking private documents or giving unsupported answers?
+## Control Objective
+Ensure unauthorized content is blocked before retrieval output can flow into answer context or citations.
 
-## Evidence Status
-- **Not Collected:** Runtime production telemetry, red-team execution logs, and live policy decision logs.
-- **Pending:** Control test execution in staging, dashboard wiring, and launch-gate sign-offs.
-- **Collected:** Repository audit artifacts under `security-readiness/00-repo-audit/` and scoped planning documentation.
-- **Verified:** Only items explicitly traceable to repository files and static architecture assumptions.
+## Runtime Control
+- Control: `RetrievalAuthorizationGuard`
+- Enforced at: `backend/onyx/context/search/pipeline.py::_build_index_filters`
+- Enforcement timing: before `IndexFilters` are finalized and before retrieval execution.
 
-## Current Assurance View
-- **Verified:** Documentation scope and repository audit references are present.
-- **Partially Confirmed:** Design-time controls are defined but not execution-verified.
-- **Unknown:** Runtime effectiveness, false positive/negative rates, and incident response timing.
+## Decision Inputs
+- Identity context: `user.id`
+- Requested resources: `BaseFilters.document_set`
+- Permission context: `filter_document_set_names_by_user_access(...)` output
 
-## Key Inputs
-- `security-readiness/00-repo-audit/phase-1-findings.md`
-- `security-readiness/00-repo-audit/onyx-auth-access-paths.md`
-- `security-readiness/00-repo-audit/onyx-retrieval-paths.md`
-- `security-readiness/00-repo-audit/onyx-observability-paths.md`
-- `security-readiness/00-repo-audit/onyx-tool-mcp-paths.md`
+## Fail-Closed Conditions
+- Missing identity context -> deny (`INSUFFICIENT_PERMISSIONS`)
+- Missing document permission context -> deny (`INSUFFICIENT_PERMISSIONS`)
+- Missing per-resource policy in guard policy map -> deny (`INSUFFICIENT_PERMISSIONS`)
 
-## Content
-- Draft deliverable populated for Priority 1 with Atlas-specific readiness context.
-- Includes explicit statuses (Not Collected/Pending/Collected/Verified), assumptions, and unresolved unknowns.
-- References repository-audit artifacts for available evidence; avoids unsupported implementation claims.
-- Maintains launch posture as **Draft / Not Yet Approved** until runtime evidence is attached.
+## Decision Logging
+- Audit event: `retrieval_authorization_decision`
+- Runtime trace: `retrieval.authorization`
 
-## Open Unknowns
-1. Unknown: Whether department-level authorization is fail-closed for all retrieval paths in runtime.
-2. Unknown: Whether unsupported-answer suppression consistently triggers under adversarial prompts.
-3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review.
+## Evidence
+- Code path updated: `backend/onyx/context/search/pipeline.py`
+- Targeted tests: `backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py`
+- Execution artifact set: `security-readiness/evidence-artifacts/rag-boundary-001/`
 
-## Next Evidence Step
-Run scoped control and abuse-case tests defined in `security-readiness/08-testing/` and attach command output before any launch approval.
+## Assurance Statement
+- **Partially Confirmed**: guard is now called in a real retrieval path.
+- **Unknown**: full end-to-end validation for final-answer/citation exclusion remains pending successful integration test execution in a fully provisioned environment.

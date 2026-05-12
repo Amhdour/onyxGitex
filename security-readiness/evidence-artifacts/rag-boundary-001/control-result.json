@@ -1,0 +1,14 @@
+{
+  "control_id": "RAG-BOUNDARY-001",
+  "date": "2026-05-11",
+  "status": "Partially Confirmed",
+  "summary": "RetrievalAuthorizationGuard wired into _build_index_filters for document_set authorization with fail-closed checks; targeted test execution blocked by missing test dependency fastapi_users.",
+  "verified": [
+    "Guard invocation before IndexFilters construction for document_set path",
+    "Fail-closed OnyxError for missing identity context",
+    "Fail-closed OnyxError for missing document permission context"
+  ],
+  "unknowns": [
+    "End-to-end runtime assertion for denied content exclusion from final answer context/citations"
+  ]
+}
