@@ -154,6 +154,18 @@
         ]
       },
       {
+        "id": "mcp_deny_before_dispatch_adjacent",
+        "description": "MCP deny-before-dispatch runtime-adjacent evidence is present (non-critical positive signal)",
+        "critical": false,
+        "when": "always",
+        "evidence_file": "security-readiness/evidence-artifacts/test-results/mcp-deny-before-dispatch-tests.json",
+        "pass_field": "mcp_deny_before_dispatch_adjacent_status",
+        "pass_values": [
+          "PASS",
+          "PASSED"
+        ]
+      },
+      {
         "id": "tool_runtime_wiring_verified",
         "description": "Tool runtime wiring verification is documented and passing for RAG+Tools mode",
         "critical": true,
