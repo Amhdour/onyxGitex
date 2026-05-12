@@ -1,0 +1,1 @@
+PYTHONPATH=backend pytest -q backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py

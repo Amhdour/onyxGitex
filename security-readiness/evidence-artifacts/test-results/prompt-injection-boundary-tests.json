@@ -1,27 +1,16 @@
 {
-  "artifact": "prompt-injection-boundary-tests",
-  "executed_at": "2026-05-12T00:00:00Z",
-  "scope": "Policy/adapter-level prompt-injection boundary checks for retrieval authorization",
-  "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/prompt-injection-boundary/test_prompt_injection_boundary.py",
-  "result": {
-    "tests_run": 8,
-    "tests_passed": 8,
-    "tests_failed": 0,
-    "duration_seconds": 0.09
-  },
-  "assertions": [
-    "Authorization decision remains deny.",
-    "Denied document IDs do not enter allowed context.",
-    "Denied source/citation fields are excluded.",
-    "Audit event records denial.",
-    "No prompt text can change authorization_decisions."
+  "suite_id": "prompt_injection_boundary_tests",
+  "status": "BLOCKED",
+  "runtime_level": "TIER_4",
+  "launch_posture": "NOT_ENOUGH_EVIDENCE",
+  "tests_run": 0,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "blockers": [
+    "Runtime test execution blocked before fixture setup: ModuleNotFoundError: No module named 'fastapi_users'"
   ],
-  "limitations": [
-    "No external LLM APIs were called.",
-    "This is not a full runtime prompt-injection proof; it validates the policy/adapter boundary only."
-  ],
-  "launch_gate": {
-    "status": "NOT_ENOUGH_EVIDENCE",
-    "reason": "Policy/adapter tests are passing but broader runtime and integrated red-team evidence is still required."
-  }
+  "audit_events": [],
+  "runtime_traces": [],
+  "forbidden_markers_checked": [],
+  "forbidden_markers_found": []
 }
