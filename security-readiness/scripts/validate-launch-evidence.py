@@ -277,6 +277,7 @@ def main() -> int:
             "tool_runtime_wiring_adjacent": get_control_check_status(checked, failed, missing, "tool_runtime_wiring_adjacent"),
             "tool_runtime_wiring_research_agent_adjacent": get_control_check_status(checked, failed, missing, "tool_runtime_wiring_research_agent_adjacent"),
             "mcp_deny_before_dispatch_adjacent": get_control_check_status(checked, failed, missing, "mcp_deny_before_dispatch_adjacent"),
+            "tier4_artifact_writer_scaffold": get_control_check_status(checked, failed, missing, "tier4_artifact_writer_scaffold"),
         },
     }
 

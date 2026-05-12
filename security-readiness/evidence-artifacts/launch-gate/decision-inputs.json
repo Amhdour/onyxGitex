@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-12T19:49:26+00:00",
-  "git_commit": "128d77abeb5bceeb09bf5d56523cb93365a6d2e2",
+  "generated_at": "2026-05-12T19:54:46+00:00",
+  "git_commit": "c5011093c5bce4046764359bdd5dfe5e1693c017",
   "inputs": {
     "evidence_registry": "security-readiness/47-evidence-automation/evidence-artifact-registry.json",
     "evidence_validation": "security-readiness/evidence-artifacts/evidence-validation/validation-result.json",
