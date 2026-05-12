@@ -6,9 +6,9 @@ Evidence recorder: Codex agent
 ## Workflow Execution Metadata
 - Workflow name: `tier4-runtime-collection`
 - Workflow file: `.github/workflows/tier4-runtime-collection.yml`
-- Workflow run URL: **<real URL>**
-- Commit SHA: **<real SHA>**
-- Run conclusion (`success` / `failure` / `cancelled`): **<success/failure/cancelled>**
+- Workflow run URL: **NOT_PROVIDED**
+- Commit SHA: **NOT_PROVIDED**
+- Run conclusion (`success` / `failure` / `cancelled`): **NOT_PROVIDED**
 
 ## Collection Outcome
 - Collection status (`COLLECTED_SKIPPED` / `FAILED_COLLECTION` / `FAILED_INSTALL`): **COLLECTED_SKIPPED**
