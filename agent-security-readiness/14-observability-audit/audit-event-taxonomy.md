@@ -1,0 +1,14 @@
+agent.request.received
+agent.identity.bound
+agent.plan.created
+policy.decision.requested
+policy.decision.allowed
+policy.decision.denied
+approval.required
+approval.granted
+approval.denied
+tool.execution.started
+tool.execution.completed
+tool.execution.blocked
+kill_switch.enabled
+incident.flagged

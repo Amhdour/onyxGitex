@@ -1,0 +1,1 @@
+Abuse cases: unapproved email, unapproved export, cross-department access, malicious retrieved instruction obedience, unknown tool use, continue after policy failure, memory leakage, missing audit log, ignored kill switch.

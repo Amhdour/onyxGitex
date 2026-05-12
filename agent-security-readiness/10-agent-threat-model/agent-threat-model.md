@@ -1,0 +1,1 @@
+STRIDE-style threats: spoofed user identity, unauthorized tool call, privilege escalation, prompt injection, approval bypass, memory leakage, tool output poisoning, audit tampering, external API misuse, data export abuse, kill switch failure.
