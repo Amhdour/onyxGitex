@@ -1,0 +1,1 @@
+PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/trusted-system-context-input/test_trusted_context_schema_injection.py
