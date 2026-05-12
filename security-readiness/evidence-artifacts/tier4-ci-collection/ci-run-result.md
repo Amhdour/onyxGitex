@@ -6,9 +6,9 @@ Evidence recorder: Codex agent
 ## Workflow Execution Metadata
 - Workflow name: `tier4-runtime-collection`
 - Workflow file: `.github/workflows/tier4-runtime-collection.yml`
-- Workflow run URL: **[INPUT_REQUIRED]**
-- Commit SHA: **[INPUT_REQUIRED]**
-- Run conclusion (`success` / `failure` / `cancelled`): **[INPUT_REQUIRED]**
+- Workflow run URL: **UNAVAILABLE**
+- Commit SHA: **UNAVAILABLE**
+- Run conclusion (`success` / `failure` / `cancelled`): **UNAVAILABLE**
 
 ## Collection Outcome
 - Collection status (`COLLECTED_SKIPPED` / `FAILED_COLLECTION` / `FAILED_INSTALL`): **COLLECTED_SKIPPED**
@@ -26,4 +26,4 @@ Evidence recorder: Codex agent
 
 ## Evidence Classification
 - CI collection workflow exists in-repo: **Verified**.
-- Runtime CI execution result for this specific run: **Partially Confirmed** (status class recorded as `COLLECTED_SKIPPED`; run URL/SHA/conclusion still required for full audit traceability).
+- Runtime CI execution result for this specific run: **Unknown** (real workflow run URL, commit SHA, run conclusion, and downloaded CI artifacts were not provided in this workspace).
