@@ -67,6 +67,9 @@ from onyx.tools.tool_implementations.search.search_tool import SearchTool
 from onyx.tools.tool_implementations.web_search.utils import extract_url_snippet_map
 from onyx.tools.tool_implementations.web_search.web_search_tool import WebSearchTool
 from onyx.tools.tool_runner import run_tool_calls
+from onyx.security_readiness.tool_runtime_wiring_adapter import (
+    run_tool_calls_with_runtime_context,
+)
 from onyx.tools.utils import generate_tools_description
 from onyx.tracing.framework.create import function_span
 from onyx.utils.logger import setup_logger
@@ -82,6 +85,35 @@ RESEARCH_AGENT_TIMEOUT_MESSAGE = "Research Agent timed out after 30 minutes"
 RESEARCH_AGENT_FORCE_REPORT_SECONDS = 12 * 60
 # May be good to experiment with this, empirically reports of around 5,000 tokens are pretty good.
 MAX_INTERMEDIATE_REPORT_LENGTH_TOKENS = 10000
+
+
+def _run_research_agent_tool_calls(
+    *,
+    tool_runtime_enforcement_mode: str,
+    tool_calls: list[ToolCallKickoff],
+    tool_runner_kwargs: dict[str, Any],
+    authorization_router: object | None,
+    user_id: str | None,
+    tool_policy: dict[str, Any] | None,
+    approval_id: str | None,
+    audit_events: list[dict[str, Any]] | None,
+    runtime_trace: list[dict[str, Any]] | None,
+):
+    if tool_runtime_enforcement_mode == "DISABLED":
+        return run_tool_calls(tool_calls=tool_calls, **tool_runner_kwargs)
+
+    return run_tool_calls_with_runtime_context(
+        launch_mode=tool_runtime_enforcement_mode,
+        tool_calls=tool_calls,
+        run_tool_calls_fn=run_tool_calls,
+        authorization_router=authorization_router,
+        user_id=user_id,
+        tool_policy=tool_policy,
+        approval_id=approval_id,
+        audit_events=audit_events,
+        runtime_trace=runtime_trace,
+        **tool_runner_kwargs,
+    )
 
 
 def generate_intermediate_report(
@@ -213,6 +245,12 @@ def run_research_agent_call(
     is_reasoning_model: bool,
     token_counter: Callable[[str], int],
     user_identity: LLMUserIdentity | None,
+    tool_runtime_enforcement_mode: str = "DISABLED",
+    authorization_router: object | None = None,
+    tool_policy: dict[str, Any] | None = None,
+    approval_id: str | None = None,
+    audit_events: list[dict[str, Any]] | None = None,
+    runtime_trace: list[dict[str, Any]] | None = None,
 ) -> ResearchAgentCallResult | None:
     turn_index = research_agent_call.placement.turn_index
     tab_index = research_agent_call.placement.tab_index
@@ -444,27 +482,36 @@ def run_research_agent_call(
                     most_recent_reasoning = llm_step_result.reasoning
                     continue
                 else:
-                    parallel_tool_call_results = run_tool_calls(
+                    parallel_tool_call_results = _run_research_agent_tool_calls(
+                        tool_runtime_enforcement_mode=tool_runtime_enforcement_mode,
                         tool_calls=tool_calls,
-                        tools=current_tools,
-                        message_history=msg_history,
-                        user_memory_context=None,
-                        user_info=None,
-                        citation_mapping=citation_mapping,
-                        next_citation_num=citation_processor.get_next_citation_number(),
-                        # Packets currently cannot differentiate between parallel calls in a nested level
-                        # so we just cannot show parallel calls in the UI. This should not happen for deep research anyhow.
-                        max_concurrent_tools=1,
-                        # May be better to not do this step, hard to say, needs to be tested
-                        skip_search_query_expansion=False,
-                        url_snippet_map=extract_url_snippet_map(
-                            [
-                                search_doc
-                                for tool_call in state_container.get_tool_calls()
-                                if tool_call.search_docs
-                                for search_doc in tool_call.search_docs
-                            ]
-                        ),
+                        tool_runner_kwargs={
+                            "tools": current_tools,
+                            "message_history": msg_history,
+                            "user_memory_context": None,
+                            "user_info": None,
+                            "citation_mapping": citation_mapping,
+                            "next_citation_num": citation_processor.get_next_citation_number(),
+                            # Packets currently cannot differentiate between parallel calls in a nested level
+                            # so we just cannot show parallel calls in the UI. This should not happen for deep research anyhow.
+                            "max_concurrent_tools": 1,
+                            # May be better to not do this step, hard to say, needs to be tested
+                            "skip_search_query_expansion": False,
+                            "url_snippet_map": extract_url_snippet_map(
+                                [
+                                    search_doc
+                                    for tool_call in state_container.get_tool_calls()
+                                    if tool_call.search_docs
+                                    for search_doc in tool_call.search_docs
+                                ]
+                            ),
+                        },
+                        authorization_router=authorization_router,
+                        user_id=(str(user_identity.id) if user_identity and user_identity.id else None),
+                        tool_policy=tool_policy,
+                        approval_id=approval_id,
+                        audit_events=audit_events,
+                        runtime_trace=runtime_trace,
                     )
                     tool_responses = parallel_tool_call_results.tool_responses
                     citation_mapping = (

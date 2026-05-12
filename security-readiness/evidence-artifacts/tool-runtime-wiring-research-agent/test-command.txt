@@ -1,0 +1,1 @@
+PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/tool-runtime-wiring-research-agent/test_research_agent_tool_wiring.py
