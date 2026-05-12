@@ -43,13 +43,13 @@ Use evidence-limited wording; do not state runtime PASS or launch approval.
 
 
 ## 13. Latest RAG runtime boundary execution attempt (2026-05-12)
-- Latest execution attempt date: **2026-05-12T21:51:25Z**
-- Latest git commit: **f90f2639edf5f477d1e595539956ce1c845a47db**
-- Latest runtime status: **BLOCKED (DEPENDENCY_FAILURE)**
+- Latest execution attempt date: **2026-05-12T21:58:04Z**
+- Latest git commit: **76d3b85c23c470b6f5d5ec3884eb723ab937bf23**
+- Previous blocker: **DEPENDENCY_FAILURE (`fastapi_users` missing at pytest startup)**
+- Current blocker: **BLOCKED_PACKAGE_RESOLUTION (`uv sync` blocked by `onnxruntime==1.20.1` wheel incompatibility on CPython 3.14; `fastapi_users` remains unavailable)**
+- Dependency issue resolved: **No**
+- Latest runtime status: **BLOCKED (PARTIAL_COLLECTION / NOT_ENOUGH_EVIDENCE)**
 - Evidence package path: `security-readiness/evidence-artifacts/runtime-rag-boundary/`
-- Remaining blockers:
-  - Missing Python dependency `fastapi_users` during pytest startup.
-  - Backend runtime logs not yet captured.
-- Next required action: install backend test dependencies, rerun runtime boundary script, and capture backend logs.
+- Launch-gate impact: Runtime RAG boundary evidence remains insufficient; decision stays **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**.
 
 Decision remains: **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**.

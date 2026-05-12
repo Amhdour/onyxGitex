@@ -5,11 +5,14 @@
   "collection_status": "PARTIAL_COLLECTION",
   "evidence_status": "NOT_ENOUGH_EVIDENCE",
   "runtime_verified": false,
-  "blocker_type": "DEPENDENCY_FAILURE",
-  "timestamp": "2026-05-12T21:51:25Z",
-  "git_commit": "f90f2639edf5f477d1e595539956ce1c845a47db",
+  "blocker_type": "BLOCKED_PACKAGE_RESOLUTION",
+  "timestamp": "2026-05-12T21:58:04Z",
+  "git_commit": "76d3b85c23c470b6f5d5ec3884eb723ab937bf23",
   "test_command": "cd backend && python -m pytest -xv tests/integration/tests/chat/test_chat_document_set_access.py -k \"rag or boundary or document_set or access\"",
   "artifacts_present": [
+    "dependency-precheck.md",
+    "dependency-resolution.md",
+    "dependency-install-output.txt",
     "pytest-output.txt",
     "docker-compose-ps.txt",
     "env-manifest-redacted.txt",
@@ -17,16 +20,19 @@
     "test-command.txt",
     "timestamp.txt",
     "runtime-status.txt",
-    "execution-precheck.md"
+    "execution-precheck.md",
+    "runtime-execution-report.md",
+    "final-run-status.json"
   ],
   "artifacts_missing": [
     "backend-logs.txt"
   ],
   "open_blockers": [
-    "Python dependency missing during pytest startup: fastapi_users",
-    "Runtime RAG boundary integration test could not execute due to dependency import failure"
+    "uv sync --group backend --group dev failed: onnxruntime==1.20.1 has no cp314 wheel/sdist for current platform",
+    "fastapi_users remains unavailable in active runtime",
+    "Pytest import still fails before test collection with ModuleNotFoundError: fastapi_users"
   ],
-  "next_required_action": "Install backend test dependencies (including fastapi_users), re-run run-runtime-rag-boundary-check.sh, and capture backend runtime logs.",
+  "next_required_action": "Use a supported Python version for repository dependencies (e.g., cp311/cp312/cp313), run uv sync for backend/dev, then rerun runtime-rag-boundary script.",
   "claims_allowed": [
     "RAG boundary runtime execution was attempted",
     "Dependency failure evidence was captured",
@@ -37,5 +43,7 @@
     "Restricted content leakage is prevented",
     "Runtime enforcement is verified",
     "System is safe to launch"
-  ]
+  ],
+  "previous_blocker": "DEPENDENCY_FAILURE: fastapi_users missing during pytest startup",
+  "current_blocker": "BLOCKED_PACKAGE_RESOLUTION: uv sync blocked by onnxruntime wheel incompatibility on CPython 3.14; fastapi_users unresolved"
 }

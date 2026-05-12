@@ -1,4 +1,8 @@
-Runtime artifact logs status (2026-05-12): PRESENT (`runtime-status.txt`, `pytest-output.txt`, `git-commit.txt`, `timestamp.txt`, `test-command.txt`, `env-manifest-redacted.txt`, `docker-compose-ps.txt`).
+Dependency precheck artifact status (2026-05-12): PRESENT (`security-readiness/evidence-artifacts/runtime-rag-boundary/dependency-precheck.md`).
+
+Dependency resolution artifact status (2026-05-12): PRESENT, outcome BLOCKED_PACKAGE_RESOLUTION (`security-readiness/evidence-artifacts/runtime-rag-boundary/dependency-resolution.md`).
+
+Runtime artifact logs status (2026-05-12): PRESENT (`runtime-status.txt`, `pytest-output.txt`, `git-commit.txt`, `timestamp.txt`, `test-command.txt`, `env-manifest-redacted.txt`, `docker-compose-ps.txt`, `dependency-install-output.txt`).
 
 Screenshots, sanitized evidence, public README, architecture diagram, threat model, control matrix, launch gate example, CI artifact example, demo script, recruiter explanation, client explanation.
 
