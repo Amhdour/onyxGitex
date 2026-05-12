@@ -49,5 +49,11 @@
   ],
   "next_required_action": "Restore network/package download path and rerun uv sync, import checks, then rerun runtime boundary pytest.",
   "previous_blocker": "BLOCKED_PACKAGE_RESOLUTION/DEPENDENCY_FAILURE from earlier run (onnxruntime cp314 then numpy tunnel download).",
-  "current_blocker": "BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD"
+  "current_blocker": "BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD",
+  "ci_workflow_name": "RAG Boundary Runtime Evidence",
+  "ci_artifact_name": "rag-boundary-runtime-evidence",
+  "ci_run_status": "NOT_RUN",
+  "ci_run_url": null,
+  "ci_artifact_expected": "rag-boundary-runtime-evidence",
+  "evidence_collection_mode": "GITHUB_ACTIONS_WORKFLOW_DEFINED"
 }

@@ -96,3 +96,15 @@ Conclusion: **BLOCKED_DEPENDENCY**
 - Next action: restore dependency download connectivity and rerun sync + runtime script.
 
 Conclusion: **BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD**
+
+
+## GitHub Actions Evidence Workflow Added
+
+- Reason: local/Codex execution remains blocked by network/tunnel dependency download failures.
+- Workflow path: `.github/workflows/rag-boundary-runtime-evidence.yml`
+- Workflow name: `RAG Boundary Runtime Evidence`
+- Artifact name: `rag-boundary-runtime-evidence`
+- Workflow execution scope: runs `sync-rag-evidence-env.sh` then `run-runtime-rag-boundary-check.sh`, performs artifact inspection, and uploads the full runtime-rag-boundary evidence directory.
+- Current CI status: `CI_WORKFLOW_DEFINED / CI_NOT_RUN`
+- Current runtime status: preserve latest known `BLOCKED / PARTIAL_COLLECTION / NOT_ENOUGH_EVIDENCE` until CI run evidence exists.
+- Next required action: trigger workflow and review/download uploaded artifact package before updating launch-gate conclusions.

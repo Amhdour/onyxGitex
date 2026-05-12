@@ -1,0 +1,91 @@
+name: RAG Boundary Runtime Evidence
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  collect-rag-boundary-evidence:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Print versions
+        run: |
+          set -euo pipefail
+          python --version
+          python -c "import sys; print(sys.executable); print(sys.version)"
+          uv --version
+          git rev-parse HEAD
+
+      - name: Prepare scripts
+        run: |
+          set -euo pipefail
+          chmod +x security-readiness/evidence-artifacts/runtime-rag-boundary/scripts/sync-rag-evidence-env.sh
+          chmod +x security-readiness/evidence-artifacts/runtime-rag-boundary/scripts/run-runtime-rag-boundary-check.sh
+
+      - name: Run dependency sync evidence script
+        id: sync
+        continue-on-error: true
+        run: |
+          set +e
+          bash security-readiness/evidence-artifacts/runtime-rag-boundary/scripts/sync-rag-evidence-env.sh
+          rc=$?
+          echo "sync_exit_code=$rc" >> "$GITHUB_OUTPUT"
+          exit $rc
+
+      - name: Run runtime evidence script
+        id: runtime
+        continue-on-error: true
+        run: |
+          set +e
+          bash security-readiness/evidence-artifacts/runtime-rag-boundary/scripts/run-runtime-rag-boundary-check.sh
+          rc=$?
+          echo "runtime_exit_code=$rc" >> "$GITHUB_OUTPUT"
+          exit $rc
+
+      - name: Final artifact inspection
+        if: always()
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR="security-readiness/evidence-artifacts/runtime-rag-boundary"
+          cat "$EVIDENCE_DIR/dependency-sync-status.txt" || true
+          cat "$EVIDENCE_DIR/runtime-status.txt" || true
+          python -m json.tool "$EVIDENCE_DIR/final-run-status.json"
+          find "$EVIDENCE_DIR" -maxdepth 4 -type f | sort
+          echo "sync_exit_code=${{ steps.sync.outputs.sync_exit_code }}"
+          echo "runtime_exit_code=${{ steps.runtime.outputs.runtime_exit_code }}"
+
+      - name: Upload runtime evidence artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rag-boundary-runtime-evidence
+          path: security-readiness/evidence-artifacts/runtime-rag-boundary/
+          retention-days: 14
+
+      - name: Enforce post-upload status policy
+        if: always()
+        run: |
+          set -euo pipefail
+          EVIDENCE_DIR="security-readiness/evidence-artifacts/runtime-rag-boundary"
+          status="NOT_AVAILABLE"
+          if [[ -f "$EVIDENCE_DIR/runtime-status.txt" ]]; then
+            status="$(cat "$EVIDENCE_DIR/runtime-status.txt")"
+          fi
+          echo "Final runtime status: $status"
+          if [[ "$status" == "FAIL" ]]; then
+            echo "Runtime status is FAIL; marking job failed after artifact upload."
+            exit 1
+          fi
+          echo "Evidence preserved. Non-FAIL statuses remain review-driven."
