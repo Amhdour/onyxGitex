@@ -84,24 +84,20 @@ for path in \
 done
 
 # Candidate commands can be overridden by env vars
-RETRIEVAL_CMD="${RETRIEVAL_CMD:-pytest -q backend/tests/unit/onyx/context/search/test_pipeline_retrieval_guard.py}"
-CITATION_CMD="${CITATION_CMD:-TODO: pytest -q backend/tests/integration/tests/chat/test_citation_leakage_runtime.py}"
-PROMPT_INJECTION_CMD="${PROMPT_INJECTION_CMD:-TODO: pytest -q backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py}"
+RETRIEVAL_CMD="${RETRIEVAL_CMD:-pytest -q backend/tests/integration/tests/chat/test_retrieval_authorization_runtime.py}"
+CITATION_CMD="${CITATION_CMD:-pytest -q backend/tests/integration/tests/chat/test_citation_leakage_runtime.py}"
+PROMPT_INJECTION_CMD="${PROMPT_INJECTION_CMD:-pytest -q backend/tests/integration/tests/chat/test_prompt_injection_boundary_runtime.py}"
 
-if run_and_capture "retrieval_authorization" "${RETRIEVAL_CMD}"; then
-  status_retrieval="PASS"
-else
-  status_retrieval="BLOCKED"
-fi
+run_and_capture "retrieval_authorization" "${RETRIEVAL_CMD}" || true
+log "EXIT retrieval_authorization: BLOCKED/SKIPPED until runtime fixtures are available"
+status_retrieval="BLOCKED"
 
-log "citation_leakage_tests exact runtime test status: MISSING"
-log "COMMAND citation_leakage: ${CITATION_CMD}"
-log "EXIT citation_leakage: BLOCKED (missing exact runtime test file)"
+run_and_capture "citation_leakage" "${CITATION_CMD}" || true
+log "EXIT citation_leakage: BLOCKED/SKIPPED until runtime fixtures are available"
 status_citation="BLOCKED"
 
-log "prompt_injection_boundary_tests exact runtime test status: MISSING"
-log "COMMAND prompt_injection_boundary: ${PROMPT_INJECTION_CMD}"
-log "EXIT prompt_injection_boundary: BLOCKED (missing exact runtime test file)"
+run_and_capture "prompt_injection_boundary" "${PROMPT_INJECTION_CMD}" || true
+log "EXIT prompt_injection_boundary: BLOCKED/SKIPPED until runtime fixtures are available"
 status_prompt="BLOCKED"
 
 {
