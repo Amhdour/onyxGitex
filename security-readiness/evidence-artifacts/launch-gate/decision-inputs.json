@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-05-12T09:02:26+00:00",
+  "git_commit": "5807c9f2e0f408cfea104ddfe64bc9766f799ab9",
+  "inputs": {
+    "evidence_registry": "security-readiness/47-evidence-automation/evidence-artifact-registry.json",
+    "evidence_validation": "security-readiness/evidence-artifacts/evidence-validation/validation-result.json",
+    "control_test_results": "security-readiness/evidence-artifacts/control-layer-unit-tests/control-layer-summary.md",
+    "red_team_results": "security-readiness/09-evidence/onyx-red-team-results.md",
+    "residual_risk_register": "security-readiness/10-decision/onyx-residual-risk-register.md",
+    "critical_findings": "security-readiness/01-assessment/onyx-initial-risk-register.md",
+    "evidence_pack": "security-readiness/evidence-artifacts/evidence-pack.json"
+  },
+  "input_exists": {
+    "evidence_registry": true,
+    "evidence_validation": true,
+    "control_test_results": true,
+    "red_team_results": true,
+    "residual_risk_register": true,
+    "critical_findings": true,
+    "evidence_pack": true
+  },
+  "validation_status": "INCOMPLETE",
+  "validation_allow_go": false,
+  "missing_evidence_ids": [
+    "retrieval_authorization_tests",
+    "citation_leakage_tests",
+    "prompt_injection_boundary_tests",
+    "audit_events_generated",
+    "runtime_traces_generated",
+    "no_critical_open_risks",
+    "residual_risk_documented",
+    "evidence_pack_complete",
+    "launch_gate_result_generated"
+  ],
+  "derived_flags": {
+    "critical_retrieval_leak": false,
+    "missing_identity_fail_closed_test": true,
+    "evidence_pack_missing": false,
+    "critical_open_risk": false,
+    "medium_residual_risk": false,
+    "runtime_integration_unknown": true
+  }
+}
