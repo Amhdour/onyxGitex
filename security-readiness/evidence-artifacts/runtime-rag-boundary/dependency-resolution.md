@@ -53,3 +53,13 @@ Runtime RAG boundary evidence remains **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLI
 - uv environment usable: no (sync not completed).
 - Current blocker classification: `BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD`.
 - Next required action: restore package download path and rerun sync/import/runtime evidence commands.
+
+
+## CI Runtime Evidence Follow-Up
+
+- Local/Codex blocker: `BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD`.
+- Why GitHub Actions: expected cleaner outbound network path and reproducible artifact upload for auditable evidence capture.
+- Workflow path: `.github/workflows/rag-boundary-runtime-evidence.yml`.
+- Expected artifact: `rag-boundary-runtime-evidence`.
+- Status: `CI_WORKFLOW_DEFINED / CI_NOT_RUN`.
+- Next action: trigger `workflow_dispatch` (or PR run), then review artifact contents and update evidence status from actual outputs only.

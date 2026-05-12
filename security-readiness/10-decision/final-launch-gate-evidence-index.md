@@ -71,3 +71,17 @@ Decision remains: **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**.
 - runtime status: BLOCKED
 - evidence package path: security-readiness/evidence-artifacts/runtime-rag-boundary/
 - launch-gate impact: NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH
+
+
+## RAG Runtime Boundary CI Evidence Workflow Update (2026-05-12)
+- previous blocker: `BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD`
+- new action: GitHub Actions evidence workflow defined
+- workflow path: `.github/workflows/rag-boundary-runtime-evidence.yml`
+- expected artifact: `rag-boundary-runtime-evidence`
+- current CI evidence status: `CI_NOT_RUN`
+- launch-gate impact: remains `NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH`
+- decision rules reaffirmed:
+  - defining a workflow does not verify runtime controls;
+  - artifact upload alone does not verify control effectiveness;
+  - PASS requires pytest execution and pass;
+  - Full GO remains prohibited until critical controls are verified.

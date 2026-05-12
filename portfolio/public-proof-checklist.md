@@ -28,3 +28,16 @@ Dependency sync output artifact status (2026-05-12): BLOCKED (`dependency-sync-o
 Dependency import-check artifact status (2026-05-12): BLOCKED (`dependency-import-check.txt` not produced due sync failure).
 Runtime logs artifact status (2026-05-12): PRESENT (`runtime-status.txt`, `pytest-output.txt`, `test-command.txt`, `timestamp.txt`).
 Screenshots TODO: remain TODO (no screenshots created in this run).
+
+
+## RAG Boundary CI Runtime Evidence Checklist
+- [x] GitHub Actions RAG boundary runtime workflow exists. (PRESENT)
+- [ ] Workflow run screenshot. (TODO)
+- [ ] Dependency sync step screenshot. (TODO)
+- [ ] Runtime evidence step screenshot. (TODO)
+- [ ] Artifact upload screenshot. (TODO)
+- [ ] Downloaded artifact screenshot. (TODO)
+- [ ] final-run-status.json screenshot from artifact. (TODO)
+- [ ] dependency-sync-status.txt screenshot from artifact. (TODO)
+- [ ] runtime-status.txt screenshot from artifact. (TODO)
+- [ ] pytest-output.txt screenshot from artifact. (TODO)
