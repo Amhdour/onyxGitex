@@ -42,6 +42,20 @@
     ]
   },
   {
+    "id": "mcp_deny_before_dispatch_adjacent",
+    "phase": "pre_launch_evidence_validation",
+    "description": "MCP deny-before-dispatch runtime-adjacent evidence is present (non-critical positive signal)",
+    "critical": false,
+    "expected_file": "security-readiness/evidence-artifacts/test-results/mcp-deny-before-dispatch-tests.json",
+    "status": "FAILED",
+    "reason": "Evidence artifact does not meet pass criteria",
+    "observed": null,
+    "expected": [
+      "PASS",
+      "PASSED"
+    ]
+  },
+  {
     "id": "no_critical_open_risks",
     "phase": "pre_launch_evidence_validation",
     "description": "No critical open risks",
