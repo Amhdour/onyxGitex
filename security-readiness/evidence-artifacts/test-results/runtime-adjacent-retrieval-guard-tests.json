@@ -1,21 +1,16 @@
 {
   "artifact": "runtime-adjacent-retrieval-guard-tests",
   "date_utc": "2026-05-12",
-  "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/runtime-adjacent-retrieval-guard/isolated_test_pipeline_guard.py",
+  "command": "PYTHONPATH=backend pytest -q security-readiness/evidence-artifacts/runtime-adjacent-retrieval-guard/test_retrieval_guard_adapter.py",
   "scope": "runtime-adjacent only",
-  "status": "BLOCKED",
-  "runtime_adjacent_evidence": "BLOCKED",
+  "status": "PASS",
+  "runtime_adjacent_evidence": "PASS",
   "full_runtime_evidence": "NOT_PASS",
   "retrieval_authorization_tests": "NOT_PASS",
   "launch_gate": "NOT_ENOUGH_EVIDENCE",
-  "blocker": {
-    "type": "missing_dependency",
-    "module": "fastapi_users_db_sqlalchemy",
-    "observed_in": "backend/onyx/db/models.py",
-    "phase": "pytest collection/import"
-  },
+  "blocker": null,
   "notes": [
-    "Isolated test path outside backend/tests avoided backend/tests/conftest.py load.",
-    "Execution remains blocked by backend import chain requiring fastapi_users_db_sqlalchemy."
+    "Runtime-adjacent adapter test executed without importing full backend dependency graph.",
+    "Evidence remains limited to adapter scope; full pipeline runtime retrieval tests are still NOT_PASS."
   ]
 }
