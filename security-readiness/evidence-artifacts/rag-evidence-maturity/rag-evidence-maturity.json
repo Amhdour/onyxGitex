@@ -60,11 +60,11 @@
     },
     {
       "control": "ToolAuthorizationRouter",
-      "tier_achieved": 1,
-      "evidence_file": "security-readiness/final-control-status-canonical.md",
-      "current_status": "Control implementation exists; runtime enforcement path incomplete/blocked",
-      "missing": "Main chat runtime wiring plus passing runtime tests",
-      "launch_gate_impact": "Critical for tool-misuse boundary; current gap contributes to NOT_ENOUGH_EVIDENCE"
+      "tier_achieved": 2,
+      "evidence_file": "security-readiness/evidence-artifacts/test-results/tool-authorization-dependency-light-tests.json; security-readiness/final-control-status-canonical.md",
+      "current_status": "Dependency-light tool authorization evidence PASS; runtime wiring/enforcement remains incomplete",
+      "missing": "Main chat runtime wiring plus passing full runtime tool authorization tests",
+      "launch_gate_impact": "Partial positive signal only; RAG_PLUS_TOOLS remains blocked and launch stays NOT_ENOUGH_EVIDENCE"
     },
     {
       "control": "AuditLogger",

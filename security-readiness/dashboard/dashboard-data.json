@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-12T14:25:59.248138+00:00",
+  "generated_at": "2026-05-12T15:07:03.064205+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
   "active_launch_mode": "RAG_ONLY",
-  "readiness_score": 52.9,
+  "readiness_score": 55.6,
   "evidence_completeness": {
     "status": "FAILED",
     "allow_go": false,
-    "complete": 9,
-    "required_total": 17,
-    "percent": 52.9
+    "complete": 10,
+    "required_total": 18,
+    "percent": 55.6
   },
   "control_status": "Missing",
   "tests": {
@@ -18,6 +18,7 @@
     "citation_leakage": "Blocked",
     "prompt_injection_dependency_light_boundary": "Passed",
     "prompt_injection_full_runtime_red_team": "Blocked",
+    "tool_authorization_dependency_light": "Passed",
     "tool_authorization": "Skipped",
     "tool_runtime_wiring": "Skipped",
     "mcp_tool_hardening": "Skipped"
@@ -60,7 +61,14 @@
       "runtime_proof": "No",
       "launch_gate_effect": "Partial positive evidence only; GO remains blocked until full runtime prompt-injection/red-team evidence is PASS"
     },
-    "full_runtime_prompt_injection_red_team": "Blocked"
+    "full_runtime_prompt_injection_red_team": "Blocked",
+    "tool_authorization_dependency_light": {
+      "status": "Passed",
+      "evidence_type": "dependency-light tool authorization test evidence",
+      "runtime_proof": "No",
+      "launch_gate_effect": "Partial positive evidence only; RAG_PLUS_TOOLS remains blocked until full tool authorization and runtime wiring evidence are PASS"
+    },
+    "tool_runtime_wiring": "Skipped"
   },
   "audit_logging_status": "Passed",
   "runtime_tracing_status": "Passed",
@@ -73,8 +81,8 @@
       "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
     ]
   },
-  "last_evidence_timestamp": "2026-05-12T14:25:58+00:00",
-  "git_commit": "5e40f90bae58533d41415ed7fa241262d60750f4",
+  "last_evidence_timestamp": "2026-05-12T15:06:58+00:00",
+  "git_commit": "245bdcacab09b2796d901cf97394193ea342aa34",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",
