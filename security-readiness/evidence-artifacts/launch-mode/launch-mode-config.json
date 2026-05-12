@@ -1,0 +1,20 @@
+{
+  "generated": true,
+  "generated_at": "2026-05-12T00:00:00+00:00",
+  "active_launch_mode": "RAG_ONLY",
+  "default_launch_mode": "RAG_ONLY",
+  "tools_enabled": false,
+  "mcp_enabled": false,
+  "mode_requirements": {
+    "RAG_ONLY": {
+      "tool_authorization_evidence_required": false,
+      "rag_runtime_evidence_required_for_go": true,
+      "skip_policy": "Tool authorization evidence may be skipped only when explicitly recorded in validator output with reason."
+    },
+    "RAG_PLUS_TOOLS": {
+      "tool_authorization_evidence_required": true,
+      "tool_runtime_wiring_required": true,
+      "mcp_tool_hardening_required_when_tools_or_mcp_enabled": true
+    }
+  }
+}

@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 DECISIONS = {"GO", "CONDITIONAL_GO", "NO_GO", "NOT_ENOUGH_EVIDENCE"}
+LAUNCH_MODE_CONFIG = "security-readiness/evidence-artifacts/launch-mode/launch-mode-config.json"
 
 
 def parse_args() -> argparse.Namespace:
@@ -62,6 +63,13 @@ def main() -> int:
         "critical_findings": root / args.critical_findings,
         "evidence_pack": root / args.evidence_pack,
     }
+    launch_mode_path = root / LAUNCH_MODE_CONFIG
+    launch_mode = "RAG_ONLY"
+    if launch_mode_path.exists():
+        try:
+            launch_mode = str(read_json(launch_mode_path).get("active_launch_mode", "RAG_ONLY")).upper()
+        except Exception:
+            launch_mode = "RAG_ONLY"
 
     reasons: list[str] = []
     missing_inputs: list[str] = []
@@ -81,9 +89,16 @@ def main() -> int:
         missing_evidence_ids = [m.get("id", "unknown") for m in v.get("missing", [])]
     else:
         unknown_inputs.append("evidence_validation")
+    missing_or_failed_ids: list[str] = []
+    if paths["evidence_validation"].exists():
+        missing_or_failed_ids = missing_evidence_ids + [f.get("id", "unknown") for f in v.get("failed", [])]
 
     missing_identity_fail_closed_test = any("retrieval_authorization" in x or "identity" in x for x in missing_evidence_ids)
     runtime_integration_unknown = any("runtime_traces_generated" in x for x in missing_evidence_ids)
+    rag_plus_tools_blocked = launch_mode == "RAG_PLUS_TOOLS" and any(
+        req in missing_or_failed_ids
+        for req in ["tool_authorization_tests", "tool_runtime_wiring_verified", "mcp_tool_hardening_verified"]
+    )
 
     critical_retrieval_leak = contains_any(paths["critical_findings"], ["critical retrieval leak", "cross-tenant leakage", "retrieval leak"]) and contains_any(paths["critical_findings"], ["open", "unresolved", "pending"])
     critical_open_risk = contains_any(paths["residual_risk_register"], ["critical"]) and contains_any(paths["residual_risk_register"], ["open", "unresolved", "not remediated"])
@@ -108,6 +123,9 @@ def main() -> int:
     elif runtime_integration_unknown:
         decision = "NOT_ENOUGH_EVIDENCE"
         reasons.append("Runtime integration evidence is unknown/incomplete.")
+    elif rag_plus_tools_blocked:
+        decision = "NOT_ENOUGH_EVIDENCE"
+        reasons.append("RAG_PLUS_TOOLS requires tool authorization, runtime wiring, and MCP/tool hardening evidence.")
     elif validation_status != "COMPLETE" or not allow_go:
         decision = "NOT_ENOUGH_EVIDENCE"
         reasons.append("Evidence completeness validator does not allow GO.")
@@ -131,6 +149,7 @@ def main() -> int:
         "inputs": {k: str(v.relative_to(root)) for k, v in paths.items()},
         "input_exists": {k: exists_nonempty(v) for k, v in paths.items()},
         "validation_status": validation_status,
+        "active_launch_mode": launch_mode,
         "validation_allow_go": allow_go,
         "missing_evidence_ids": missing_evidence_ids,
         "derived_flags": {
@@ -140,6 +159,7 @@ def main() -> int:
             "critical_open_risk": critical_open_risk,
             "medium_residual_risk": medium_residual_risk,
             "runtime_integration_unknown": runtime_integration_unknown,
+            "rag_plus_tools_blocked": rag_plus_tools_blocked,
         },
     }
 
@@ -151,6 +171,7 @@ def main() -> int:
         "reasons": reasons,
         "uncertainty_preserved": decision != "GO",
         "validation_status": validation_status,
+        "active_launch_mode": launch_mode,
     }
 
     (out_dir / "decision-inputs.json").write_text(json.dumps(decision_inputs, indent=2) + "\n", encoding="utf-8")
@@ -164,6 +185,7 @@ def main() -> int:
         f"- Generated at (UTC): `{now}`",
         f"- Git commit: `{commit}`",
         f"- Decision: **{decision}**",
+        f"- Active launch mode: **{launch_mode}**",
         "",
         "## Decision Reasons",
     ]
@@ -178,6 +200,7 @@ def main() -> int:
         f"- Rule 5 (medium residual risk): `{medium_residual_risk}`",
         f"- Rule 6 (all required evidence + no critical risk): `{validation_status == 'COMPLETE' and allow_go and not critical_open_risk}`",
         f"- Rule 7 (unknown runtime integration): `{runtime_integration_unknown}`",
+        f"- Rule 8 (RAG+Tools evidence requirements met): `{not rag_plus_tools_blocked}`",
     ])
     (out_dir / "launch-gate-summary.md").write_text("\n".join(summary) + "\n", encoding="utf-8")
 

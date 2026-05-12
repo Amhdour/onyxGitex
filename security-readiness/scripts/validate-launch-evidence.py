@@ -20,6 +20,8 @@ from typing import Any
 VALID_STATUSES = {"COMPLETE", "INCOMPLETE", "FAILED", "STALE"}
 PRE_LAUNCH_PHASE = "pre_launch_evidence_validation"
 POST_LAUNCH_PHASE = "post_launch_output_validation"
+LAUNCH_MODE_CONFIG_DEFAULT = "security-readiness/evidence-artifacts/launch-mode/launch-mode-config.json"
+VALID_LAUNCH_MODES = {"RAG_ONLY", "RAG_PLUS_TOOLS"}
 
 
 def parse_args() -> argparse.Namespace:
@@ -39,6 +41,11 @@ def parse_args() -> argparse.Namespace:
         choices=["true", "false", "auto"],
         default="auto",
         help="Whether tools are enabled. auto uses rules.tools.enabled",
+    )
+    parser.add_argument(
+        "--launch-mode-config",
+        default=LAUNCH_MODE_CONFIG_DEFAULT,
+        help="Path to launch mode config JSON",
     )
     return parser.parse_args()
 
@@ -65,6 +72,19 @@ def resolve_tools_enabled(cli_value: str, rules: dict[str, Any]) -> bool:
 
     rules_value = ((rules.get("tools") or {}).get("enabled"))
     return bool(rules_value)
+
+
+def resolve_launch_mode(rules: dict[str, Any], launch_mode_config_path: Path) -> str:
+    mode = str(rules.get("launch_mode", "RAG_ONLY")).upper()
+    if launch_mode_config_path.exists():
+        try:
+            payload = read_json_file(launch_mode_config_path)
+            mode = str(payload.get("active_launch_mode", mode)).upper()
+        except Exception:
+            pass
+    if mode not in VALID_LAUNCH_MODES:
+        mode = "RAG_ONLY"
+    return mode
 
 
 def read_json_file(path: Path) -> Any:
@@ -108,6 +128,7 @@ def main() -> int:
         default_status = "INCOMPLETE"
 
     tools_enabled = resolve_tools_enabled(args.tools_enabled, rules)
+    launch_mode = resolve_launch_mode(rules, repo_root / args.launch_mode_config)
     phase_rules = rules.get("phases") or {}
     pre_launch_required = phase_rules.get(PRE_LAUNCH_PHASE) or []
     post_launch_required = phase_rules.get(POST_LAUNCH_PHASE) or []
@@ -124,6 +145,13 @@ def main() -> int:
                 "id": item.get("id"),
                 "phase": phase,
                 "reason": "Skipped because tools are disabled",
+            })
+            continue
+        if when == "rag_plus_tools" and launch_mode != "RAG_PLUS_TOOLS":
+            skipped.append({
+                "id": item.get("id"),
+                "phase": phase,
+                "reason": "Skipped because launch mode is RAG_ONLY",
             })
             continue
 
@@ -226,6 +254,7 @@ def main() -> int:
         "draft_decision_only": bool(rules.get("draft_decision_only", True)),
         "default_status_when_unsure": default_status,
         "tools_enabled": tools_enabled,
+        "active_launch_mode": launch_mode,
         "counts": {
             "complete": len(checked),
             "missing": len(missing),
@@ -260,6 +289,7 @@ def main() -> int:
             f"- Pre-launch status: **{pre_launch_status}**",
             f"- Post-launch status: **{post_launch_status}**",
             f"- Draft decision only: **{bool(rules.get('draft_decision_only', True))}**",
+            f"- Active launch mode: **{launch_mode}**",
             f"- Tools enabled: **{tools_enabled}**",
             "",
             "## Counts",

@@ -98,6 +98,7 @@ next_steps = extract_bullets(DECISION_MD, "Required Actions Before Re-evaluation
 payload = {
     "generated_at": datetime.now(timezone.utc).isoformat(),
     "overall_launch_gate_decision": (launch or {}).get("decision", "NOT_ENOUGH_EVIDENCE"),
+    "active_launch_mode": (validation or {}).get("active_launch_mode", "RAG_ONLY"),
     "readiness_score": completeness_pct,
     "evidence_completeness": {
         "status": (validation or {}).get("status", "INCOMPLETE"),
@@ -115,7 +116,13 @@ payload = {
         "prompt_injection_dependency_light_boundary": item_status(validation, "prompt_injection_boundary_dependency_light"),
         "prompt_injection_full_runtime_red_team": item_status(validation, "prompt_injection_boundary_tests"),
         "tool_authorization": item_status(validation, "tool_authorization_tests"),
+        "tool_runtime_wiring": item_status(validation, "tool_runtime_wiring_verified"),
+        "mcp_tool_hardening": item_status(validation, "mcp_tool_hardening_verified"),
     },
+    "tooling_skip_visibility": [
+        item for item in (validation or {}).get("skipped", [])
+        if item.get("id") in {"tool_authorization_tests", "tool_runtime_wiring_verified", "mcp_tool_hardening_verified"}
+    ],
     "evidence_scope": {
         "pure_control_layer": {
             "status": item_status(validation, "pure_control_unit_tests"),

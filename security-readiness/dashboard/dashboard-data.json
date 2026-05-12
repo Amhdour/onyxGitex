@@ -1,13 +1,14 @@
 {
-  "generated_at": "2026-05-12T16:00:00+00:00",
+  "generated_at": "2026-05-12T14:25:59.248138+00:00",
   "overall_launch_gate_decision": "NOT_ENOUGH_EVIDENCE",
-  "readiness_score": 60.0,
+  "active_launch_mode": "RAG_ONLY",
+  "readiness_score": 52.9,
   "evidence_completeness": {
     "status": "FAILED",
     "allow_go": false,
     "complete": 9,
-    "required_total": 15,
-    "percent": 60.0
+    "required_total": 17,
+    "percent": 52.9
   },
   "control_status": "Missing",
   "tests": {
@@ -17,8 +18,27 @@
     "citation_leakage": "Blocked",
     "prompt_injection_dependency_light_boundary": "Passed",
     "prompt_injection_full_runtime_red_team": "Blocked",
-    "tool_authorization": "Skipped"
+    "tool_authorization": "Skipped",
+    "tool_runtime_wiring": "Skipped",
+    "mcp_tool_hardening": "Skipped"
   },
+  "tooling_skip_visibility": [
+    {
+      "id": "tool_authorization_tests",
+      "phase": "pre_launch_evidence_validation",
+      "reason": "Skipped because launch mode is RAG_ONLY"
+    },
+    {
+      "id": "tool_runtime_wiring_verified",
+      "phase": "pre_launch_evidence_validation",
+      "reason": "Skipped because launch mode is RAG_ONLY"
+    },
+    {
+      "id": "mcp_tool_hardening_verified",
+      "phase": "pre_launch_evidence_validation",
+      "reason": "Skipped because tools are disabled"
+    }
+  ],
   "evidence_scope": {
     "pure_control_layer": {
       "status": "Passed",
@@ -53,8 +73,8 @@
       "3. Unknown: Whether audit evidence can be generated on-demand for launch-gate review."
     ]
   },
-  "last_evidence_timestamp": "2026-05-12T13:58:28+00:00",
-  "git_commit": "d8e9ed2ec5c412e80f625c28a879111d31b8113d",
+  "last_evidence_timestamp": "2026-05-12T14:25:58+00:00",
+  "git_commit": "5e40f90bae58533d41415ed7fa241262d60750f4",
   "explanation": {
     "status": "NOT_ENOUGH_EVIDENCE",
     "summary": "NOT ENOUGH EVIDENCE: launch is blocked until missing critical evidence is produced.",
@@ -66,70 +86,6 @@
       "1. Provide missing retrieval/identity fail-closed test artifacts required by the validator.",
       "2. Re-run evidence completeness validation and confirm `status=COMPLETE` with `allow_go=true`.",
       "3. Re-run `security-readiness/scripts/run-launch-gate.py` to regenerate a new decision from updated evidence."
-    ]
-  },
-  "rag_evidence_maturity": {
-    "tier_legend": {
-      "0": "Documentation only",
-      "1": "Control code exists",
-      "2": "Dependency-light tests pass",
-      "3": "Runtime-adjacent tests pass",
-      "4": "Full backend/runtime tests pass",
-      "5": "Client-specific production evidence exists"
-    },
-    "highest_tier_with_verified_critical_evidence": 3,
-    "critical_runtime_tier_4_complete": false,
-    "controls": [
-      {
-        "name": "RetrievalAuthorizationGuard",
-        "tier": 3,
-        "status": "Runtime-adjacent PASS; full runtime blocked"
-      },
-      {
-        "name": "RetrievalGuardAdapter",
-        "tier": 3,
-        "status": "Adapter/path PASS; full runtime blocked"
-      },
-      {
-        "name": "BypassACLContract",
-        "tier": 2,
-        "status": "Dependency-light PASS"
-      },
-      {
-        "name": "TrustedSystemContextInputBoundary",
-        "tier": 2,
-        "status": "Dependency-light PASS"
-      },
-      {
-        "name": "CitationSourceLeakageFilter",
-        "tier": 2,
-        "status": "Dependency-light PASS; full runtime blocked"
-      },
-      {
-        "name": "PromptInjectionBoundary",
-        "tier": 2,
-        "status": "Dependency-light PASS; full runtime blocked"
-      },
-      {
-        "name": "ToolAuthorizationRouter",
-        "tier": 1,
-        "status": "Code exists; runtime enforcement incomplete"
-      },
-      {
-        "name": "AuditLogger",
-        "tier": 3,
-        "status": "Runtime-adjacent PASS"
-      },
-      {
-        "name": "RuntimeTracer",
-        "tier": 3,
-        "status": "Runtime-adjacent PASS"
-      },
-      {
-        "name": "LaunchGateEngine",
-        "tier": 3,
-        "status": "Fail-closed NOT_ENOUGH_EVIDENCE output confirmed"
-      }
     ]
   }
 }
