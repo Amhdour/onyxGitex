@@ -1,0 +1,6 @@
+# Override with env vars if needed when invoking runner:
+#   RETRIEVAL_CMD='...' CITATION_CMD='...' PROMPT_INJECTION_CMD='...' ./security-readiness/scripts/run-tier4-runtime-tests.sh
+
+python -m dotenv -f .vscode/.env run -- pytest backend/tests/integration/tests/permissions -k retrieval -xv
+python -m dotenv -f .vscode/.env run -- pytest backend/tests/integration -k citation -xv
+python -m dotenv -f .vscode/.env run -- pytest backend/tests/integration -k 'prompt and injection' -xv

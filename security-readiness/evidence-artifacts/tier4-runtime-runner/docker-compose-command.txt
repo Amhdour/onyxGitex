@@ -1,0 +1,1 @@
+docker compose -f deployment/docker_compose/docker-compose.yml -f deployment/docker_compose/docker-compose.dev.yml up -d --wait
