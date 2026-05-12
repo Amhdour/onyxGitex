@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "name": "tier4_runtime_fixture_map",
+    "version": "1.0.0",
+    "date": "2026-05-12",
+    "status": "design_only",
+    "launch_posture": "NOT_ENOUGH_EVIDENCE"
+  },
+  "fixtures": [
+    {
+      "name": "authorized_user",
+      "type": "identity",
+      "description": "User identity with entitlement to allowed_document_set and no entitlement to restricted_document_set.",
+      "required_fields": ["user_id", "tenant_id", "groups", "entitlements", "session_token_ref"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "unauthorized_user",
+      "type": "identity",
+      "description": "User identity lacking entitlement to restricted_document_set; may have baseline tenant access only.",
+      "required_fields": ["user_id", "tenant_id", "groups", "entitlements", "session_token_ref"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "allowed_document",
+      "type": "document",
+      "description": "Single document that authorized_user can retrieve and cite.",
+      "required_fields": ["document_id", "source_id", "classification", "acl", "content", "marker_tokens"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "restricted_document",
+      "type": "document",
+      "description": "Single document containing leakage markers and restricted ACL.",
+      "required_fields": ["document_id", "source_id", "classification", "acl", "content", "marker_tokens"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "allowed_document_set",
+      "type": "document_set",
+      "description": "Collection of retrievable documents with positive controls for citation assertions.",
+      "required_fields": ["set_id", "document_ids", "retrieval_tags", "expected_citation_ids"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "restricted_document_set",
+      "type": "document_set",
+      "description": "Collection of non-retrievable documents containing canary leakage markers.",
+      "required_fields": ["set_id", "document_ids", "retrieval_tags", "forbidden_markers"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "chat_session",
+      "type": "session",
+      "description": "Runtime chat session envelope for end-to-end request execution.",
+      "required_fields": ["chat_session_id", "user_id", "tenant_id", "conversation_seed", "created_at"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "retrieval_request",
+      "type": "request",
+      "description": "Prompt request payload and retrieval configuration for runtime call.",
+      "required_fields": ["request_id", "prompt", "top_k", "filters", "temperature", "model_profile"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "citation_capture",
+      "type": "capture",
+      "description": "Collector for answer citation IDs, source metadata, and rendered spans.",
+      "required_fields": ["captured_citation_ids", "captured_source_ids", "raw_citation_payload", "capture_status"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "audit_event_capture",
+      "type": "capture",
+      "description": "Collector for policy, authz, and response logging events.",
+      "required_fields": ["events", "event_types", "policy_decisions", "capture_status"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "runtime_trace_capture",
+      "type": "capture",
+      "description": "Collector for runtime spans and node-level decision traces.",
+      "required_fields": ["trace_id", "span_ids", "decision_nodes", "capture_status"],
+      "used_by_tests": ["retrieval_authorization", "citation_leakage", "prompt_injection_boundary"]
+    },
+    {
+      "name": "adversarial_prompt_corpus",
+      "type": "corpus",
+      "description": "Versioned corpus of injection and leakage prompts used for negative testing.",
+      "required_fields": ["corpus_version", "cases", "attack_family", "expected_policy_outcome"],
+      "used_by_tests": ["citation_leakage", "prompt_injection_boundary"]
+    }
+  ]
+}
