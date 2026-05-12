@@ -26,4 +26,4 @@ Evidence recorder: Codex agent
 
 ## Evidence Classification
 - CI collection workflow exists in-repo: **Verified**.
-- Runtime CI execution result for this specific run: **Partially Confirmed** (workflow metadata fields were provided, but artifact file contents still determine final confidence).
+- Runtime CI execution result for this specific run: Partially Confirmed only at posture level; workflow run URL, commit SHA, run conclusion, and downloaded CI logs were not provided.
