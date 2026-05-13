@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-05-13T11:35:25.622321+00:00",
+    "timestamp": "2026-05-13T11:50:17.490718+00:00",
     "case_id": "LG-ALLOW-001",
     "event_type": "tool_allowed",
     "decision": "ALLOW",
@@ -9,7 +9,7 @@
     "reason": "Tool 'read_document' allowed for role 'analyst'."
   },
   {
-    "timestamp": "2026-05-13T11:35:25.622337+00:00",
+    "timestamp": "2026-05-13T11:50:17.490736+00:00",
     "case_id": "LG-DENY-001",
     "event_type": "tool_denied_role",
     "decision": "DENY",
@@ -18,7 +18,7 @@
     "reason": "Role 'analyst' is not authorized for tool 'send_email'."
   },
   {
-    "timestamp": "2026-05-13T11:35:25.622352+00:00",
+    "timestamp": "2026-05-13T11:50:17.490747+00:00",
     "case_id": "LG-APPROVAL-001",
     "event_type": "approval_required",
     "decision": "REQUIRE_APPROVAL",
@@ -27,7 +27,7 @@
     "reason": "Tool 'send_email' requires human approval before execution."
   },
   {
-    "timestamp": "2026-05-13T11:35:25.622361+00:00",
+    "timestamp": "2026-05-13T11:50:17.490756+00:00",
     "case_id": "LG-ALLOW-APPROVED-001",
     "event_type": "tool_allowed_with_approval",
     "decision": "ALLOW_WITH_APPROVAL",
@@ -36,7 +36,7 @@
     "reason": "Tool 'send_email' allowed with human approval."
   },
   {
-    "timestamp": "2026-05-13T11:35:25.622368+00:00",
+    "timestamp": "2026-05-13T11:50:17.490763+00:00",
     "case_id": "LG-FAILCLOSED-UNKNOWN-001",
     "event_type": "unknown_tool_denied",
     "decision": "DENY_FAIL_CLOSED",
@@ -45,7 +45,7 @@
     "reason": "Unknown tool requested; fail-closed applied."
   },
   {
-    "timestamp": "2026-05-13T11:35:25.622413+00:00",
+    "timestamp": "2026-05-13T11:50:17.490801+00:00",
     "case_id": "LG-FAILCLOSED-IDENTITY-001",
     "event_type": "identity_missing",
     "decision": "DENY_FAIL_CLOSED",
@@ -54,7 +54,7 @@
     "reason": "Missing user identity; fail-closed applied."
   },
   {
-    "timestamp": "2026-05-13T11:35:25.622423+00:00",
+    "timestamp": "2026-05-13T11:50:17.490809+00:00",
     "case_id": "LG-INJECTION-001",
     "event_type": "prompt_injection_tool_escalation_denied",
     "decision": "DENY",
@@ -63,7 +63,7 @@
     "reason": "Prompt injection attempted tool escalation and was blocked by policy."
   },
   {
-    "timestamp": "2026-05-13T11:35:25.622423+00:00",
+    "timestamp": "2026-05-13T11:50:17.490809+00:00",
     "case_id": "LG-INJECTION-001",
     "event_type": "tool_denied_role",
     "decision": "DENY",

@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-05-13T11:35:25.622352+00:00",
+    "timestamp": "2026-05-13T11:50:17.490747+00:00",
     "case_id": "LG-APPROVAL-001",
     "scenario_name": "manager_send_email_without_approval",
     "user_role": "manager",

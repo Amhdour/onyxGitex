@@ -1,26 +1,22 @@
-## Current CI Evidence Classification
+# LangGraph CI Result Summary
 
-- workflow_path: .github/workflows/langgraph-agent-lab-evidence.yml
-- workflow_run_verified: false
-- artifact_downloaded: false
-- artifact_verified: false
-- ci_workflow_status: CI_NOT_VERIFIED
-- ci_artifact_status: CI_ARTIFACT_NOT_VERIFIED
-- evidence_status: LOCAL_ONLY_PARTIAL_EVIDENCE
-- launch_gate_status: NO_GO
+- ci_workflow_status: `CI_NOT_VERIFIED`
+- ci_artifact_status: `CI_ARTIFACT_NOT_VERIFIED`
+- local_verifier_status: `CI_ARTIFACT_NOT_AVAILABLE`
+- evidence_status: `LOCAL_ONLY_PARTIAL_EVIDENCE`
+- launch_gate_status: `NO_GO`
 
-## Evidence Required To Upgrade
-1. Workflow run URL or run ID.
-2. Job status.
-3. Artifact name.
-4. Artifact download result.
-5. Artifact file list.
-6. final-run-status.json from artifact.
-7. graph-runtime-summary.json from artifact.
-8. ci-artifact-verification-output.json.
+Verifier details:
+- Artifact directory checked: `agent-security-readiness/23-langgraph-agent-lab/ci-downloaded-artifact/`
+- Artifact directory exists: `true`
+- Artifact files complete: `false` (no downloaded workflow artifact contents yet)
+- JSON validation passed: `not applicable (artifact not available)`
+- Workflow run ID known: `no`
+- Artifact verified: `no`
 
-## Non-Claims
-- CI workflow existence does not prove CI execution.
-- Local artifacts do not prove CI artifacts.
-- CI artifacts do not prove production safety.
-- CI PASS does not equal launch approval.
+Non-claims:
+- CI workflow file existence does not prove CI execution.
+- CI artifact verifier output does not prove artifact exists unless artifact files are actually present.
+- Local compatibility artifacts do not prove CI artifacts.
+- CI artifact verification does not prove production safety.
+- No GO decision.

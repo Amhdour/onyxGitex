@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-05-13T11:35:25.622368+00:00",
+    "timestamp": "2026-05-13T11:50:17.490763+00:00",
     "case_id": "LG-FAILCLOSED-UNKNOWN-001",
     "scenario_name": "unknown_tool_fail_closed",
     "user_role": "manager",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "timestamp": "2026-05-13T11:35:25.622413+00:00",
+    "timestamp": "2026-05-13T11:50:17.490801+00:00",
     "case_id": "LG-FAILCLOSED-IDENTITY-001",
     "scenario_name": "missing_identity_fail_closed",
     "user_role": null,

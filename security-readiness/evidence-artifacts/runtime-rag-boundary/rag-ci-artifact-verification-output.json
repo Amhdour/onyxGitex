@@ -1,0 +1,16 @@
+{
+  "artifact_dir": "/workspace/onyxGitex/security-readiness/evidence-artifacts/runtime-rag-boundary/ci-downloaded-artifact",
+  "artifact_dir_exists": true,
+  "required_files_present": [],
+  "required_files_missing": [
+    "final-run-status.json",
+    "pytest-output.txt",
+    "test-command.txt",
+    "git-commit.txt",
+    "timestamp.txt",
+    "runtime-status.txt"
+  ],
+  "json_validation": {},
+  "verification_status": "RAG_CI_ARTIFACT_INCOMPLETE",
+  "checked_at_utc": "2026-05-13T11:51:00.590449+00:00"
+}

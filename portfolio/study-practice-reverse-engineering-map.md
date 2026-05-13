@@ -99,3 +99,15 @@ Agent exercises:
 5. Trace prompt injection to escalation denial.
 6. Trace audit events to incident timeline.
 7. Trace final-run-status.json to launch-gate status.
+
+## Evidence Verification Milestones
+
+| Milestone | Current status | Next action | What it teaches |
+|---|---|---|---|
+| LangGraph local compatibility evidence | Verified (21/21 compatibility) | Preserve deterministic reruns | How to build fallback evidence when optional deps fail |
+| LangGraph real runtime attempt | Install failed / runtime unverified | Retry in network-enabled env | Honest separation of attempted vs verified runtime |
+| LangGraph CI artifact verification | Not verified (artifact not available) | Trigger workflow + download artifact + run verifier | Direct-artifact proof discipline |
+| RAG primary CI artifact verification | Not verified (artifact not available) | Download primary artifact and run RAG verifier | Primary-vs-external signal integrity |
+| Telemetry mapping | Local schema mapped, not integrated | Implement production telemetry wiring evidence | Difference between schema planning and runtime integration |
+| Production telemetry integration | Unverified | Integrate and validate in runtime logs | Auditability requirements for launch evidence |
+| Launch-gate decision | NO_GO | Close blockers with direct evidence only | Strict evidence-first launch governance |
