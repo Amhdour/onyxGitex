@@ -6,7 +6,7 @@
     "graph_runtime_status": "COMPATIBILITY_GRAPH_PASS",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
     "real_langgraph_status": "NOT_AVAILABLE",
-    "real_langgraph_attempt_status": "REAL_LANGGRAPH_NOT_AVAILABLE",
+    "real_langgraph_attempt_status": "INSTALL_FAILED",
     "compatibility_runtime_status": "PASS",
     "tool_authorization_status": "COMPATIBILITY_RUNTIME_VERIFIED",
     "human_approval_status": "COMPATIBILITY_RUNTIME_VERIFIED",
@@ -22,48 +22,12 @@
     "evidence_status": "PARTIAL_EVIDENCE",
     "launch_gate_status": "NO_GO"
   },
-  "real_langgraph_evidence": {
-    "langgraph_available": false,
-    "attempted_real_runtime": false,
-    "real_runtime_status": "REAL_LANGGRAPH_NOT_AVAILABLE",
-    "runtime_mode_observed": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
-    "graph_summary_path": "/workspace/onyxGitex/agent-security-readiness/23-langgraph-agent-lab/graph-runtime-artifacts/graph-runtime-summary.json",
-    "evidence_implication": "Real runtime not available; compatibility evidence remains applicable.",
-    "launch_gate_implication": "NO_GO",
-    "checked_at_utc": "2026-05-13T11:35:24.805467+00:00"
-  },
-  "compatibility_evidence": {
-    "total_cases": 21,
-    "passed_cases": 21,
-    "failed_cases": 0,
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
-    "real_langgraph_used": false,
-    "compatibility_mode_used": true,
-    "langgraph_available": false,
-    "external_services_called": false,
-    "memory_store_used": true,
-    "sandboxed_tools_used": true,
-    "ci_context": false,
-    "launch_gate_status": "NO_GO",
-    "graph_runtime_status": "COMPATIBILITY_GRAPH_PASS"
-  },
-  "memory_evidence": {
-    "status": "COMPATIBILITY_RUNTIME_PARTIAL",
-    "artifact": "graph-runtime-artifacts/graph-memory-boundary-log.json"
-  },
-  "sandboxed_tool_evidence": {
-    "status": "COMPATIBILITY_RUNTIME_PARTIAL",
-    "artifact": "graph-runtime-artifacts/graph-sandboxed-tool-results.json"
-  },
-  "telemetry_evidence": {
-    "status": "LOCAL_SCHEMA_MAPPED_NOT_INTEGRATED",
-    "artifact": "telemetry-field-map.json"
-  },
-  "ci_evidence": {
-    "status": "CI_ARTIFACT_NOT_VERIFIED",
-    "artifact_verified": false
-  },
-  "rag_parallel_plan_reference": "security-readiness/evidence-artifacts/runtime-rag-boundary/rag-primary-ci-artifact-verification-plan.md",
+  "ci_evidence": {"status": "CI_ARTIFACT_NOT_VERIFIED", "artifact_verified": false, "local_verifier_status": "CI_ARTIFACT_INCOMPLETE"},
+  "real_langgraph_evidence": {"real_runtime_status": "INSTALL_FAILED", "attempted_real_runtime": false},
+  "compatibility_evidence": {"total_cases": 21, "passed_cases": 21, "failed_cases": 0},
+  "memory_evidence": {"status": "COMPATIBILITY_RUNTIME_PARTIAL", "artifact": "graph-runtime-artifacts/graph-memory-boundary-log.json"},
+  "sandboxed_tool_evidence": {"status": "COMPATIBILITY_RUNTIME_PARTIAL", "artifact": "graph-runtime-artifacts/graph-sandboxed-tool-results.json"},
+  "telemetry_evidence": {"status": "LOCAL_SCHEMA_MAPPED_NOT_INTEGRATED", "artifact": "telemetry-field-map.json"},
   "claims_allowed": [
     "Deterministic compatibility runtime executed locally.",
     "Local runtime trace/audit/incident artifacts were generated.",
@@ -74,25 +38,16 @@
     "Production telemetry integration is verified.",
     "CI artifact verification is complete without downloaded artifact validation.",
     "Real LangGraph runtime verified when dependency is unavailable.",
+    "The autonomous agent is safe to launch.",
     "Launch is approved."
   ],
-  "artifacts_present": [
-    "graph-runtime-artifacts/graph-runtime-summary.json",
-    "graph-runtime-artifacts/graph-runtime-trace.json",
-    "graph-runtime-artifacts/graph-policy-decision-log.json",
-    "graph-runtime-artifacts/graph-audit-events.json",
-    "graph-runtime-artifacts/graph-memory-boundary-log.json",
-    "graph-runtime-artifacts/graph-sandboxed-tool-results.json",
-    "graph-runtime-artifacts/graph-incident-timeline.json",
-    "telemetry-field-map.json",
-    "ci-artifact-verification-output.json",
-    "real-langgraph-attempt-output.json"
-  ],
-  "artifacts_missing": [],
+  "artifacts_present": ["graph-runtime-artifacts/graph-runtime-summary.json", "graph-runtime-artifacts/graph-runtime-trace.json", "graph-runtime-artifacts/graph-policy-decision-log.json", "graph-runtime-artifacts/graph-audit-events.json", "graph-runtime-artifacts/graph-memory-boundary-log.json", "graph-runtime-artifacts/graph-sandboxed-tool-results.json", "graph-runtime-artifacts/graph-incident-timeline.json", "telemetry-field-map.json", "ci-artifact-verification-output.json", "real-langgraph-attempt-output.json"],
+  "artifacts_missing": ["ci-downloaded-artifact/*", "rag-primary-ci-downloaded-artifact/*"],
   "open_blockers": [
     "No downloaded CI artifact proof yet",
     "No production telemetry integration evidence",
-    "RAG primary workflow artifact proof pending"
+    "RAG primary workflow artifact proof pending",
+    "LangGraph install attempt failed in this environment (network/index access)."
   ],
-  "next_required_action": "READY_FOR_CI_ARTIFACT_VERIFICATION"
+  "next_required_action": "READY_TO_TRIGGER_LANGGRAPH_CI_MANUALLY"
 }

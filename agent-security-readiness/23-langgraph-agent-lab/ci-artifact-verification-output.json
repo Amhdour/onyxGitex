@@ -1,12 +1,34 @@
 {
   "artifact_dir": "/workspace/onyxGitex/agent-security-readiness/23-langgraph-agent-lab/ci-downloaded-artifact",
-  "artifact_dir_exists": false,
+  "artifact_dir_exists": true,
   "required_files_total": 11,
   "required_files_present": [],
-  "required_files_missing": [],
-  "json_validation": {},
-  "verification_status": "CI_ARTIFACT_NOT_AVAILABLE",
+  "required_files_missing": [
+    "final-run-status.json",
+    "runtime-execution-report.md",
+    "evidence-manifest.md",
+    "runtime-artifacts/langgraph-dependency-check.json",
+    "graph-runtime-artifacts/graph-runtime-summary.json",
+    "graph-runtime-artifacts/graph-runtime-trace.json",
+    "graph-runtime-artifacts/graph-policy-decision-log.json",
+    "graph-runtime-artifacts/graph-audit-events.json",
+    "graph-runtime-artifacts/graph-memory-boundary-log.json",
+    "graph-runtime-artifacts/graph-sandboxed-tool-results.json",
+    "graph-runtime-artifacts/graph-incident-timeline.json"
+  ],
+  "json_validation": {
+    "final-run-status.json": "MISSING",
+    "runtime-artifacts/langgraph-dependency-check.json": "MISSING",
+    "graph-runtime-artifacts/graph-runtime-summary.json": "MISSING",
+    "graph-runtime-artifacts/graph-runtime-trace.json": "MISSING",
+    "graph-runtime-artifacts/graph-policy-decision-log.json": "MISSING",
+    "graph-runtime-artifacts/graph-audit-events.json": "MISSING",
+    "graph-runtime-artifacts/graph-memory-boundary-log.json": "MISSING",
+    "graph-runtime-artifacts/graph-sandboxed-tool-results.json": "MISSING",
+    "graph-runtime-artifacts/graph-incident-timeline.json": "MISSING"
+  },
+  "verification_status": "CI_ARTIFACT_INCOMPLETE",
   "evidence_implication": "CI artifact proof is not yet verified from downloaded artifacts.",
   "launch_gate_implication": "NO_GO",
-  "checked_at_utc": "2026-05-13T11:35:27.326918+00:00"
+  "checked_at_utc": "2026-05-13T11:50:19.227236+00:00"
 }

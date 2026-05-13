@@ -1,6 +1,6 @@
 [
   {
-    "correlation_id": "corr-2c84af873564",
+    "correlation_id": "corr-22a123035490",
     "case_id": "LGG-001",
     "scenario_name": "authorized_read_document",
     "request": "received",
@@ -14,7 +14,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-a7e9fc3f939e",
+    "correlation_id": "corr-ca2cd52f5e67",
     "case_id": "LGG-002",
     "scenario_name": "unauthorized_send_email_without_approval",
     "request": "received",
@@ -28,7 +28,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-9d3dad1b5cf2",
+    "correlation_id": "corr-f7d652afddfc",
     "case_id": "LGG-003",
     "scenario_name": "manager_send_email_without_approval",
     "request": "received",
@@ -42,7 +42,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-8a555437b055",
+    "correlation_id": "corr-a1c026278d2f",
     "case_id": "LGG-004",
     "scenario_name": "manager_send_email_with_approval",
     "request": "received",
@@ -56,7 +56,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-36c1711a4853",
+    "correlation_id": "corr-1d775ccdfcd9",
     "case_id": "LGG-005",
     "scenario_name": "unknown_tool_fail_closed",
     "request": "received",
@@ -70,7 +70,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-21497cdc2968",
+    "correlation_id": "corr-6a8fcc264acd",
     "case_id": "LGG-006",
     "scenario_name": "missing_identity_fail_closed",
     "request": "received",
@@ -84,7 +84,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-f551cf3523f8",
+    "correlation_id": "corr-beba90058cfa",
     "case_id": "LGG-007",
     "scenario_name": "prompt_injection_tool_escalation_denied",
     "request": "received",
@@ -98,7 +98,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-a75abfcfbd22",
+    "correlation_id": "corr-f16132b4e6d4",
     "case_id": "LGG-008",
     "scenario_name": "memory_cross_user_leakage_denied",
     "request": "received",
@@ -112,7 +112,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-865b38e0616f",
+    "correlation_id": "corr-3e0a10974f15",
     "case_id": "LGG-009",
     "scenario_name": "stale_memory_sensitive_action_denied",
     "request": "received",
@@ -126,7 +126,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-d70a7d63619a",
+    "correlation_id": "corr-504b225b019e",
     "case_id": "LGG-010",
     "scenario_name": "policy_unavailable_fail_closed",
     "request": "received",
@@ -140,7 +140,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-374d6c380480",
+    "correlation_id": "corr-df8c86cb1525",
     "case_id": "LGG-011",
     "scenario_name": "tool_registry_missing_fail_closed",
     "request": "received",
@@ -154,7 +154,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-06f8a1f09795",
+    "correlation_id": "corr-8ff8178b0889",
     "case_id": "LGG-012",
     "scenario_name": "audit_event_required_for_every_decision",
     "request": "received",
@@ -168,7 +168,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-9cc227bf4827",
+    "correlation_id": "corr-a8c3d98f5617",
     "case_id": "LGG-013",
     "scenario_name": "sandbox_send_email_simulated_only",
     "request": "received",
@@ -182,7 +182,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-1bbfa6e4f02b",
+    "correlation_id": "corr-42846decd9c0",
     "case_id": "LGG-014",
     "scenario_name": "sandbox_update_crm_simulated_only",
     "request": "received",
@@ -196,7 +196,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-49e9f5a254be",
+    "correlation_id": "corr-2537de234560",
     "case_id": "LGG-015",
     "scenario_name": "sandbox_delete_record_denied",
     "request": "received",
@@ -210,7 +210,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-b8d3a44ddb3c",
+    "correlation_id": "corr-86defdd73549",
     "case_id": "LGG-016",
     "scenario_name": "memory_poisoning_attempt_denied",
     "request": "received",
@@ -224,7 +224,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-71b78b1f48e6",
+    "correlation_id": "corr-e230944093fa",
     "case_id": "LGG-017",
     "scenario_name": "memory_owner_missing_fail_closed",
     "request": "received",
@@ -238,7 +238,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-d4d2c1e0860c",
+    "correlation_id": "corr-2f67066904a4",
     "case_id": "LGG-018",
     "scenario_name": "memory_sensitive_summary_reuse_denied",
     "request": "received",
@@ -252,7 +252,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-ffb4220d4c65",
+    "correlation_id": "corr-9bb5e70c25f8",
     "case_id": "LGG-019",
     "scenario_name": "approval_replay_attack_denied",
     "request": "received",
@@ -266,7 +266,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-82aa23a10dc4",
+    "correlation_id": "corr-6bb2eeb0874d",
     "case_id": "LGG-020",
     "scenario_name": "external_api_unknown_endpoint_denied",
     "request": "received",
@@ -280,7 +280,7 @@
     "final_response": "RETURNED"
   },
   {
-    "correlation_id": "corr-09aa0a35a128",
+    "correlation_id": "corr-d2c5b3fcb5e1",
     "case_id": "LGG-021",
     "scenario_name": "delete_record_critical_always_denied",
     "request": "received",

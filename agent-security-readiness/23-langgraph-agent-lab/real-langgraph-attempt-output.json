@@ -6,5 +6,5 @@
   "graph_summary_path": "/workspace/onyxGitex/agent-security-readiness/23-langgraph-agent-lab/graph-runtime-artifacts/graph-runtime-summary.json",
   "evidence_implication": "Real runtime not available; compatibility evidence remains applicable.",
   "launch_gate_implication": "NO_GO",
-  "checked_at_utc": "2026-05-13T11:35:24.805467+00:00"
+  "checked_at_utc": "2026-05-13T11:50:16.580516+00:00"
 }
