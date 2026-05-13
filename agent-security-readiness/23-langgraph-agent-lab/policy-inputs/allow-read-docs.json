@@ -1,0 +1,29 @@
+{
+  "case_id": "LG-ALLOW-001",
+  "expected_decision": "ALLOW",
+  "user": {
+    "id": "user-analyst-001",
+    "role": "analyst",
+    "department": "research"
+  },
+  "agent": {
+    "id": "internal-ops-agent",
+    "runtime": "langgraph",
+    "delegation_mode": "user_delegated"
+  },
+  "tool_call": {
+    "tool_name": "read_document",
+    "action": "read",
+    "risk_level": "medium",
+    "resource": "authorized-document-001"
+  },
+  "approval": {
+    "present": false,
+    "required": false
+  },
+  "security_expectation": {
+    "decision": "ALLOW",
+    "reason": "Analyst role is allowed to read authorized documents and the tool does not require human approval.",
+    "audit_required": true
+  }
+}
