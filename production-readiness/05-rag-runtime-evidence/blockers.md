@@ -1,3 +1,9 @@
-Runtime blockers encountered
-- Dependency blockers: pytest imports missing runtime deps (see rag-pytest-output.txt).
-- Remaining work before Version 2B: resolve local runtime blockers and rerun Version 2A.
+# Version 2A Blockers
+
+No local harness blockers detected.
+
+Remaining blockers before stronger claims:
+- CI artifact proof is not complete.
+- Staging proof is not complete.
+- Client-specific proof is not complete.
+- Production readiness remains blocked.

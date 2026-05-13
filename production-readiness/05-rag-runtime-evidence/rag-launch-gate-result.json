@@ -1,10 +1,10 @@
 {
   "version": "2A",
   "gate": "RAG_RUNTIME_EVIDENCE_GATE",
-  "launch_status": "NOT_ENOUGH_EVIDENCE",
+  "launch_status": "PARTIAL_RUNTIME_EVIDENCE",
   "production_ready": false,
   "go_decision": false,
-  "reason": "Local Version 2A gate result from deterministic harness.",
+  "reason": "All local Version 2A RAG runtime harness scenarios passed. CI proof is still required before any stronger claim.",
   "ci_required_for_go": true,
-  "next_required_action": "Resolve Version 2A RAG Runtime Evidence blockers"
+  "next_required_action": "Complete Version 2B CI Artifact Proof"
 }

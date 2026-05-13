@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "decision_id": "dec-001",
+    "scenario_id": "RAG-2A-001",
+    "user_id": "finance_analyst",
+    "document_id": "finance_policy_q4",
+    "decision": "ALLOW",
+    "reason": "explicit_document_allow",
+    "fail_closed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "decision_id": "dec-002",
+    "scenario_id": "RAG-2A-001",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "fail_closed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "decision_id": "dec-003",
+    "scenario_id": "RAG-2A-002",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "fail_closed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "decision_id": "dec-004",
+    "scenario_id": "RAG-2A-003",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "fail_closed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "decision_id": "dec-005",
+    "scenario_id": "RAG-2A-004",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "fail_closed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "decision_id": "dec-006",
+    "scenario_id": "RAG-2A-005",
+    "user_id": "finance_analyst",
+    "document_id": "finance_policy_q4",
+    "decision": "ALLOW",
+    "reason": "explicit_document_allow",
+    "fail_closed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "decision_id": "dec-007",
+    "scenario_id": "RAG-2A-005",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "fail_closed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "decision_id": "dec-008",
+    "scenario_id": "RAG-2A-006",
+    "user_id": "ANONYMOUS",
+    "document_id": "finance_policy_q4",
+    "decision": "DENY",
+    "reason": "missing_identity",
+    "fail_closed": true,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "decision_id": "dec-009",
+    "scenario_id": "RAG-2A-007",
+    "user_id": "finance_analyst",
+    "document_id": "finance_policy_q4",
+    "decision": "DENY",
+    "reason": "policy_unavailable",
+    "fail_closed": true,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  }
+]

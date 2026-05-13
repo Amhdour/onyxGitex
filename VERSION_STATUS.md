@@ -72,7 +72,7 @@ Version 1:
 Portfolio Lab
 
 Version 2A:
-RAG Runtime Evidence Gate — NOT_ENOUGH_EVIDENCE (local runtime blocked: missing test dependency `fastapi_users`).
+RAG Runtime Evidence Gate — PARTIAL_RUNTIME_EVIDENCE local harness completed. CI proof still required.
 
 Version 2B:
 CI Artifact Proof

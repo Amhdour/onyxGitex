@@ -2,70 +2,77 @@
   "version": "2A",
   "gate": "RAG_RUNTIME_EVIDENCE_GATE",
   "canonical_evidence_directory": "security-readiness/evidence-artifacts/version-2a-rag-runtime",
+  "generated_at_utc": "2026-05-13T16:53:29.025684+00:00",
   "artifacts": [
     {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-runtime-final-status.json",
       "required": true,
       "exists": true,
-      "sha256": "6d8f4c982a61c87473396c4390942721f2ebbd4f055b91797d2b23e56dac76bb",
+      "sha256": "2e5e3346c0a4435cb7dc50f0ff07fcd374f1a8da48c0844cef7d61896f4e35f5",
       "description": "rag-runtime-final-status.json"
     },
     {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-pytest-output.txt",
       "required": true,
       "exists": true,
-      "sha256": "28cf71915c11070cb333534ddbbfa1ee022a61388c72a3015c5c48a9e03edd24",
+      "sha256": "e82462dab5a6c134370c2d4a9731f1d7a83f610e4b5b5ff5f1c55aa6d1bf2b78",
       "description": "rag-pytest-output.txt"
     },
     {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-audit-events.json",
       "required": true,
       "exists": true,
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "sha256": "36f3dd1d2fefc6fe77ce6c795a466ba42108cfded55fae8a5f00ac11ae4a95f9",
       "description": "rag-audit-events.json"
     },
     {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-policy-decisions.json",
       "required": true,
       "exists": true,
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "sha256": "4f3b0566de0a55ce839ce3677a0db58b16695376f827701f876567b61d137de5",
       "description": "rag-policy-decisions.json"
     },
     {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-retrieval-log.json",
       "required": true,
       "exists": true,
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "sha256": "ec177a133bc10d6a3b4f6e07cfee204771f342db90e00f7271118f6062f0de12",
       "description": "rag-retrieval-log.json"
     },
     {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-citation-check.json",
       "required": true,
       "exists": true,
-      "sha256": "c6b339343bbb7d9199caca5417819b7d6b61b399c7e65a596fd5eb3480438458",
+      "sha256": "1521d06455ceb042a1d35152bc65b3b9178c2cfbf84887ba414b5ad35370c6aa",
       "description": "rag-citation-check.json"
     },
     {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-launch-gate-result.json",
       "required": true,
       "exists": true,
-      "sha256": "3781cbd80d38082adaf74745a161134d5c860a5dee6a7a439ec9f12007ff865a",
+      "sha256": "9caa36cf8369d328e9719c925749801b954afc4468d7c5cbaf560f3f9f8e540a",
       "description": "rag-launch-gate-result.json"
     },
     {
+      "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/evidence-manifest.json",
+      "required": true,
+      "exists": false,
+      "sha256": "",
+      "description": "evidence-manifest.json"
+    },
+    {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/evidence-summary.md",
-      "required": false,
+      "required": true,
       "exists": true,
-      "sha256": "9f98117c5fcf8c70636a9490d8d5e2d4e1e8aedf7e5b218b06952d7c591632da",
+      "sha256": "4e24b0fda49c5567b45f1a1fe2911b51a58830513d437a2d8df763e219644b5c",
       "description": "evidence-summary.md"
     },
     {
       "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/blockers.md",
-      "required": false,
+      "required": true,
       "exists": true,
-      "sha256": "21de97dc2344016868c5b3608d248b0fa93103d994e5e6fc8d5934f8f2f159b5",
+      "sha256": "c81a3b2dde7ada870bbf02a0163da8be3630cc03b4ca0860c9e3967e9960ca12",
       "description": "blockers.md"
     }
-  ],
-  "generated_at_utc": "2026-05-13T16:26:31.310525+00:00"
+  ]
 }
