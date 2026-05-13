@@ -1,0 +1,59 @@
+{
+  "registry_name": "langgraph-agent-readiness-tool-registry",
+  "status": "FOUNDATION_CREATED_NOT_RUNTIME_VERIFIED",
+  "tools": [
+    {
+      "name": "search_internal_docs",
+      "description": "Search authorized internal documents.",
+      "risk_level": "low",
+      "requires_human_approval": false,
+      "allowed_roles": ["employee", "analyst", "manager"],
+      "audit_required": true
+    },
+    {
+      "name": "read_document",
+      "description": "Read a specific authorized document by identifier.",
+      "risk_level": "medium",
+      "requires_human_approval": false,
+      "allowed_roles": ["analyst", "manager"],
+      "audit_required": true
+    },
+    {
+      "name": "draft_email",
+      "description": "Draft an email without sending it.",
+      "risk_level": "medium",
+      "requires_human_approval": false,
+      "allowed_roles": ["employee", "analyst", "manager"],
+      "audit_required": true
+    },
+    {
+      "name": "send_email",
+      "description": "Send an outbound email.",
+      "risk_level": "high",
+      "requires_human_approval": true,
+      "allowed_roles": ["manager"],
+      "audit_required": true
+    },
+    {
+      "name": "update_crm_record",
+      "description": "Modify a customer or business record.",
+      "risk_level": "high",
+      "requires_human_approval": true,
+      "allowed_roles": ["manager"],
+      "audit_required": true
+    },
+    {
+      "name": "delete_record",
+      "description": "Delete a record from an operational system.",
+      "risk_level": "critical",
+      "requires_human_approval": true,
+      "allowed_roles": [],
+      "audit_required": true,
+      "default_decision": "DENY_FAIL_CLOSED"
+    }
+  ],
+  "non_claims": [
+    "This registry is not runtime enforcement by itself.",
+    "Tool authorization is not verified until runtime traces and policy outputs exist."
+  ]
+}
