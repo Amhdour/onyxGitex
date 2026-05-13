@@ -41,3 +41,12 @@ Screenshots TODO: remain TODO (no screenshots created in this run).
 - [ ] dependency-sync-status.txt screenshot from artifact. (BLOCKED: CI_NOT_RUN / CI_TRIGGER_UNAVAILABLE)
 - [ ] runtime-status.txt screenshot from artifact. (BLOCKED: CI_NOT_RUN / CI_TRIGGER_UNAVAILABLE)
 - [ ] pytest-output.txt screenshot from artifact. (BLOCKED: CI_NOT_RUN / CI_TRIGGER_UNAVAILABLE)
+
+## RAG Boundary Proof Checklist — Normalized
+- Primary RAG boundary CI run screenshot: TODO (no direct proof).
+- Primary RAG boundary artifact screenshot: TODO (no direct proof).
+- External CI signal screenshot: PRESENT if recorded.
+- Local runtime dependency blocker logs: PRESENT (files exist).
+- Python runtime evidence logs: PRESENT (files exist).
+- Launch-gate NO-GO screenshot: TODO/PENDING capture.
+- RAG boundary PASS screenshot: TODO (must remain absent unless direct PASS proof exists).

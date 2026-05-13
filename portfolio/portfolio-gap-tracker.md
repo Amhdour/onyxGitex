@@ -19,3 +19,16 @@
 | CI artifact proof incomplete or pending. | PARTIAL | Actions run + uploaded artifact screenshots | DevSecOps | Public proof incomplete | Run workflow and attach screenshots |
 | Launch decision cannot be upgraded to GO. | NOT_ENOUGH_EVIDENCE | Verified runtime control evidence across critical controls | Launch Gate Owner | No production launch recommendation | Close critical runtime evidence gaps first |
 | Public case study must preserve evidence limitations. | REQUIRED | Updated public proof pack language and screenshots | Portfolio Owner | Reputation risk if overstated | Keep limitation wording and evidence-linked claims |
+
+## RAG Retrieval-Boundary Runtime/CI Gap — Normalized Update
+- Current status: `NOT_ENOUGH_EVIDENCE / NO_GO`
+- Local runtime: `BLOCKED_DEPENDENCY`
+- Primary CI: `CI_NOT_RUN`
+- External CI: `EXTERNAL_SIGNAL_INSUFFICIENT`
+- Required evidence:
+  1. Primary RAG boundary workflow run metadata.
+  2. Verified artifact download.
+  3. Successful dependency sync.
+  4. Pytest collection/execution.
+  5. Backend/audit logs.
+  6. `final-run-status.json` upgrade based on direct proof.
