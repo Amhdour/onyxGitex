@@ -1,1346 +1,1514 @@
 [
   {
-    "audit_event_id": "ae-2c8b8d0bb3",
-    "timestamp": "2026-05-13T11:15:44.711211+00:00",
+    "audit_event_id": "ae-431171806f12",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.472908+00:00",
     "case_id": "LGG-001",
-    "node": "intake_node",
+    "node": "request",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-495ab80d41",
-    "timestamp": "2026-05-13T11:15:44.711242+00:00",
+    "audit_event_id": "ae-f5c89fb90667",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.472935+00:00",
     "case_id": "LGG-001",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-f44b6d21fc",
-    "timestamp": "2026-05-13T11:15:44.711252+00:00",
+    "audit_event_id": "ae-ce0bd8ad2cd6",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.472944+00:00",
     "case_id": "LGG-001",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-9915079f57",
-    "timestamp": "2026-05-13T11:15:44.711260+00:00",
+    "audit_event_id": "ae-c88f2d35cdce",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.472952+00:00",
     "case_id": "LGG-001",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-f8d0b33367",
-    "timestamp": "2026-05-13T11:15:44.711267+00:00",
+    "audit_event_id": "ae-3be443da81b3",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.472987+00:00",
     "case_id": "LGG-001",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-3e0da3fcaa",
-    "timestamp": "2026-05-13T11:15:44.711275+00:00",
+    "audit_event_id": "ae-c70892de7bfd",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.472998+00:00",
     "case_id": "LGG-001",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-aebc212906",
-    "timestamp": "2026-05-13T11:15:44.711281+00:00",
+    "audit_event_id": "ae-594c0eab6361",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.473005+00:00",
     "case_id": "LGG-001",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-f4de9b826e",
-    "timestamp": "2026-05-13T11:15:44.711296+00:00",
+    "audit_event_id": "ae-564b1c46db5f",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.473013+00:00",
     "case_id": "LGG-001",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-334f4a6a49",
-    "timestamp": "2026-05-13T11:15:44.711308+00:00",
+    "audit_event_id": "ae-7f4a3f739c06",
+    "correlation_id": "corr-2c84af873564",
+    "timestamp": "2026-05-13T11:35:26.473020+00:00",
     "case_id": "LGG-001",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-b408efd82a",
-    "timestamp": "2026-05-13T11:15:44.711347+00:00",
-    "case_id": "LGG-001",
-    "node": "audit_node",
-    "decision": "ALLOW"
-  },
-  {
-    "audit_event_id": "ae-33ffd2dd57",
-    "timestamp": "2026-05-13T11:15:44.711356+00:00",
-    "case_id": "LGG-001",
-    "node": "incident_timeline_node",
-    "decision": "ALLOW"
-  },
-  {
-    "audit_event_id": "ae-3349c5f9da",
-    "timestamp": "2026-05-13T11:15:44.711363+00:00",
-    "case_id": "LGG-001",
-    "node": "final_response_node",
-    "decision": "ALLOW"
-  },
-  {
-    "audit_event_id": "ae-190aa6cd3b",
-    "timestamp": "2026-05-13T11:15:44.711378+00:00",
+    "audit_event_id": "ae-5d614d9371c2",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473049+00:00",
     "case_id": "LGG-002",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-5ab6b0bb53",
-    "timestamp": "2026-05-13T11:15:44.711385+00:00",
+    "audit_event_id": "ae-182b7c38e5bc",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473062+00:00",
     "case_id": "LGG-002",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-cb2152d953",
-    "timestamp": "2026-05-13T11:15:44.711392+00:00",
+    "audit_event_id": "ae-8d60e01bf6c9",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473074+00:00",
     "case_id": "LGG-002",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-8c034b8a85",
-    "timestamp": "2026-05-13T11:15:44.711433+00:00",
+    "audit_event_id": "ae-e267074aa09b",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473093+00:00",
     "case_id": "LGG-002",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-63b551aec1",
-    "timestamp": "2026-05-13T11:15:44.711446+00:00",
+    "audit_event_id": "ae-94473e408173",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473100+00:00",
     "case_id": "LGG-002",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-8a8b45da96",
-    "timestamp": "2026-05-13T11:15:44.711459+00:00",
+    "audit_event_id": "ae-dda683c0fda1",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473131+00:00",
     "case_id": "LGG-002",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-b26494572c",
-    "timestamp": "2026-05-13T11:15:44.711471+00:00",
+    "audit_event_id": "ae-2b2d516cb995",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473139+00:00",
     "case_id": "LGG-002",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-626bdf9105",
-    "timestamp": "2026-05-13T11:15:44.711483+00:00",
+    "audit_event_id": "ae-716f6519e2d4",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473146+00:00",
     "case_id": "LGG-002",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-fe26a60f8c",
-    "timestamp": "2026-05-13T11:15:44.711492+00:00",
+    "audit_event_id": "ae-38eb35790e11",
+    "correlation_id": "corr-a7e9fc3f939e",
+    "timestamp": "2026-05-13T11:35:26.473153+00:00",
     "case_id": "LGG-002",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-5a0704383c",
-    "timestamp": "2026-05-13T11:15:44.711499+00:00",
-    "case_id": "LGG-002",
-    "node": "audit_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-8428fe9171",
-    "timestamp": "2026-05-13T11:15:44.711506+00:00",
-    "case_id": "LGG-002",
-    "node": "incident_timeline_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-c2d7708d19",
-    "timestamp": "2026-05-13T11:15:44.711514+00:00",
-    "case_id": "LGG-002",
-    "node": "final_response_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-890610d229",
-    "timestamp": "2026-05-13T11:15:44.711526+00:00",
+    "audit_event_id": "ae-65baba7d8533",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473171+00:00",
     "case_id": "LGG-003",
-    "node": "intake_node",
+    "node": "request",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-5e02f9fe0c",
-    "timestamp": "2026-05-13T11:15:44.711533+00:00",
+    "audit_event_id": "ae-0c6c25c53155",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473180+00:00",
     "case_id": "LGG-003",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-ea153cf48d",
-    "timestamp": "2026-05-13T11:15:44.711540+00:00",
+    "audit_event_id": "ae-9178992b017a",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473187+00:00",
     "case_id": "LGG-003",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-a72c132d55",
-    "timestamp": "2026-05-13T11:15:44.711547+00:00",
+    "audit_event_id": "ae-bc1350b9a41b",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473195+00:00",
     "case_id": "LGG-003",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-1e036e4a75",
-    "timestamp": "2026-05-13T11:15:44.711554+00:00",
+    "audit_event_id": "ae-ae0168123455",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473202+00:00",
     "case_id": "LGG-003",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-61fd5048de",
-    "timestamp": "2026-05-13T11:15:44.711561+00:00",
+    "audit_event_id": "ae-6a2cba49d728",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473209+00:00",
     "case_id": "LGG-003",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-c50bccf7cf",
-    "timestamp": "2026-05-13T11:15:44.711591+00:00",
+    "audit_event_id": "ae-9fdbd7c668e7",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473216+00:00",
     "case_id": "LGG-003",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-5327dbd7ca",
-    "timestamp": "2026-05-13T11:15:44.711599+00:00",
+    "audit_event_id": "ae-07bdf9874ade",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473223+00:00",
     "case_id": "LGG-003",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-e801f46960",
-    "timestamp": "2026-05-13T11:15:44.711606+00:00",
+    "audit_event_id": "ae-ecdacb871bee",
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "timestamp": "2026-05-13T11:35:26.473230+00:00",
     "case_id": "LGG-003",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "REQUIRE_APPROVAL"
   },
   {
-    "audit_event_id": "ae-b47351fc3d",
-    "timestamp": "2026-05-13T11:15:44.711613+00:00",
-    "case_id": "LGG-003",
-    "node": "audit_node",
-    "decision": "REQUIRE_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-49a88e4f8c",
-    "timestamp": "2026-05-13T11:15:44.711620+00:00",
-    "case_id": "LGG-003",
-    "node": "incident_timeline_node",
-    "decision": "REQUIRE_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-1c482c497c",
-    "timestamp": "2026-05-13T11:15:44.711627+00:00",
-    "case_id": "LGG-003",
-    "node": "final_response_node",
-    "decision": "REQUIRE_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-87f9ae38c0",
-    "timestamp": "2026-05-13T11:15:44.711642+00:00",
+    "audit_event_id": "ae-ee614d71e976",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473246+00:00",
     "case_id": "LGG-004",
-    "node": "intake_node",
+    "node": "request",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-eeb0d847aa",
-    "timestamp": "2026-05-13T11:15:44.711649+00:00",
+    "audit_event_id": "ae-38de43fb32dc",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473272+00:00",
     "case_id": "LGG-004",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-b705c4d566",
-    "timestamp": "2026-05-13T11:15:44.711656+00:00",
+    "audit_event_id": "ae-28051165d3bc",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473280+00:00",
     "case_id": "LGG-004",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-ebe8f4d883",
-    "timestamp": "2026-05-13T11:15:44.711663+00:00",
+    "audit_event_id": "ae-9a230dfbc450",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473287+00:00",
     "case_id": "LGG-004",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-bf810c1814",
-    "timestamp": "2026-05-13T11:15:44.711670+00:00",
+    "audit_event_id": "ae-930c6eb9e188",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473294+00:00",
     "case_id": "LGG-004",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-9b799e47c7",
-    "timestamp": "2026-05-13T11:15:44.711677+00:00",
+    "audit_event_id": "ae-53bb4a2b7d5a",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473301+00:00",
     "case_id": "LGG-004",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-32ae1da243",
-    "timestamp": "2026-05-13T11:15:44.711684+00:00",
+    "audit_event_id": "ae-a0aa8609848b",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473308+00:00",
     "case_id": "LGG-004",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-644c88f502",
-    "timestamp": "2026-05-13T11:15:44.711708+00:00",
+    "audit_event_id": "ae-f59bc90f68f4",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473315+00:00",
     "case_id": "LGG-004",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-d40a6b2c48",
-    "timestamp": "2026-05-13T11:15:44.711716+00:00",
+    "audit_event_id": "ae-37c6fcadf322",
+    "correlation_id": "corr-8a555437b055",
+    "timestamp": "2026-05-13T11:35:26.473322+00:00",
     "case_id": "LGG-004",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-5e6f674aec",
-    "timestamp": "2026-05-13T11:15:44.711723+00:00",
-    "case_id": "LGG-004",
-    "node": "audit_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-cba3ab57d6",
-    "timestamp": "2026-05-13T11:15:44.711730+00:00",
-    "case_id": "LGG-004",
-    "node": "incident_timeline_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-4d0c3b8211",
-    "timestamp": "2026-05-13T11:15:44.711737+00:00",
-    "case_id": "LGG-004",
-    "node": "final_response_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-5503630a18",
-    "timestamp": "2026-05-13T11:15:44.711748+00:00",
+    "audit_event_id": "ae-a881c4961f62",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473356+00:00",
     "case_id": "LGG-005",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-89ee02ce74",
-    "timestamp": "2026-05-13T11:15:44.711755+00:00",
+    "audit_event_id": "ae-722fe5a8d7ec",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473364+00:00",
     "case_id": "LGG-005",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-e390091534",
-    "timestamp": "2026-05-13T11:15:44.711762+00:00",
+    "audit_event_id": "ae-d98fdb059ad4",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473371+00:00",
     "case_id": "LGG-005",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-c63cdf9af3",
-    "timestamp": "2026-05-13T11:15:44.711769+00:00",
+    "audit_event_id": "ae-1a01f3812c73",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473378+00:00",
     "case_id": "LGG-005",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-443a71c9bb",
-    "timestamp": "2026-05-13T11:15:44.711776+00:00",
+    "audit_event_id": "ae-fe33772c6aab",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473385+00:00",
     "case_id": "LGG-005",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-e3a71582ff",
-    "timestamp": "2026-05-13T11:15:44.711784+00:00",
+    "audit_event_id": "ae-96644b18e03a",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473393+00:00",
     "case_id": "LGG-005",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-e39af0897a",
-    "timestamp": "2026-05-13T11:15:44.711791+00:00",
+    "audit_event_id": "ae-6db709dc7379",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473400+00:00",
     "case_id": "LGG-005",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-2cf23b7946",
-    "timestamp": "2026-05-13T11:15:44.711819+00:00",
+    "audit_event_id": "ae-106b2693c77f",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473407+00:00",
     "case_id": "LGG-005",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-9938cd0517",
-    "timestamp": "2026-05-13T11:15:44.711827+00:00",
+    "audit_event_id": "ae-dfba5f1376c6",
+    "correlation_id": "corr-36c1711a4853",
+    "timestamp": "2026-05-13T11:35:26.473432+00:00",
     "case_id": "LGG-005",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-9eeea9062a",
-    "timestamp": "2026-05-13T11:15:44.711834+00:00",
-    "case_id": "LGG-005",
-    "node": "audit_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-c14e1ddd72",
-    "timestamp": "2026-05-13T11:15:44.711841+00:00",
-    "case_id": "LGG-005",
-    "node": "incident_timeline_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-f75f58e5c3",
-    "timestamp": "2026-05-13T11:15:44.711848+00:00",
-    "case_id": "LGG-005",
-    "node": "final_response_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-9f6280d690",
-    "timestamp": "2026-05-13T11:15:44.711858+00:00",
+    "audit_event_id": "ae-f49a868c2aaa",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473449+00:00",
     "case_id": "LGG-006",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-5a3532d9fb",
-    "timestamp": "2026-05-13T11:15:44.711865+00:00",
+    "audit_event_id": "ae-2be3105b465f",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473456+00:00",
     "case_id": "LGG-006",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-73200cf2f5",
-    "timestamp": "2026-05-13T11:15:44.711871+00:00",
+    "audit_event_id": "ae-f06fffca28e2",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473463+00:00",
     "case_id": "LGG-006",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-28f8ae5be1",
-    "timestamp": "2026-05-13T11:15:44.711878+00:00",
+    "audit_event_id": "ae-6a7f826abdee",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473470+00:00",
     "case_id": "LGG-006",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-9686534a5a",
-    "timestamp": "2026-05-13T11:15:44.711885+00:00",
+    "audit_event_id": "ae-3da80781bc23",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473477+00:00",
     "case_id": "LGG-006",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-8dbabdb42b",
-    "timestamp": "2026-05-13T11:15:44.711892+00:00",
+    "audit_event_id": "ae-6768e19ea808",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473484+00:00",
     "case_id": "LGG-006",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-91bd19809d",
-    "timestamp": "2026-05-13T11:15:44.711899+00:00",
+    "audit_event_id": "ae-f0949feafb95",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473491+00:00",
     "case_id": "LGG-006",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-0d94198206",
-    "timestamp": "2026-05-13T11:15:44.711924+00:00",
+    "audit_event_id": "ae-aaae71df4447",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473498+00:00",
     "case_id": "LGG-006",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-1159ae8fcc",
-    "timestamp": "2026-05-13T11:15:44.711933+00:00",
+    "audit_event_id": "ae-6415a856e802",
+    "correlation_id": "corr-21497cdc2968",
+    "timestamp": "2026-05-13T11:35:26.473506+00:00",
     "case_id": "LGG-006",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-99de3e6c66",
-    "timestamp": "2026-05-13T11:15:44.711941+00:00",
-    "case_id": "LGG-006",
-    "node": "audit_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-5776f4827c",
-    "timestamp": "2026-05-13T11:15:44.711964+00:00",
-    "case_id": "LGG-006",
-    "node": "incident_timeline_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-b021a8ba7c",
-    "timestamp": "2026-05-13T11:15:44.711972+00:00",
-    "case_id": "LGG-006",
-    "node": "final_response_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-a89cb187ea",
-    "timestamp": "2026-05-13T11:15:44.711983+00:00",
+    "audit_event_id": "ae-b0bcf6189882",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473521+00:00",
     "case_id": "LGG-007",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-af5fbf8c3c",
-    "timestamp": "2026-05-13T11:15:44.711990+00:00",
+    "audit_event_id": "ae-593784e10591",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473545+00:00",
     "case_id": "LGG-007",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-5c4454ae1d",
-    "timestamp": "2026-05-13T11:15:44.711997+00:00",
+    "audit_event_id": "ae-e904e9686e6e",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473554+00:00",
     "case_id": "LGG-007",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-849aef8204",
-    "timestamp": "2026-05-13T11:15:44.712003+00:00",
+    "audit_event_id": "ae-9717e897b695",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473561+00:00",
     "case_id": "LGG-007",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-1a61327e62",
-    "timestamp": "2026-05-13T11:15:44.712059+00:00",
+    "audit_event_id": "ae-92e80a0fe955",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473568+00:00",
     "case_id": "LGG-007",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-a4b1e1fee0",
-    "timestamp": "2026-05-13T11:15:44.712070+00:00",
+    "audit_event_id": "ae-416fad5d06a2",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473576+00:00",
     "case_id": "LGG-007",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-6cc5253f44",
-    "timestamp": "2026-05-13T11:15:44.712077+00:00",
+    "audit_event_id": "ae-6f5e57cb34d0",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473583+00:00",
     "case_id": "LGG-007",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-db03b2b62f",
-    "timestamp": "2026-05-13T11:15:44.712084+00:00",
+    "audit_event_id": "ae-cdce7613329e",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473590+00:00",
     "case_id": "LGG-007",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-ca4bff574d",
-    "timestamp": "2026-05-13T11:15:44.712091+00:00",
+    "audit_event_id": "ae-a58ecd3648ae",
+    "correlation_id": "corr-f551cf3523f8",
+    "timestamp": "2026-05-13T11:35:26.473597+00:00",
     "case_id": "LGG-007",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-0ea1ef6775",
-    "timestamp": "2026-05-13T11:15:44.712099+00:00",
-    "case_id": "LGG-007",
-    "node": "audit_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-11396fb0c0",
-    "timestamp": "2026-05-13T11:15:44.712125+00:00",
-    "case_id": "LGG-007",
-    "node": "incident_timeline_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-42c0e07436",
-    "timestamp": "2026-05-13T11:15:44.712133+00:00",
-    "case_id": "LGG-007",
-    "node": "final_response_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-0bc58e9f64",
-    "timestamp": "2026-05-13T11:15:44.712143+00:00",
+    "audit_event_id": "ae-4631e26538ea",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473612+00:00",
     "case_id": "LGG-008",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-33516bbac1",
-    "timestamp": "2026-05-13T11:15:44.712150+00:00",
+    "audit_event_id": "ae-2d675c86737a",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473619+00:00",
     "case_id": "LGG-008",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-b6081dd1d7",
-    "timestamp": "2026-05-13T11:15:44.712157+00:00",
+    "audit_event_id": "ae-dd4bc5c89c5a",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473626+00:00",
     "case_id": "LGG-008",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-752d41ba41",
-    "timestamp": "2026-05-13T11:15:44.712164+00:00",
+    "audit_event_id": "ae-e857f6ad68d9",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473633+00:00",
     "case_id": "LGG-008",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-9b691514c3",
-    "timestamp": "2026-05-13T11:15:44.712172+00:00",
+    "audit_event_id": "ae-88ba8f686263",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473640+00:00",
     "case_id": "LGG-008",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-b08c34c570",
-    "timestamp": "2026-05-13T11:15:44.712187+00:00",
+    "audit_event_id": "ae-44e4e76663f6",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473647+00:00",
     "case_id": "LGG-008",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-52f32d36c6",
-    "timestamp": "2026-05-13T11:15:44.712198+00:00",
+    "audit_event_id": "ae-7843a8d176cb",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473653+00:00",
     "case_id": "LGG-008",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-8f5488852a",
-    "timestamp": "2026-05-13T11:15:44.712209+00:00",
+    "audit_event_id": "ae-7c19603418d2",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473661+00:00",
     "case_id": "LGG-008",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-01a50cb6bd",
-    "timestamp": "2026-05-13T11:15:44.712216+00:00",
+    "audit_event_id": "ae-dd41eca7cf75",
+    "correlation_id": "corr-a75abfcfbd22",
+    "timestamp": "2026-05-13T11:35:26.473668+00:00",
     "case_id": "LGG-008",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-0ecba94580",
-    "timestamp": "2026-05-13T11:15:44.712224+00:00",
-    "case_id": "LGG-008",
-    "node": "audit_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-96306092a5",
-    "timestamp": "2026-05-13T11:15:44.712231+00:00",
-    "case_id": "LGG-008",
-    "node": "incident_timeline_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-a48cbd1d90",
-    "timestamp": "2026-05-13T11:15:44.712238+00:00",
-    "case_id": "LGG-008",
-    "node": "final_response_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-ca6bee2ce1",
-    "timestamp": "2026-05-13T11:15:44.712268+00:00",
+    "audit_event_id": "ae-71cf53cac325",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473700+00:00",
     "case_id": "LGG-009",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-259cf76a5c",
-    "timestamp": "2026-05-13T11:15:44.712276+00:00",
+    "audit_event_id": "ae-e3b64d25bea6",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473708+00:00",
     "case_id": "LGG-009",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-0ed46f9324",
-    "timestamp": "2026-05-13T11:15:44.712283+00:00",
+    "audit_event_id": "ae-b704dc62ec64",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473715+00:00",
     "case_id": "LGG-009",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-dc0f3c0b71",
-    "timestamp": "2026-05-13T11:15:44.712290+00:00",
+    "audit_event_id": "ae-7fff3f9f82b2",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473722+00:00",
     "case_id": "LGG-009",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-f04bff1e94",
-    "timestamp": "2026-05-13T11:15:44.712297+00:00",
+    "audit_event_id": "ae-3f844836afa4",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473729+00:00",
     "case_id": "LGG-009",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-8145a2f433",
-    "timestamp": "2026-05-13T11:15:44.712303+00:00",
+    "audit_event_id": "ae-138b8f586311",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473737+00:00",
     "case_id": "LGG-009",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-d242fcef5d",
-    "timestamp": "2026-05-13T11:15:44.712310+00:00",
+    "audit_event_id": "ae-55953ce00822",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473744+00:00",
     "case_id": "LGG-009",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-f4277d304c",
-    "timestamp": "2026-05-13T11:15:44.712317+00:00",
+    "audit_event_id": "ae-e760c7fb40eb",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473751+00:00",
     "case_id": "LGG-009",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-f939869b1d",
-    "timestamp": "2026-05-13T11:15:44.712324+00:00",
+    "audit_event_id": "ae-0d43ae0593a6",
+    "correlation_id": "corr-865b38e0616f",
+    "timestamp": "2026-05-13T11:35:26.473758+00:00",
     "case_id": "LGG-009",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-e01c02b565",
-    "timestamp": "2026-05-13T11:15:44.712331+00:00",
-    "case_id": "LGG-009",
-    "node": "audit_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-235f574851",
-    "timestamp": "2026-05-13T11:15:44.712337+00:00",
-    "case_id": "LGG-009",
-    "node": "incident_timeline_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-f62bf6c787",
-    "timestamp": "2026-05-13T11:15:44.712344+00:00",
-    "case_id": "LGG-009",
-    "node": "final_response_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-913a7e4c80",
-    "timestamp": "2026-05-13T11:15:44.712353+00:00",
+    "audit_event_id": "ae-3b16b89cc074",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473773+00:00",
     "case_id": "LGG-010",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-f6389dec13",
-    "timestamp": "2026-05-13T11:15:44.712362+00:00",
+    "audit_event_id": "ae-777d11f035b9",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473780+00:00",
     "case_id": "LGG-010",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-9a70c73d0d",
-    "timestamp": "2026-05-13T11:15:44.712399+00:00",
+    "audit_event_id": "ae-1da4d40ce873",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473787+00:00",
     "case_id": "LGG-010",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-21c3cabf09",
-    "timestamp": "2026-05-13T11:15:44.712408+00:00",
+    "audit_event_id": "ae-e55d900adcbb",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473794+00:00",
     "case_id": "LGG-010",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-f7ebf737ec",
-    "timestamp": "2026-05-13T11:15:44.712415+00:00",
+    "audit_event_id": "ae-d71ddcdd24ba",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473800+00:00",
     "case_id": "LGG-010",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-4637b4544b",
-    "timestamp": "2026-05-13T11:15:44.712422+00:00",
+    "audit_event_id": "ae-4a7bc90c5a78",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473807+00:00",
     "case_id": "LGG-010",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-04aed699dc",
-    "timestamp": "2026-05-13T11:15:44.712429+00:00",
+    "audit_event_id": "ae-a998821fb2f3",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473814+00:00",
     "case_id": "LGG-010",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-0b2cbf8558",
-    "timestamp": "2026-05-13T11:15:44.712436+00:00",
+    "audit_event_id": "ae-884cfea6ff02",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473821+00:00",
     "case_id": "LGG-010",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-59152cf8d0",
-    "timestamp": "2026-05-13T11:15:44.712443+00:00",
+    "audit_event_id": "ae-899fb949bb30",
+    "correlation_id": "corr-d70a7d63619a",
+    "timestamp": "2026-05-13T11:35:26.473846+00:00",
     "case_id": "LGG-010",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-6ef1cc26eb",
-    "timestamp": "2026-05-13T11:15:44.712467+00:00",
-    "case_id": "LGG-010",
-    "node": "audit_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-c8a92ba52b",
-    "timestamp": "2026-05-13T11:15:44.712476+00:00",
-    "case_id": "LGG-010",
-    "node": "incident_timeline_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-b2d5a51974",
-    "timestamp": "2026-05-13T11:15:44.712483+00:00",
-    "case_id": "LGG-010",
-    "node": "final_response_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-e77c316c64",
-    "timestamp": "2026-05-13T11:15:44.712529+00:00",
+    "audit_event_id": "ae-ec7e593f81f5",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473861+00:00",
     "case_id": "LGG-011",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-b436e6f474",
-    "timestamp": "2026-05-13T11:15:44.712542+00:00",
+    "audit_event_id": "ae-23e3a46e4add",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473868+00:00",
     "case_id": "LGG-011",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-cbfbd913db",
-    "timestamp": "2026-05-13T11:15:44.712554+00:00",
+    "audit_event_id": "ae-05789bc6a832",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473876+00:00",
     "case_id": "LGG-011",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-28928596df",
-    "timestamp": "2026-05-13T11:15:44.712567+00:00",
+    "audit_event_id": "ae-714e0b868413",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473883+00:00",
     "case_id": "LGG-011",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-150b56f06a",
-    "timestamp": "2026-05-13T11:15:44.712576+00:00",
+    "audit_event_id": "ae-8cbf71bf9dda",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473890+00:00",
     "case_id": "LGG-011",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-e96f5e54f3",
-    "timestamp": "2026-05-13T11:15:44.712583+00:00",
+    "audit_event_id": "ae-66df86ba3193",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473897+00:00",
     "case_id": "LGG-011",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-46ff2d907d",
-    "timestamp": "2026-05-13T11:15:44.712590+00:00",
+    "audit_event_id": "ae-7ce78939ec5a",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473904+00:00",
     "case_id": "LGG-011",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-07e58e6cd2",
-    "timestamp": "2026-05-13T11:15:44.712597+00:00",
+    "audit_event_id": "ae-9651dd09aaf8",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473910+00:00",
     "case_id": "LGG-011",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-3884a75fe0",
-    "timestamp": "2026-05-13T11:15:44.712604+00:00",
+    "audit_event_id": "ae-866680c62107",
+    "correlation_id": "corr-374d6c380480",
+    "timestamp": "2026-05-13T11:35:26.473917+00:00",
     "case_id": "LGG-011",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-be8ae427cc",
-    "timestamp": "2026-05-13T11:15:44.712611+00:00",
-    "case_id": "LGG-011",
-    "node": "audit_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-8fa80b488e",
-    "timestamp": "2026-05-13T11:15:44.712618+00:00",
-    "case_id": "LGG-011",
-    "node": "incident_timeline_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-13c550be3c",
-    "timestamp": "2026-05-13T11:15:44.712625+00:00",
-    "case_id": "LGG-011",
-    "node": "final_response_node",
-    "decision": "DENY_FAIL_CLOSED"
-  },
-  {
-    "audit_event_id": "ae-3dd3d5a8c0",
-    "timestamp": "2026-05-13T11:15:44.712638+00:00",
+    "audit_event_id": "ae-8b6df07b8f44",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.473931+00:00",
     "case_id": "LGG-012",
-    "node": "intake_node",
+    "node": "request",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-cc0279bf34",
-    "timestamp": "2026-05-13T11:15:44.712645+00:00",
+    "audit_event_id": "ae-a6771e14ea0b",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.473938+00:00",
     "case_id": "LGG-012",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-eba6626abc",
-    "timestamp": "2026-05-13T11:15:44.712651+00:00",
+    "audit_event_id": "ae-0fb73e445add",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.473945+00:00",
     "case_id": "LGG-012",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-e2100e1a80",
-    "timestamp": "2026-05-13T11:15:44.712658+00:00",
+    "audit_event_id": "ae-cf946599962a",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.473969+00:00",
     "case_id": "LGG-012",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-b4910a9c25",
-    "timestamp": "2026-05-13T11:15:44.712665+00:00",
+    "audit_event_id": "ae-0ac767e1d9bd",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.473977+00:00",
     "case_id": "LGG-012",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-12aff79214",
-    "timestamp": "2026-05-13T11:15:44.712693+00:00",
+    "audit_event_id": "ae-f0e15f830f07",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.473985+00:00",
     "case_id": "LGG-012",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-94a67ae38d",
-    "timestamp": "2026-05-13T11:15:44.712701+00:00",
+    "audit_event_id": "ae-8cbb499613e3",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.473992+00:00",
     "case_id": "LGG-012",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-4d19d5beeb",
-    "timestamp": "2026-05-13T11:15:44.712707+00:00",
+    "audit_event_id": "ae-d3ff0e5ef1fa",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.474015+00:00",
     "case_id": "LGG-012",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-c7133f394b",
-    "timestamp": "2026-05-13T11:15:44.712714+00:00",
+    "audit_event_id": "ae-1283d41e0f72",
+    "correlation_id": "corr-06f8a1f09795",
+    "timestamp": "2026-05-13T11:35:26.474024+00:00",
     "case_id": "LGG-012",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "ALLOW"
   },
   {
-    "audit_event_id": "ae-e11ea28b71",
-    "timestamp": "2026-05-13T11:15:44.712721+00:00",
-    "case_id": "LGG-012",
-    "node": "audit_node",
-    "decision": "ALLOW"
-  },
-  {
-    "audit_event_id": "ae-5dfdc586b9",
-    "timestamp": "2026-05-13T11:15:44.712728+00:00",
-    "case_id": "LGG-012",
-    "node": "incident_timeline_node",
-    "decision": "ALLOW"
-  },
-  {
-    "audit_event_id": "ae-34092429eb",
-    "timestamp": "2026-05-13T11:15:44.712735+00:00",
-    "case_id": "LGG-012",
-    "node": "final_response_node",
-    "decision": "ALLOW"
-  },
-  {
-    "audit_event_id": "ae-5acaa5ef9c",
-    "timestamp": "2026-05-13T11:15:44.712746+00:00",
+    "audit_event_id": "ae-c3ee461d838f",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474039+00:00",
     "case_id": "LGG-013",
-    "node": "intake_node",
+    "node": "request",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-ff57764104",
-    "timestamp": "2026-05-13T11:15:44.712770+00:00",
+    "audit_event_id": "ae-bac09da21824",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474047+00:00",
     "case_id": "LGG-013",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-6836dd6313",
-    "timestamp": "2026-05-13T11:15:44.712778+00:00",
+    "audit_event_id": "ae-52d8ddfff387",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474054+00:00",
     "case_id": "LGG-013",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-98038e5b4d",
-    "timestamp": "2026-05-13T11:15:44.712785+00:00",
+    "audit_event_id": "ae-803fd6c405e9",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474061+00:00",
     "case_id": "LGG-013",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-1d0feda017",
-    "timestamp": "2026-05-13T11:15:44.712792+00:00",
+    "audit_event_id": "ae-95d1ed8517c8",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474068+00:00",
     "case_id": "LGG-013",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-ec5ac1c292",
-    "timestamp": "2026-05-13T11:15:44.712799+00:00",
+    "audit_event_id": "ae-80c07a6269a4",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474075+00:00",
     "case_id": "LGG-013",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-6dc8cd33dd",
-    "timestamp": "2026-05-13T11:15:44.712899+00:00",
+    "audit_event_id": "ae-3d679a062dc3",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474082+00:00",
     "case_id": "LGG-013",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-5a2d2429eb",
-    "timestamp": "2026-05-13T11:15:44.712907+00:00",
+    "audit_event_id": "ae-1328974b448d",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474088+00:00",
     "case_id": "LGG-013",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-d8aa2cd167",
-    "timestamp": "2026-05-13T11:15:44.712914+00:00",
+    "audit_event_id": "ae-84a193cd7478",
+    "correlation_id": "corr-9cc227bf4827",
+    "timestamp": "2026-05-13T11:35:26.474095+00:00",
     "case_id": "LGG-013",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-930bb4f0ab",
-    "timestamp": "2026-05-13T11:15:44.712921+00:00",
-    "case_id": "LGG-013",
-    "node": "audit_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-c26eb1605e",
-    "timestamp": "2026-05-13T11:15:44.712928+00:00",
-    "case_id": "LGG-013",
-    "node": "incident_timeline_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-ab6e603189",
-    "timestamp": "2026-05-13T11:15:44.712935+00:00",
-    "case_id": "LGG-013",
-    "node": "final_response_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-2684ba252b",
-    "timestamp": "2026-05-13T11:15:44.712947+00:00",
+    "audit_event_id": "ae-808cf0261aee",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474147+00:00",
     "case_id": "LGG-014",
-    "node": "intake_node",
+    "node": "request",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-ebe547e63c",
-    "timestamp": "2026-05-13T11:15:44.712954+00:00",
+    "audit_event_id": "ae-1492da6a88de",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474156+00:00",
     "case_id": "LGG-014",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-ef65c28529",
-    "timestamp": "2026-05-13T11:15:44.712961+00:00",
+    "audit_event_id": "ae-97796aead603",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474162+00:00",
     "case_id": "LGG-014",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-fa2f8a49ba",
-    "timestamp": "2026-05-13T11:15:44.712968+00:00",
+    "audit_event_id": "ae-e3d8d14e4a46",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474169+00:00",
     "case_id": "LGG-014",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-0c3581583a",
-    "timestamp": "2026-05-13T11:15:44.712975+00:00",
+    "audit_event_id": "ae-b5a24ee4e1d4",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474176+00:00",
     "case_id": "LGG-014",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-3de4565037",
-    "timestamp": "2026-05-13T11:15:44.712982+00:00",
+    "audit_event_id": "ae-a94b0042c472",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474183+00:00",
     "case_id": "LGG-014",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-bc3ac23b74",
-    "timestamp": "2026-05-13T11:15:44.713007+00:00",
+    "audit_event_id": "ae-4cc590887ec8",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474190+00:00",
     "case_id": "LGG-014",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-848a21badd",
-    "timestamp": "2026-05-13T11:15:44.713014+00:00",
+    "audit_event_id": "ae-c2c24de7f780",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474197+00:00",
     "case_id": "LGG-014",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-2afa55bdd1",
-    "timestamp": "2026-05-13T11:15:44.713021+00:00",
+    "audit_event_id": "ae-bfce926af985",
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "timestamp": "2026-05-13T11:35:26.474204+00:00",
     "case_id": "LGG-014",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "ALLOW_WITH_APPROVAL"
   },
   {
-    "audit_event_id": "ae-303155e480",
-    "timestamp": "2026-05-13T11:15:44.713028+00:00",
-    "case_id": "LGG-014",
-    "node": "audit_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-3ce4382de6",
-    "timestamp": "2026-05-13T11:15:44.713035+00:00",
-    "case_id": "LGG-014",
-    "node": "incident_timeline_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-922a3b4c14",
-    "timestamp": "2026-05-13T11:15:44.713041+00:00",
-    "case_id": "LGG-014",
-    "node": "final_response_node",
-    "decision": "ALLOW_WITH_APPROVAL"
-  },
-  {
-    "audit_event_id": "ae-6d8cf84f24",
-    "timestamp": "2026-05-13T11:15:44.713068+00:00",
+    "audit_event_id": "ae-61631c17fbba",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474253+00:00",
     "case_id": "LGG-015",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-7e1277110d",
-    "timestamp": "2026-05-13T11:15:44.713077+00:00",
+    "audit_event_id": "ae-4238314a861d",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474261+00:00",
     "case_id": "LGG-015",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-6b2641f401",
-    "timestamp": "2026-05-13T11:15:44.713084+00:00",
+    "audit_event_id": "ae-b5e6d065cd20",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474268+00:00",
     "case_id": "LGG-015",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-88dd99aafb",
-    "timestamp": "2026-05-13T11:15:44.713107+00:00",
+    "audit_event_id": "ae-bb62122195ba",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474276+00:00",
     "case_id": "LGG-015",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-32a738b114",
-    "timestamp": "2026-05-13T11:15:44.713114+00:00",
+    "audit_event_id": "ae-cd0fbe533fe6",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474283+00:00",
     "case_id": "LGG-015",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-5080080583",
-    "timestamp": "2026-05-13T11:15:44.713122+00:00",
+    "audit_event_id": "ae-f8dec2d881f3",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474289+00:00",
     "case_id": "LGG-015",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-46ae7598ba",
-    "timestamp": "2026-05-13T11:15:44.713128+00:00",
+    "audit_event_id": "ae-cbe1cb28945c",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474314+00:00",
     "case_id": "LGG-015",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-3a4ccfe1e3",
-    "timestamp": "2026-05-13T11:15:44.713135+00:00",
+    "audit_event_id": "ae-97d5f7090ae1",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474322+00:00",
     "case_id": "LGG-015",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-89e2691603",
-    "timestamp": "2026-05-13T11:15:44.713142+00:00",
+    "audit_event_id": "ae-a9808713b90b",
+    "correlation_id": "corr-49e9f5a254be",
+    "timestamp": "2026-05-13T11:35:26.474329+00:00",
     "case_id": "LGG-015",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-c7cc41db2e",
-    "timestamp": "2026-05-13T11:15:44.713149+00:00",
-    "case_id": "LGG-015",
-    "node": "audit_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-2b5c14e9fc",
-    "timestamp": "2026-05-13T11:15:44.713156+00:00",
-    "case_id": "LGG-015",
-    "node": "incident_timeline_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-a8a0d21188",
-    "timestamp": "2026-05-13T11:15:44.713162+00:00",
-    "case_id": "LGG-015",
-    "node": "final_response_node",
-    "decision": "DENY"
-  },
-  {
-    "audit_event_id": "ae-b32bb27f37",
-    "timestamp": "2026-05-13T11:15:44.713173+00:00",
+    "audit_event_id": "ae-13ecfb1ab043",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474343+00:00",
     "case_id": "LGG-016",
-    "node": "intake_node",
+    "node": "request",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-2d7323e437",
-    "timestamp": "2026-05-13T11:15:44.713180+00:00",
+    "audit_event_id": "ae-8a0fd2512df4",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474350+00:00",
     "case_id": "LGG-016",
-    "node": "identity_node",
+    "node": "identity",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-dfbdcbadc7",
-    "timestamp": "2026-05-13T11:15:44.713187+00:00",
+    "audit_event_id": "ae-273e1f9568d1",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474357+00:00",
     "case_id": "LGG-016",
-    "node": "memory_load_node",
+    "node": "memory",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-6b787628d3",
-    "timestamp": "2026-05-13T11:15:44.713193+00:00",
+    "audit_event_id": "ae-57779df966c5",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474364+00:00",
     "case_id": "LGG-016",
-    "node": "prompt_injection_detection_node",
+    "node": "injection_check",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-75a599e20b",
-    "timestamp": "2026-05-13T11:15:44.713200+00:00",
+    "audit_event_id": "ae-3b964b152c04",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474371+00:00",
     "case_id": "LGG-016",
-    "node": "tool_registry_node",
+    "node": "policy",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-fd0d5e4748",
-    "timestamp": "2026-05-13T11:15:44.713207+00:00",
+    "audit_event_id": "ae-6d15b44d6594",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474378+00:00",
     "case_id": "LGG-016",
-    "node": "policy_gate_node",
+    "node": "approval",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-05a1689485",
-    "timestamp": "2026-05-13T11:15:44.713214+00:00",
+    "audit_event_id": "ae-aebc596eb9bd",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474385+00:00",
     "case_id": "LGG-016",
-    "node": "human_approval_node",
+    "node": "sandbox_tool",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-3cb9c77cf1",
-    "timestamp": "2026-05-13T11:15:44.713221+00:00",
+    "audit_event_id": "ae-68f9603b6389",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474420+00:00",
     "case_id": "LGG-016",
-    "node": "sandboxed_tool_execution_node",
+    "node": "audit",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-49e812a5fb",
-    "timestamp": "2026-05-13T11:15:44.713227+00:00",
+    "audit_event_id": "ae-1995df2aa7a4",
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "timestamp": "2026-05-13T11:35:26.474430+00:00",
     "case_id": "LGG-016",
-    "node": "memory_write_node",
+    "node": "final_response",
     "decision": "DENY"
   },
   {
-    "audit_event_id": "ae-f374fd27c3",
-    "timestamp": "2026-05-13T11:15:44.713234+00:00",
-    "case_id": "LGG-016",
-    "node": "audit_node",
-    "decision": "DENY"
+    "audit_event_id": "ae-016ca3328eaa",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474465+00:00",
+    "case_id": "LGG-017",
+    "node": "request",
+    "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-abd406f263",
-    "timestamp": "2026-05-13T11:15:44.713267+00:00",
-    "case_id": "LGG-016",
-    "node": "incident_timeline_node",
-    "decision": "DENY"
+    "audit_event_id": "ae-2a29b978f230",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474473+00:00",
+    "case_id": "LGG-017",
+    "node": "identity",
+    "decision": "DENY_FAIL_CLOSED"
   },
   {
-    "audit_event_id": "ae-1e4b60baec",
-    "timestamp": "2026-05-13T11:15:44.713279+00:00",
-    "case_id": "LGG-016",
-    "node": "final_response_node",
-    "decision": "DENY"
+    "audit_event_id": "ae-d878b4b67065",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474497+00:00",
+    "case_id": "LGG-017",
+    "node": "memory",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-092325576706",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474505+00:00",
+    "case_id": "LGG-017",
+    "node": "injection_check",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-6b00708bbad5",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474512+00:00",
+    "case_id": "LGG-017",
+    "node": "policy",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-16b0b9d2bd42",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474520+00:00",
+    "case_id": "LGG-017",
+    "node": "approval",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-a7c6d5fea2a6",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474527+00:00",
+    "case_id": "LGG-017",
+    "node": "sandbox_tool",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-c3f7a7cb46bd",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474534+00:00",
+    "case_id": "LGG-017",
+    "node": "audit",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-0aebd652298c",
+    "correlation_id": "corr-71b78b1f48e6",
+    "timestamp": "2026-05-13T11:35:26.474541+00:00",
+    "case_id": "LGG-017",
+    "node": "final_response",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-7e141fcf5909",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474556+00:00",
+    "case_id": "LGG-018",
+    "node": "request",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-12bbaed6a589",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474562+00:00",
+    "case_id": "LGG-018",
+    "node": "identity",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-d9727e93608e",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474569+00:00",
+    "case_id": "LGG-018",
+    "node": "memory",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-829737e88102",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474576+00:00",
+    "case_id": "LGG-018",
+    "node": "injection_check",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-9aa5ec60e6da",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474583+00:00",
+    "case_id": "LGG-018",
+    "node": "policy",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-e37998e66d92",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474607+00:00",
+    "case_id": "LGG-018",
+    "node": "approval",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-5b99b787c6ab",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474617+00:00",
+    "case_id": "LGG-018",
+    "node": "sandbox_tool",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-3c6c8901a680",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474624+00:00",
+    "case_id": "LGG-018",
+    "node": "audit",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-f87112495dc4",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "timestamp": "2026-05-13T11:35:26.474631+00:00",
+    "case_id": "LGG-018",
+    "node": "final_response",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-d21615ea57dc",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474677+00:00",
+    "case_id": "LGG-019",
+    "node": "request",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-8fb7125a7000",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474684+00:00",
+    "case_id": "LGG-019",
+    "node": "identity",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-746c515ac9e2",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474691+00:00",
+    "case_id": "LGG-019",
+    "node": "memory",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-bbb5593e2e06",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474698+00:00",
+    "case_id": "LGG-019",
+    "node": "injection_check",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-870ab85f5797",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474705+00:00",
+    "case_id": "LGG-019",
+    "node": "policy",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-c261ddad0709",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474712+00:00",
+    "case_id": "LGG-019",
+    "node": "approval",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-9a21f5b50b7d",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474718+00:00",
+    "case_id": "LGG-019",
+    "node": "sandbox_tool",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-d4bdc7132da3",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474725+00:00",
+    "case_id": "LGG-019",
+    "node": "audit",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-8c83a761e762",
+    "correlation_id": "corr-ffb4220d4c65",
+    "timestamp": "2026-05-13T11:35:26.474732+00:00",
+    "case_id": "LGG-019",
+    "node": "final_response",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-b9990d44d27a",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474746+00:00",
+    "case_id": "LGG-020",
+    "node": "request",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-cc6257662f12",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474752+00:00",
+    "case_id": "LGG-020",
+    "node": "identity",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-47b37b243d3c",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474760+00:00",
+    "case_id": "LGG-020",
+    "node": "memory",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-8331223cf572",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474767+00:00",
+    "case_id": "LGG-020",
+    "node": "injection_check",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-92570547bc58",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474773+00:00",
+    "case_id": "LGG-020",
+    "node": "policy",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-b5e0ffab75df",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474798+00:00",
+    "case_id": "LGG-020",
+    "node": "approval",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-678cde13300d",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474806+00:00",
+    "case_id": "LGG-020",
+    "node": "sandbox_tool",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-b5b5b5541679",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474830+00:00",
+    "case_id": "LGG-020",
+    "node": "audit",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-aaf74e73b159",
+    "correlation_id": "corr-82aa23a10dc4",
+    "timestamp": "2026-05-13T11:35:26.474838+00:00",
+    "case_id": "LGG-020",
+    "node": "final_response",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-1adf9bad309a",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474853+00:00",
+    "case_id": "LGG-021",
+    "node": "request",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-287219336df9",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474860+00:00",
+    "case_id": "LGG-021",
+    "node": "identity",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-b72fb54037e8",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474867+00:00",
+    "case_id": "LGG-021",
+    "node": "memory",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-d1ab4b0056e5",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474874+00:00",
+    "case_id": "LGG-021",
+    "node": "injection_check",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-f5f4a6aa85c0",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474880+00:00",
+    "case_id": "LGG-021",
+    "node": "policy",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-a95d34a4f741",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474887+00:00",
+    "case_id": "LGG-021",
+    "node": "approval",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-74d20d145ff2",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474894+00:00",
+    "case_id": "LGG-021",
+    "node": "sandbox_tool",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-35de3d0b7d8d",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474901+00:00",
+    "case_id": "LGG-021",
+    "node": "audit",
+    "decision": "DENY_FAIL_CLOSED"
+  },
+  {
+    "audit_event_id": "ae-2f421672adc3",
+    "correlation_id": "corr-09aa0a35a128",
+    "timestamp": "2026-05-13T11:35:26.474908+00:00",
+    "case_id": "LGG-021",
+    "node": "final_response",
+    "decision": "DENY_FAIL_CLOSED"
   }
 ]

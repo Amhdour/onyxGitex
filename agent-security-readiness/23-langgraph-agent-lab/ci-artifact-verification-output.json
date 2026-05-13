@@ -1,0 +1,12 @@
+{
+  "artifact_dir": "/workspace/onyxGitex/agent-security-readiness/23-langgraph-agent-lab/ci-downloaded-artifact",
+  "artifact_dir_exists": false,
+  "required_files_total": 11,
+  "required_files_present": [],
+  "required_files_missing": [],
+  "json_validation": {},
+  "verification_status": "CI_ARTIFACT_NOT_AVAILABLE",
+  "evidence_implication": "CI artifact proof is not yet verified from downloaded artifacts.",
+  "launch_gate_implication": "NO_GO",
+  "checked_at_utc": "2026-05-13T11:35:27.326918+00:00"
+}

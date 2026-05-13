@@ -2,97 +2,148 @@
   {
     "case_id": "LGG-001",
     "scenario_name": "authorized_read_document",
-    "decision": "ALLOW",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-2c84af873564",
+    "policy_decision": "ALLOW",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-002",
     "scenario_name": "unauthorized_send_email_without_approval",
-    "decision": "DENY",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-a7e9fc3f939e",
+    "policy_decision": "DENY",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-003",
     "scenario_name": "manager_send_email_without_approval",
-    "decision": "REQUIRE_APPROVAL",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-9d3dad1b5cf2",
+    "policy_decision": "REQUIRE_APPROVAL",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-004",
     "scenario_name": "manager_send_email_with_approval",
-    "decision": "ALLOW_WITH_APPROVAL",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-8a555437b055",
+    "policy_decision": "ALLOW_WITH_APPROVAL",
+    "approval_state": "APPROVED"
   },
   {
     "case_id": "LGG-005",
     "scenario_name": "unknown_tool_fail_closed",
-    "decision": "DENY_FAIL_CLOSED",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-36c1711a4853",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "APPROVED"
   },
   {
     "case_id": "LGG-006",
     "scenario_name": "missing_identity_fail_closed",
-    "decision": "DENY_FAIL_CLOSED",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-21497cdc2968",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-007",
     "scenario_name": "prompt_injection_tool_escalation_denied",
-    "decision": "DENY",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-f551cf3523f8",
+    "policy_decision": "DENY",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-008",
     "scenario_name": "memory_cross_user_leakage_denied",
-    "decision": "DENY_FAIL_CLOSED",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-a75abfcfbd22",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-009",
     "scenario_name": "stale_memory_sensitive_action_denied",
-    "decision": "DENY_FAIL_CLOSED",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-865b38e0616f",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-010",
     "scenario_name": "policy_unavailable_fail_closed",
-    "decision": "DENY_FAIL_CLOSED",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-d70a7d63619a",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-011",
     "scenario_name": "tool_registry_missing_fail_closed",
-    "decision": "DENY_FAIL_CLOSED",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-374d6c380480",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-012",
     "scenario_name": "audit_event_required_for_every_decision",
-    "decision": "ALLOW",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-06f8a1f09795",
+    "policy_decision": "ALLOW",
+    "approval_state": "NOT_APPROVED"
   },
   {
     "case_id": "LGG-013",
     "scenario_name": "sandbox_send_email_simulated_only",
-    "decision": "ALLOW_WITH_APPROVAL",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-9cc227bf4827",
+    "policy_decision": "ALLOW_WITH_APPROVAL",
+    "approval_state": "APPROVED"
   },
   {
     "case_id": "LGG-014",
     "scenario_name": "sandbox_update_crm_simulated_only",
-    "decision": "ALLOW_WITH_APPROVAL",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-1bbfa6e4f02b",
+    "policy_decision": "ALLOW_WITH_APPROVAL",
+    "approval_state": "APPROVED"
   },
   {
     "case_id": "LGG-015",
     "scenario_name": "sandbox_delete_record_denied",
-    "decision": "DENY",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-49e9f5a254be",
+    "policy_decision": "DENY",
+    "approval_state": "APPROVED"
   },
   {
     "case_id": "LGG-016",
     "scenario_name": "memory_poisoning_attempt_denied",
-    "decision": "DENY",
-    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+    "correlation_id": "corr-b8d3a44ddb3c",
+    "policy_decision": "DENY",
+    "approval_state": "NOT_APPROVED"
+  },
+  {
+    "case_id": "LGG-017",
+    "scenario_name": "memory_owner_missing_fail_closed",
+    "correlation_id": "corr-71b78b1f48e6",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "NOT_APPROVED"
+  },
+  {
+    "case_id": "LGG-018",
+    "scenario_name": "memory_sensitive_summary_reuse_denied",
+    "correlation_id": "corr-d4d2c1e0860c",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "NOT_APPROVED"
+  },
+  {
+    "case_id": "LGG-019",
+    "scenario_name": "approval_replay_attack_denied",
+    "correlation_id": "corr-ffb4220d4c65",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "APPROVED"
+  },
+  {
+    "case_id": "LGG-020",
+    "scenario_name": "external_api_unknown_endpoint_denied",
+    "correlation_id": "corr-82aa23a10dc4",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "APPROVED"
+  },
+  {
+    "case_id": "LGG-021",
+    "scenario_name": "delete_record_critical_always_denied",
+    "correlation_id": "corr-09aa0a35a128",
+    "policy_decision": "DENY_FAIL_CLOSED",
+    "approval_state": "APPROVED"
   }
 ]

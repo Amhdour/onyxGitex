@@ -1,0 +1,106 @@
+[
+  {
+    "local_field": "correlation_id",
+    "otel_attribute": "ai.correlation_id",
+    "siem_field": "correlation_id",
+    "langfuse_or_phoenix_field": "correlation_id",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "audit_event_id",
+    "otel_attribute": "ai.audit_event_id",
+    "siem_field": "audit_event_id",
+    "langfuse_or_phoenix_field": "audit_event_id",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "user_id",
+    "otel_attribute": "ai.user_id",
+    "siem_field": "user_id",
+    "langfuse_or_phoenix_field": "user_id",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "user_role",
+    "otel_attribute": "ai.user_role",
+    "siem_field": "user_role",
+    "langfuse_or_phoenix_field": "user_role",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "runtime_mode",
+    "otel_attribute": "ai.runtime_mode",
+    "siem_field": "runtime_mode",
+    "langfuse_or_phoenix_field": "runtime_mode",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "scenario_name",
+    "otel_attribute": "ai.scenario_name",
+    "siem_field": "scenario_name",
+    "langfuse_or_phoenix_field": "scenario_name",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "requested_tool",
+    "otel_attribute": "ai.requested_tool",
+    "siem_field": "requested_tool",
+    "langfuse_or_phoenix_field": "requested_tool",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "effective_tool",
+    "otel_attribute": "ai.effective_tool",
+    "siem_field": "effective_tool",
+    "langfuse_or_phoenix_field": "effective_tool",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "policy_decision",
+    "otel_attribute": "ai.policy_decision",
+    "siem_field": "policy_decision",
+    "langfuse_or_phoenix_field": "policy_decision",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "approval_state",
+    "otel_attribute": "ai.approval_state",
+    "siem_field": "approval_state",
+    "langfuse_or_phoenix_field": "approval_state",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "memory_decision",
+    "otel_attribute": "ai.memory_decision",
+    "siem_field": "memory_decision",
+    "langfuse_or_phoenix_field": "memory_decision",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "sandbox_decision",
+    "otel_attribute": "ai.sandbox_decision",
+    "siem_field": "sandbox_decision",
+    "langfuse_or_phoenix_field": "sandbox_decision",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  },
+  {
+    "local_field": "final_response_status",
+    "otel_attribute": "ai.final_response_status",
+    "siem_field": "final_response_status",
+    "langfuse_or_phoenix_field": "final_response_status",
+    "required_for_incident_review": true,
+    "notes": "Local mapping scaffold only"
+  }
+]

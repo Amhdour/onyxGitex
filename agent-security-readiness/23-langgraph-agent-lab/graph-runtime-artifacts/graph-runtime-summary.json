@@ -1,13 +1,15 @@
 {
-  "langgraph_available": false,
-  "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
-  "graph_engine": "deterministic_compat_graph",
-  "total_cases": 16,
-  "passed_cases": 16,
+  "total_cases": 21,
+  "passed_cases": 21,
   "failed_cases": 0,
+  "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
   "real_langgraph_used": false,
   "compatibility_mode_used": true,
+  "langgraph_available": false,
   "external_services_called": false,
+  "memory_store_used": true,
+  "sandboxed_tools_used": true,
+  "ci_context": false,
   "launch_gate_status": "NO_GO",
   "graph_runtime_status": "COMPATIBILITY_GRAPH_PASS"
 }
