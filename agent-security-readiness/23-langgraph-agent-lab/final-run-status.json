@@ -1,85 +1,53 @@
 {
   "evidence_package": "langgraph-agent-runtime-lab",
   "control_area": "Autonomous agent tool authorization, approval gating, memory boundary, auditability, and launch-gate readiness",
-  "schema_version": "langgraph-agent-lab-status-v1",
+  "schema_version": "langgraph-agent-lab-status-v2",
   "status_dimensions": {
     "runtime_status": "PASS",
     "graph_runtime_status": "COMPATIBILITY_GRAPH_PASS",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
+    "real_langgraph_status": "NOT_AVAILABLE",
+    "compatibility_runtime_status": "PASS",
     "tool_authorization_status": "COMPATIBILITY_RUNTIME_VERIFIED",
     "human_approval_status": "COMPATIBILITY_RUNTIME_VERIFIED",
+    "sandboxed_tool_status": "COMPATIBILITY_RUNTIME_PARTIAL",
     "memory_boundary_status": "COMPATIBILITY_RUNTIME_PARTIAL",
     "prompt_injection_status": "COMPATIBILITY_RUNTIME_PARTIAL",
     "fail_closed_status": "COMPATIBILITY_RUNTIME_VERIFIED",
     "audit_status": "RUNTIME_ARTIFACTS_PRESENT",
     "incident_trace_status": "RUNTIME_ARTIFACTS_PRESENT",
+    "ci_workflow_status": "CI_NOT_VERIFIED",
+    "ci_artifact_status": "CI_ARTIFACT_NOT_VERIFIED",
     "evidence_status": "PARTIAL_EVIDENCE",
     "launch_gate_status": "NO_GO"
   },
-  "runtime": {
-    "framework": "LangGraph-style mock harness (local deterministic graph)",
-    "runtime_implemented": true,
-    "runtime_executed": true,
-    "runtime_trace_verified": true,
-    "external_services_called": false
-  },
   "claims_allowed": [
-    "A deterministic LangGraph-style mock runtime harness executed.",
-    "Tool authorization decisions were tested in mock runtime scenarios.",
-    "Human approval requirement behavior was tested in mock runtime scenarios.",
-    "Fail-closed behavior was tested for missing identity and unknown tools.",
-    "Runtime trace and audit artifacts were generated."
+    "Deterministic compatibility runtime executed locally.",
+    "Memory-boundary and sandboxed-tool checks were exercised in local simulation artifacts."
   ],
   "claims_not_allowed": [
+    "Production autonomous agent safety is verified.",
     "Production LangGraph deployment is verified.",
     "Real external tool execution is verified.",
-    "Memory boundary controls are verified.",
-    "The autonomous agent is safe to launch.",
-    "Prompt injection is fully mitigated in production."
+    "Persistent production memory boundary is verified.",
+    "SIEM/production incident response is verified.",
+    "Launch is approved."
   ],
-  "required_runtime_artifacts": [
+  "ci_evidence": {"status": "CI_NOT_VERIFIED"},
+  "memory_evidence": {"status": "COMPATIBILITY_RUNTIME_PARTIAL", "store": "local simulated JSON"},
+  "sandboxed_tool_evidence": {"status": "COMPATIBILITY_RUNTIME_PARTIAL", "external_side_effect": false},
+  "incident_trace_evidence": {"status": "RUNTIME_ARTIFACTS_PRESENT"},
+  "artifacts_present": [
     "graph-runtime-artifacts/graph-runtime-summary.json",
     "graph-runtime-artifacts/graph-runtime-trace.json",
     "graph-runtime-artifacts/graph-policy-decision-log.json",
     "graph-runtime-artifacts/graph-audit-events.json",
-    "graph-runtime-artifacts/graph-allowed-tool-call-log.json",
-    "graph-runtime-artifacts/graph-denied-tool-call-log.json",
-    "graph-runtime-artifacts/graph-human-approval-required-log.json",
-    "graph-runtime-artifacts/graph-fail-closed-log.json",
     "graph-runtime-artifacts/graph-memory-boundary-log.json",
     "graph-runtime-artifacts/graph-prompt-injection-log.json",
     "graph-runtime-artifacts/graph-incident-timeline.json",
-    "graph-runtime-artifacts/graph-harness-output.txt",
-    "graph-runtime-artifacts/graph-runtime-mode.txt",
-    "graph-runtime-artifacts/timestamp.txt",
-    "graph-runtime-artifacts/git-commit.txt"
-  ],
-  "artifacts_present": [
-    "README.md",
-    "tool-registry.json",
-    "langgraph-agent-runtime-skeleton.py",
-    "policy-inputs/allow-read-docs.json",
-    "policy-inputs/deny-sensitive-without-approval.json",
-    "final-run-status.json",
-    "runtime-precheck.md",
-    "run-langgraph-agent-harness.py",
-    "runtime-artifacts/allowed-tool-call-log.json",
-    "runtime-artifacts/denied-tool-call-log.json",
-    "runtime-artifacts/human-approval-required-log.json",
-    "runtime-artifacts/fail-closed-log.json",
-    "runtime-artifacts/runtime-trace.json",
-    "runtime-artifacts/policy-decision-log.json",
-    "runtime-artifacts/audit-events.json",
-    "runtime-artifacts/harness-summary.json",
-    "runtime-artifacts/harness-output.txt",
-    "runtime-artifacts/timestamp.txt",
-    "runtime-artifacts/git-commit.txt"
+    "graph-runtime-artifacts/graph-sandboxed-tool-results.json"
   ],
   "artifacts_missing": [],
-  "open_blockers": [
-    "Production LangGraph runtime execution remains unverified.",
-    "Real external tool execution remains unverified.",
-    "Memory boundary and sandbox boundary controls are not runtime verified."
-  ],
-  "next_required_action": "Run production-representative LangGraph runtime tests with controlled sandboxed tools and memory-boundary verification evidence."
+  "open_blockers": ["Production runtime unverified", "CI artifact verification unverified"],
+  "next_required_action": "Trigger CI and verify downloaded artifacts; optionally install langgraph and rerun harness."
 }

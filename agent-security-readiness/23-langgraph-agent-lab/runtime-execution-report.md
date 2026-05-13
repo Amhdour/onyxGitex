@@ -17,3 +17,19 @@
 - Launch-gate impact: PARTIAL_EVIDENCE and NO_GO preserved.
 
 This is graph-compatible deterministic runtime evidence, not proof of a production LangGraph deployment.
+
+## Real Runtime / Memory / Sandbox Follow-Up
+- langgraph package available: false (local run).
+- Runtime mode used: DETERMINISTIC_GRAPH_COMPATIBILITY_MODE.
+- Real LangGraph graph execution occurred: no.
+- Compatibility mode used: yes.
+- Scenarios executed: 16; pass/fail: 16/0.
+- Persistent memory boundary scenarios: local simulated checks logged.
+- Sandboxed tool scenarios: local simulated tools only; no external side effects.
+- Prompt-injection escalation scenarios: denied in compatibility harness.
+- Fail-closed scenarios: denied/blocked as expected.
+- Audit/incident artifacts: present in graph-runtime-artifacts.
+- CI artifact verification status: CI metadata only, not verified.
+- This is deterministic graph-compatible runtime evidence, not production LangGraph deployment evidence.
+- What this does not prove: production deployment safety, real external tool safety, production memory boundary safety.
+- Launch gate remains NO_GO.

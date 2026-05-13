@@ -20,3 +20,9 @@
 
 ## Status rule
 Do not change current status unless direct evidence exists.
+
+## Parallel Agent-Lab Lesson Applied to RAG
+- Agent lab now has local compatibility evidence plus CI workflow scaffolding.
+- RAG track still requires primary workflow metadata and artifact verification.
+- RAG status must not be upgraded from external signals.
+- Next RAG milestone remains: primary RAG boundary workflow run + artifact verification + pytest/backend logs.

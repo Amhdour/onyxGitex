@@ -1,0 +1,4 @@
+- ci_workflow_status: CI_NOT_VERIFIED
+- artifact_status: CI_ARTIFACT_NOT_VERIFIED
+- evidence_status: LOCAL_ONLY_PARTIAL_EVIDENCE
+- launch_gate_status: NO_GO

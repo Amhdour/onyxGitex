@@ -3,84 +3,96 @@
     "case_id": "LGG-001",
     "scenario_name": "authorized_read_document",
     "decision": "ALLOW",
-    "reason": "Authorized read.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-002",
     "scenario_name": "unauthorized_send_email_without_approval",
     "decision": "DENY",
-    "reason": "Role unauthorized.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-003",
     "scenario_name": "manager_send_email_without_approval",
     "decision": "REQUIRE_APPROVAL",
-    "reason": "Approval required.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-004",
     "scenario_name": "manager_send_email_with_approval",
     "decision": "ALLOW_WITH_APPROVAL",
-    "reason": "Approved action.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-005",
     "scenario_name": "unknown_tool_fail_closed",
     "decision": "DENY_FAIL_CLOSED",
-    "reason": "Unknown tool.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-006",
     "scenario_name": "missing_identity_fail_closed",
     "decision": "DENY_FAIL_CLOSED",
-    "reason": "Missing identity.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-007",
     "scenario_name": "prompt_injection_tool_escalation_denied",
     "decision": "DENY",
-    "reason": "Escalation blocked.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-008",
     "scenario_name": "memory_cross_user_leakage_denied",
     "decision": "DENY_FAIL_CLOSED",
-    "reason": "Cross-user memory denied.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-009",
     "scenario_name": "stale_memory_sensitive_action_denied",
     "decision": "DENY_FAIL_CLOSED",
-    "reason": "Stale approval denied.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-010",
     "scenario_name": "policy_unavailable_fail_closed",
     "decision": "DENY_FAIL_CLOSED",
-    "reason": "Policy unavailable.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-011",
     "scenario_name": "tool_registry_missing_fail_closed",
     "decision": "DENY_FAIL_CLOSED",
-    "reason": "Tool registry unavailable.",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   },
   {
     "case_id": "LGG-012",
     "scenario_name": "audit_event_required_for_every_decision",
     "decision": "ALLOW",
-    "reason": "Audit completeness case.",
+    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+  },
+  {
+    "case_id": "LGG-013",
+    "scenario_name": "sandbox_send_email_simulated_only",
+    "decision": "ALLOW_WITH_APPROVAL",
+    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+  },
+  {
+    "case_id": "LGG-014",
+    "scenario_name": "sandbox_update_crm_simulated_only",
+    "decision": "ALLOW_WITH_APPROVAL",
+    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+  },
+  {
+    "case_id": "LGG-015",
+    "scenario_name": "sandbox_delete_record_denied",
+    "decision": "DENY",
+    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+  },
+  {
+    "case_id": "LGG-016",
+    "scenario_name": "memory_poisoning_attempt_denied",
+    "decision": "DENY",
     "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
   }
 ]

@@ -23,3 +23,14 @@
 | incident-trace-reconstruction.md | Yes | INCIDENT_TRACE | Present | IR reconstruction guide. |
 | final-run-status.json | Yes | LAUNCH_GATE | Updated | PARTIAL_EVIDENCE / NO_GO. |
 | claims_not_allowed entries | Yes | NON_CLAIM | Enforced | No production-safe launch claim. |
+| real-runtime-upgrade-precheck.md | Yes | REAL_LANGGRAPH_RUNTIME | Added | Precheck and upgrade decision. |
+| langgraph-install-notes.md | Yes | REAL_LANGGRAPH_RUNTIME | Added | Optional dependency path. |
+| memory-store/README.md | Yes | MEMORY_BOUNDARY | Added | Local simulation scope. |
+| memory-store/memory-store-seed.json | Yes | MEMORY_BOUNDARY | Added | Synthetic records only. |
+| memory-store/memory-boundary-policy.md | Yes | MEMORY_BOUNDARY | Added | Boundary rules. |
+| sandboxed-tools/README.md | Yes | SANDBOXED_TOOL | Added | No real side effects. |
+| sandboxed-tools/mock_tools.py | Yes | SANDBOXED_TOOL | Added | Local mock tools. |
+| ci-artifact-verification-plan.md | Yes | CI_ARTIFACT | Added | Verification process. |
+| ci-result-summary.md | Yes | CI_ARTIFACT | Added | CI not verified yet. |
+| ci-rerun-and-artifact-instructions.md | Yes | CI_ARTIFACT | Added | Manual retrieval process. |
+| graph-runtime-artifacts/graph-sandboxed-tool-results.json | Yes | SANDBOXED_TOOL | Generated | Local mock tool outputs. |
