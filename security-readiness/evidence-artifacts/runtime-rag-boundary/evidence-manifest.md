@@ -25,4 +25,3 @@
 | ci-artifact-analysis.md | CI_NOT_RUN | No artifact available to analyze. |
 | ci-downloaded-artifact/ | CI_NOT_RUN | No downloaded artifact directory populated in this run. |
 | ci-result-summary.md | PRESENT | CI result summary added with evidence-limited conclusion. |
-| ci-external-signal.md | PRESENT | Reviewer-provided CI signal captured; not sufficient to classify rag-boundary workflow run. |

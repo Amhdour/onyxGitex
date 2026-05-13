@@ -98,8 +98,3 @@ Decision remains: **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**.
 - pytest status: `NOT_AVAILABLE_FROM_CI`
 - evidence conclusion: `CI_NOT_RUN`
 - launch-gate impact: remains `NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH`; full GO remains prohibited.
-
-## tier4-runtime-collection external signal note (2026-05-12)
-- Reviewer-provided signal indicates activity for `.github/workflows/tier4-runtime-collection.yml`.
-- This does not replace required evidence for `.github/workflows/rag-boundary-runtime-evidence.yml` run metadata/artifacts.
-- RAG boundary CI classification therefore remains `CI_NOT_RUN` until direct workflow evidence is available.

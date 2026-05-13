@@ -49,8 +49,3 @@ Decision remains `NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH`.
 
 ## 13. Next required action
 Run the workflow from a GitHub-authenticated environment (or GitHub UI), then collect run metadata, logs, and artifact contents to update evidence status.
-
-## External CI signal
-- Reviewer provided a GitHub Actions badge/job snippet for `tier4-runtime-collection.yml`.
-- It is recorded in `ci-external-signal.md` for traceability.
-- It does not prove a `RAG Boundary Runtime Evidence` run or artifact, so conclusion remains `CI_NOT_RUN`.
