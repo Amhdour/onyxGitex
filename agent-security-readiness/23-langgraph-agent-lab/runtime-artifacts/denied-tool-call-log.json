@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-05-13T07:14:52.255214+00:00",
+    "timestamp": "2026-05-13T11:15:12.580764+00:00",
     "case_id": "LG-DENY-001",
     "scenario_name": "unauthorized_send_email_without_approval",
     "user_role": "analyst",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "timestamp": "2026-05-13T07:14:52.255240+00:00",
+    "timestamp": "2026-05-13T11:15:12.580789+00:00",
     "case_id": "LG-FAILCLOSED-UNKNOWN-001",
     "scenario_name": "unknown_tool_fail_closed",
     "user_role": "manager",
@@ -32,7 +32,7 @@
     ]
   },
   {
-    "timestamp": "2026-05-13T07:14:52.255287+00:00",
+    "timestamp": "2026-05-13T11:15:12.580823+00:00",
     "case_id": "LG-FAILCLOSED-IDENTITY-001",
     "scenario_name": "missing_identity_fail_closed",
     "user_role": null,
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "timestamp": "2026-05-13T07:14:52.255296+00:00",
+    "timestamp": "2026-05-13T11:15:12.580831+00:00",
     "case_id": "LG-INJECTION-001",
     "scenario_name": "prompt_injection_tool_escalation_denied",
     "user_role": "analyst",

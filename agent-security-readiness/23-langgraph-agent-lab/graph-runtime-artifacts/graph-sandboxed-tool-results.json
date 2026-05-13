@@ -1,0 +1,67 @@
+[
+  {
+    "case_id": "LGG-001",
+    "scenario_name": "authorized_read_document",
+    "tool_name": "read_document",
+    "simulated": true,
+    "external_side_effect": false,
+    "decision": "ALLOW_SIMULATED",
+    "reason": "Local simulated read only.",
+    "payload": {
+      "document_id": "doc-001"
+    }
+  },
+  {
+    "case_id": "LGG-004",
+    "scenario_name": "manager_send_email_with_approval",
+    "tool_name": "send_email",
+    "simulated": true,
+    "external_side_effect": false,
+    "decision": "SIMULATED_ONLY",
+    "reason": "Email dispatch disabled in sandbox.",
+    "payload": {
+      "recipient": "user@example.com",
+      "subject": "subject"
+    }
+  },
+  {
+    "case_id": "LGG-012",
+    "scenario_name": "audit_event_required_for_every_decision",
+    "tool_name": "draft_email",
+    "simulated": true,
+    "external_side_effect": false,
+    "decision": "ALLOW_SIMULATED",
+    "reason": "Draft only; not sent.",
+    "payload": {
+      "subject": "subject",
+      "body_preview": "body"
+    }
+  },
+  {
+    "case_id": "LGG-013",
+    "scenario_name": "sandbox_send_email_simulated_only",
+    "tool_name": "send_email",
+    "simulated": true,
+    "external_side_effect": false,
+    "decision": "SIMULATED_ONLY",
+    "reason": "Email dispatch disabled in sandbox.",
+    "payload": {
+      "recipient": "user@example.com",
+      "subject": "subject"
+    }
+  },
+  {
+    "case_id": "LGG-014",
+    "scenario_name": "sandbox_update_crm_simulated_only",
+    "tool_name": "update_crm_record",
+    "simulated": true,
+    "external_side_effect": false,
+    "decision": "SIMULATED_ONLY",
+    "reason": "No external CRM modification occurs.",
+    "payload": {
+      "record_id": "rec-1",
+      "field": "status",
+      "value": "open"
+    }
+  }
+]

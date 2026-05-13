@@ -1,5 +1,5 @@
 LangGraph-style deterministic mock runtime harness
-Started: 2026-05-13T07:14:52.255110+00:00
+Started: 2026-05-13T11:15:12.580710+00:00
 LG-ALLOW-001 authorized_read_document: decision=ALLOW matched_expected=True
 LG-DENY-001 unauthorized_send_email_without_approval: decision=DENY matched_expected=True
 LG-APPROVAL-001 manager_send_email_without_approval: decision=REQUIRE_APPROVAL matched_expected=True

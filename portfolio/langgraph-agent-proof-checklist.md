@@ -1,14 +1,15 @@
-# LangGraph Agent Proof Checklist
-
-- [x] graph runtime dependency check exists
-- [x] graph runtime harness exists
-- [x] graph runtime trace exists
-- [x] graph policy decision log exists
-- [x] graph audit events exist
-- [x] graph memory boundary log exists
-- [x] graph prompt injection log exists
-- [x] graph incident timeline exists
-- [x] LangGraph agent CI workflow exists
-- [ ] CI artifact screenshot TODO
-- [ ] production runtime screenshot TODO
-- [x] launch-gate NO_GO proof present
+- [ ] Real LangGraph package installed in optional job.
+- [ ] Real LangGraph runtime attempt artifact exists.
+- [x] Compatibility graph runtime artifact exists.
+- [x] Persistent memory-store seed exists.
+- [x] Memory boundary policy exists.
+- [x] Memory boundary log exists.
+- [x] Sandboxed tools exist.
+- [x] Sandboxed tool result artifact exists.
+- [x] Incident timeline artifact exists.
+- [x] CI artifact verification plan exists.
+- [ ] CI artifact downloaded and inspected.
+- [ ] Screenshot of CI workflow run.
+- [ ] Screenshot of artifact file list.
+- [ ] Screenshot of final-run-status.json.
+- [x] Launch gate NO_GO evidence present.

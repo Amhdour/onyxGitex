@@ -1,11 +1,13 @@
 {
-  "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
   "langgraph_available": false,
-  "total_scenarios": 12,
-  "passed_scenarios": 12,
-  "failed_scenarios": 0,
-  "graph_runtime_status": "COMPATIBILITY_GRAPH_PASS",
-  "evidence_status": "PARTIAL_EVIDENCE",
+  "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
+  "graph_engine": "deterministic_compat_graph",
+  "total_cases": 16,
+  "passed_cases": 16,
+  "failed_cases": 0,
+  "real_langgraph_used": false,
+  "compatibility_mode_used": true,
+  "external_services_called": false,
   "launch_gate_status": "NO_GO",
-  "limitation": "LangGraph package absent; compatibility mode used."
+  "graph_runtime_status": "COMPATIBILITY_GRAPH_PASS"
 }

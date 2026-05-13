@@ -1,0 +1,12 @@
+- Current commit: d440af242de5899f0773ca8775d03efb9a46ac5b
+- Existing runtime mode: DETERMINISTIC_GRAPH_COMPATIBILITY_MODE
+- Existing evidence status: PARTIAL_EVIDENCE
+- Existing launch-gate status: NO_GO
+- langgraph importable: false (precheck run)
+- package manager files: pyproject.toml (yes), uv.lock (yes), requirements files (none at repo root)
+- optional LangGraph dependency safety: safe as optional path only
+- CI workflow exists: .github/workflows/langgraph-agent-lab-evidence.yml
+- persistent memory evidence existed: partial artifacts only
+- sandboxed tool evidence existed: partial model only
+- CI artifact verification existed: not verified
+- Upgrade decision: READY_TO_ADD_OPTIONAL_LANGGRAPH_DEPENDENCY
