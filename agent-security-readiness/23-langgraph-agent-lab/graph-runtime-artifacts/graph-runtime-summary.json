@@ -1,0 +1,11 @@
+{
+  "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
+  "langgraph_available": false,
+  "total_scenarios": 12,
+  "passed_scenarios": 12,
+  "failed_scenarios": 0,
+  "graph_runtime_status": "COMPATIBILITY_GRAPH_PASS",
+  "evidence_status": "PARTIAL_EVIDENCE",
+  "launch_gate_status": "NO_GO",
+  "limitation": "LangGraph package absent; compatibility mode used."
+}

@@ -1,0 +1,9 @@
+{
+  "python_version": "3.12.13",
+  "python_executable": "/root/.pyenv/versions/3.12.13/bin/python",
+  "langgraph_available": false,
+  "typing_extensions_available": true,
+  "pydantic_available": true,
+  "dependency_status": "READY_FOR_COMPATIBILITY_RUNTIME",
+  "selected_runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE"
+}

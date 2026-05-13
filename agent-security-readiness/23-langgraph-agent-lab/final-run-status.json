@@ -4,10 +4,15 @@
   "schema_version": "langgraph-agent-lab-status-v1",
   "status_dimensions": {
     "runtime_status": "PASS",
-    "tool_authorization_status": "MOCK_RUNTIME_VERIFIED",
-    "human_approval_status": "MOCK_RUNTIME_VERIFIED",
-    "memory_boundary_status": "NOT_RUNTIME_VERIFIED",
-    "audit_status": "MOCK_RUNTIME_ARTIFACTS_PRESENT",
+    "graph_runtime_status": "COMPATIBILITY_GRAPH_PASS",
+    "runtime_mode": "DETERMINISTIC_GRAPH_COMPATIBILITY_MODE",
+    "tool_authorization_status": "COMPATIBILITY_RUNTIME_VERIFIED",
+    "human_approval_status": "COMPATIBILITY_RUNTIME_VERIFIED",
+    "memory_boundary_status": "COMPATIBILITY_RUNTIME_PARTIAL",
+    "prompt_injection_status": "COMPATIBILITY_RUNTIME_PARTIAL",
+    "fail_closed_status": "COMPATIBILITY_RUNTIME_VERIFIED",
+    "audit_status": "RUNTIME_ARTIFACTS_PRESENT",
+    "incident_trace_status": "RUNTIME_ARTIFACTS_PRESENT",
     "evidence_status": "PARTIAL_EVIDENCE",
     "launch_gate_status": "NO_GO"
   },
@@ -33,13 +38,21 @@
     "Prompt injection is fully mitigated in production."
   ],
   "required_runtime_artifacts": [
-    "allowed-tool-call-log.json",
-    "denied-tool-call-log.json",
-    "human-approval-required-log.json",
-    "fail-closed-log.json",
-    "runtime-trace.json",
-    "policy-decision-log.json",
-    "audit-events.json"
+    "graph-runtime-artifacts/graph-runtime-summary.json",
+    "graph-runtime-artifacts/graph-runtime-trace.json",
+    "graph-runtime-artifacts/graph-policy-decision-log.json",
+    "graph-runtime-artifacts/graph-audit-events.json",
+    "graph-runtime-artifacts/graph-allowed-tool-call-log.json",
+    "graph-runtime-artifacts/graph-denied-tool-call-log.json",
+    "graph-runtime-artifacts/graph-human-approval-required-log.json",
+    "graph-runtime-artifacts/graph-fail-closed-log.json",
+    "graph-runtime-artifacts/graph-memory-boundary-log.json",
+    "graph-runtime-artifacts/graph-prompt-injection-log.json",
+    "graph-runtime-artifacts/graph-incident-timeline.json",
+    "graph-runtime-artifacts/graph-harness-output.txt",
+    "graph-runtime-artifacts/graph-runtime-mode.txt",
+    "graph-runtime-artifacts/timestamp.txt",
+    "graph-runtime-artifacts/git-commit.txt"
   ],
   "artifacts_present": [
     "README.md",

@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-05-13T06:56:17.426368+00:00",
+    "timestamp": "2026-05-13T07:14:52.255191+00:00",
     "case_id": "LG-ALLOW-001",
     "scenario_name": "authorized_read_document",
     "user_role": "analyst",
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "timestamp": "2026-05-13T06:56:17.426403+00:00",
+    "timestamp": "2026-05-13T07:14:52.255233+00:00",
     "case_id": "LG-ALLOW-APPROVED-001",
     "scenario_name": "manager_send_email_with_approval",
     "user_role": "manager",
