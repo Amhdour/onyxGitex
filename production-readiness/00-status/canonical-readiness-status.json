@@ -11,7 +11,7 @@
   },
   "version_2_production_track": {
     "status": "STARTED_INCOMPLETE",
-    "version_2a_rag_runtime_evidence": "NOT_ENOUGH_EVIDENCE",
+    "version_2a_rag_runtime_evidence": "PARTIAL_RUNTIME_EVIDENCE",
     "version_2b_ci_artifact_proof": "NOT_VERIFIED",
     "version_2c_observability_proof": "DESIGN_ONLY",
     "version_2d_agent_runtime_evidence": "NOT_VERIFIED"
@@ -30,5 +30,5 @@
     "full_observability_integration_verified",
     "client_specific_go_decision"
   ],
-  "next_required_action": "Resolve Version 2A RAG Runtime Evidence blockers"
+  "next_required_action": "Complete Version 2B CI Artifact Proof"
 }

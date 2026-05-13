@@ -1,4 +1,72 @@
 {
-  "scenario_results": [],
-  "overall_result": "NOT_TESTED"
+  "scenario_results": [
+    {
+      "scenario_id": "RAG-2A-001",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [
+        "finance_policy_q4"
+      ],
+      "blocked_citation_ids": [
+        "hr_compensation_private"
+      ],
+      "result": "PASS"
+    },
+    {
+      "scenario_id": "RAG-2A-002",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [
+        "hr_compensation_private"
+      ],
+      "result": "PASS"
+    },
+    {
+      "scenario_id": "RAG-2A-003",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [
+        "hr_compensation_private"
+      ],
+      "result": "PASS"
+    },
+    {
+      "scenario_id": "RAG-2A-004",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [
+        "hr_compensation_private"
+      ],
+      "result": "PASS"
+    },
+    {
+      "scenario_id": "RAG-2A-005",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [
+        "finance_policy_q4"
+      ],
+      "blocked_citation_ids": [
+        "hr_compensation_private"
+      ],
+      "result": "PASS"
+    },
+    {
+      "scenario_id": "RAG-2A-006",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [
+        "finance_policy_q4"
+      ],
+      "result": "PASS"
+    },
+    {
+      "scenario_id": "RAG-2A-007",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [
+        "finance_policy_q4"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "overall_result": "PASS"
 }

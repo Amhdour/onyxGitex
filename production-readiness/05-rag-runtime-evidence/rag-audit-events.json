@@ -1,1 +1,162 @@
-[]
+[
+  {
+    "event_id": "evt-001",
+    "scenario_id": "RAG-2A-001",
+    "event_type": "retrieval_allowed",
+    "user_id": "finance_analyst",
+    "document_id": "finance_policy_q4",
+    "decision": "ALLOW",
+    "reason": "explicit_document_allow",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-002",
+    "scenario_id": "RAG-2A-001",
+    "event_type": "retrieval_denied",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-003",
+    "scenario_id": "RAG-2A-001",
+    "event_type": "citation_removed",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "unauthorized_citation_blocked",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-004",
+    "scenario_id": "RAG-2A-002",
+    "event_type": "retrieval_denied",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-005",
+    "scenario_id": "RAG-2A-002",
+    "event_type": "citation_removed",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "unauthorized_citation_blocked",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-006",
+    "scenario_id": "RAG-2A-003",
+    "event_type": "retrieval_denied",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-007",
+    "scenario_id": "RAG-2A-003",
+    "event_type": "citation_removed",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "unauthorized_citation_blocked",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-008",
+    "scenario_id": "RAG-2A-004",
+    "event_type": "retrieval_denied",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-009",
+    "scenario_id": "RAG-2A-004",
+    "event_type": "citation_removed",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "unauthorized_citation_blocked",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-010",
+    "scenario_id": "RAG-2A-005",
+    "event_type": "retrieval_allowed",
+    "user_id": "finance_analyst",
+    "document_id": "finance_policy_q4",
+    "decision": "ALLOW",
+    "reason": "explicit_document_allow",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-011",
+    "scenario_id": "RAG-2A-005",
+    "event_type": "retrieval_denied",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "department_or_sensitivity_denied",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-012",
+    "scenario_id": "RAG-2A-005",
+    "event_type": "citation_removed",
+    "user_id": "finance_analyst",
+    "document_id": "hr_compensation_private",
+    "decision": "DENY",
+    "reason": "unauthorized_citation_blocked",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-013",
+    "scenario_id": "RAG-2A-006",
+    "event_type": "fail_closed",
+    "user_id": "ANONYMOUS",
+    "document_id": "finance_policy_q4",
+    "decision": "DENY",
+    "reason": "missing_identity",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-014",
+    "scenario_id": "RAG-2A-006",
+    "event_type": "citation_removed",
+    "user_id": "ANONYMOUS",
+    "document_id": "finance_policy_q4",
+    "decision": "DENY",
+    "reason": "unauthorized_citation_blocked",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-015",
+    "scenario_id": "RAG-2A-007",
+    "event_type": "fail_closed",
+    "user_id": "finance_analyst",
+    "document_id": "finance_policy_q4",
+    "decision": "DENY",
+    "reason": "policy_unavailable",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "event_id": "evt-016",
+    "scenario_id": "RAG-2A-007",
+    "event_type": "citation_removed",
+    "user_id": "finance_analyst",
+    "document_id": "finance_policy_q4",
+    "decision": "DENY",
+    "reason": "unauthorized_citation_blocked",
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  }
+]

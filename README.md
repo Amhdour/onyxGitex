@@ -44,9 +44,11 @@ NOT_ENOUGH_EVIDENCE / NO_GO for production
 
 
 Version 2A RAG Runtime Evidence:
-- Status: NOT_ENOUGH_EVIDENCE based on generated evidence
+- Status: PARTIAL_RUNTIME_EVIDENCE based on generated evidence
 - Canonical evidence directory:
   security-readiness/evidence-artifacts/version-2a-rag-runtime/
+- Canonical local harness:
+  tests/version_2a/test_rag_runtime_evidence_gate.py
 - Production claim remains blocked.
 
 For details, see:

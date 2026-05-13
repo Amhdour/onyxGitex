@@ -1,1 +1,106 @@
-[]
+[
+  {
+    "scenario_id": "RAG-2A-001",
+    "user_id": "finance_analyst",
+    "query": "finance policy",
+    "candidate_document_ids": [
+      "finance_policy_q4",
+      "hr_compensation_private"
+    ],
+    "allowed_document_ids": [
+      "finance_policy_q4"
+    ],
+    "blocked_document_ids": [
+      "hr_compensation_private"
+    ],
+    "restricted_content_exposed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "scenario_id": "RAG-2A-002",
+    "user_id": "finance_analyst",
+    "query": "hr salaries",
+    "candidate_document_ids": [
+      "hr_compensation_private"
+    ],
+    "allowed_document_ids": [],
+    "blocked_document_ids": [
+      "hr_compensation_private"
+    ],
+    "restricted_content_exposed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "scenario_id": "RAG-2A-003",
+    "user_id": "finance_analyst",
+    "query": "cross dept",
+    "candidate_document_ids": [
+      "hr_compensation_private"
+    ],
+    "allowed_document_ids": [],
+    "blocked_document_ids": [
+      "hr_compensation_private"
+    ],
+    "restricted_content_exposed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "scenario_id": "RAG-2A-004",
+    "user_id": "finance_analyst",
+    "query": "override",
+    "candidate_document_ids": [
+      "hr_compensation_private"
+    ],
+    "allowed_document_ids": [],
+    "blocked_document_ids": [
+      "hr_compensation_private"
+    ],
+    "restricted_content_exposed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "scenario_id": "RAG-2A-005",
+    "user_id": "finance_analyst",
+    "query": "mix",
+    "candidate_document_ids": [
+      "finance_policy_q4",
+      "hr_compensation_private"
+    ],
+    "allowed_document_ids": [
+      "finance_policy_q4"
+    ],
+    "blocked_document_ids": [
+      "hr_compensation_private"
+    ],
+    "restricted_content_exposed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "scenario_id": "RAG-2A-006",
+    "user_id": "ANONYMOUS",
+    "query": "who am i",
+    "candidate_document_ids": [
+      "finance_policy_q4"
+    ],
+    "allowed_document_ids": [],
+    "blocked_document_ids": [
+      "finance_policy_q4"
+    ],
+    "restricted_content_exposed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  },
+  {
+    "scenario_id": "RAG-2A-007",
+    "user_id": "finance_analyst",
+    "query": "policy down",
+    "candidate_document_ids": [
+      "finance_policy_q4"
+    ],
+    "allowed_document_ids": [],
+    "blocked_document_ids": [
+      "finance_policy_q4"
+    ],
+    "restricted_content_exposed": false,
+    "timestamp_utc": "2026-05-13T00:00:00+00:00"
+  }
+]
