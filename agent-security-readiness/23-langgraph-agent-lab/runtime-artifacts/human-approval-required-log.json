@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2026-05-13T06:56:17.426396+00:00",
+    "case_id": "LG-APPROVAL-001",
+    "scenario_name": "manager_send_email_without_approval",
+    "user_role": "manager",
+    "requested_tool": "send_email",
+    "effective_tool": "send_email",
+    "decision": "REQUIRE_APPROVAL",
+    "expected_decision": "REQUIRE_APPROVAL",
+    "matched_expected": true,
+    "reason": "Tool 'send_email' requires human approval before execution.",
+    "approval_present": false,
+    "audit_event_types": [
+      "approval_required"
+    ]
+  }
+]
