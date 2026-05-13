@@ -42,6 +42,13 @@ NOT_PRODUCTION_READY
 Current launch status:
 NOT_ENOUGH_EVIDENCE / NO_GO for production
 
+
+Version 2A RAG Runtime Evidence:
+- Status: NOT_ENOUGH_EVIDENCE based on generated evidence
+- Canonical evidence directory:
+  security-readiness/evidence-artifacts/version-2a-rag-runtime/
+- Production claim remains blocked.
+
 For details, see:
 - VERSION_STATUS.md
 - portfolio-lab/
