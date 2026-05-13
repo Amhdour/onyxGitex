@@ -98,3 +98,18 @@ Decision remains: **NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH**.
 - pytest status: `NOT_AVAILABLE_FROM_CI`
 - evidence conclusion: `CI_NOT_RUN`
 - launch-gate impact: remains `NOT_ENOUGH_EVIDENCE / NO-GO FOR REAL CLIENT LAUNCH`; full GO remains prohibited.
+
+## RAG Boundary Evidence Status — Normalized
+
+| Dimension | Current Value | Source File | Launch Impact |
+|---|---|---|---|
+| local_runtime_status | BLOCKED_DEPENDENCY | `security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json` | Runtime behavior not directly verified. |
+| ci_workflow_status | CI_NOT_RUN | `security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json` | Primary CI proof absent. |
+| external_ci_signal_status | EXTERNAL_SIGNAL_INSUFFICIENT | `security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json` | Context only; cannot upgrade primary evidence. |
+| dependency_status | BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD | `security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json` | Local verification blocked. |
+| evidence_status | NOT_ENOUGH_EVIDENCE | `security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json` | Launch cannot be upgraded. |
+| launch_gate_status | NO_GO | `security-readiness/evidence-artifacts/runtime-rag-boundary/final-run-status.json` | No launch approval. |
+
+The launch decision remains NO_GO / NOT_ENOUGH_EVIDENCE because direct primary CI artifact proof and successful runtime behavior evidence are not available.
+
+External tier4-runtime-collection activity is recorded but does not substitute for primary RAG boundary workflow evidence.

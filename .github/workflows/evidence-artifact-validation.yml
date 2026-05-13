@@ -47,6 +47,11 @@ jobs:
               raise SystemExit(f'Invalid runtime_verified true in {fp}')
           PY
 
+      - name: Check RAG boundary status consistency
+        run: |
+          set -euo pipefail
+          python scripts/check-rag-boundary-status-consistency.py
+
       - name: Scan forbidden claims
         run: |
           set -euo pipefail

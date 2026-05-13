@@ -1,75 +1,80 @@
 {
   "evidence_package": "runtime-rag-boundary",
   "control_area": "RAG retrieval boundary and restricted content leakage prevention",
-  "run_status": "BLOCKED",
-  "collection_status": "NO_CI_COLLECTION",
-  "evidence_status": "NOT_ENOUGH_EVIDENCE",
-  "runtime_verified": false,
-  "blocker_type": "CI_TRIGGER_OR_RUN_UNAVAILABLE",
-  "timestamp": "2026-05-12T23:59:00Z",
-  "git_commit": "dee8751505890403c9aea3089790dfa549c563fc",
-  "python_version": "Python 3.12.13",
-  "selected_python_version": "3.12",
-  "dependency_sync_status": "NOT_AVAILABLE_FROM_CI",
-  "dependency_import_status": "PARTIAL",
-  "test_command": "cd backend && uv run --python 3.12 python -m pytest -xv tests/integration/tests/chat/test_chat_document_set_access.py -k \"rag or boundary or document_set or access\"",
+  "schema_version": "runtime-rag-boundary-status-v2",
+  "status_dimensions": {
+    "local_runtime_status": "BLOCKED_DEPENDENCY",
+    "ci_workflow_status": "CI_NOT_RUN",
+    "external_ci_signal_status": "EXTERNAL_SIGNAL_INSUFFICIENT",
+    "dependency_status": "BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD",
+    "evidence_status": "NOT_ENOUGH_EVIDENCE",
+    "launch_gate_status": "NO_GO"
+  },
+  "primary_workflow": {
+    "workflow_path": ".github/workflows/rag-boundary-runtime-evidence.yml",
+    "workflow_triggered": false,
+    "workflow_run_verified": false,
+    "artifact_verified": false,
+    "classification": "CI_NOT_RUN"
+  },
+  "external_ci_signal": {
+    "signal_present": true,
+    "source_workflow": "tier4-runtime-collection.yml",
+    "classification": "EXTERNAL_SIGNAL_INSUFFICIENT",
+    "handling_decision": "Do not use as proof of the primary RAG boundary workflow."
+  },
+  "local_runtime": {
+    "script_path": "security-readiness/evidence-artifacts/runtime-rag-boundary/scripts/run-runtime-rag-boundary-check.sh",
+    "latest_status": "BLOCKED_DEPENDENCY",
+    "pytest_collection_reached": false,
+    "pytest_execution_reached": false,
+    "latest_blocker": "Dependency sync under Python 3.12 failed due to numpy download tunnel/network error, leaving fastapi_users unavailable.",
+    "selected_python_version": "3.12"
+  },
+  "evidence_conclusion": {
+    "runtime_verified": false,
+    "classification": "NOT_ENOUGH_EVIDENCE",
+    "reason": "Primary CI run/artifact is not verified and local runtime execution remains blocked before RAG boundary behavior is observed."
+  },
+  "launch_gate": {
+    "decision": "NO_GO",
+    "reason": "RAG boundary runtime enforcement has not been verified with direct artifacts."
+  },
+  "claims_allowed": [
+    "Primary RAG boundary workflow file is defined.",
+    "External related CI signal was observed and separately scoped.",
+    "RAG runtime verification remains not established."
+  ],
+  "claims_not_allowed": [
+    "Primary RAG boundary workflow ran.",
+    "Primary RAG boundary artifact was verified.",
+    "RAG boundary runtime evidence passed.",
+    "Launch gate can be upgraded to GO."
+  ],
   "artifacts_present": [
     "README.md",
-    "ci-artifact-download-output.txt",
-    "ci-artifact-file-list.txt",
     "ci-result-summary.md",
-    "ci-run-list.txt",
-    "ci-run-precheck.md",
-    "ci-run-summary.md",
-    "ci-trigger-output.txt",
-    "control-claim-evidence.md",
-    "dependency-import-check.txt",
-    "dependency-install-output.txt",
-    "dependency-precheck.md",
-    "dependency-resolution.md",
-    "dependency-sync-analysis.md",
-    "dependency-sync-output.txt",
-    "dependency-sync-precheck.md",
-    "dependency-sync-status.txt",
-    "docker-compose-ps.txt",
-    "env-manifest-redacted.txt",
-    "evidence-manifest.md",
-    "execution-precheck.md",
-    "final-run-status.json",
-    "git-commit.txt",
-    "pytest-output.txt",
-    "python-runtime-precheck.md",
-    "python-runtime-sync-output.txt",
-    "python-version.txt",
-    "runtime-environment.md",
+    "ci-external-signal.md",
     "runtime-execution-report.md",
+    "evidence-manifest.md",
     "runtime-status.txt",
-    "test-command.txt",
+    "pytest-output.txt",
+    "dependency-resolution.md",
+    "python-runtime-precheck.md",
+    "git-commit.txt",
     "timestamp.txt"
   ],
   "artifacts_missing": [
     "backend-logs.txt",
-    "ci-artifact-analysis.md",
+    "ci-run-metadata.json",
     "ci-run-log.txt",
-    "ci-run-metadata.json"
+    "ci-artifact-analysis.md"
   ],
   "open_blockers": [
-    "GitHub CLI is unavailable in this environment; workflow run could not be triggered or listed.",
-    "No CI run metadata or artifact is available yet for this workflow from this execution context."
+    "CPython 3.14 incompatibility for onnxruntime==1.20.1 required Python 3.12 selection.",
+    "uv sync under Python 3.12 was blocked by numpy dependency download tunnel/network failure.",
+    "fastapi_users import remains unavailable because dependency sync did not complete.",
+    "Primary CI workflow run metadata and artifact download are not verified from this environment."
   ],
-  "next_required_action": "Trigger RAG Boundary Runtime Evidence workflow from GitHub UI or gh-authenticated environment, then capture run metadata and artifact outputs.",
-  "previous_blocker": "BLOCKED_NETWORK_DEPENDENCY_DOWNLOAD",
-  "current_blocker": "CI_TRIGGER_OR_RUN_UNAVAILABLE",
-  "ci_workflow_name": "RAG Boundary Runtime Evidence",
-  "ci_artifact_name": "rag-boundary-runtime-evidence",
-  "ci_run_status": "CI_NOT_RUN",
-  "ci_run_url": null,
-  "ci_artifact_expected": "rag-boundary-runtime-evidence",
-  "evidence_collection_mode": "GITHUB_ACTIONS_WORKFLOW_DEFINED",
-  "ci_workflow_path": ".github/workflows/rag-boundary-runtime-evidence.yml",
-  "ci_run_id": null,
-  "ci_artifact_downloaded": false,
-  "ci_artifact_path": "security-readiness/evidence-artifacts/runtime-rag-boundary/ci-downloaded-artifact/",
-  "runtime_status": "NOT_AVAILABLE_FROM_CI",
-  "pytest_status": "NOT_AVAILABLE_FROM_CI"
+  "next_required_action": "Run the primary GitHub workflow from an authenticated environment, verify/download artifact outputs, restore dependency sync completion, then rerun evidence classification based on direct proof."
 }
