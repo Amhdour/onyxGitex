@@ -68,3 +68,34 @@ Week 1: Trigger LangGraph CI workflow; download artifacts; compare local vs CI f
 Week 2: Install optional langgraph; attempt real runtime pass; preserve compatibility fallback.
 Week 3: Strengthen memory-boundary tests; add prompt-injection memory-poisoning cases.
 Week 4: Return to RAG primary CI evidence; obtain direct workflow/artifact proof.
+
+
+## Current Next Milestones
+
+| Track | Current Evidence | Next Evidence Target | Why It Matters |
+|---|---|---|---|
+| RAG readiness | NOT_ENOUGH_EVIDENCE | Primary CI artifact proof | Launch dependency |
+| LangGraph compatibility agent lab | COMPATIBILITY_GRAPH_PASS | CI artifact verification | Reproducibility |
+| Real LangGraph runtime | NOT_AVAILABLE | REAL_LANGGRAPH_RUNTIME_PASS | Runtime parity |
+| CI artifact verification | NOT_VERIFIED | CI_ARTIFACT_VERIFIED | Auditability |
+| Memory boundary | PARTIAL | Integrated memory proof | Data isolation |
+| Sandboxed tools | PARTIAL | Real tool guard evidence | Side-effect safety |
+| Telemetry/incident readiness | Local mapping | Production integration | Incident response |
+| Launch gate | NO_GO | Evidence-backed decision | Governance |
+
+## Reverse Engineering Exercises
+
+RAG exercises:
+1. Trace identity to retrieval filter.
+2. Trace document permission to answer source.
+3. Trace CI artifact to launch-gate decision.
+4. Trace dependency blocker to NOT_ENOUGH_EVIDENCE.
+
+Agent exercises:
+1. Trace request to node sequence.
+2. Trace node sequence to policy decision.
+3. Trace policy decision to sandboxed tool action.
+4. Trace memory decision to denial.
+5. Trace prompt injection to escalation denial.
+6. Trace audit events to incident timeline.
+7. Trace final-run-status.json to launch-gate status.

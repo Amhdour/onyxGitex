@@ -1,15 +1,12 @@
-- [ ] Real LangGraph package installed in optional job.
-- [ ] Real LangGraph runtime attempt artifact exists.
-- [x] Compatibility graph runtime artifact exists.
-- [x] Persistent memory-store seed exists.
-- [x] Memory boundary policy exists.
-- [x] Memory boundary log exists.
-- [x] Sandboxed tools exist.
-- [x] Sandboxed tool result artifact exists.
-- [x] Incident timeline artifact exists.
-- [x] CI artifact verification plan exists.
-- [ ] CI artifact downloaded and inspected.
-- [ ] Screenshot of CI workflow run.
-- [ ] Screenshot of artifact file list.
-- [ ] Screenshot of final-run-status.json.
-- [x] Launch gate NO_GO evidence present.
+# LangGraph Agent Proof Checklist
+
+- [x] Real LangGraph attempt output exists.
+- [ ] Real LangGraph runtime PASS if available.
+- [x] Compatibility runtime PASS exists.
+- [x] CI artifact verification output exists.
+- [ ] CI artifact downloaded and verified.
+- [x] Telemetry field map exists.
+- [ ] Telemetry production integration exists.
+- [x] RAG primary CI artifact plan exists.
+- [ ] RAG primary CI artifact verified.
+- [x] Launch gate remains honest.
