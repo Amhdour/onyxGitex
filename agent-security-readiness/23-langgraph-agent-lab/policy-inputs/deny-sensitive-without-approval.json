@@ -1,0 +1,29 @@
+{
+  "case_id": "LG-DENY-001",
+  "expected_decision": "DENY_OR_REQUIRE_APPROVAL",
+  "user": {
+    "id": "user-analyst-001",
+    "role": "analyst",
+    "department": "research"
+  },
+  "agent": {
+    "id": "internal-ops-agent",
+    "runtime": "langgraph",
+    "delegation_mode": "user_delegated"
+  },
+  "tool_call": {
+    "tool_name": "send_email",
+    "action": "execute",
+    "risk_level": "high",
+    "resource": "external-recipient"
+  },
+  "approval": {
+    "present": false,
+    "required": true
+  },
+  "security_expectation": {
+    "decision": "DENY_OR_REQUIRE_APPROVAL",
+    "reason": "send_email is high risk, requires human approval, and analyst is not an allowed role for execution.",
+    "audit_required": true
+  }
+}
