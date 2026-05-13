@@ -72,7 +72,7 @@ Version 1:
 Portfolio Lab
 
 Version 2A:
-RAG Runtime Evidence Gate
+RAG Runtime Evidence Gate — NOT_ENOUGH_EVIDENCE (local runtime blocked: missing test dependency `fastapi_users`).
 
 Version 2B:
 CI Artifact Proof
@@ -95,3 +95,7 @@ No runtime claim without runtime artifact.
 No PASS without logs.
 No GO without evidence.
 No production language without staging/client proof.
+
+
+Current launch status remains:
+NOT_ENOUGH_EVIDENCE / NO_GO for production
