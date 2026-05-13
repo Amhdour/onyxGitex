@@ -1,0 +1,12 @@
+{
+  "total_cases": 7,
+  "passed_cases": 7,
+  "failed_cases": 0,
+  "runtime_status": "PASS",
+  "tool_authorization_status": "MOCK_RUNTIME_VERIFIED",
+  "human_approval_status": "MOCK_RUNTIME_VERIFIED",
+  "fail_closed_status": "MOCK_RUNTIME_VERIFIED",
+  "audit_status": "MOCK_RUNTIME_ARTIFACTS_PRESENT",
+  "evidence_status": "PARTIAL_EVIDENCE",
+  "launch_gate_status": "NO_GO"
+}

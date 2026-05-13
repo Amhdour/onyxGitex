@@ -43,3 +43,20 @@ The LangGraph autonomous-agent lab currently contains a readiness foundation, st
 6. Prompt-injection tool-escalation denial result.
 7. Audit-event completeness check.
 8. Updated `final-run-status.json` based on executed evidence.
+
+## Latest Runtime Harness Result
+
+- latest runtime status: PASS (mock-runtime scope)
+- evidence status: PARTIAL_EVIDENCE
+- launch-gate status: NO_GO
+- scenarios passed: 7
+- scenarios failed: 0
+- artifact path: `agent-security-readiness/23-langgraph-agent-lab/runtime-artifacts/`
+- remaining unverified areas:
+  - production LangGraph runtime
+  - real tool execution
+  - memory boundary
+  - external tool sandboxing
+  - incident response correlation
+
+Decision remains **NO_GO** pending production-grade direct runtime evidence.

@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2026-05-13T06:56:17.426410+00:00",
+    "case_id": "LG-FAILCLOSED-UNKNOWN-001",
+    "scenario_name": "unknown_tool_fail_closed",
+    "user_role": "manager",
+    "requested_tool": "unknown_wire_transfer",
+    "effective_tool": "unknown_wire_transfer",
+    "decision": "DENY_FAIL_CLOSED",
+    "expected_decision": "DENY_FAIL_CLOSED",
+    "matched_expected": true,
+    "reason": "Unknown tool requested; fail-closed applied.",
+    "approval_present": true,
+    "audit_event_types": [
+      "unknown_tool_denied"
+    ]
+  },
+  {
+    "timestamp": "2026-05-13T06:56:17.426441+00:00",
+    "case_id": "LG-FAILCLOSED-IDENTITY-001",
+    "scenario_name": "missing_identity_fail_closed",
+    "user_role": null,
+    "requested_tool": "read_document",
+    "effective_tool": "read_document",
+    "decision": "DENY_FAIL_CLOSED",
+    "expected_decision": "DENY_FAIL_CLOSED",
+    "matched_expected": true,
+    "reason": "Missing user identity; fail-closed applied.",
+    "approval_present": false,
+    "audit_event_types": [
+      "identity_missing"
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+LangGraph-style deterministic mock runtime harness
+Started: 2026-05-13T06:56:17.426307+00:00
+LG-ALLOW-001 authorized_read_document: decision=ALLOW matched_expected=True
+LG-DENY-001 unauthorized_send_email_without_approval: decision=DENY matched_expected=True
+LG-APPROVAL-001 manager_send_email_without_approval: decision=REQUIRE_APPROVAL matched_expected=True
+LG-ALLOW-APPROVED-001 manager_send_email_with_approval: decision=ALLOW_WITH_APPROVAL matched_expected=True
+LG-FAILCLOSED-UNKNOWN-001 unknown_tool_fail_closed: decision=DENY_FAIL_CLOSED matched_expected=True
+LG-FAILCLOSED-IDENTITY-001 missing_identity_fail_closed: decision=DENY_FAIL_CLOSED matched_expected=True
+LG-INJECTION-001 prompt_injection_tool_escalation_denied: decision=DENY matched_expected=True
+Result: PASS (7/7 matched expected)
+No external services called; mock tools only.

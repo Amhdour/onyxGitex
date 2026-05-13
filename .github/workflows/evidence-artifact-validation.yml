@@ -52,6 +52,12 @@ jobs:
           set -euo pipefail
           python scripts/check-rag-boundary-status-consistency.py
 
+
+      - name: Check LangGraph agent lab status consistency
+        run: |
+          set -euo pipefail
+          python scripts/check-langgraph-agent-lab-status.py
+
       - name: Scan forbidden claims
         run: |
           set -euo pipefail

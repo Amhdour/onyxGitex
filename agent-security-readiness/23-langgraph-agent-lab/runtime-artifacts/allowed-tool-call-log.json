@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2026-05-13T06:56:17.426368+00:00",
+    "case_id": "LG-ALLOW-001",
+    "scenario_name": "authorized_read_document",
+    "user_role": "analyst",
+    "requested_tool": "read_document",
+    "effective_tool": "read_document",
+    "decision": "ALLOW",
+    "expected_decision": "ALLOW",
+    "matched_expected": true,
+    "reason": "Tool 'read_document' allowed for role 'analyst'.",
+    "approval_present": false,
+    "audit_event_types": [
+      "tool_allowed"
+    ]
+  },
+  {
+    "timestamp": "2026-05-13T06:56:17.426403+00:00",
+    "case_id": "LG-ALLOW-APPROVED-001",
+    "scenario_name": "manager_send_email_with_approval",
+    "user_role": "manager",
+    "requested_tool": "send_email",
+    "effective_tool": "send_email",
+    "decision": "ALLOW_WITH_APPROVAL",
+    "expected_decision": "ALLOW_WITH_APPROVAL or ALLOW",
+    "matched_expected": true,
+    "reason": "Tool 'send_email' allowed with human approval.",
+    "approval_present": true,
+    "audit_event_types": [
+      "tool_allowed_with_approval"
+    ]
+  }
+]
