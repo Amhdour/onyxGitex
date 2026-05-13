@@ -1,5 +1,5 @@
 | Project | Repo/folder | System type | Main risks | Controls | Evidence | Launch decision | Status |
 |---|---|---|---|---|---|---|---|
-| RAG Internal Knowledge Assistant | security-readiness | RAG assistant | Retrieval leakage, prompt injection | Authz + fail-closed | Tiered artifacts | NOT_ENOUGH_EVIDENCE | PARTIALLY_CONFIRMED |
-| Autonomous Internal Operations Agent | agent-security-readiness | Agentic system | Unauthorized tools, approval bypass | Policy-as-code + approval gate | Foundation templates | NOT_ENOUGH_EVIDENCE | FOUNDATION_CREATED |
-| LangGraph Autonomous Agent Runtime Lab | agent-security-readiness/23-langgraph-agent-lab | Agentic runtime lab | Tool escalation, approval bypass, missing identity, incomplete audit trail | Tool registry + policy gate + approval gate + fail-closed harness | Mock runtime artifacts + status checker evidence | NO_GO / PARTIAL_EVIDENCE | MOCK_RUNTIME_PARTIAL_EVIDENCE |
+| RAG Internal Knowledge Assistant | security-readiness | RAG assistant | Retrieval leakage, prompt injection | Authz + fail-closed | Tiered artifacts | NO_GO | EVIDENCE_DEPENDENT |
+| Autonomous Internal Operations Agent | agent-security-readiness | Agentic system | Unauthorized tools, approval bypass | Policy-as-code + approval gate | Foundation + lab artifacts | NO_GO | AGENT_READINESS_FOUNDATION |
+| LangGraph Autonomous Agent Runtime Lab | agent-security-readiness/23-langgraph-agent-lab | Agentic runtime lab | Tool escalation, approval bypass, memory leakage, audit gaps | Graph nodes + policy + approval + fail-closed | Compatibility graph harness artifacts | NO_GO | COMPATIBILITY_GRAPH_PASS / PARTIAL_EVIDENCE |

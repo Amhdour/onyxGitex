@@ -1,22 +1,25 @@
-# Evidence Manifest — LangGraph Agent Lab
-
 | Artifact | Present | Scope | Status | Notes |
 |---|---|---|---|---|
-| README.md | Yes | FOUNDATION | Present | Baseline lab purpose and non-claims. |
-| tool-registry.json | Yes | POLICY_DECISION | Present | Tool policy inventory used by harness. |
-| langgraph-agent-runtime-skeleton.py | Yes | FOUNDATION | Present | Skeleton control-point reference implementation. |
-| run-langgraph-agent-harness.py | Yes | MOCK_RUNTIME | Present | Deterministic executable runtime harness. |
-| runtime-precheck.md | Yes | STATUS | Present | Environment and dependency precheck recorded. |
-| final-run-status.json | Yes | LAUNCH_GATE | Updated | Updated from executed mock-runtime evidence. |
-| launch-gate-notes.md | Yes | LAUNCH_GATE | Updated | Includes latest runtime result and NO_GO rationale. |
-| runtime-artifacts/allowed-tool-call-log.json | Yes | MOCK_RUNTIME | Generated | Allowed tool decisions only. |
-| runtime-artifacts/denied-tool-call-log.json | Yes | POLICY_DECISION | Generated | DENY and DENY_FAIL_CLOSED decisions. |
-| runtime-artifacts/human-approval-required-log.json | Yes | APPROVAL_GATE | Generated | REQUIRE_APPROVAL decisions. |
-| runtime-artifacts/fail-closed-log.json | Yes | FAIL_CLOSED | Generated | DENY_FAIL_CLOSED decisions only. |
-| runtime-artifacts/runtime-trace.json | Yes | MOCK_RUNTIME | Generated | Full scenario-by-scenario execution trace. |
-| runtime-artifacts/policy-decision-log.json | Yes | POLICY_DECISION | Generated | Per-case policy decision record. |
-| runtime-artifacts/audit-events.json | Yes | AUDIT | Generated | Audit event stream for all decisions. |
-| runtime-artifacts/harness-summary.json | Yes | STATUS | Generated | Mock-runtime summary and aggregate status. |
-| runtime-artifacts/harness-output.txt | Yes | MOCK_RUNTIME | Generated | Human-readable harness execution output. |
-| runtime-artifacts/timestamp.txt | Yes | STATUS | Generated | UTC runtime timestamp. |
-| runtime-artifacts/git-commit.txt | Yes | STATUS | Generated | Commit hash at runtime execution. |
+| langgraph-runtime-dependency-check.py | Yes | GRAPH_RUNTIME | Present | Dependency detection entrypoint. |
+| runtime-artifacts/langgraph-dependency-check.json | Yes | COMPATIBILITY_RUNTIME | Generated | Captures LangGraph availability/mode. |
+| run-real-langgraph-or-compat-harness.py | Yes | GRAPH_RUNTIME | Present | Graph-orchestrated harness. |
+| graph-runtime-artifacts/graph-runtime-summary.json | Yes | GRAPH_RUNTIME | Generated | 12/12 pass in compatibility mode. |
+| graph-runtime-artifacts/graph-runtime-trace.json | Yes | GRAPH_RUNTIME | Generated | Per-scenario trace with required fields. |
+| graph-runtime-artifacts/graph-policy-decision-log.json | Yes | TOOL_AUTHORIZATION | Generated | Policy decisions. |
+| graph-runtime-artifacts/graph-audit-events.json | Yes | AUDIT | Generated | Per-node audit events. |
+| graph-runtime-artifacts/graph-allowed-tool-call-log.json | Yes | TOOL_AUTHORIZATION | Generated | Allowed actions. |
+| graph-runtime-artifacts/graph-denied-tool-call-log.json | Yes | FAIL_CLOSED | Generated | Denied actions. |
+| graph-runtime-artifacts/graph-human-approval-required-log.json | Yes | HUMAN_APPROVAL | Generated | Approval-required decisions. |
+| graph-runtime-artifacts/graph-fail-closed-log.json | Yes | FAIL_CLOSED | Generated | Fail-closed decisions. |
+| graph-runtime-artifacts/graph-memory-boundary-log.json | Yes | MEMORY_BOUNDARY | Generated | Memory scenarios. |
+| graph-runtime-artifacts/graph-prompt-injection-log.json | Yes | PROMPT_INJECTION | Generated | Injection scenario evidence. |
+| graph-runtime-artifacts/graph-incident-timeline.json | Yes | INCIDENT_TRACE | Generated | Reconstructed timelines. |
+| graph-runtime-artifacts/graph-harness-output.txt | Yes | GRAPH_RUNTIME | Generated | Human-readable output. |
+| graph-runtime-artifacts/graph-runtime-mode.txt | Yes | COMPATIBILITY_RUNTIME | Generated | Runtime mode marker. |
+| graph-runtime-artifacts/timestamp.txt | Yes | GRAPH_RUNTIME | Generated | UTC timestamp. |
+| graph-runtime-artifacts/git-commit.txt | Yes | GRAPH_RUNTIME | Generated | Git commit used by run. |
+| memory-boundary-test-plan.md | Yes | MEMORY_BOUNDARY | Present | Boundary plan. |
+| sandboxed-tool-model.md | Yes | TOOL_AUTHORIZATION | Present | Sandbox model constraints. |
+| incident-trace-reconstruction.md | Yes | INCIDENT_TRACE | Present | IR reconstruction guide. |
+| final-run-status.json | Yes | LAUNCH_GATE | Updated | PARTIAL_EVIDENCE / NO_GO. |
+| claims_not_allowed entries | Yes | NON_CLAIM | Enforced | No production-safe launch claim. |

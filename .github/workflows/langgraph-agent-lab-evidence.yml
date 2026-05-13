@@ -1,0 +1,31 @@
+name: LangGraph Agent Lab Evidence
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run lab evidence scripts
+        run: |
+          python agent-security-readiness/23-langgraph-agent-lab/langgraph-runtime-dependency-check.py
+          python agent-security-readiness/23-langgraph-agent-lab/run-langgraph-agent-harness.py
+          python agent-security-readiness/23-langgraph-agent-lab/run-real-langgraph-or-compat-harness.py
+          python -m json.tool agent-security-readiness/23-langgraph-agent-lab/final-run-status.json
+          python scripts/check-langgraph-agent-lab-status.py
+      - name: Upload evidence artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: langgraph-agent-lab-evidence
+          path: |
+            agent-security-readiness/23-langgraph-agent-lab/runtime-artifacts/
+            agent-security-readiness/23-langgraph-agent-lab/graph-runtime-artifacts/
+            agent-security-readiness/23-langgraph-agent-lab/final-run-status.json
+            agent-security-readiness/23-langgraph-agent-lab/runtime-execution-report.md
+            agent-security-readiness/23-langgraph-agent-lab/evidence-manifest.md

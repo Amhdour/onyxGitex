@@ -1,0 +1,13 @@
+mode=DETERMINISTIC_GRAPH_COMPATIBILITY_MODE
+LGG-001 authorized_read_document: ALLOW expected=ALLOW
+LGG-002 unauthorized_send_email_without_approval: DENY expected=DENY
+LGG-003 manager_send_email_without_approval: REQUIRE_APPROVAL expected=REQUIRE_APPROVAL
+LGG-004 manager_send_email_with_approval: ALLOW_WITH_APPROVAL expected=ALLOW_WITH_APPROVAL
+LGG-005 unknown_tool_fail_closed: DENY_FAIL_CLOSED expected=DENY_FAIL_CLOSED
+LGG-006 missing_identity_fail_closed: DENY_FAIL_CLOSED expected=DENY_FAIL_CLOSED
+LGG-007 prompt_injection_tool_escalation_denied: DENY expected=DENY
+LGG-008 memory_cross_user_leakage_denied: DENY_FAIL_CLOSED expected=DENY_FAIL_CLOSED
+LGG-009 stale_memory_sensitive_action_denied: DENY_FAIL_CLOSED expected=DENY_FAIL_CLOSED
+LGG-010 policy_unavailable_fail_closed: DENY_FAIL_CLOSED expected=DENY_FAIL_CLOSED
+LGG-011 tool_registry_missing_fail_closed: DENY_FAIL_CLOSED expected=DENY_FAIL_CLOSED
+LGG-012 audit_event_required_for_every_decision: ALLOW expected=ALLOW
