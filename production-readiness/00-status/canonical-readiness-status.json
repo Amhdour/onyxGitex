@@ -1,0 +1,34 @@
+{
+  "project": "onyxGitex",
+  "current_version": "1.5",
+  "current_status": "PORTFOLIO_LAB_WITH_EARLY_PRODUCTION_TRACK_SCAFFOLDING",
+  "production_ready": false,
+  "launch_status": "NOT_ENOUGH_EVIDENCE",
+  "version_1_portfolio_lab": {
+    "status": "STRONG",
+    "public_use": "YES_WITH_CAREFUL_WORDING",
+    "production_claim_allowed": false
+  },
+  "version_2_production_track": {
+    "status": "STARTED_INCOMPLETE",
+    "version_2a_rag_runtime_evidence": "NOT_VERIFIED",
+    "version_2b_ci_artifact_proof": "NOT_VERIFIED",
+    "version_2c_observability_proof": "DESIGN_ONLY",
+    "version_2d_agent_runtime_evidence": "NOT_VERIFIED"
+  },
+  "version_3_staging_demo": {
+    "status": "NOT_STARTED"
+  },
+  "version_4_client_specific_production": {
+    "status": "TEMPLATE_ONLY"
+  },
+  "blocked_claims": [
+    "production_ready",
+    "full_rag_runtime_security_proven",
+    "full_agent_runtime_security_proven",
+    "full_ci_artifact_verification_complete",
+    "full_observability_integration_verified",
+    "client_specific_go_decision"
+  ],
+  "next_required_action": "Complete Version 2A RAG Runtime Evidence Gate"
+}

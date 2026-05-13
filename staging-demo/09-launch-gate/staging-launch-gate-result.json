@@ -1,0 +1,8 @@
+{
+  "version": "3",
+  "stage": "staging-demo",
+  "status": "NOT_STARTED",
+  "launch_decision": "NOT_ENOUGH_EVIDENCE",
+  "production_ready": false,
+  "reason": "Staging runtime evidence has not been produced yet."
+}

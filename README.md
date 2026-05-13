@@ -27,6 +27,32 @@
 
 # Onyx - The Open Source AI Platform
 
+## Project Version Status
+
+onyxGitex is currently Version 1.5:
+
+- Version 1 — Portfolio Lab: strong / mostly achieved
+- Version 2 — Production-Track Starter Kit: started / incomplete
+- Version 3 — Staging Demo: not yet achieved
+- Version 4 — Client-Specific Production: template only / not achieved
+
+Current production decision:
+NOT_PRODUCTION_READY
+
+Current launch status:
+NOT_ENOUGH_EVIDENCE / NO_GO for production
+
+For details, see:
+- VERSION_STATUS.md
+- portfolio-lab/
+- production-readiness/
+- staging-demo/
+- client-production-template/
+
+This repository must not be described as production-ready. It is a portfolio lab and production-track readiness project. Production readiness requires verified runtime evidence, CI artifacts, observability proof, staging validation, and client-specific approval.
+
+---
+
 **[Onyx](https://www.onyx.app/?utm_source=onyx_repo&utm_medium=github&utm_campaign=readme)** is the application layer for LLMs - bringing a feature-rich interface that can be easily hosted by anyone.
 Onyx enables LLMs through advanced capabilities like RAG, web search, code execution, file creation, deep research and more.
 
