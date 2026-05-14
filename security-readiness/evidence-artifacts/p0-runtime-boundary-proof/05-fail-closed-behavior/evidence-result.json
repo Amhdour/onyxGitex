@@ -1,15 +1,23 @@
 {
   "control_id": "P0-FC-001",
   "control_name": "Fail-Closed Behavior",
-  "status": "NOT_EXECUTED",
-  "evidence_level": "P0_PROOF_STRUCTURE_ONLY",
-  "test_executed": false,
-  "test_command": "",
-  "runtime_log_path": "",
-  "pytest_output_path": "",
   "supports_go_claim": false,
   "supports_production_claim": false,
   "supports_client_claim": false,
-  "limitations": [],
-  "next_required_action": "Execute runtime test and populate evidence paths."
+  "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/05-fail-closed-behavior/runtime-log.txt",
+  "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/05-fail-closed-behavior/pytest-output.txt",
+  "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"fails_closed or fail_closed\"",
+  "timestamp_utc": "2026-05-14T17:27:18.711447+00:00",
+  "status": "FAILED",
+  "evidence_level": "LOCAL_TEST_FAILED",
+  "test_executed": true,
+  "exit_code": 4,
+  "supports_local_runtime_claim": false,
+  "limitations": [
+    "Test command returned non-zero exit code."
+  ],
+  "blockers": [
+    "TEST_FAILURE"
+  ],
+  "next_required_action": "Fix failing test/control and rerun V2.2 proof."
 }

@@ -8,7 +8,7 @@
   "p0_controls": {
     "total": 7,
     "passed": 0,
-    "not_executed": 7
+    "not_executed": 0
   },
   "errors": [],
   "warnings": [],
@@ -28,5 +28,5 @@
     "P0-AL-001",
     "P0-TT-001"
   ],
-  "timestamp_utc": "2026-05-14T17:12:23+00:00"
+  "timestamp_utc": "2026-05-14T17:27:26+00:00"
 }

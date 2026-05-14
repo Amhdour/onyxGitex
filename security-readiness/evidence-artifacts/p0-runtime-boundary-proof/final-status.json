@@ -1,12 +1,180 @@
 {
-  "p0_runtime_boundary_proof_status": "NOT_EXECUTED",
+  "milestone": "V2.2 \u2014 Execute P0 Runtime Boundary Proof",
+  "p0_runtime_boundary_proof_status": "PARTIAL",
   "all_p0_controls_passed": false,
   "supports_launch_go": false,
   "supports_production_ready": false,
   "supports_client_verified": false,
+  "supports_staging_verified": false,
   "controls_total": 7,
   "controls_passed": 0,
-  "controls_not_executed": 7,
-  "blocking_reason": "P0 runtime boundary tests are structured but not executed.",
-  "next_required_action": "Execute P0 tests and collect runtime logs, pytest output, and evidence-result.json files."
+  "controls_failed": 7,
+  "controls_blocked": 0,
+  "controls_not_executed": 0,
+  "control_results": [
+    {
+      "control_id": "P0-RA-001",
+      "control_name": "Retrieval Authorization",
+      "supports_go_claim": false,
+      "supports_production_claim": false,
+      "supports_client_claim": false,
+      "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/01-retrieval-authorization/runtime-log.txt",
+      "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/01-retrieval-authorization/pytest-output.txt",
+      "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"retrieval_guard\"",
+      "timestamp_utc": "2026-05-14T17:27:13.322450+00:00",
+      "status": "FAILED",
+      "evidence_level": "LOCAL_TEST_FAILED",
+      "test_executed": true,
+      "exit_code": 4,
+      "supports_local_runtime_claim": false,
+      "limitations": [
+        "Test command returned non-zero exit code."
+      ],
+      "blockers": [
+        "TEST_FAILURE"
+      ],
+      "next_required_action": "Fix failing test/control and rerun V2.2 proof."
+    },
+    {
+      "control_id": "P0-CL-001",
+      "control_name": "Citation Leakage Boundary",
+      "supports_go_claim": false,
+      "supports_production_claim": false,
+      "supports_client_claim": false,
+      "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/02-citation-leakage-boundary/runtime-log.txt",
+      "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/02-citation-leakage-boundary/pytest-output.txt",
+      "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_p0_citation_leakage_boundary.py",
+      "timestamp_utc": "2026-05-14T17:27:15.886778+00:00",
+      "status": "FAILED",
+      "evidence_level": "LOCAL_TEST_FAILED",
+      "test_executed": true,
+      "exit_code": 4,
+      "supports_local_runtime_claim": false,
+      "limitations": [
+        "Test command returned non-zero exit code."
+      ],
+      "blockers": [
+        "TEST_FAILURE"
+      ],
+      "next_required_action": "Fix failing test/control and rerun V2.2 proof."
+    },
+    {
+      "control_id": "P0-PI-001",
+      "control_name": "Prompt-Injection Retrieval Boundary",
+      "supports_go_claim": false,
+      "supports_production_claim": false,
+      "supports_client_claim": false,
+      "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/03-prompt-injection-retrieval-boundary/runtime-log.txt",
+      "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/03-prompt-injection-retrieval-boundary/pytest-output.txt",
+      "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_p0_prompt_injection_boundary.py",
+      "timestamp_utc": "2026-05-14T17:27:16.860234+00:00",
+      "status": "FAILED",
+      "evidence_level": "LOCAL_TEST_FAILED",
+      "test_executed": true,
+      "exit_code": 4,
+      "supports_local_runtime_claim": false,
+      "limitations": [
+        "Test command returned non-zero exit code."
+      ],
+      "blockers": [
+        "TEST_FAILURE"
+      ],
+      "next_required_action": "Fix failing test/control and rerun V2.2 proof."
+    },
+    {
+      "control_id": "P0-TA-001",
+      "control_name": "Tool Authorization",
+      "supports_go_claim": false,
+      "supports_production_claim": false,
+      "supports_client_claim": false,
+      "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/04-tool-authorization/runtime-log.txt",
+      "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/04-tool-authorization/pytest-output.txt",
+      "test_command": "python3 -m pytest -q backend/tests/unit/onyx/tools/test_tool_authorization_runtime.py",
+      "timestamp_utc": "2026-05-14T17:27:17.801594+00:00",
+      "status": "FAILED",
+      "evidence_level": "LOCAL_TEST_FAILED",
+      "test_executed": true,
+      "exit_code": 4,
+      "supports_local_runtime_claim": false,
+      "limitations": [
+        "Test command returned non-zero exit code."
+      ],
+      "blockers": [
+        "TEST_FAILURE"
+      ],
+      "next_required_action": "Fix failing test/control and rerun V2.2 proof."
+    },
+    {
+      "control_id": "P0-FC-001",
+      "control_name": "Fail-Closed Behavior",
+      "supports_go_claim": false,
+      "supports_production_claim": false,
+      "supports_client_claim": false,
+      "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/05-fail-closed-behavior/runtime-log.txt",
+      "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/05-fail-closed-behavior/pytest-output.txt",
+      "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"fails_closed or fail_closed\"",
+      "timestamp_utc": "2026-05-14T17:27:18.711447+00:00",
+      "status": "FAILED",
+      "evidence_level": "LOCAL_TEST_FAILED",
+      "test_executed": true,
+      "exit_code": 4,
+      "supports_local_runtime_claim": false,
+      "limitations": [
+        "Test command returned non-zero exit code."
+      ],
+      "blockers": [
+        "TEST_FAILURE"
+      ],
+      "next_required_action": "Fix failing test/control and rerun V2.2 proof."
+    },
+    {
+      "control_id": "P0-AL-001",
+      "control_name": "Audit Logging",
+      "supports_go_claim": false,
+      "supports_production_claim": false,
+      "supports_client_claim": false,
+      "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/runtime-log.txt",
+      "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/pytest-output.txt",
+      "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"audit\"",
+      "timestamp_utc": "2026-05-14T17:27:19.726534+00:00",
+      "status": "FAILED",
+      "evidence_level": "LOCAL_TEST_FAILED",
+      "test_executed": true,
+      "exit_code": 4,
+      "supports_local_runtime_claim": false,
+      "limitations": [
+        "Test command returned non-zero exit code."
+      ],
+      "blockers": [
+        "TEST_FAILURE"
+      ],
+      "next_required_action": "Fix failing test/control and rerun V2.2 proof."
+    },
+    {
+      "control_id": "P0-TT-001",
+      "control_name": "Telemetry Tracing",
+      "supports_go_claim": false,
+      "supports_production_claim": false,
+      "supports_client_claim": false,
+      "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/07-telemetry-tracing/runtime-log.txt",
+      "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/07-telemetry-tracing/pytest-output.txt",
+      "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_runtime_tracing_paths.py",
+      "timestamp_utc": "2026-05-14T17:27:20.659321+00:00",
+      "status": "FAILED",
+      "evidence_level": "LOCAL_TEST_FAILED",
+      "test_executed": true,
+      "exit_code": 4,
+      "supports_local_runtime_claim": false,
+      "limitations": [
+        "Test command returned non-zero exit code."
+      ],
+      "blockers": [
+        "TEST_FAILURE"
+      ],
+      "next_required_action": "Fix failing test/control and rerun V2.2 proof."
+    }
+  ],
+  "blocking_reason": "One or more P0 controls are failed/blocked or only local runtime evidence exists.",
+  "next_required_action": "Resolve failed/blocked controls and replay in CI (V2.3).",
+  "timestamp_utc": "2026-05-14T17:27:21.609767+00:00"
 }

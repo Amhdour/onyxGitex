@@ -3,7 +3,7 @@
 This repository is an AI Trust & Security Readiness portfolio lab and production-readiness starter kit. It is not production proof, not client verification, and not a compliance certification.
 
 ## Current status
-- Current status: V1.5 / V2-alpha moving toward V2.1.
+- Current status: V2.2 local P0 runtime boundary proof attempted (partial).
 - Current launch-gate decision: NO_GO.
 
 ## Safe claims
