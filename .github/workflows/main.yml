@@ -1,0 +1,11 @@
+## Evidence Workflows
+
+[![Version 2B - RAG Runtime Evidence CI Artifact Proof](https://github.com/Amhdour/onyxGitex/actions/workflows/version-2b-rag-runtime-evidence.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/version-2b-rag-runtime-evidence.yml)
+
+[![Evidence Artifact Validation](https://github.com/Amhdour/onyxGitex/actions/workflows/evidence-artifact-validation.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/evidence-artifact-validation.yml)
+
+[![Tier 4 Runtime Collection](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml)
+
+[![Readiness CI](https://github.com/Amhdour/onyxGitex/actions/workflows/readiness-ci.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/readiness-ci.yml)
+
+> Workflow badges show CI workflow status only. They do not by themselves prove production readiness, GO launch status, staging verification, client-specific approval, or full runtime security.
