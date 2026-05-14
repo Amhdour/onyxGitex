@@ -1,0 +1,116 @@
+{
+  "version": "2C",
+  "gate": "OBSERVABILITY_PROOF",
+  "correlation_type": "retrieval_logs",
+  "correlation_status": "PASS",
+  "records": [
+    {
+      "trace_id": "trace-v2c-rag-2a-001",
+      "scenario_id": "RAG-2A-001",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-001",
+      "candidate_document_ids": [
+        "fin-q1-2025"
+      ],
+      "allowed_document_ids": [
+        "fin-q1-2025"
+      ],
+      "blocked_document_ids": [],
+      "restricted_content_exposed": false,
+      "timestamp_utc": "2026-05-14T13:09:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-002",
+      "scenario_id": "RAG-2A-002",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-002",
+      "candidate_document_ids": [
+        "restricted-doc-002"
+      ],
+      "allowed_document_ids": [],
+      "blocked_document_ids": [
+        "restricted-doc-002"
+      ],
+      "restricted_content_exposed": false,
+      "timestamp_utc": "2026-05-14T13:10:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-003",
+      "scenario_id": "RAG-2A-003",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-003",
+      "candidate_document_ids": [
+        "restricted-doc-003"
+      ],
+      "allowed_document_ids": [],
+      "blocked_document_ids": [
+        "restricted-doc-003"
+      ],
+      "restricted_content_exposed": false,
+      "timestamp_utc": "2026-05-14T13:11:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-004",
+      "scenario_id": "RAG-2A-004",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-004",
+      "candidate_document_ids": [
+        "restricted-doc-004"
+      ],
+      "allowed_document_ids": [],
+      "blocked_document_ids": [
+        "restricted-doc-004"
+      ],
+      "restricted_content_exposed": false,
+      "timestamp_utc": "2026-05-14T13:12:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-005",
+      "scenario_id": "RAG-2A-005",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-005",
+      "candidate_document_ids": [
+        "restricted-doc-005"
+      ],
+      "allowed_document_ids": [],
+      "blocked_document_ids": [
+        "restricted-doc-005"
+      ],
+      "restricted_content_exposed": false,
+      "timestamp_utc": "2026-05-14T13:13:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-006",
+      "scenario_id": "RAG-2A-006",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-006",
+      "candidate_document_ids": [
+        "restricted-doc-006"
+      ],
+      "allowed_document_ids": [],
+      "blocked_document_ids": [
+        "restricted-doc-006"
+      ],
+      "restricted_content_exposed": false,
+      "timestamp_utc": "2026-05-14T13:14:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-007",
+      "scenario_id": "RAG-2A-007",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-007",
+      "candidate_document_ids": [
+        "restricted-doc-007"
+      ],
+      "allowed_document_ids": [],
+      "blocked_document_ids": [
+        "restricted-doc-007"
+      ],
+      "restricted_content_exposed": false,
+      "timestamp_utc": "2026-05-14T13:15:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-008",
+      "scenario_id": "RAG-2A-008",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-008",
+      "candidate_document_ids": [],
+      "allowed_document_ids": [],
+      "blocked_document_ids": [],
+      "restricted_content_exposed": false,
+      "timestamp_utc": "2026-05-14T13:16:57+00:00"
+    }
+  ]
+}

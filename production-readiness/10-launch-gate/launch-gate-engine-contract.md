@@ -45,3 +45,31 @@ Hard rules:
 - Version 2B cannot produce GO.
 - Version 2B cannot claim staging or client verification.
 - Version 2B only verifies CI artifact proof for Version 2A evidence.
+
+# Version 2C Observability Proof Contract
+
+Inputs:
+- version-2c-observability-status.json
+- trace-events.json
+- audit-correlation.json
+- policy-correlation.json
+- retrieval-correlation.json
+- citation-correlation.json
+- launch-gate-correlation.json
+- incident-timeline.json
+- dashboard-query-view.json
+- observability-evidence-manifest.json
+
+Outputs:
+- OBSERVABILITY_EVIDENCE_VERIFIED when all local trace/correlation artifacts validate.
+- OBSERVABILITY_EVIDENCE_GENERATED when artifacts exist but validation is incomplete.
+- NOT_ENOUGH_EVIDENCE when required artifacts are missing.
+- NO_GO when correlation, trace reconstruction, or claim-safety validation fails.
+
+Hard rules:
+- production_ready must remain false.
+- go_decision must remain false.
+- Version 2C cannot produce GO.
+- Version 2C cannot claim external observability integration unless real external evidence exists.
+- Version 2C cannot claim staging or client-specific readiness.
+- Version 2C only proves local observability evidence and correlation for Version 2A/2B evidence.

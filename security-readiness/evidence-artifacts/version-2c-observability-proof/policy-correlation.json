@@ -1,0 +1,80 @@
+{
+  "version": "2C",
+  "gate": "OBSERVABILITY_PROOF",
+  "correlation_type": "policy_decisions",
+  "correlation_status": "PASS",
+  "records": [
+    {
+      "trace_id": "trace-v2c-rag-2a-001",
+      "scenario_id": "RAG-2A-001",
+      "policy_decision_id": "policy-v2c-rag-2a-001",
+      "decision": "ALLOW",
+      "fail_closed": false,
+      "reason": "authorized_document_access",
+      "timestamp_utc": "2026-05-14T13:09:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-002",
+      "scenario_id": "RAG-2A-002",
+      "policy_decision_id": "policy-v2c-rag-2a-002",
+      "decision": "DENY",
+      "fail_closed": false,
+      "reason": "unauthorized_document_access",
+      "timestamp_utc": "2026-05-14T13:10:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-003",
+      "scenario_id": "RAG-2A-003",
+      "policy_decision_id": "policy-v2c-rag-2a-003",
+      "decision": "DENY",
+      "fail_closed": false,
+      "reason": "cross_department_access_denied",
+      "timestamp_utc": "2026-05-14T13:11:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-004",
+      "scenario_id": "RAG-2A-004",
+      "policy_decision_id": "policy-v2c-rag-2a-004",
+      "decision": "DENY",
+      "fail_closed": false,
+      "reason": "prompt_injection_policy_override_denied",
+      "timestamp_utc": "2026-05-14T13:12:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-005",
+      "scenario_id": "RAG-2A-005",
+      "policy_decision_id": "policy-v2c-rag-2a-005",
+      "decision": "DENY",
+      "fail_closed": false,
+      "reason": "citation_leakage_blocked",
+      "timestamp_utc": "2026-05-14T13:13:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-006",
+      "scenario_id": "RAG-2A-006",
+      "policy_decision_id": "policy-v2c-rag-2a-006",
+      "decision": "DENY",
+      "fail_closed": true,
+      "reason": "missing_identity_fail_closed",
+      "timestamp_utc": "2026-05-14T13:14:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-007",
+      "scenario_id": "RAG-2A-007",
+      "policy_decision_id": "policy-v2c-rag-2a-007",
+      "decision": "DENY",
+      "fail_closed": true,
+      "reason": "missing_policy_decision_fail_closed",
+      "timestamp_utc": "2026-05-14T13:15:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-008",
+      "scenario_id": "RAG-2A-008",
+      "policy_decision_id": "policy-v2c-rag-2a-008",
+      "decision": "ALLOW",
+      "fail_closed": false,
+      "reason": "launch_gate_reads_evidence",
+      "timestamp_utc": "2026-05-14T13:16:57+00:00"
+    }
+  ]
+}

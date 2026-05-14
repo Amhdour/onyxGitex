@@ -1,0 +1,92 @@
+{
+  "version": "2C",
+  "gate": "OBSERVABILITY_PROOF",
+  "correlation_type": "citation_checks",
+  "correlation_status": "PASS",
+  "records": [
+    {
+      "trace_id": "trace-v2c-rag-2a-001",
+      "scenario_id": "RAG-2A-001",
+      "citation_check_id": "citation-v2c-rag-2a-001",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [
+        "fin-q1-2025"
+      ],
+      "blocked_citation_ids": [],
+      "result": "PASS",
+      "timestamp_utc": "2026-05-14T13:09:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-002",
+      "scenario_id": "RAG-2A-002",
+      "citation_check_id": "citation-v2c-rag-2a-002",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [],
+      "result": "PASS",
+      "timestamp_utc": "2026-05-14T13:10:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-003",
+      "scenario_id": "RAG-2A-003",
+      "citation_check_id": "citation-v2c-rag-2a-003",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [],
+      "result": "PASS",
+      "timestamp_utc": "2026-05-14T13:11:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-004",
+      "scenario_id": "RAG-2A-004",
+      "citation_check_id": "citation-v2c-rag-2a-004",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [],
+      "result": "PASS",
+      "timestamp_utc": "2026-05-14T13:12:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-005",
+      "scenario_id": "RAG-2A-005",
+      "citation_check_id": "citation-v2c-rag-2a-005",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [
+        "restricted-citation-005"
+      ],
+      "result": "PASS",
+      "timestamp_utc": "2026-05-14T13:13:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-006",
+      "scenario_id": "RAG-2A-006",
+      "citation_check_id": "citation-v2c-rag-2a-006",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [],
+      "result": "PASS",
+      "timestamp_utc": "2026-05-14T13:14:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-007",
+      "scenario_id": "RAG-2A-007",
+      "citation_check_id": "citation-v2c-rag-2a-007",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [],
+      "result": "PASS",
+      "timestamp_utc": "2026-05-14T13:15:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-008",
+      "scenario_id": "RAG-2A-008",
+      "citation_check_id": "citation-v2c-rag-2a-008",
+      "unauthorized_citations_present": false,
+      "authorized_citation_ids": [],
+      "blocked_citation_ids": [],
+      "result": "PASS",
+      "timestamp_utc": "2026-05-14T13:16:57+00:00"
+    }
+  ]
+}

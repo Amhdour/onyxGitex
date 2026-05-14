@@ -61,7 +61,7 @@ NOT_ENOUGH_EVIDENCE / NO_GO for production
 
 ## Required Next Move
 
-Complete Version 2C Observability Proof.
+Complete Version 2D Agent Runtime Evidence Gate.
 
 ## Version Roadmap
 
@@ -75,7 +75,7 @@ Version 2B:
 CI Artifact Proof — CI_ARTIFACT_VERIFIED. Real GitHub Actions workflow run, job success, artifact metadata, downloaded artifact file list, and Version 2A artifact contents are verified. Production readiness remains blocked.
 
 Version 2C:
-Observability Proof
+Observability Proof — OBSERVABILITY_EVIDENCE_VERIFIED. Local trace, audit, policy, retrieval, citation, launch-gate, and incident-timeline correlation evidence is generated and validated. Production readiness remains blocked.
 
 Version 2D:
 Agent Runtime Evidence Gate

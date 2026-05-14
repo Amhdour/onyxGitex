@@ -1,0 +1,167 @@
+{
+  "version": "2C",
+  "gate": "OBSERVABILITY_PROOF",
+  "trace_count": 8,
+  "traces": [
+    {
+      "trace_id": "trace-v2c-rag-2a-001",
+      "scenario_id": "RAG-2A-001",
+      "request_id": "request-v2c-rag-2a-001",
+      "user_id": "finance_analyst",
+      "outcome": "ALLOW",
+      "policy_decision_id": "policy-v2c-rag-2a-001",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-001",
+      "citation_check_id": "citation-v2c-rag-2a-001",
+      "audit_event_ids": [
+        "audit-v2c-rag-2a-001-001"
+      ],
+      "timestamp_utc": "2026-05-14T13:09:57+00:00",
+      "production_ready": false,
+      "go_decision": false,
+      "blocked_claims": [
+        "production_ready",
+        "go_launch_decision"
+      ]
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-002",
+      "scenario_id": "RAG-2A-002",
+      "request_id": "request-v2c-rag-2a-002",
+      "user_id": "hr_analyst",
+      "outcome": "DENY",
+      "policy_decision_id": "policy-v2c-rag-2a-002",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-002",
+      "citation_check_id": "citation-v2c-rag-2a-002",
+      "audit_event_ids": [
+        "audit-v2c-rag-2a-002-001"
+      ],
+      "timestamp_utc": "2026-05-14T13:10:57+00:00",
+      "production_ready": false,
+      "go_decision": false,
+      "blocked_claims": [
+        "production_ready",
+        "go_launch_decision"
+      ]
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-003",
+      "scenario_id": "RAG-2A-003",
+      "request_id": "request-v2c-rag-2a-003",
+      "user_id": "engineering_analyst",
+      "outcome": "DENY",
+      "policy_decision_id": "policy-v2c-rag-2a-003",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-003",
+      "citation_check_id": "citation-v2c-rag-2a-003",
+      "audit_event_ids": [
+        "audit-v2c-rag-2a-003-001"
+      ],
+      "timestamp_utc": "2026-05-14T13:11:57+00:00",
+      "production_ready": false,
+      "go_decision": false,
+      "blocked_claims": [
+        "production_ready",
+        "go_launch_decision"
+      ]
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-004",
+      "scenario_id": "RAG-2A-004",
+      "request_id": "request-v2c-rag-2a-004",
+      "user_id": "finance_analyst",
+      "outcome": "DENY",
+      "policy_decision_id": "policy-v2c-rag-2a-004",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-004",
+      "citation_check_id": "citation-v2c-rag-2a-004",
+      "audit_event_ids": [
+        "audit-v2c-rag-2a-004-001"
+      ],
+      "timestamp_utc": "2026-05-14T13:12:57+00:00",
+      "production_ready": false,
+      "go_decision": false,
+      "blocked_claims": [
+        "production_ready",
+        "go_launch_decision"
+      ]
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-005",
+      "scenario_id": "RAG-2A-005",
+      "request_id": "request-v2c-rag-2a-005",
+      "user_id": "finance_analyst",
+      "outcome": "DENY",
+      "policy_decision_id": "policy-v2c-rag-2a-005",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-005",
+      "citation_check_id": "citation-v2c-rag-2a-005",
+      "audit_event_ids": [
+        "audit-v2c-rag-2a-005-001"
+      ],
+      "timestamp_utc": "2026-05-14T13:13:57+00:00",
+      "production_ready": false,
+      "go_decision": false,
+      "blocked_claims": [
+        "production_ready",
+        "go_launch_decision"
+      ]
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-006",
+      "scenario_id": "RAG-2A-006",
+      "request_id": "request-v2c-rag-2a-006",
+      "user_id": "unknown",
+      "outcome": "DENY",
+      "policy_decision_id": "policy-v2c-rag-2a-006",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-006",
+      "citation_check_id": "citation-v2c-rag-2a-006",
+      "audit_event_ids": [
+        "audit-v2c-rag-2a-006-001"
+      ],
+      "timestamp_utc": "2026-05-14T13:14:57+00:00",
+      "production_ready": false,
+      "go_decision": false,
+      "blocked_claims": [
+        "production_ready",
+        "go_launch_decision"
+      ]
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-007",
+      "scenario_id": "RAG-2A-007",
+      "request_id": "request-v2c-rag-2a-007",
+      "user_id": "finance_analyst",
+      "outcome": "DENY",
+      "policy_decision_id": "policy-v2c-rag-2a-007",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-007",
+      "citation_check_id": "citation-v2c-rag-2a-007",
+      "audit_event_ids": [
+        "audit-v2c-rag-2a-007-001"
+      ],
+      "timestamp_utc": "2026-05-14T13:15:57+00:00",
+      "production_ready": false,
+      "go_decision": false,
+      "blocked_claims": [
+        "production_ready",
+        "go_launch_decision"
+      ]
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-008",
+      "scenario_id": "RAG-2A-008",
+      "request_id": "request-v2c-rag-2a-008",
+      "user_id": "launch_gate_engine",
+      "outcome": "ALLOW",
+      "policy_decision_id": "policy-v2c-rag-2a-008",
+      "retrieval_event_id": "retrieval-v2c-rag-2a-008",
+      "citation_check_id": "citation-v2c-rag-2a-008",
+      "audit_event_ids": [
+        "audit-v2c-rag-2a-008-001"
+      ],
+      "timestamp_utc": "2026-05-14T13:16:57+00:00",
+      "production_ready": false,
+      "go_decision": false,
+      "blocked_claims": [
+        "production_ready",
+        "go_launch_decision"
+      ]
+    }
+  ]
+}
