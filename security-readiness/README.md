@@ -2,25 +2,25 @@
 
 This repository is a portfolio and readiness-engineering lab. It is not a production certification and does not claim that Onyx or any derived system is production-secure.
 
-## What this project is
-A structured readiness methodology covering architecture mapping, threat modeling, control design, runtime evidence planning, evidence manifests, and launch-gate decisions.
+## Version 2.1 — Artifact-Aware Evidence Validator + P0 Runtime Proof Pack
+- Adds artifact-aware evidence consistency validation.
+- Adds P0 runtime boundary proof structure for seven controls.
+- Keeps conservative claim boundaries and explicit NO_GO blockers.
 
-## What this project is not
-It is not production proof, client verification proof, or compliance certification.
+### Inspect V2.1
+- `security-readiness/meta/canonical-version-status.json`
+- `security-readiness/evidence-artifacts/canonical-evidence-manifest.json`
+- `security-readiness/evidence-artifacts/p0-runtime-boundary-proof/`
+- `security-readiness/launch-gates/canonical-launch-gate-decision.json`
 
-## Allowed claim
-The project demonstrates a structured method for assessing RAG and agent readiness through architecture mapping, threat modeling, control design, runtime evidence planning, evidence manifests, and launch-gate decisions.
+### Run validator
+`python3 security-readiness/scripts/validate_readiness_evidence.py`
 
-## Blocked claim
-The project does not prove production security, client deployment readiness, or compliance certification.
+### Current P0 status
+`NOT_EXECUTED` (structure-only, no runtime pass evidence yet).
 
-## Role mapping
-- Layer Retrofit
-- Secure Starter Kits
-- Launch Gates
+### Current launch gate
+`NO_GO`.
 
-## Evidence status
-Design and partial local/CI evidence exist. Staging/production/client runtime evidence is not verified.
-
-## Next milestone
-Version 2 — Evidence-Consistent Runtime Readiness Kit.
+### Next step after V2.1
+V2.2 — Execute P0 Runtime Boundary Proof.

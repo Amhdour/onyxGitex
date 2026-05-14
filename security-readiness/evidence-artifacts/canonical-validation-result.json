@@ -1,15 +1,32 @@
 {
   "validation_status": "PASS",
-  "validation_scope": "metadata_consistency_only_not_production_readiness",
+  "validation_scope": "metadata_and_artifact_consistency_only_not_runtime_or_production_readiness",
   "allow_go": false,
   "production_ready": false,
   "client_verified": false,
+  "staging_verified": false,
+  "p0_controls": {
+    "total": 7,
+    "passed": 0,
+    "not_executed": 7
+  },
   "errors": [],
   "warnings": [],
   "checked_files": [
     "/workspace/onyxGitex/security-readiness/meta/canonical-version-status.json",
     "/workspace/onyxGitex/security-readiness/launch-gates/canonical-launch-gate-decision.json",
-    "/workspace/onyxGitex/security-readiness/evidence-artifacts/canonical-evidence-manifest.json"
+    "/workspace/onyxGitex/security-readiness/evidence-artifacts/canonical-evidence-manifest.json",
+    "/workspace/onyxGitex/security-readiness/evidence-artifacts/p0-runtime-boundary-proof/manifest.json",
+    "/workspace/onyxGitex/security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json"
   ],
-  "timestamp_utc": "2026-05-14T16:52:39+00:00"
+  "checked_p0_controls": [
+    "P0-RA-001",
+    "P0-CL-001",
+    "P0-PI-001",
+    "P0-TA-001",
+    "P0-FC-001",
+    "P0-AL-001",
+    "P0-TT-001"
+  ],
+  "timestamp_utc": "2026-05-14T17:12:23+00:00"
 }

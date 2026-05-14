@@ -1,20 +1,16 @@
 # Evidence Gap Backlog
 
-## P0 — Blocks all GO claims
-- **P0-01 Retrieval authorization runtime proof** ... claim unlocked: stronger runtime-boundary claim.
-- **P0-02 Citation leakage boundary proof** ... claim unlocked: bounded citation-leakage claim.
-- **P0-03 Prompt-injection retrieval boundary proof** ... claim unlocked: prompt-injection boundary claim.
-- **P0-04 Launch-gate validation consistency** ... claim unlocked: consistency claim.
-- **P0-05 Evidence pack completeness** ... claim unlocked: auditable evidence-pack claim.
-- **P0-06 Critical open risks resolved/accepted** ... claim unlocked: controlled residual-risk claim.
+## V2.1 P0 Runtime Boundary Proof Tasks
 
-## P1 — Blocks production-track maturity
-- CI runtime evidence stable and not queued; policy decision logging proof; audit taxonomy proof; fail-closed proof; tool auth runtime proof; MCP permission boundary proof; secrets access proof/non-use; telemetry trace proof.
-
-## P2 — Blocks client delivery readiness
-- Client intake real/sample-marked; scope/assumptions approved/template-marked; production architecture verified; incident response tested; readiness report from real evidence.
-
-## P3 — Improves portfolio quality
-- Clearer README narrative; diagrams; folder ordering; public portfolio explanation; case-study packaging.
-
-> Note: Detailed acceptance criteria and evidence outputs are tracked in canonical launch-gate + evidence manifest files; these backlog entries remain blocked until runtime artifacts are produced.
+| Priority | Description | Affected files | Acceptance criteria | Evidence required | Claim unlocked if completed | Current status |
+|---|---|---|---|---|---|---|
+| P0 | Execute retrieval authorization proof | p0-runtime-boundary-proof/01-retrieval-authorization/* | Acceptance criteria met with logs | pytest output + runtime log + evidence-result | Retrieval boundary runtime claim | NOT_EXECUTED |
+| P0 | Execute citation leakage boundary proof | p0-runtime-boundary-proof/02-citation-leakage-boundary/* | No restricted citation leakage in tested scope | answer output + citations + logs + result | Citation boundary runtime claim | NOT_EXECUTED |
+| P0 | Execute prompt-injection retrieval boundary proof | p0-runtime-boundary-proof/03-prompt-injection-retrieval-boundary/* | Injection bypass denied and logged | injected corpus test logs + result | Prompt-injection boundary runtime claim | NOT_EXECUTED |
+| P0 | Execute tool authorization proof | p0-runtime-boundary-proof/04-tool-authorization/* | allow/deny/missing identity/high-risk cases validated | tool call outputs + audit logs + result | Tool authorization runtime claim | NOT_EXECUTED |
+| P0 | Execute fail-closed behavior proof | p0-runtime-boundary-proof/05-fail-closed-behavior/* | missing context always denied | denial logs + result | Fail-closed runtime claim | NOT_EXECUTED |
+| P0 | Execute audit logging proof | p0-runtime-boundary-proof/06-audit-logging/* | allow+deny structured logs captured | audit events + result | Audit logging runtime claim | NOT_EXECUTED |
+| P0 | Execute telemetry tracing proof | p0-runtime-boundary-proof/07-telemetry-tracing/* | trace chain captured without sensitive leak | traces + result | Telemetry tracing runtime claim | NOT_EXECUTED |
+| P1 | Upgrade CI evidence replay | workflows + scripts + evidence artifacts | CI replay stable and reproducible | CI logs/artifacts | Stronger CI runtime confidence | BLOCKED |
+| P1 | Connect P0 evidence to canonical launch-gate decision | launch-gate json/md + manifest | Blockers auto-updated from P0 results | updated canonical files | Stronger launch-gate automation claim | BLOCKED |
+| P1 | Re-run artifact-aware validator after evidence collection | validator output json | PASS with updated runtime metadata | canonical-validation-result.json | Updated consistency claim | NOT_EXECUTED |

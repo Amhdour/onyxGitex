@@ -1,22 +1,10 @@
 # Canonical Evidence Manifest (Normalized)
 
-This manifest normalizes evidence by category and level. Template/design artifacts are not counted as runtime enforcement proof.
+Includes V2.1 P0 runtime proof-pack entries for seven controls, each currently `NOT_EXECUTED` and `P0_PROOF_STRUCTURE_ONLY`.
 
-Primary source: `canonical-evidence-manifest.json`.
-
-## Coverage Summary
-- Static architecture evidence: PRESENT
-- Threat model evidence: PRESENT
-- Control design evidence: PRESENT
-- Policy-as-code evidence: PARTIAL (design/contracts dominate)
-- Runtime guardrail evidence: PARTIAL (local)
-- Retrieval boundary evidence: PARTIAL (local)
-- Tool authorization evidence: PARTIAL (local)
-- MCP/agent tool evidence: PARTIAL (local)
-- Telemetry/auditability evidence: PARTIAL (local)
-- Red-team/abuse-case evidence: DESIGN_ONLY plans dominate
-- CI evidence: PARTIAL
-- Local runtime evidence: PRESENT (selected controls)
-- Staging evidence: NOT_VERIFIED
-- Production evidence: MISSING
-- Client evidence: NOT_VERIFIED
+All P0 entries currently:
+- supports_go_claim: false
+- supports_production_claim: false
+- supports_client_claim: false
+- limitation: runtime evidence not yet collected
+- next action: run test and collect logs/output
