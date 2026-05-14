@@ -241,3 +241,14 @@ For workflow visibility and evidence-boundary explanations, see the Evidence Wor
 - Client approver recorded: false
 - Production claim remains blocked.
 - GO decision remains false.
+
+## Client-Facing Walkthrough Pack
+
+A client-facing walkthrough pack is available at:
+
+client-facing-walkthrough-pack/
+
+It explains the evidence chain, client engagement workflow, demo scripts, sales one-pager, technical one-pager, launch-gate model, and Version 4 client-specific production template.
+
+Boundary:
+The walkthrough pack does not claim production readiness or client GO. Real client evidence is required before any production decision.

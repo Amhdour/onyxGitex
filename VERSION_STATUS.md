@@ -103,3 +103,20 @@ Client-Specific Production Template — CLIENT_PRODUCTION_TEMPLATE_READY. The te
 Update Required Next Move:
 
 Fill Version 4 template with real client evidence before any production decision.
+
+## Client-Facing Walkthrough Pack
+
+Status:
+CLIENT_WALKTHROUGH_PACK_READY
+
+Purpose:
+Explain the project to clients, partners, and decision makers while preserving claim boundaries.
+
+Production claim:
+No.
+
+GO claim:
+No.
+
+Next action:
+Use this pack for client walkthroughs, then fill Version 4 with real client evidence before any production decision.

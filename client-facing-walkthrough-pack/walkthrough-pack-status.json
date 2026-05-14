@@ -1,0 +1,22 @@
+{
+  "pack": "client-facing-walkthrough-pack",
+  "status": "CLIENT_WALKTHROUGH_PACK_READY",
+  "production_ready": false,
+  "go_decision": false,
+  "client_evidence_verified": false,
+  "purpose": "Explain the onyxGitex evidence chain, client engagement workflow, and Version 4 client-specific production template.",
+  "based_on_versions": {
+    "version_2a": "PARTIAL_RUNTIME_EVIDENCE",
+    "version_2b": "CI_ARTIFACT_VERIFIED",
+    "version_2c": "OBSERVABILITY_EVIDENCE_VERIFIED",
+    "version_2d": "AGENT_RUNTIME_EVIDENCE_VERIFIED",
+    "version_3": "STAGING_DEMO_EVIDENCE_VERIFIED",
+    "version_4": "CLIENT_PRODUCTION_TEMPLATE_READY"
+  },
+  "claim_safety": {
+    "production_claim_allowed": false,
+    "go_claim_allowed": false,
+    "client_go_claim_allowed": false
+  },
+  "next_required_action": "Use this pack for client walkthroughs, then fill Version 4 with real client evidence before any production decision"
+}

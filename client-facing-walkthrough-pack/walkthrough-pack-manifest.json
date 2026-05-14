@@ -1,0 +1,228 @@
+{
+  "pack": "client-facing-walkthrough-pack",
+  "generated_at_utc": "2026-05-14T14:18:28Z",
+  "required_files": [
+    {
+      "path": "client-facing-walkthrough-pack/README.md",
+      "exists": true,
+      "sha256": "42da5148c1409e12f5bdeb7798dd970ff798847436969d158e6d008f685b5958",
+      "description": "README.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/00-executive-overview.md",
+      "exists": true,
+      "sha256": "6723bc95fdb99d568c3ef8bbe2cdf44e13d0feac19075efc0f9f0c95d0cdc574",
+      "description": "00-executive-overview.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/01-problem-statement.md",
+      "exists": true,
+      "sha256": "bebe3307ac9574eef27790da37eaab1902b0d6cbb28adad884fa836bc4b1e8c5",
+      "description": "01-problem-statement.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/02-service-positioning.md",
+      "exists": true,
+      "sha256": "2a72092b53519c1b3462acfb98dc158b68576009dde4a44ca80438cfb47ebb04",
+      "description": "02-service-positioning.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/03-evidence-chain-map.md",
+      "exists": true,
+      "sha256": "b1eecec7daee497e9b49bdce9ad6a75346175eefd08e33b740b45d165553e786",
+      "description": "03-evidence-chain-map.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/04-version-by-version-walkthrough.md",
+      "exists": true,
+      "sha256": "eecff11f6272668b337b2239969dc5a040eb3920788e6086813661c6d59482f9",
+      "description": "04-version-by-version-walkthrough.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/05-what-this-project-proves.md",
+      "exists": true,
+      "sha256": "763f83ba545827e94f30527410106df2ae11aaf432e5dd6024f3cca55da8c21e",
+      "description": "05-what-this-project-proves.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/06-what-this-project-does-not-prove.md",
+      "exists": true,
+      "sha256": "edd78650b661569388dee6eb5ebfe996848b2b82ed053e0f9ec3eb63f7d0dd0c",
+      "description": "06-what-this-project-does-not-prove.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/07-client-engagement-workflow.md",
+      "exists": true,
+      "sha256": "1c52bf0ae6dbad72f746a29598dd60b0b69ee94a845dea6bad34e9473e46e5cf",
+      "description": "07-client-engagement-workflow.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/08-demo-script-15-minute.md",
+      "exists": true,
+      "sha256": "d0ca5b99c999c61700036fcf4b6310e49ef36d4aece98d0ae49469cf4125f4b6",
+      "description": "08-demo-script-15-minute.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/09-demo-script-30-minute.md",
+      "exists": true,
+      "sha256": "4deff715ab3e6301bbf9863d5d0bbc14aaaa212769dd5aed1e0e3e027f0735bf",
+      "description": "09-demo-script-30-minute.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/10-client-meeting-talk-track.md",
+      "exists": true,
+      "sha256": "9ef7deb2036dbdf07292cda82dcaab9fefa9d050d56f298ef92f8641ae83c5c1",
+      "description": "10-client-meeting-talk-track.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/11-sales-one-pager.md",
+      "exists": true,
+      "sha256": "ac46a6d3e8737ea0f92298cd6f9fc853c38dd11d7d0d0761a4a76a80a0685133",
+      "description": "11-sales-one-pager.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/12-technical-one-pager.md",
+      "exists": true,
+      "sha256": "107d09d65b7ecd10c3b0181e6fba7e3ae46fb6a15f350a456444f905f748d9a2",
+      "description": "12-technical-one-pager.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/13-deliverables-list.md",
+      "exists": true,
+      "sha256": "ea7a25647b9f5deeffc876716c238d1fc7d7eb17867b51aa5d81738a8f2c665e",
+      "description": "13-deliverables-list.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/14-client-questions-and-answers.md",
+      "exists": true,
+      "sha256": "1129e8f683d5ea736f85bb8ebecd88048c4e47da6050ab124a19680206c659fe",
+      "description": "14-client-questions-and-answers.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/15-objection-handling.md",
+      "exists": true,
+      "sha256": "5923cea3af39412a0ae1772c0dec1dfb1def593a4516269550aec7e51202f48b",
+      "description": "15-objection-handling.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/16-use-case-internal-company-knowledge-assistant.md",
+      "exists": true,
+      "sha256": "6ea7561177f690a83bf10dfff9440456ca8583263c748c791c22cfb3a8e3fdfe",
+      "description": "16-use-case-internal-company-knowledge-assistant.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/17-how-to-use-version-4-template.md",
+      "exists": true,
+      "sha256": "c98d852a615d094f95502853515e4f2aeaaa74b135c69ab286d193860756703a",
+      "description": "17-how-to-use-version-4-template.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/18-launch-gate-decision-model.md",
+      "exists": true,
+      "sha256": "5910f19ff221d7eacd8b75fea87828ac25c9ca604ce7527e6e67dcf30df2fd7c",
+      "description": "18-launch-gate-decision-model.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/19-readiness-maturity-model.md",
+      "exists": true,
+      "sha256": "1921a6d4cdedaa4b5813003b70e88bd91805812508957b2d2db6a3ac1b670252",
+      "description": "19-readiness-maturity-model.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/20-next-step-email-template.md",
+      "exists": true,
+      "sha256": "1d03803e14396e2a63febe8eaf64485d7cec09a4c482db8ef8768a96f9ad0f10",
+      "description": "20-next-step-email-template.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/21-linkedin-post-template.md",
+      "exists": true,
+      "sha256": "942d141b85cf5aeb01d53c0a9b689cbb49674644d2c717ab8382ff374d088975",
+      "description": "21-linkedin-post-template.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/22-website-service-page-copy.md",
+      "exists": true,
+      "sha256": "24371bd34f093e8f0376f9659595f3b7f7163bf5dfc6747bdd66aa0a2d17ef12",
+      "description": "22-website-service-page-copy.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/23-partner-outreach-script.md",
+      "exists": true,
+      "sha256": "95499f4a7cc1e7282b19b707a9271986f18d213aed6c515ef3f6b0bf87ef28ed",
+      "description": "23-partner-outreach-script.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/24-consultant-partnership-brief.md",
+      "exists": true,
+      "sha256": "58ac53a4bd80109b42b2c8b9e27cf117464dd3c790010dc505220ff2c0424e3f",
+      "description": "24-consultant-partnership-brief.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/25-private-school-university-offer.md",
+      "exists": true,
+      "sha256": "5924065f9f484e27838b896ebc9312984fc7195daf39695343754d9d0263a940",
+      "description": "25-private-school-university-offer.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/26-ai-agency-offer.md",
+      "exists": true,
+      "sha256": "474afa4d9bcac0cfc6dca92d0816e61448dd396a2d6989c06f6ddd5fdb66ac1a",
+      "description": "26-ai-agency-offer.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/27-founder-cto-brief.md",
+      "exists": true,
+      "sha256": "7226fbff8697dd08fa078676627f2052d89b6dc6bd2e00c1c48087e33afbb35d",
+      "description": "27-founder-cto-brief.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/28-checklist-before-client-call.md",
+      "exists": true,
+      "sha256": "fc2c29890307f2ba6b6b88e61620292b382f93808e64cf2918a0b81efa8d79a3",
+      "description": "28-checklist-before-client-call.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/29-glossary-simple-english.md",
+      "exists": true,
+      "sha256": "1de0bc9c5301f81b32e642c6a1410a9e9cfeaa6f57eac12fc6bf54b7cd73c092",
+      "description": "29-glossary-simple-english.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/30-glossary-technical.md",
+      "exists": true,
+      "sha256": "61fbd73ff43efe882603de99173e17515d44f973bc24d6af4f75c7ad1f529db1",
+      "description": "30-glossary-technical.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/claim-boundaries.md",
+      "exists": true,
+      "sha256": "298e40bc94e0c71fd658a1aa4a84491cbf733a4a707f4180ddac197cea25a423",
+      "description": "claim-boundaries.md"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/walkthrough-pack-status.json",
+      "exists": true,
+      "sha256": "2e0fd103e78a2c5067cf967bb3f36865a1469a1a8bf1143ac06b07fe99ca4fbb",
+      "description": "walkthrough-pack-status.json"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/walkthrough-pack-manifest.json",
+      "exists": true,
+      "sha256": "adefb4fd6fed99182ba090d56a321c8f51234cbc9e2537770edc8da59b3b194d",
+      "description": "walkthrough-pack-manifest.json"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/validation-result.txt",
+      "exists": true,
+      "sha256": "5e6f729c13edd8a673183fe242705a32165abceb97a68139197eed3cc0f33edf",
+      "description": "validation-result.txt"
+    },
+    {
+      "path": "client-facing-walkthrough-pack/blockers.md",
+      "exists": true,
+      "sha256": "b3c39db498e8b04eb052b0e1c9bf8a427d2c297cc74aea45e764b48f8382f338",
+      "description": "blockers.md"
+    }
+  ]
+}
