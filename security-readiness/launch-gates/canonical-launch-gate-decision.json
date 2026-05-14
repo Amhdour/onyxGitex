@@ -1,1 +1,17 @@
-{"decision":"NO_GO","current_version_focus":"V2.2","reason":"P0 runtime boundary proof executed with failing controls; launch criteria not met.","v2_2_result":{"controls_passed":0,"controls_failed":7,"controls_blocked":0,"controls_not_executed":0},"still_blocked":["GO","production-ready","client-ready","staging-verified","compliance-certified"]}
+{
+  "decision": "NO_GO",
+  "current_version_focus": "V2.2.1",
+  "reason": "P0 controls did not reach meaningful security assertions because pytest collection/import failed due to missing dependency fastapi_users.",
+  "v2_2_1_result": {
+    "controls_passed": 0,
+    "controls_failed_assertion": 0,
+    "controls_blocked_import_dependency": 7
+  },
+  "still_blocked": [
+    "GO",
+    "production-ready",
+    "client-ready",
+    "staging-verified",
+    "compliance-certified"
+  ]
+}

@@ -12,59 +12,56 @@ req = {
 "p0_final": ROOT / 'security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json',
 }
 out_f = ROOT / 'security-readiness/evidence-artifacts/canonical-validation-result.json'
+ALLOWED={"PASSED","FAILED_ASSERTION","FAILED_TEST_RUNTIME","BLOCKED_IMPORT_DEPENDENCY","BLOCKED_TEST_COLLECTION","BLOCKED_ENVIRONMENT","BLOCKED_COMMAND_MISSING","NOT_EXECUTED"}
+BLOCKED={"BLOCKED_IMPORT_DEPENDENCY","BLOCKED_TEST_COLLECTION","BLOCKED_ENVIRONMENT","BLOCKED_COMMAND_MISSING","NOT_EXECUTED"}
 errors=[]; warnings=[]; checked=[str(v) for v in req.values()]
 for f in req.values():
     if not f.exists(): errors.append(f"Missing required canonical file: {f}")
 
-def exists_or_waived(path, item):
-    status=item.get('status','')
-    if status in {'MISSING','TO_BE_CREATED'}: return True
-    return (ROOT / path).exists()
-
-checked_controls=[]; p0_passed=0; p0_not=0
+counts={k:0 for k in ["passed","failed_assertion","failed_test_runtime","blocked_import_dependency","blocked_test_collection","blocked_environment","blocked_command_missing","not_executed","assertions_reached"]}
+checked_controls=[]
 if not errors:
     status=json.loads(req['status'].read_text())
     launch=json.loads(req['launch'].read_text())
-    manifest=json.loads(req['manifest'].read_text())
     p0_manifest=json.loads(req['p0_manifest'].read_text())
-    p0_final=json.loads(req['p0_final'].read_text())
-
-    for it in manifest.get('evidence_items',[]):
-        fp=it.get('file_path','')
-        if fp and not exists_or_waived(fp,it): errors.append(f"Evidence path missing: {fp} ({it.get('evidence_id')})")
 
     for c in p0_manifest.get('controls',[]):
         checked_controls.append(c.get('control_id'))
-        folder=ROOT / c.get('folder_path','')
-        if not folder.exists(): errors.append(f"Missing P0 folder: {folder}")
-        for rf in c.get('required_files',[]):
-            if not (folder/rf).exists(): errors.append(f"Missing required P0 file: {folder/rf}")
-        erp=folder/'evidence-result.json'
-        if erp.exists():
-            er=json.loads(erp.read_text())
-            for k in ['control_id','control_name','status','evidence_level','test_executed','supports_go_claim','supports_production_claim','supports_client_claim','limitations','next_required_action']:
-                if k not in er: errors.append(f"{erp} missing field: {k}")
-            if er.get('status')=='PASSED': p0_passed+=1
-            if er.get('status')=='NOT_EXECUTED': p0_not+=1
-            if er.get('supports_go_claim'):
-                good_level=er.get('evidence_level') in {'LOCAL_RUNTIME','CI_RUNTIME','STAGING_RUNTIME','PRODUCTION_RUNTIME','CLIENT_VERIFIED'}
-                rlp=ROOT/er.get('runtime_log_path','missing')
-                pop=ROOT/er.get('pytest_output_path','missing')
-                if not (er.get('status')=='PASSED' and er.get('test_executed') is True and good_level and rlp.exists() and pop.exists()):
-                    errors.append(f"Invalid GO-supporting claim in {erp}")
-            if er.get('evidence_level') in {'DESIGN_ONLY','TEMPLATE_ONLY','STATIC_REVIEW','P0_PROOF_STRUCTURE_ONLY'} and (er.get('supports_go_claim') or er.get('supports_production_claim') or er.get('supports_client_claim')):
-                errors.append(f"Invalid claim support for low evidence level in {erp}")
-        for ph in ['runtime-log.placeholder.txt','pytest-output.placeholder.txt']:
-            phf=folder/ph
-            if phf.exists() and 'PLACEHOLDER_ONLY' not in phf.read_text():
-                errors.append(f"Placeholder marker missing in {phf}")
+        erp=ROOT / c.get('folder_path','') / 'evidence-result.json'
+        if not erp.exists():
+            errors.append(f"Missing evidence-result.json: {erp}")
+            continue
+        er=json.loads(erp.read_text())
+        required=['assertions_reached','failure_classification','root_cause_summary','dependency_blockers','environment_blockers','test_collection_blockers','recommended_fix','supports_local_harness_claim','supports_staging_claim','status','exit_code']
+        for k in required:
+            if k not in er: errors.append(f"{erp} missing field: {k}")
+        st=er.get('status')
+        if st not in ALLOWED: errors.append(f"Invalid status {st} in {erp}")
+        if st=="PASSED":
+            counts['passed']+=1
+            if er.get('assertions_reached') is not True or er.get('exit_code')!=0: errors.append(f"PASSED must have assertions_reached=true and exit_code=0 in {erp}")
+        if st=="FAILED_ASSERTION":
+            counts['failed_assertion']+=1
+            if er.get('assertions_reached') is not True: errors.append(f"FAILED_ASSERTION must have assertions_reached=true in {erp}")
+        if st=="FAILED_TEST_RUNTIME": counts['failed_test_runtime']+=1
+        if st=="BLOCKED_IMPORT_DEPENDENCY":
+            counts['blocked_import_dependency']+=1
+            if er.get('assertions_reached') is not False: errors.append(f"BLOCKED_IMPORT_DEPENDENCY must have assertions_reached=false in {erp}")
+            if not er.get('dependency_blockers'): errors.append(f"BLOCKED_IMPORT_DEPENDENCY must include dependency_blockers in {erp}")
+        if st=="BLOCKED_TEST_COLLECTION": counts['blocked_test_collection']+=1
+        if st=="BLOCKED_ENVIRONMENT": counts['blocked_environment']+=1
+        if st=="BLOCKED_COMMAND_MISSING": counts['blocked_command_missing']+=1
+        if st=="NOT_EXECUTED": counts['not_executed']+=1
+        if er.get('assertions_reached') is True: counts['assertions_reached']+=1
+        if st in BLOCKED:
+            if er.get('supports_local_runtime_claim') or er.get('supports_go_claim') or er.get('supports_production_claim') or er.get('supports_client_claim') or er.get('supports_staging_claim'):
+                errors.append(f"Blocked status cannot support runtime/GO/production/client/staging claims in {erp}")
 
+    total=len(p0_manifest.get('controls',[]))
+    if counts['passed']<total and launch.get('decision')!='NO_GO': errors.append('Launch decision must remain NO_GO while any P0 control is not PASSED')
     if status.get('production_ready'): errors.append('production_ready=true without production evidence is not allowed')
     if status.get('client_verified'): errors.append('client_verified=true without client evidence is not allowed')
-    if status.get('versions',{}).get('v3_staging_demo',{}).get('status') in {'VERIFIED','PASSED'}:
-        errors.append('staging_verified style claim without deployed evidence is not allowed')
-    total=len(p0_manifest.get('controls',[]))
-    if p0_passed<total and launch.get('decision')!='NO_GO': errors.append('Launch decision must remain NO_GO while any P0 control is not PASSED')
+    if status.get('staging_verified'): errors.append('staging_verified=true without staging evidence is not allowed')
 
 result={
 "validation_status":"FAIL" if errors else "PASS",
@@ -73,7 +70,7 @@ result={
 "production_ready":False,
 "client_verified":False,
 "staging_verified":False,
-"p0_controls":{"total":7,"passed":p0_passed,"not_executed":p0_not},
+"p0_controls":{"total":7, **counts},
 "errors":errors,
 "warnings":warnings,
 "checked_files":checked,

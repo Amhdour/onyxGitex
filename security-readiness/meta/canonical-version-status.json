@@ -1,7 +1,7 @@
 {
   "project_name": "onyxGitex",
   "canonical_status_version": "v2.2-execution-track",
-  "last_updated_utc": "2026-05-14T00:00:00Z",
+  "last_updated_utc": "2026-05-14T17:44:30Z",
   "overall_positioning": "Portfolio lab with production-track starter-kit artifacts; V2.1 in progress; no staging/production/client verification.",
   "production_ready": false,
   "client_verified": false,
@@ -69,6 +69,32 @@
       "open_gaps": [
         "Fix failed P0 controls",
         "Replay in CI (V2.3)"
+      ]
+    },
+    "v2_2_1_fix_p0_execution_environment_and_failure_classification": {
+      "status": "ACHIEVED_CLASSIFICATION_CORRECTION",
+      "evidence_level": "ARTIFACT_CLASSIFICATION_CORRECTED",
+      "production_ready": false,
+      "client_verified": false,
+      "staging_verified": false,
+      "launch_go": false,
+      "allowed_claims": [
+        "V2.2.1 corrected P0 result classification so import/setup blockers are not mislabeled as security-control failures.",
+        "V2.2.1 documents missing dependency and execution environment blockers.",
+        "V2.2.1 preserves NO_GO until meaningful P0 assertions execute and pass."
+      ],
+      "blocked_claims": [
+        "V2.2.1 proves P0 controls passed.",
+        "V2.2.1 proves P0 controls functionally failed.",
+        "V2.2.1 proves production readiness.",
+        "V2.2.1 proves client readiness.",
+        "V2.2.1 proves staging verification."
+      ],
+      "open_gaps": [
+        "Resolve missing dependency fastapi_users or isolate lightweight harness tests.",
+        "Execute meaningful lightweight harness tests.",
+        "Execute real Onyx runtime/integration tests.",
+        "Replay P0 evidence in CI."
       ]
     }
   },

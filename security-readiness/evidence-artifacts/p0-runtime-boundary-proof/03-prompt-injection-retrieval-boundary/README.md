@@ -1,4 +1,3 @@
-# Prompt-Injection Retrieval Boundary
+# 03-prompt-injection-retrieval-boundary
 
-Control ID: P0-PI-001
-Status: NOT_EXECUTED
+Current result is BLOCKED_IMPORT_DEPENDENCY. The control did not reach meaningful security assertions. This is not a functional pass or functional fail of the control.

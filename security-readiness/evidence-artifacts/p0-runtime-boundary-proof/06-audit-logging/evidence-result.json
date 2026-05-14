@@ -1,23 +1,36 @@
 {
   "control_id": "P0-AL-001",
   "control_name": "Audit Logging",
+  "status": "BLOCKED_IMPORT_DEPENDENCY",
+  "evidence_level": "BLOCKED_IMPORT_DEPENDENCY",
+  "test_executed": true,
+  "assertions_reached": false,
+  "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"audit\"",
+  "exit_code": 4,
+  "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/pytest-output.txt",
+  "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/runtime-log.txt",
+  "failure_classification": "missing_python_dependency",
+  "root_cause_summary": "Pytest import/collection failed before assertions because required dependency fastapi_users is missing.",
+  "dependency_blockers": [
+    "fastapi_users"
+  ],
+  "environment_blockers": [],
+  "test_collection_blockers": [
+    "ModuleNotFoundError"
+  ],
+  "supports_local_harness_claim": false,
+  "supports_local_runtime_claim": false,
   "supports_go_claim": false,
   "supports_production_claim": false,
   "supports_client_claim": false,
-  "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/runtime-log.txt",
-  "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/pytest-output.txt",
-  "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"audit\"",
-  "timestamp_utc": "2026-05-14T17:27:19.726534+00:00",
-  "status": "FAILED",
-  "evidence_level": "LOCAL_TEST_FAILED",
-  "test_executed": true,
-  "exit_code": 4,
-  "supports_local_runtime_claim": false,
+  "supports_staging_claim": false,
   "limitations": [
-    "Test command returned non-zero exit code."
+    "Pytest import/collection failed before assertions because required dependency fastapi_users is missing."
   ],
   "blockers": [
-    "TEST_FAILURE"
+    "MISSING_PYTHON_DEPENDENCY: fastapi_users"
   ],
-  "next_required_action": "Fix failing test/control and rerun V2.2 proof."
+  "recommended_fix": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
+  "next_required_action": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
+  "timestamp_utc": "2026-05-14T17:44:28+00:00"
 }

@@ -1,4 +1,3 @@
-# Citation Leakage Boundary
+# 02-citation-leakage-boundary
 
-Control ID: P0-CL-001
-Status: NOT_EXECUTED
+Current result is BLOCKED_IMPORT_DEPENDENCY. The control did not reach meaningful security assertions. This is not a functional pass or functional fail of the control.

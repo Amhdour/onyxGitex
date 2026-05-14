@@ -8,7 +8,14 @@
   "p0_controls": {
     "total": 7,
     "passed": 0,
-    "not_executed": 0
+    "failed_assertion": 0,
+    "failed_test_runtime": 0,
+    "blocked_import_dependency": 7,
+    "blocked_test_collection": 0,
+    "blocked_environment": 0,
+    "blocked_command_missing": 0,
+    "not_executed": 0,
+    "assertions_reached": 0
   },
   "errors": [],
   "warnings": [],
@@ -28,5 +35,5 @@
     "P0-AL-001",
     "P0-TT-001"
   ],
-  "timestamp_utc": "2026-05-14T17:27:26+00:00"
+  "timestamp_utc": "2026-05-14T17:44:30+00:00"
 }
