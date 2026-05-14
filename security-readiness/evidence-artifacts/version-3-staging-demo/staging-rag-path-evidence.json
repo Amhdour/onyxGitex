@@ -1,0 +1,45 @@
+{
+  "version": "3",
+  "gate": "STAGING_DEMO",
+  "rag_path_status": "PASS",
+  "rag_runtime": "onyx_rag_runtime_or_local_rag_harness",
+  "real_onyx_runtime_verified": false,
+  "real_retrieval_store_verified": false,
+  "controls": [
+    {
+      "control_id": "STAGE-RAG-001",
+      "name": "Authorized retrieval allowed",
+      "mapped_version_2_evidence": [
+        "RAG-2A-001"
+      ],
+      "result": "PASS"
+    },
+    {
+      "control_id": "STAGE-RAG-002",
+      "name": "Unauthorized retrieval blocked",
+      "mapped_version_2_evidence": [
+        "RAG-2A-002",
+        "RAG-2A-003"
+      ],
+      "result": "PASS"
+    },
+    {
+      "control_id": "STAGE-RAG-003",
+      "name": "Prompt-injected document cannot override access policy",
+      "mapped_version_2_evidence": [
+        "RAG-2A-004"
+      ],
+      "result": "PASS"
+    },
+    {
+      "control_id": "STAGE-RAG-004",
+      "name": "Citation leakage blocked",
+      "mapped_version_2_evidence": [
+        "RAG-2A-005"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

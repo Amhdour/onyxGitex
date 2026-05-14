@@ -1,0 +1,33 @@
+{
+  "version": "3",
+  "gate": "STAGING_DEMO",
+  "identity_boundary_status": "PASS",
+  "identity_provider": "mock_oidc_or_keycloak_placeholder",
+  "real_keycloak_runtime_verified": false,
+  "controls": [
+    {
+      "control_id": "STAGE-ID-001",
+      "name": "User identity required",
+      "mapped_version_2_evidence": [
+        "RAG-2A-006",
+        "AGENT-2D-005"
+      ],
+      "staging_expectation": "Requests without identity fail closed.",
+      "evidence_status": "DESIGN_PLUS_LOCAL_EVIDENCE",
+      "result": "PASS"
+    },
+    {
+      "control_id": "STAGE-ID-002",
+      "name": "Identity propagated to RAG and agent traces",
+      "mapped_version_2_evidence": [
+        "trace-events.json",
+        "agent-trace-events.json"
+      ],
+      "staging_expectation": "Trace records include user and agent identity context.",
+      "evidence_status": "DESIGN_PLUS_LOCAL_EVIDENCE",
+      "result": "PASS"
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

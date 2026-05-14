@@ -107,3 +107,36 @@ Hard rules:
 - Version 2D cannot claim MCP hardening unless MCP proof exists.
 - Version 2D cannot claim staging or client-specific readiness.
 - Version 2D only proves local deterministic agent runtime evidence unless stronger runtime proof is actually present.
+
+
+# Version 3 Staging Demo Contract
+
+Inputs:
+- version-3-staging-demo-status.json
+- staging-prerequisite-checks.json
+- staging-service-map-evidence.json
+- staging-identity-boundary-evidence.json
+- staging-secrets-boundary-evidence.json
+- staging-policy-path-evidence.json
+- staging-rag-path-evidence.json
+- staging-agent-path-evidence.json
+- staging-observability-path-evidence.json
+- staging-evidence-artifact-index.json
+- staging-launch-gate-result.json
+- staging-evidence-manifest.json
+
+Outputs:
+- STAGING_DEMO_EVIDENCE_VERIFIED when all local staging demo evidence artifacts validate.
+- STAGING_DEMO_EVIDENCE_GENERATED when artifacts exist but validation is incomplete.
+- STAGING_DEMO_CONTAINER_VERIFIED only when real container runtime proof exists.
+- NOT_ENOUGH_EVIDENCE when required prerequisites or artifacts are missing.
+- NO_GO when staging demo evidence, claim-safety, secret-safety, or launch-gate validation fails.
+
+Hard rules:
+- production_ready must remain false.
+- go_decision must remain false.
+- Version 3 cannot produce production GO.
+- Version 3 cannot claim real container runtime unless container proof exists.
+- Version 3 cannot claim real Keycloak/OPA/Vault/Onyx/LangGraph/Qdrant/Grafana runtime unless real runtime evidence exists.
+- Version 3 cannot claim client-specific readiness.
+- Version 3 only proves local staging-demo evidence unless stronger runtime proof exists.

@@ -61,7 +61,7 @@ NOT_ENOUGH_EVIDENCE / NO_GO for production
 
 ## Required Next Move
 
-Prepare Version 3 Staging Demo.
+Prepare Version 4 Client-Specific Production Template.
 
 ## Version Roadmap
 
@@ -81,7 +81,7 @@ Version 2D:
 Agent Runtime Evidence Gate — AGENT_RUNTIME_EVIDENCE_VERIFIED. Local deterministic agent identity, tool authorization, human approval, fail-closed, prompt-injection escalation blocking, sandbox/no-side-effect, audit timeline, and launch-gate evidence is generated and validated. Production readiness remains blocked.
 
 Version 3:
-Staging Demo
+Staging Demo — STAGING_DEMO_EVIDENCE_VERIFIED. Local staging-demo evidence maps Version 2 RAG, CI artifact, observability, and agent runtime evidence into a staging architecture, service map, trust boundaries, and staging launch-gate decision. Production readiness remains blocked.
 
 Version 4:
 Client-Specific Production Template

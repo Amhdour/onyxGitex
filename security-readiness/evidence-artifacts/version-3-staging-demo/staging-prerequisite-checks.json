@@ -1,0 +1,33 @@
+{
+  "version": "3",
+  "gate": "STAGING_DEMO",
+  "prerequisite_status": "PASS",
+  "checks": [
+    {
+      "name": "version_2a_rag_runtime_evidence",
+      "required_status": "PARTIAL_RUNTIME_EVIDENCE",
+      "actual_status": "PARTIAL_RUNTIME_EVIDENCE",
+      "result": "PASS"
+    },
+    {
+      "name": "version_2b_ci_artifact_proof",
+      "required_status": "CI_ARTIFACT_VERIFIED",
+      "actual_status": "CI_ARTIFACT_VERIFIED",
+      "result": "PASS"
+    },
+    {
+      "name": "version_2c_observability_proof",
+      "required_status": "OBSERVABILITY_EVIDENCE_VERIFIED",
+      "actual_status": "OBSERVABILITY_EVIDENCE_VERIFIED",
+      "result": "PASS"
+    },
+    {
+      "name": "version_2d_agent_runtime_evidence",
+      "required_status": "AGENT_RUNTIME_EVIDENCE_VERIFIED",
+      "actual_status": "AGENT_RUNTIME_EVIDENCE_VERIFIED",
+      "result": "PASS"
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

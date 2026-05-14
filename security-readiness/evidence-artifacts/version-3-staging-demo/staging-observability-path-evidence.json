@@ -1,0 +1,38 @@
+{
+  "version": "3",
+  "gate": "STAGING_DEMO",
+  "observability_path_status": "PASS",
+  "observability_stack": "local_trace_export_or_dashboard_query_view",
+  "real_langfuse_verified": false,
+  "real_phoenix_verified": false,
+  "real_grafana_verified": false,
+  "controls": [
+    {
+      "control_id": "STAGE-OBS-001",
+      "name": "RAG trace correlation available",
+      "mapped_version_2_evidence": [
+        "trace-events.json",
+        "incident-timeline.json"
+      ],
+      "result": "PASS"
+    },
+    {
+      "control_id": "STAGE-OBS-002",
+      "name": "Agent incident timeline available",
+      "mapped_version_2_evidence": [
+        "agent-incident-timeline.json"
+      ],
+      "result": "PASS"
+    },
+    {
+      "control_id": "STAGE-OBS-003",
+      "name": "Dashboard/query view defined",
+      "mapped_version_2_evidence": [
+        "dashboard-query-view.json"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

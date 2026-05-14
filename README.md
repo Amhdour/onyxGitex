@@ -33,7 +33,7 @@ onyxGitex is currently Version 1.5:
 
 - Version 1 — Portfolio Lab: strong / mostly achieved
 - Version 2 — Production-Track Starter Kit: started / incomplete
-- Version 3 — Staging Demo: not yet achieved
+- Version 3 — Staging Demo: STAGING_DEMO_EVIDENCE_VERIFIED
 - Version 4 — Client-Specific Production: template only / not achieved
 
 Current production decision:
@@ -112,6 +112,16 @@ Version 2D Agent Runtime Evidence:
   security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/
 - Real LangGraph runtime verified: false
 - External tool execution enabled: false.
+- Production claim remains blocked.
+
+
+Version 3 Staging Demo:
+- Status: STAGING_DEMO_EVIDENCE_VERIFIED
+- Harness type: STAGING_DEMO_LOCAL_HARNESS
+- Canonical evidence directory:
+  security-readiness/evidence-artifacts/version-3-staging-demo/
+- Container runtime verified: false
+- External integrations verified: false
 - Production claim remains blocked.
 
 ---
