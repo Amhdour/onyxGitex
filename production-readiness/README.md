@@ -1,37 +1,28 @@
-# Version 2 — Production-Track Starter Kit
+# Production Readiness Starter Kit
 
-This folder converts the portfolio lab into production-track engineering gates.
+This folder is a production-track starter kit. It is not production proof.
 
-It is not production-ready.
-It is a starter kit for proving readiness through runtime evidence, CI artifacts, observability, and launch-gate decisions.
+## Current status
+In progress; strong design artifacts plus partial local/CI evidence links.
 
-## Purpose
-Define and enforce evidence contracts that must be met before any production claim.
+## Complete
+- Architecture/policy/observability/incident design artifacts.
+- Starter-kit structure for runtime evidence collection.
 
-## Current Status
-STARTED / INCOMPLETE
+## Incomplete
+- Full runtime control verification across critical boundaries.
+- Verified staging and production runtime evidence.
+- Client-verified deployment evidence.
 
-## Version 2A / 2B / 2C / 2D Breakdown
-- Version 2A: RAG Runtime Evidence Gate (NOT_VERIFIED)
-- Version 2B: CI Artifact Proof (NOT_VERIFIED)
-- Version 2C: Observability Proof (DESIGN_ONLY)
-- Version 2D: Agent Runtime Evidence Gate (NOT_VERIFIED)
+## Required before production claim
+- P0 control runtime proofs complete.
+- Canonical NO_GO->GO gate transition backed by evidence.
+- Staging and production telemetry/audit proof.
 
-## Evidence Labels
-DESIGN_ONLY:
-The artifact describes intended design or control structure but has no runtime proof.
+## Evidence required
+- Reproducible runtime artifacts for retrieval, citation leakage, prompt injection, tool authorization, fail-closed behavior.
 
-PARTIAL_RUNTIME_EVIDENCE:
-Some local or partial runtime evidence exists, but CI/staging/client proof is incomplete.
-
-RUNTIME_VERIFIED:
-Evidence exists from a verified runtime execution with logs/artifacts sufficient for review.
-
-## Required Gates
-RAG runtime proof, CI artifact integrity proof, observability proof, and agent runtime proof.
-
-## Source Folder Index
-See `source-folder-index.md`.
-
-## Current Next Action
-Complete Version 2A RAG Runtime Evidence Gate.
+## Blocked claims
+- Production-ready security.
+- Client-verified readiness.
+- Compliance certification.

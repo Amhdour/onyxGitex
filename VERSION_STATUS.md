@@ -1,163 +1,64 @@
 # onyxGitex Version Status
 
-## Current Version
+## Canonical Status
+- Canonical model: `security-readiness/meta/canonical-version-status.json`
+- Canonical track: `2.0-evidence-consistency-track`
+- Current global launch decision: **NO_GO**
+- `production_ready=false`, `client_verified=false`
 
-Version 1.5
+## Executive Summary
+The repository is currently a portfolio-grade AI Trust & Security Readiness lab with partial production-track implementation and evidence artifacts. It is not production-ready and is not client-verified. Existing local and limited CI artifacts support selected technical claims, but they do not satisfy full launch-gate requirements.
 
-## Summary
+## Version 1 — Portfolio Lab
+**Status:** STRONG  
+**Achieved:** Architecture/threat/control documentation and methodology packaging for readiness assessment.  
+**Not achieved:** Production runtime proof.
 
-onyxGitex is currently a strong AI Trust & Security Readiness Portfolio Lab with early Production-Track Starter Kit scaffolding.
+## Version 1.5 — Current Evidence-Consistency State
+**Status:** Evidence-consistency repair in progress.  
+**Partially achieved:** Canonical normalization and contradiction audit workflow initiated.  
+**Blocked:** End-to-end claim/evidence consistency until all canonical files and validations remain aligned.
 
-## Version Classification
+## Version 2 — Production-Track Starter Kit
+**Status:** Started / In Progress.  
+**Achieved:** Starter-kit documentation, launch-gate scripting, local runtime artifacts for selected controls, and CI artifact scaffolding.  
+**Partially achieved:** CI runtime proof depth and control-verification breadth.  
+**Not achieved:** Full production-track completion criteria.
 
-| Version | Name | Current Status | Production Claim |
-|---|---|---|---|
-| Version 1 | Portfolio Lab | Strong / mostly achieved | No |
-| Version 2 | Production-Track Starter Kit | Started / incomplete | No |
-| Version 3 | Staging Demo | Not yet achieved | No |
-| Version 4 | Client-Specific Production | Template only / not achieved | No |
+## Version 3 — Staging Demo
+**Status:** Design and artifact mapping only.  
+**Not achieved:** Real deployed staging runtime validation with staging telemetry/audit evidence.
 
-## Current Honest Decision
+## Version 4 — Client Production Template
+**Status:** Template only.  
+**Not achieved:** Client-specific runtime evidence, approvals, and production verification.
 
-NOT_PRODUCTION_READY
+## Allowed Claims
+- The repository demonstrates a structured readiness methodology for RAG and autonomous agent systems.
+- The repository includes design artifacts and partial local/CI evidence where explicitly documented.
+- The repository applies launch-gate and non-overclaiming discipline.
 
-## Current Launch Status
+## Blocked Claims
+- Production-grade security proven.
+- Client production readiness proven.
+- Staging runtime verification proven.
+- Compliance certification proven.
 
-NOT_ENOUGH_EVIDENCE / NO_GO for production
+## Launch Gate Status
+**Decision:** NO_GO  
+**Reason:** P0 runtime evidence gaps and evidence-consistency gaps remain unresolved.
 
-## What This Project Currently Demonstrates
+## Evidence Gaps
+- Retrieval authorization runtime proof across required abuse cases.
+- Citation leakage boundary runtime proof for claims of leakage resistance.
+- Prompt-injection retrieval-boundary runtime proof.
+- Canonical evidence manifest completeness and stable CI evidence replay.
 
-- RAG readiness methodology
-- Agent readiness methodology
-- AI Trust & Security Readiness lifecycle
-- Reverse-engineering workflow
-- Evidence discipline
-- Launch-gate thinking
-- Non-overclaiming discipline
-- Client-facing readiness structure
-- Early production-track scaffolding
+## Next Required Work
+1. Complete canonical launch-gate/evidence model alignment.
+2. Close P0 runtime evidence gaps with reproducible test artifacts.
+3. Re-run canonical validator and preserve result artifact.
+4. Reassess GO/NO_GO only after evidence thresholds are met.
 
-## What This Project Does Not Yet Prove
-
-- Full RAG runtime authorization proof
-- Full citation leakage prevention
-- Full prompt-injection resistance
-- Full real LangGraph runtime proof
-- Full observability integration
-- Full staging deployment
-- Client-specific production readiness
-
-## Current Scores
-
-| Area | Score |
-|---|---:|
-| Study | 9/10 |
-| Practice | 9/10 |
-| Reverse Engineering | 9/10 |
-| Portfolio Credibility | 8.5–9/10 |
-| Production-Track Readiness | 4/10 |
-| Staging Readiness | 1/10 |
-| Client Production Readiness | 0/10 |
-
-## Required Next Move
-
-Prepare Version 4 Client-Specific Production Template.
-
-## Version Roadmap
-
-Version 1:
-Portfolio Lab
-
-Version 2A:
-RAG Runtime Evidence Gate — PARTIAL_RUNTIME_EVIDENCE local harness completed. CI proof still required.
-
-Version 2B:
-CI Artifact Proof — CI_ARTIFACT_VERIFIED. Real GitHub Actions workflow run, job success, artifact metadata, downloaded artifact file list, and Version 2A artifact contents are verified. Production readiness remains blocked.
-
-Version 2C:
-Observability Proof — OBSERVABILITY_EVIDENCE_VERIFIED. Local trace, audit, policy, retrieval, citation, launch-gate, and incident-timeline correlation evidence is generated and validated. Production readiness remains blocked.
-
-Version 2D:
-Agent Runtime Evidence Gate — AGENT_RUNTIME_EVIDENCE_VERIFIED. Local deterministic agent identity, tool authorization, human approval, fail-closed, prompt-injection escalation blocking, sandbox/no-side-effect, audit timeline, and launch-gate evidence is generated and validated. Production readiness remains blocked.
-
-Version 3:
-Staging Demo — STAGING_DEMO_EVIDENCE_VERIFIED. Local staging-demo evidence maps Version 2 RAG, CI artifact, observability, and agent runtime evidence into a staging architecture, service map, trust boundaries, and staging launch-gate decision. Production readiness remains blocked.
-
-Version 4:
-Client-Specific Production Template
-
-## Core Operating Rule
-
-No runtime claim without runtime artifact.
-No PASS without logs.
-No GO without evidence.
-No production language without staging/client proof.
-
-
-Current launch status remains:
-NOT_ENOUGH_EVIDENCE / NO_GO for production
-
-Version 4:
-Client-Specific Production Template — CLIENT_PRODUCTION_TEMPLATE_READY. The template defines required client-specific evidence, approval, compliance, runtime, residual-risk, and launch-gate requirements. It does not prove production readiness or client GO.
-
-Update Required Next Move:
-
-Fill Version 4 template with real client evidence before any production decision.
-
-## Client-Facing Walkthrough Pack
-
-Status:
-CLIENT_WALKTHROUGH_PACK_READY
-
-Purpose:
-Explain the project to clients, partners, and decision makers while preserving claim boundaries.
-
-Production claim:
-No.
-
-GO claim:
-No.
-
-Next action:
-Use this pack for client walkthroughs, then fill Version 4 with real client evidence before any production decision.
-
-## Pitch Deck Pack
-
-Status:
-PITCH_DECK_PACK_READY
-
-Purpose:
-Provide a 10-slide client and partner presentation structure for explaining the onyxGitex AI Trust & Security Readiness evidence chain.
-
-Production claim:
-No.
-
-GO claim:
-No.
-
-Client evidence claim:
-No.
-
-Next action:
-Use this pitch deck pack for client and partner presentations, then fill Version 4 with real client evidence before any production decision.
-
-## Presentation Export
-
-Status:
-POWERPOINT_DECK_EXPORT_READY
-
-Generated deck:
-presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pptx
-
-Production claim:
-No.
-
-GO claim:
-No.
-
-Client evidence claim:
-No.
-
-Next action:
-Use the deck for client and partner presentations, then fill Version 4 with real client evidence before any production decision.
-
+## Non-Overclaiming Rule
+No production, staging, or client-readiness claim is allowed without direct runtime evidence at that environment level. Template/design artifacts do not equal enforcement proof.

@@ -1,0 +1,29 @@
+{
+  "decision": "NO_GO",
+  "decision_scope": "portfolio_lab_to_production_track",
+  "can_claim_portfolio_lab": true,
+  "can_claim_production_ready": false,
+  "can_claim_client_verified": false,
+  "can_claim_staging_verified": false,
+  "evidence_summary": {
+    "design_evidence": "Present across portfolio-lab, production-readiness plans, and control/threat-model docs.",
+    "local_harness_evidence": "Present for selected RAG, citation, and tool-authorization tests; coverage incomplete.",
+    "ci_evidence": "Partial and mixed; some workflows/artifact records present but not complete for all critical controls.",
+    "staging_evidence": "Not verified as real deployed staging runtime evidence.",
+    "production_evidence": "Missing.",
+    "client_evidence": "Missing; template-only client pack exists."
+  },
+  "blocking_items": [
+    "P0 runtime boundary proofs not complete",
+    "No staging runtime proof",
+    "No production runtime proof",
+    "No client-verified evidence",
+    "Contradictory historical status statements require canonical interpretation"
+  ],
+  "next_required_actions": [
+    "Close P0 backlog runtime proofs",
+    "Stabilize CI runtime evidence outputs",
+    "Generate complete canonical evidence manifest",
+    "Re-run canonical validation and preserve artifacts"
+  ]
+}

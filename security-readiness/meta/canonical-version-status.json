@@ -1,0 +1,65 @@
+{
+  "project_name": "onyxGitex",
+  "canonical_status_version": "2.0-evidence-consistency-track",
+  "last_updated_utc": "2026-05-14T00:00:00Z",
+  "overall_positioning": "Portfolio lab with partial production-track artifacts and mixed local/CI evidence; not staging-verified, not production-ready, not client-verified.",
+  "production_ready": false,
+  "client_verified": false,
+  "allowed_claims": [
+    "Structured readiness methodology exists for RAG and agent systems.",
+    "Design and partial runtime evidence artifacts exist and are traceable.",
+    "Launch-gate discipline and non-overclaiming controls are documented."
+  ],
+  "blocked_claims": [
+    "Production-ready security posture proven",
+    "Client deployment readiness proven",
+    "Staging runtime verification proven"
+  ],
+  "versions": {
+    "v1_portfolio_lab": {
+      "status": "STRONG",
+      "evidence_level": "STATIC_REVIEW",
+      "allowed_claims": ["Portfolio readiness methodology demonstration"],
+      "blocked_claims": ["Production security proof"],
+      "open_gaps": ["Runtime enforcement proof across all critical controls"]
+    },
+    "v1_5_current_state": {
+      "status": "EVIDENCE_CONSISTENCY_REPAIR_IN_PROGRESS",
+      "evidence_level": "LOCAL_RUNTIME",
+      "allowed_claims": ["Partial local runtime evidence exists for selected controls"],
+      "blocked_claims": ["End-to-end validated launch gate GO"],
+      "open_gaps": ["Contradictory status signals", "Canonical claim-evidence normalization"]
+    },
+    "v2_production_track_starter_kit": {
+      "status": "STARTED_IN_PROGRESS",
+      "evidence_level": "CI_RUNTIME",
+      "allowed_claims": ["Starter kit artifacts and CI-linked evidence scaffolding exist"],
+      "blocked_claims": ["Production-track completion"],
+      "open_gaps": ["P0 runtime boundary proof completion", "Fail-closed runtime verification"]
+    },
+    "v3_staging_demo": {
+      "status": "DESIGN_AND_ARTIFACT_MAPPING_ONLY",
+      "evidence_level": "DESIGN_ONLY",
+      "allowed_claims": ["Staging template and mapping artifacts exist"],
+      "blocked_claims": ["Real deployed staging runtime verified"],
+      "open_gaps": ["Deployed staging execution logs", "Staging audit/telemetry traces"]
+    },
+    "v4_client_production_template": {
+      "status": "TEMPLATE_ONLY",
+      "evidence_level": "TEMPLATE_ONLY",
+      "allowed_claims": ["Client production template structure exists"],
+      "blocked_claims": ["Client verified production readiness"],
+      "open_gaps": ["Client-specific evidence", "Client approvals", "Production runtime proofs"]
+    }
+  },
+  "global_launch_gate": {
+    "decision": "NO_GO",
+    "reason": "Critical runtime and evidence-consistency gaps remain; no verified staging/production/client runtime evidence.",
+    "blocking_items": [
+      "Retrieval authorization runtime proof incomplete",
+      "Citation leakage boundary runtime proof incomplete",
+      "Prompt-injection retrieval boundary runtime proof incomplete",
+      "Canonical evidence pack completeness not achieved"
+    ]
+  }
+}
