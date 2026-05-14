@@ -1,10 +1,10 @@
 {
   "version": "2B",
   "gate": "CI_ARTIFACT_PROOF",
-  "status": "CI_ARTIFACT_GENERATED_UNVERIFIED",
+  "status": "CI_ARTIFACT_VERIFIED",
   "production_ready": false,
   "go_decision": false,
-  "ci_artifact_verified": false,
+  "ci_artifact_verified": true,
   "version_2a_required": true,
   "version_2a_status_required": "PARTIAL_RUNTIME_EVIDENCE",
   "workflow": {
@@ -17,7 +17,7 @@
   },
   "artifacts": {
     "expected_artifact_name": "version-2a-rag-runtime-evidence",
-    "artifact_download_verified": false,
+    "artifact_download_verified": true,
     "artifact_id": 6993717057,
     "required_files": [
       "rag-runtime-final-status.json",
@@ -31,13 +31,13 @@
       "evidence-summary.md",
       "blockers.md"
     ],
-    "required_files_verified_in_downloaded_artifact": false
+    "required_files_verified_in_downloaded_artifact": true
   },
   "secondary_artifact": {
     "name": "version-2b-ci-artifact-proof",
     "artifact_id": 6993717349,
     "artifact_download_verified": false
   },
-  "next_required_action": "Verify downloadable artifact contents",
-  "timestamp_utc": "2026-05-14T12:05:00Z"
+  "next_required_action": "Complete Version 2C Observability Proof",
+  "timestamp_utc": "2026-05-14T12:18:00Z"
 }
