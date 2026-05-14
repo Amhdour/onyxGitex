@@ -1,0 +1,90 @@
+{
+  "pack": "presentation-export",
+  "generated_at_utc": "2026-05-14T14:49:25.841837+00:00",
+  "required_files": [
+    {
+      "path": "presentation-export/README.md",
+      "exists": true,
+      "sha256": "3986b6e89bccf87aac79f8f09b79fd256f98c2cf3989bc6c14aadf2da8cebbf7",
+      "description": "README.md"
+    },
+    {
+      "path": "presentation-export/powerpoint-export-plan.md",
+      "exists": true,
+      "sha256": "ce63bbd9ea6c6bbe1962aa5974843e6e2dd5f7b6d432f8ab9214184c96346273",
+      "description": "powerpoint-export-plan.md"
+    },
+    {
+      "path": "presentation-export/slide-content-for-ppt.md",
+      "exists": true,
+      "sha256": "c4782a86b5b2e5184a5b3afd0e0d2ca639b5ea28af72ca4f1c204d1d8b53a370",
+      "description": "slide-content-for-ppt.md"
+    },
+    {
+      "path": "presentation-export/slide-layout-spec.md",
+      "exists": true,
+      "sha256": "51fff062ab278179ea9ac816c80c6bedac501960bf8a790eea0ea68153dcfd16",
+      "description": "slide-layout-spec.md"
+    },
+    {
+      "path": "presentation-export/speaker-notes-export.md",
+      "exists": true,
+      "sha256": "30c3cf24bbe064dc4d37e9963df0aba0c49f98e5fd7724524a9060f3d32fdbd4",
+      "description": "speaker-notes-export.md"
+    },
+    {
+      "path": "presentation-export/one-page-handout.md",
+      "exists": true,
+      "sha256": "d9abcbe032701c7bc8dbd3b37fac2c23f90451b13ab108fd2e8a3cec898378b6",
+      "description": "one-page-handout.md"
+    },
+    {
+      "path": "presentation-export/presentation-claim-boundaries.md",
+      "exists": true,
+      "sha256": "c9c53ab86aa7354079ecf9ad67a115af8177c77113e2dfc5f55ebd15520baa39",
+      "description": "presentation-claim-boundaries.md"
+    },
+    {
+      "path": "presentation-export/export-status.json",
+      "exists": true,
+      "sha256": "33a147323502e37f75e79c5a24e4047c0526ea39777f493194cc211fda6f5937",
+      "description": "export-status.json"
+    },
+    {
+      "path": "presentation-export/export-manifest.json",
+      "exists": true,
+      "sha256": "SELF_REFERENTIAL_MANIFEST_HASH_NOT_APPLICABLE",
+      "description": "export-manifest.json"
+    },
+    {
+      "path": "presentation-export/validation-result.txt",
+      "exists": true,
+      "sha256": "6bb209e369c21c068fd2715a05d33a85237f09f4495b1ad0b7609ad9e0b81a30",
+      "description": "validation-result.txt"
+    },
+    {
+      "path": "presentation-export/blockers.md",
+      "exists": true,
+      "sha256": "c33bb6decca6af2f7dc426a531142784486811ecedb748c136c4ba2dd0e51e6e",
+      "description": "blockers.md"
+    },
+    {
+      "path": "presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pptx",
+      "exists": false,
+      "sha256": null,
+      "description": "onyxgitex-ai-trust-security-readiness-deck.pptx"
+    },
+    {
+      "path": "presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pdf",
+      "exists": false,
+      "sha256": null,
+      "description": "onyxgitex-ai-trust-security-readiness-deck.pdf"
+    },
+    {
+      "path": "presentation-export/generated/onyxgitex-one-page-handout.pdf",
+      "exists": false,
+      "sha256": null,
+      "description": "onyxgitex-one-page-handout.pdf"
+    }
+  ]
+}
