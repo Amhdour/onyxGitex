@@ -232,3 +232,12 @@ Start here:
 These materials describe scope, controls, evidence, and launch-gate decision framing with explicit boundaries on what is proven versus not proven.
 
 For workflow visibility and evidence-boundary explanations, see the Evidence Workflows section near the top of this README.
+
+## Version 4 Client-Specific Production Template
+- Status: CLIENT_PRODUCTION_TEMPLATE_READY
+- Template type: CLIENT_SPECIFIC_PRODUCTION_TEMPLATE
+- Canonical evidence directory: `security-readiness/evidence-artifacts/version-4-client-production-template/`
+- Client evidence verified: false
+- Client approver recorded: false
+- Production claim remains blocked.
+- GO decision remains false.

@@ -1,0 +1,102 @@
+{
+  "version": "4",
+  "gate": "CLIENT_SPECIFIC_PRODUCTION_TEMPLATE",
+  "matrix_status": "PASS",
+  "client_evidence_verified": false,
+  "required_evidence_categories": [
+    {
+      "category_id": "CLIENT-EVID-001",
+      "category": "client_scope",
+      "required": true,
+      "required_artifacts": [
+        "signed_scope_statement",
+        "assumptions_and_limitations",
+        "system_owner_confirmation"
+      ],
+      "current_status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "production_blocker_if_missing": true
+    },
+    {
+      "category_id": "CLIENT-EVID-002",
+      "category": "client_data",
+      "required": true,
+      "required_artifacts": [
+        "data_classification",
+        "data_source_inventory",
+        "sensitive_data_handling_rules",
+        "data_retention_requirements"
+      ],
+      "current_status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "production_blocker_if_missing": true
+    },
+    {
+      "category_id": "CLIENT-EVID-003",
+      "category": "client_users_and_identity",
+      "required": true,
+      "required_artifacts": [
+        "user_groups",
+        "roles",
+        "identity_provider_mapping",
+        "access_review"
+      ],
+      "current_status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "production_blocker_if_missing": true
+    },
+    {
+      "category_id": "CLIENT-EVID-004",
+      "category": "client_tools_and_agents",
+      "required": true,
+      "required_artifacts": [
+        "tool_inventory",
+        "agent_inventory",
+        "tool_sensitivity_classification",
+        "human_approval_rules"
+      ],
+      "current_status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "production_blocker_if_missing": true
+    },
+    {
+      "category_id": "CLIENT-EVID-005",
+      "category": "runtime_evidence",
+      "required": true,
+      "required_artifacts": [
+        "client_rag_runtime_test_results",
+        "client_agent_runtime_test_results",
+        "client_policy_decision_logs",
+        "client_trace_exports",
+        "client_audit_logs"
+      ],
+      "current_status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "production_blocker_if_missing": true
+    },
+    {
+      "category_id": "CLIENT-EVID-006",
+      "category": "compliance_and_legal",
+      "required": true,
+      "required_artifacts": [
+        "compliance_constraints",
+        "legal_review_notes",
+        "privacy_review",
+        "retention_requirements",
+        "regulatory_mapping"
+      ],
+      "current_status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "production_blocker_if_missing": true
+    },
+    {
+      "category_id": "CLIENT-EVID-007",
+      "category": "launch_approval",
+      "required": true,
+      "required_artifacts": [
+        "named_approver",
+        "approval_date",
+        "decision_record",
+        "residual_risk_acceptance"
+      ],
+      "current_status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "production_blocker_if_missing": true
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

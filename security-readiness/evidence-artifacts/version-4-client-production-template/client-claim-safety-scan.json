@@ -1,0 +1,26 @@
+{
+  "version": "4",
+  "gate": "CLIENT_SPECIFIC_PRODUCTION_TEMPLATE",
+  "scan_status": "PASS",
+  "fake_client_evidence_detected": false,
+  "forbidden_claims_detected": false,
+  "forbidden_terms_checked": [
+    "production_ready: true",
+    "go_decision: true",
+    "CLIENT_GO",
+    "client_evidence_verified: true",
+    "client_approver_recorded: true",
+    "signed_by:",
+    "approved_by:",
+    "real_client_data_verified: true"
+  ],
+  "allowed_template_terms": [
+    "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+    "CLIENT_SPECIFIC_VALUE_REQUIRED",
+    "TEMPLATE_PLACEHOLDER_ONLY",
+    "production_ready: false",
+    "go_decision: false"
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

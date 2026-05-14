@@ -140,3 +140,34 @@ Hard rules:
 - Version 3 cannot claim real Keycloak/OPA/Vault/Onyx/LangGraph/Qdrant/Grafana runtime unless real runtime evidence exists.
 - Version 3 cannot claim client-specific readiness.
 - Version 3 only proves local staging-demo evidence unless stronger runtime proof exists.
+
+# Version 4 Client-Specific Production Template Contract
+
+Inputs:
+- version-4-client-production-template-status.json
+- client-template-completeness-checks.json
+- client-required-evidence-matrix.json
+- client-launch-gate-template-result.json
+- client-claim-safety-scan.json
+- client-placeholder-field-index.json
+- client-approval-gate-model.json
+- client-residual-risk-model.json
+- client-production-template-manifest.json
+
+Outputs:
+- CLIENT_PRODUCTION_TEMPLATE_READY when all template artifacts validate and no fake client evidence exists.
+- CLIENT_PRODUCTION_TEMPLATE_DEFINED when template structure exists but validation is incomplete.
+- CLIENT_EVIDENCE_PARTIAL only when real client evidence is added and incomplete.
+- CLIENT_EVIDENCE_VERIFIED only when real client evidence is present and validated.
+- CLIENT_CONDITIONAL_GO only when real client evidence supports conditional launch and named approval exists.
+- CLIENT_GO only when real client runtime, compliance, residual-risk acceptance, and named approval are verified.
+- NOT_ENOUGH_EVIDENCE when required template artifacts are missing.
+- NO_GO when fake evidence, forbidden claims, missing required evidence, or claim-safety validation fails.
+
+Hard rules:
+- production_ready must remain false unless real client evidence is verified.
+- go_decision must remain false unless real client evidence, runtime proof, compliance review, residual-risk acceptance, and approver signoff exist.
+- Version 4 template cannot produce production GO by itself.
+- Template placeholders cannot be treated as evidence.
+- Fake client names, fake signoff, fake compliance review, and fake runtime evidence must cause NO_GO.
+- Universal production readiness is not allowed.

@@ -96,3 +96,10 @@ No production language without staging/client proof.
 
 Current launch status remains:
 NOT_ENOUGH_EVIDENCE / NO_GO for production
+
+Version 4:
+Client-Specific Production Template — CLIENT_PRODUCTION_TEMPLATE_READY. The template defines required client-specific evidence, approval, compliance, runtime, residual-risk, and launch-gate requirements. It does not prove production readiness or client GO.
+
+Update Required Next Move:
+
+Fill Version 4 template with real client evidence before any production decision.

@@ -1,0 +1,35 @@
+{
+  "version": "4",
+  "gate": "CLIENT_SPECIFIC_PRODUCTION_TEMPLATE",
+  "approval_gate_status": "PASS",
+  "client_approver_recorded": false,
+  "approval_required_before_go": true,
+  "approval_requirements": [
+    {
+      "requirement_id": "APPROVAL-001",
+      "name": "Named business owner approval",
+      "status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "required_before_go": true
+    },
+    {
+      "requirement_id": "APPROVAL-002",
+      "name": "Security owner approval",
+      "status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "required_before_go": true
+    },
+    {
+      "requirement_id": "APPROVAL-003",
+      "name": "Risk owner residual-risk acceptance",
+      "status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "required_before_go": true
+    },
+    {
+      "requirement_id": "APPROVAL-004",
+      "name": "Compliance or privacy review acknowledgement",
+      "status": "TEMPLATE_PLACEHOLDER_ONLY",
+      "required_before_go": true
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

@@ -1,0 +1,70 @@
+{
+  "version": "4",
+  "gate": "CLIENT_SPECIFIC_PRODUCTION_TEMPLATE",
+  "placeholder_index_status": "PASS",
+  "placeholder_count": 10,
+  "required_placeholders": [
+    {
+      "field_id": "CLIENT-FIELD-001",
+      "field_name": "client_name",
+      "placeholder": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-002",
+      "field_name": "system_owner",
+      "placeholder": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-003",
+      "field_name": "launch_approver",
+      "placeholder": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-004",
+      "field_name": "client_data_sources",
+      "placeholder": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-005",
+      "field_name": "client_user_groups",
+      "placeholder": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-006",
+      "field_name": "client_policy_rules",
+      "placeholder": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-007",
+      "field_name": "client_runtime_test_results",
+      "placeholder": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-008",
+      "field_name": "client_compliance_review",
+      "placeholder": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-009",
+      "field_name": "residual_risk_acceptance",
+      "placeholder": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "required_before_go": true
+    },
+    {
+      "field_id": "CLIENT-FIELD-010",
+      "field_name": "approval_record",
+      "placeholder": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "required_before_go": true
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

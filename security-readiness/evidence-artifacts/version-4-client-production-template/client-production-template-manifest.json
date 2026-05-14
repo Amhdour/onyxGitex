@@ -1,0 +1,74 @@
+{
+  "version": "4",
+  "gate": "CLIENT_SPECIFIC_PRODUCTION_TEMPLATE",
+  "generated_at_utc": "2026-05-14T13:54:32Z",
+  "canonical_evidence_directory": "security-readiness/evidence-artifacts/version-4-client-production-template",
+  "required_artifacts": [
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/version-4-client-production-template-status.json",
+      "exists": true,
+      "sha256": "004e680cbaa1a69e94b23f12981fbd615f48042a99c2064b006083716ee4d50b",
+      "description": "version-4-client-production-template-status.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/client-production-template-evidence-summary.md",
+      "exists": true,
+      "sha256": "c31dd10bec76689490030a949ad6093104a5d010793e30aea0b8d7e87a32a2de",
+      "description": "client-production-template-evidence-summary.md"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/client-template-completeness-checks.json",
+      "exists": true,
+      "sha256": "ca776f55f2168a863a368e0f4169f227ede5f54d8815ff54a36570eaaf8ab514",
+      "description": "client-template-completeness-checks.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/client-required-evidence-matrix.json",
+      "exists": true,
+      "sha256": "8cbdb60b13ee65f796b116b6c9c6de2b7505a574cb6b232fc8b4d490ed2bd532",
+      "description": "client-required-evidence-matrix.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/client-launch-gate-template-result.json",
+      "exists": true,
+      "sha256": "9577bc2cafbac985880696593ba0e80cf97cbf423ce1e7c723e49705e6f1d584",
+      "description": "client-launch-gate-template-result.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/client-claim-safety-scan.json",
+      "exists": true,
+      "sha256": "b517aafe3792988dd80aaf1b722f2001c4092f004a70d8b69404f98732e8b18f",
+      "description": "client-claim-safety-scan.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/client-placeholder-field-index.json",
+      "exists": true,
+      "sha256": "c669eae232e722fe6504b1d8b5bb23d5e21073664564539a3ce86b865f99e573",
+      "description": "client-placeholder-field-index.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/client-approval-gate-model.json",
+      "exists": true,
+      "sha256": "e6d7439934e3c081f231d70ec42fe43cdc73b6e30badb736111ff17fbe0f301b",
+      "description": "client-approval-gate-model.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/client-residual-risk-model.json",
+      "exists": true,
+      "sha256": "7b92f6cb69a6d90bb092453d5e713b5c29a50d14faf89017ee7535c90ccd2f70",
+      "description": "client-residual-risk-model.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/validation-result.txt",
+      "exists": true,
+      "sha256": "2c2d4deb908491ad545d7dbd2d25bf40dbd76d0d1c3403617d18a7d376b116f9",
+      "description": "validation-result.txt"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-4-client-production-template/blockers.md",
+      "exists": true,
+      "sha256": "9ea5a405372fbdca237984f451f31172766d62e086b6b82c2342daf5c081f7e0",
+      "description": "blockers.md"
+    }
+  ]
+}
