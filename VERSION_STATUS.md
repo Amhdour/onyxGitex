@@ -144,10 +144,10 @@ Use this pitch deck pack for client and partner presentations, then fill Version
 ## Presentation Export
 
 Status:
-POWERPOINT_DECK_SOURCE_READY
+POWERPOINT_DECK_EXPORT_READY
 
-Purpose:
-Provide presentation-ready materials for client and partner meetings.
+Generated deck:
+presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pptx
 
 Production claim:
 No.
@@ -160,3 +160,4 @@ No.
 
 Next action:
 Use the deck for client and partner presentations, then fill Version 4 with real client evidence before any production decision.
+

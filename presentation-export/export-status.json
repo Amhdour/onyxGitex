@@ -1,15 +1,21 @@
 {
   "pack": "presentation-export",
-  "status": "POWERPOINT_DECK_SOURCE_READY",
+  "status": "POWERPOINT_DECK_EXPORT_READY",
   "source_pack": "pitch-deck-pack",
   "source_pack_status": "PITCH_DECK_PACK_READY",
   "slide_count": 10,
-  "pptx_generated": false,
-  "pptx_path": null,
+  "pptx_generated": true,
+  "pptx_path": "presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pptx",
   "pdf_generated": false,
   "pdf_path": null,
   "one_page_handout_pdf_generated": false,
   "production_ready": false,
   "go_decision": false,
-  "client_evidence_verified": false
+  "client_evidence_verified": false,
+  "claim_safety": {
+    "production_claim_allowed": false,
+    "go_claim_allowed": false,
+    "client_go_claim_allowed": false
+  },
+  "next_required_action": "Use the deck for client and partner presentations, then fill Version 4 with real client evidence before any production decision"
 }

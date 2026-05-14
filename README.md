@@ -266,13 +266,14 @@ The pitch deck pack does not claim production readiness, client GO, or real clie
 
 ## Presentation Export
 
-A presentation export package is available at:
+A generated PowerPoint deck is available at:
+
+presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pptx
+
+The source package is available at:
 
 presentation-export/
 
-It contains a PowerPoint-ready slide source, speaker notes, one-page handout, claim boundaries, and export status.
-
-The source is PowerPoint-ready, but binary .pptx generation must be completed with available presentation tooling.
-
 Boundary:
 The presentation export does not claim production readiness, client GO, or real client evidence. Real client evidence is required before any production decision.
+
