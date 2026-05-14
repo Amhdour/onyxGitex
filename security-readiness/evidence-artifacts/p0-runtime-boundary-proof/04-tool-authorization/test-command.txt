@@ -1,1 +1,1 @@
-python3 -m pytest -q backend/tests/unit/onyx/tools/test_tool_authorization_runtime.py
+PYTHONPATH=backend python3 -m pytest -q tests/security_readiness/test_p0_tool_authorization.py

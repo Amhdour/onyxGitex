@@ -10,3 +10,7 @@
 | CLM-V21-006 | V2.1 proves client readiness. | blocked | BLOCKED | security-readiness/meta/canonical-version-status.json | NONE | client evidence missing | Not claimed | Client-verified |
 | CLM-V21-007 | V2.1 proves staging runtime verification. | blocked | BLOCKED | security-readiness/meta/canonical-version-status.json | NONE | staging evidence missing | Not claimed | Staging-verified |
 | CLM-V21-008 | V2.1 proves compliance certification. | blocked | BLOCKED | N/A | NONE | no certification evidence | Not claimed | Compliance-certified |
+
+
+## V2.2.2 Update (2026-05-14)
+LOCAL_HARNESS tests under `tests/security_readiness/` produced 4 PASSED controls (P0-CL-001, P0-PI-001, P0-TA-001, P0-FC-001), with 3 controls still BLOCKED_IMPORT_DEPENDENCY (P0-RA-001, P0-AL-001, P0-TT-001). Launch decision remains NO_GO. Production/client/staging claims remain false.

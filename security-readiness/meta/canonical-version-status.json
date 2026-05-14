@@ -100,5 +100,27 @@
   },
   "global_launch_gate": {
     "decision": "NO_GO"
+  },
+  "v2_2_2_pass_lightweight_local_harness_tests": {
+    "status": "PARTIAL_LOCAL_HARNESS",
+    "evidence_level": "LOCAL_HARNESS_PARTIAL",
+    "production_ready": false,
+    "client_verified": false,
+    "staging_verified": false,
+    "launch_go": false,
+    "allowed_claims": [
+      "Selected P0 controls passed at LOCAL_HARNESS level.",
+      "Assertions were reached for selected lightweight tests."
+    ],
+    "blocked_claims": [
+      "Full runtime proof",
+      "Production/client/staging readiness",
+      "Launch GO"
+    ],
+    "open_gaps": [
+      "P0-RA-001 blocked import dependency",
+      "P0-AL-001 blocked import dependency",
+      "P0-TT-001 blocked import dependency"
+    ]
   }
 }

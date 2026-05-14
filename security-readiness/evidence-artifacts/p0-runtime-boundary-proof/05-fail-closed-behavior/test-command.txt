@@ -1,1 +1,1 @@
-python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k "fails_closed or fail_closed"
+PYTHONPATH=backend python3 -m pytest -q tests/security_readiness/test_p0_fail_closed.py

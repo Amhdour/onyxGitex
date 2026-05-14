@@ -13,12 +13,13 @@ req = {
 }
 out_f = ROOT / 'security-readiness/evidence-artifacts/canonical-validation-result.json'
 ALLOWED={"PASSED","FAILED_ASSERTION","FAILED_TEST_RUNTIME","BLOCKED_IMPORT_DEPENDENCY","BLOCKED_TEST_COLLECTION","BLOCKED_ENVIRONMENT","BLOCKED_COMMAND_MISSING","NOT_EXECUTED"}
+ALLOWED_EVIDENCE={"LOCAL_HARNESS","LOCAL_HARNESS_ASSERTION_FAILED","LOCAL_HARNESS_PARTIAL","BLOCKED_IMPORT_DEPENDENCY","BLOCKED_TEST_COLLECTION","BLOCKED_ENVIRONMENT","BLOCKED_COMMAND_MISSING","LOCAL_RUNTIME","CI_RUNTIME","STAGING_RUNTIME","PRODUCTION_RUNTIME","LOCAL_TEST_ASSERTION_FAILED","BLOCKED_NO_RUNTIME"}
 BLOCKED={"BLOCKED_IMPORT_DEPENDENCY","BLOCKED_TEST_COLLECTION","BLOCKED_ENVIRONMENT","BLOCKED_COMMAND_MISSING","NOT_EXECUTED"}
 errors=[]; warnings=[]; checked=[str(v) for v in req.values()]
 for f in req.values():
     if not f.exists(): errors.append(f"Missing required canonical file: {f}")
 
-counts={k:0 for k in ["passed","failed_assertion","failed_test_runtime","blocked_import_dependency","blocked_test_collection","blocked_environment","blocked_command_missing","not_executed","assertions_reached"]}
+counts={k:0 for k in ["passed","failed_assertion","failed_test_runtime","blocked_import_dependency","blocked_test_collection","blocked_environment","blocked_command_missing","not_executed","assertions_reached","controls_local_harness_passed","controls_local_runtime_passed"]}
 checked_controls=[]
 if not errors:
     status=json.loads(req['status'].read_text())
@@ -37,9 +38,17 @@ if not errors:
             if k not in er: errors.append(f"{erp} missing field: {k}")
         st=er.get('status')
         if st not in ALLOWED: errors.append(f"Invalid status {st} in {erp}")
+        ev=er.get('evidence_level')
+        if ev not in ALLOWED_EVIDENCE: errors.append(f"Invalid evidence_level {ev} in {erp}")
         if st=="PASSED":
             counts['passed']+=1
             if er.get('assertions_reached') is not True or er.get('exit_code')!=0: errors.append(f"PASSED must have assertions_reached=true and exit_code=0 in {erp}")
+            if ev=='LOCAL_HARNESS':
+                counts['controls_local_harness_passed']+=1
+                if not er.get('supports_local_harness_claim'): errors.append(f"LOCAL_HARNESS pass must support local harness claim in {erp}")
+                if er.get('supports_local_runtime_claim'): errors.append(f"LOCAL_HARNESS pass cannot support local runtime claim in {erp}")
+                if er.get('supports_go_claim') or er.get('supports_production_claim') or er.get('supports_client_claim') or er.get('supports_staging_claim'): errors.append(f"LOCAL_HARNESS pass cannot support GO/production/client/staging claims in {erp}")
+            if ev=='LOCAL_RUNTIME': counts['controls_local_runtime_passed']+=1
         if st=="FAILED_ASSERTION":
             counts['failed_assertion']+=1
             if er.get('assertions_reached') is not True: errors.append(f"FAILED_ASSERTION must have assertions_reached=true in {erp}")
