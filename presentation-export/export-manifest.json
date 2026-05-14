@@ -1,6 +1,6 @@
 {
   "pack": "presentation-export",
-  "generated_at_utc": "2026-05-14T14:49:25.841837+00:00",
+  "generated_at_utc": "2026-05-14T15:01:30.691583+00:00",
   "required_files": [
     {
       "path": "presentation-export/README.md",
@@ -47,7 +47,7 @@
     {
       "path": "presentation-export/export-status.json",
       "exists": true,
-      "sha256": "33a147323502e37f75e79c5a24e4047c0526ea39777f493194cc211fda6f5937",
+      "sha256": "9fcd20abcecf1079b635bad15fa2a89750edad52a41dbcd4054513e8e6df484c",
       "description": "export-status.json"
     },
     {
@@ -59,32 +59,32 @@
     {
       "path": "presentation-export/validation-result.txt",
       "exists": true,
-      "sha256": "6bb209e369c21c068fd2715a05d33a85237f09f4495b1ad0b7609ad9e0b81a30",
+      "sha256": "50b8d3e2d9c779d8f60574e82dd9d569e49fb831ab410dde9237fcaae318bcc5",
       "description": "validation-result.txt"
     },
     {
       "path": "presentation-export/blockers.md",
       "exists": true,
-      "sha256": "c33bb6decca6af2f7dc426a531142784486811ecedb748c136c4ba2dd0e51e6e",
+      "sha256": "f4779a86abc8af74fadc6fbeeebe2098a3acebccfece8571755be708bf012d83",
       "description": "blockers.md"
     },
     {
       "path": "presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pptx",
       "exists": false,
       "sha256": null,
-      "description": "onyxgitex-ai-trust-security-readiness-deck.pptx"
+      "description": "Generated PowerPoint deck"
     },
     {
       "path": "presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pdf",
       "exists": false,
       "sha256": null,
-      "description": "onyxgitex-ai-trust-security-readiness-deck.pdf"
+      "description": "Generated deck PDF"
     },
     {
       "path": "presentation-export/generated/onyxgitex-one-page-handout.pdf",
       "exists": false,
       "sha256": null,
-      "description": "onyxgitex-one-page-handout.pdf"
+      "description": "Generated one-page handout PDF"
     }
   ]
 }
