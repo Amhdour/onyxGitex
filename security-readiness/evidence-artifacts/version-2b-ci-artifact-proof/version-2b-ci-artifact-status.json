@@ -1,0 +1,50 @@
+{
+  "version": "2B",
+  "gate": "CI_ARTIFACT_PROOF",
+  "status": "CI_WORKFLOW_CONFIGURED_NOT_VERIFIED",
+  "production_ready": false,
+  "go_decision": false,
+  "ci_artifact_verified": false,
+  "version_2a_required": true,
+  "version_2a_status_required": "PARTIAL_RUNTIME_EVIDENCE",
+  "workflow": {
+    "workflow_file": ".github/workflows/version-2b-rag-runtime-evidence.yml",
+    "workflow_name": "Version 2B - RAG Runtime Evidence CI Artifact Proof",
+    "configured": true,
+    "run_verified": false,
+    "run_id": null,
+    "job_status": null
+  },
+  "artifacts": {
+    "expected_artifact_name": "version-2a-rag-runtime-evidence",
+    "artifact_download_verified": false,
+    "artifact_id": null,
+    "required_files": [
+      "rag-runtime-final-status.json",
+      "rag-pytest-output.txt",
+      "rag-audit-events.json",
+      "rag-policy-decisions.json",
+      "rag-retrieval-log.json",
+      "rag-citation-check.json",
+      "rag-launch-gate-result.json",
+      "evidence-manifest.json",
+      "evidence-summary.md",
+      "blockers.md"
+    ],
+    "required_files_verified_in_downloaded_artifact": false
+  },
+  "blocked_claims": [
+    "production_ready",
+    "go_launch_decision",
+    "staging_verified",
+    "client_verified",
+    "full_rag_runtime_security_proven_in_production"
+  ],
+  "allowed_claims": [
+    "version_2b_ci_workflow_configured",
+    "version_2b_artifact_contract_defined",
+    "production_readiness_not_claimed"
+  ],
+  "next_required_action": "Run GitHub Actions workflow and verify downloadable artifacts",
+  "timestamp_utc": "2026-05-14T01:48:45Z"
+}

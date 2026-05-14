@@ -1,0 +1,51 @@
+name: Version 2B - RAG Runtime Evidence CI Artifact Proof
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  version-2b-rag-runtime-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+
+      - name: Run Version 2A evidence gate
+        run: python scripts/run-rag-runtime-evidence.py
+
+      - name: Validate Version 2A evidence
+        run: python scripts/validate-rag-runtime-evidence.py
+
+      - name: Print Version 2A status
+        run: python scripts/print-rag-runtime-status.py
+
+      - name: Validate Version 2B CI contract
+        run: python scripts/validate-ci-artifact-proof.py --mode local-ci-contract
+
+      - name: Upload Version 2A evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: version-2a-rag-runtime-evidence
+          path: security-readiness/evidence-artifacts/version-2a-rag-runtime/
+          retention-days: 30
+
+      - name: Upload Version 2B CI proof artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: version-2b-ci-artifact-proof
+          path: security-readiness/evidence-artifacts/version-2b-ci-artifact-proof/
+          retention-days: 30

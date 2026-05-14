@@ -1,0 +1,28 @@
+{
+  "version": "2B",
+  "gate": "CI_ARTIFACT_PROOF",
+  "expected_primary_artifact_name": "version-2a-rag-runtime-evidence",
+  "expected_primary_artifact_path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/",
+  "required_files": [
+    "rag-runtime-final-status.json",
+    "rag-pytest-output.txt",
+    "rag-audit-events.json",
+    "rag-policy-decisions.json",
+    "rag-retrieval-log.json",
+    "rag-citation-check.json",
+    "rag-launch-gate-result.json",
+    "evidence-manifest.json",
+    "evidence-summary.md",
+    "blockers.md"
+  ],
+  "required_status_values": {
+    "rag-runtime-final-status.json": {
+      "version": "2A",
+      "gate": "RAG_RUNTIME_EVIDENCE_GATE",
+      "run_status": "COMPLETED",
+      "launch_status": "PARTIAL_RUNTIME_EVIDENCE",
+      "production_ready": false,
+      "go_decision": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": "2B",
+  "gate": "CI_ARTIFACT_PROOF",
+  "workflow_file": ".github/workflows/version-2b-rag-runtime-evidence.yml",
+  "workflow_name": "Version 2B - RAG Runtime Evidence CI Artifact Proof",
+  "required_commands": [
+    "python scripts/run-rag-runtime-evidence.py",
+    "python scripts/validate-rag-runtime-evidence.py",
+    "python scripts/print-rag-runtime-status.py"
+  ],
+  "required_artifact_uploads": [
+    {
+      "name": "version-2a-rag-runtime-evidence",
+      "path": "security-readiness/evidence-artifacts/version-2a-rag-runtime/"
+    },
+    {
+      "name": "version-2b-ci-artifact-proof",
+      "path": "security-readiness/evidence-artifacts/version-2b-ci-artifact-proof/"
+    }
+  ],
+  "production_ready_must_remain_false": true,
+  "go_decision_must_remain_false": true
+}

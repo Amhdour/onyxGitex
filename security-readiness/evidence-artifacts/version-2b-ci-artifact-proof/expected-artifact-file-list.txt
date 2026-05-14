@@ -1,0 +1,10 @@
+rag-runtime-final-status.json
+rag-pytest-output.txt
+rag-audit-events.json
+rag-policy-decisions.json
+rag-retrieval-log.json
+rag-citation-check.json
+rag-launch-gate-result.json
+evidence-manifest.json
+evidence-summary.md
+blockers.md
