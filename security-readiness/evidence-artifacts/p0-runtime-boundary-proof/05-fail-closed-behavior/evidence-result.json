@@ -7,6 +7,8 @@
   "assertions_reached": true,
   "test_command": "PYTHONPATH=backend python3 -m pytest -q tests/security_readiness/test_p0_fail_closed.py",
   "exit_code": 0,
+  "timeout_seconds": 120,
+  "timed_out": false,
   "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/05-fail-closed-behavior/pytest-output.txt",
   "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/05-fail-closed-behavior/runtime-log.txt",
   "failure_classification": "none",
@@ -24,5 +26,5 @@
   "blockers": [],
   "recommended_fix": "Replay in CI to strengthen evidence.",
   "next_required_action": "Replay in CI to strengthen evidence.",
-  "timestamp_utc": "2026-05-14T18:10:03+00:00"
+  "timestamp_utc": "2026-05-14T18:33:20+00:00"
 }

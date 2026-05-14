@@ -1,6 +1,5 @@
 {
   "validation_status": "PASS",
-  "validation_scope": "metadata_and_artifact_consistency_only_not_runtime_or_production_readiness",
   "allow_go": false,
   "production_ready": false,
   "client_verified": false,
@@ -14,28 +13,15 @@
     "blocked_test_collection": 0,
     "blocked_environment": 0,
     "blocked_command_missing": 0,
+    "blocked_timeout": 0,
+    "blocked_test_runtime_timeout": 0,
     "not_executed": 0,
     "assertions_reached": 4,
     "controls_local_harness_passed": 4,
-    "controls_local_runtime_passed": 0
+    "controls_local_runtime_passed": 0,
+    "controls_local_integration_passed": 0
   },
   "errors": [],
   "warnings": [],
-  "checked_files": [
-    "/workspace/onyxGitex/security-readiness/meta/canonical-version-status.json",
-    "/workspace/onyxGitex/security-readiness/launch-gates/canonical-launch-gate-decision.json",
-    "/workspace/onyxGitex/security-readiness/evidence-artifacts/canonical-evidence-manifest.json",
-    "/workspace/onyxGitex/security-readiness/evidence-artifacts/p0-runtime-boundary-proof/manifest.json",
-    "/workspace/onyxGitex/security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json"
-  ],
-  "checked_p0_controls": [
-    "P0-RA-001",
-    "P0-CL-001",
-    "P0-PI-001",
-    "P0-TA-001",
-    "P0-FC-001",
-    "P0-AL-001",
-    "P0-TT-001"
-  ],
-  "timestamp_utc": "2026-05-14T18:11:04+00:00"
+  "timestamp_utc": "2026-05-14T18:33:22+00:00"
 }

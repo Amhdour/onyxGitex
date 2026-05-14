@@ -1,6 +1,6 @@
 {
-  "milestone": "V2.2.2-hotfix \u2014 Correct Mixed-Result P0 Status Wording",
-  "p0_runtime_boundary_proof_status": "PARTIAL_LOCAL_HARNESS",
+  "milestone": "V2.2.3 \u2014 Real Onyx Runtime / Integration P0 Tests",
+  "p0_runtime_boundary_proof_status": "PARTIAL_OR_FAILED",
   "all_p0_controls_passed": false,
   "any_assertion_failures": false,
   "supports_launch_go": false,
@@ -15,9 +15,12 @@
   "controls_blocked_test_collection": 0,
   "controls_blocked_environment": 0,
   "controls_blocked_command_missing": 0,
+  "controls_blocked_timeout": 0,
+  "controls_blocked_test_runtime_timeout": 0,
   "controls_not_executed": 0,
   "controls_local_harness_passed": 4,
   "controls_local_runtime_passed": 0,
+  "controls_local_integration_passed": 0,
   "assertions_reached": 4,
   "control_results": [
     {
@@ -29,6 +32,8 @@
       "assertions_reached": false,
       "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"retrieval_guard\"",
       "exit_code": 4,
+      "timeout_seconds": 120,
+      "timed_out": false,
       "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/01-retrieval-authorization/pytest-output.txt",
       "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/01-retrieval-authorization/runtime-log.txt",
       "failure_classification": "missing_python_dependency",
@@ -54,7 +59,7 @@
       ],
       "recommended_fix": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
       "next_required_action": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
-      "timestamp_utc": "2026-05-14T18:10:01+00:00"
+      "timestamp_utc": "2026-05-14T18:33:17+00:00"
     },
     {
       "control_id": "P0-CL-001",
@@ -65,6 +70,8 @@
       "assertions_reached": true,
       "test_command": "PYTHONPATH=backend python3 -m pytest -q tests/security_readiness/test_p0_citation_leakage_boundary.py",
       "exit_code": 0,
+      "timeout_seconds": 120,
+      "timed_out": false,
       "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/02-citation-leakage-boundary/pytest-output.txt",
       "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/02-citation-leakage-boundary/runtime-log.txt",
       "failure_classification": "none",
@@ -82,7 +89,7 @@
       "blockers": [],
       "recommended_fix": "Replay in CI to strengthen evidence.",
       "next_required_action": "Replay in CI to strengthen evidence.",
-      "timestamp_utc": "2026-05-14T18:10:01+00:00"
+      "timestamp_utc": "2026-05-14T18:33:18+00:00"
     },
     {
       "control_id": "P0-PI-001",
@@ -93,6 +100,8 @@
       "assertions_reached": true,
       "test_command": "PYTHONPATH=backend python3 -m pytest -q tests/security_readiness/test_p0_prompt_injection_boundary.py",
       "exit_code": 0,
+      "timeout_seconds": 120,
+      "timed_out": false,
       "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/03-prompt-injection-retrieval-boundary/pytest-output.txt",
       "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/03-prompt-injection-retrieval-boundary/runtime-log.txt",
       "failure_classification": "none",
@@ -110,7 +119,7 @@
       "blockers": [],
       "recommended_fix": "Replay in CI to strengthen evidence.",
       "next_required_action": "Replay in CI to strengthen evidence.",
-      "timestamp_utc": "2026-05-14T18:10:02+00:00"
+      "timestamp_utc": "2026-05-14T18:33:19+00:00"
     },
     {
       "control_id": "P0-TA-001",
@@ -121,6 +130,8 @@
       "assertions_reached": true,
       "test_command": "PYTHONPATH=backend python3 -m pytest -q tests/security_readiness/test_p0_tool_authorization.py",
       "exit_code": 0,
+      "timeout_seconds": 120,
+      "timed_out": false,
       "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/04-tool-authorization/pytest-output.txt",
       "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/04-tool-authorization/runtime-log.txt",
       "failure_classification": "none",
@@ -138,7 +149,7 @@
       "blockers": [],
       "recommended_fix": "Replay in CI to strengthen evidence.",
       "next_required_action": "Replay in CI to strengthen evidence.",
-      "timestamp_utc": "2026-05-14T18:10:02+00:00"
+      "timestamp_utc": "2026-05-14T18:33:19+00:00"
     },
     {
       "control_id": "P0-FC-001",
@@ -149,6 +160,8 @@
       "assertions_reached": true,
       "test_command": "PYTHONPATH=backend python3 -m pytest -q tests/security_readiness/test_p0_fail_closed.py",
       "exit_code": 0,
+      "timeout_seconds": 120,
+      "timed_out": false,
       "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/05-fail-closed-behavior/pytest-output.txt",
       "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/05-fail-closed-behavior/runtime-log.txt",
       "failure_classification": "none",
@@ -166,7 +179,7 @@
       "blockers": [],
       "recommended_fix": "Replay in CI to strengthen evidence.",
       "next_required_action": "Replay in CI to strengthen evidence.",
-      "timestamp_utc": "2026-05-14T18:10:03+00:00"
+      "timestamp_utc": "2026-05-14T18:33:20+00:00"
     },
     {
       "control_id": "P0-AL-001",
@@ -177,6 +190,8 @@
       "assertions_reached": false,
       "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"audit\"",
       "exit_code": 4,
+      "timeout_seconds": 120,
+      "timed_out": false,
       "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/pytest-output.txt",
       "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/runtime-log.txt",
       "failure_classification": "missing_python_dependency",
@@ -202,7 +217,7 @@
       ],
       "recommended_fix": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
       "next_required_action": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
-      "timestamp_utc": "2026-05-14T18:10:03+00:00"
+      "timestamp_utc": "2026-05-14T18:33:20+00:00"
     },
     {
       "control_id": "P0-TT-001",
@@ -213,6 +228,8 @@
       "assertions_reached": false,
       "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_runtime_tracing_paths.py",
       "exit_code": 4,
+      "timeout_seconds": 120,
+      "timed_out": false,
       "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/07-telemetry-tracing/pytest-output.txt",
       "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/07-telemetry-tracing/runtime-log.txt",
       "failure_classification": "missing_python_dependency",
@@ -238,11 +255,11 @@
       ],
       "recommended_fix": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
       "next_required_action": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
-      "timestamp_utc": "2026-05-14T18:10:03+00:00"
+      "timestamp_utc": "2026-05-14T18:33:21+00:00"
     }
   ],
-  "blocking_reason": "Some P0 controls passed at LOCAL_HARNESS level while others remain blocked by import/dependency setup.",
-  "corrected_interpretation": "4 P0 controls have LOCAL_HARNESS evidence with assertions reached and passed. 3 P0 controls remain blocked by import/dependency setup. No full runtime, CI, staging, production, client, compliance, or launch-GO claim is supported.",
-  "next_required_action": "Resolve blockers for remaining controls and execute real runtime/integration evidence in V2.2.3.",
-  "timestamp_utc": "2026-05-14T18:10:03+00:00"
+  "blocking_reason": "Local evidence only; unresolved blocked/timeout controls keep NO_GO.",
+  "corrected_interpretation": "LOCAL_HARNESS and any LOCAL_RUNTIME/LOCAL_INTEGRATION evidence do not support production/client/staging claims.",
+  "next_required_action": "Resolve blockers and replay in CI (V2.3).",
+  "timestamp_utc": "2026-05-14T18:33:21+00:00"
 }
