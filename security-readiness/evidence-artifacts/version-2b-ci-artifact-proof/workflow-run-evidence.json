@@ -10,13 +10,13 @@
   "run_conclusion": "success",
   "job_id": 75982497452,
   "job_name": "version-2b-rag-runtime-evidence",
-  "job_status": "completed",
+  "job_status": "success",
   "job_conclusion": "success",
   "commit_sha": "ff4abcb41df24dfadb38731933cc82e18efbeb7e",
   "branch": "main",
-  "verified_at_utc": "2026-05-14T12:05:00Z",
+  "verified_at_utc": "2026-05-14T12:18:00Z",
   "notes": [
     "Workflow run and job success were verified through GitHub workflow job metadata.",
-    "Artifact download/content verification is not completed in this record."
+    "Artifact download and contents were verified from the uploaded version-2a-rag-runtime-evidence.zip artifact."
   ]
 }
