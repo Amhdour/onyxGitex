@@ -1,0 +1,39 @@
+{
+  "version": "3",
+  "gate": "STAGING_DEMO",
+  "index_status": "PASS",
+  "version_2_evidence_dependencies": [
+    {
+      "version": "2A",
+      "status": "PARTIAL_RUNTIME_EVIDENCE",
+      "evidence_directory": "security-readiness/evidence-artifacts/version-2a-rag-runtime/"
+    },
+    {
+      "version": "2B",
+      "status": "CI_ARTIFACT_VERIFIED",
+      "evidence_directory": "security-readiness/evidence-artifacts/version-2b-ci-artifact-proof/"
+    },
+    {
+      "version": "2C",
+      "status": "OBSERVABILITY_EVIDENCE_VERIFIED",
+      "evidence_directory": "security-readiness/evidence-artifacts/version-2c-observability-proof/"
+    },
+    {
+      "version": "2D",
+      "status": "AGENT_RUNTIME_EVIDENCE_VERIFIED",
+      "evidence_directory": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/"
+    }
+  ],
+  "staging_controls": [
+    {
+      "control_id": "STAGE-RAG-001",
+      "depends_on": [
+        "RAG-2A-001",
+        "Version 2B artifact verification",
+        "Version 2C trace correlation"
+      ]
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

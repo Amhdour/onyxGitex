@@ -1,0 +1,92 @@
+{
+  "version": "3",
+  "gate": "STAGING_DEMO",
+  "generated_at_utc": "2026-05-14T13:38:51Z",
+  "canonical_evidence_directory": "security-readiness/evidence-artifacts/version-3-staging-demo",
+  "required_artifacts": [
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/version-3-staging-demo-status.json",
+      "exists": true,
+      "sha256": "9ef686392c230372190d2a15137edb98ba873c4cafa7120695ee426d364e9b3e",
+      "description": "version-3-staging-demo-status.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-demo-evidence-summary.md",
+      "exists": true,
+      "sha256": "f7d6fa6b41c4bc6648ea3db5ed4d2d31048cb0fa89a1666800b1ec75695bc143",
+      "description": "staging-demo-evidence-summary.md"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-prerequisite-checks.json",
+      "exists": true,
+      "sha256": "54d5620cdfd96b24f9fd74d2d8fa1d307b4b153de04d652830d01d2c19dae030",
+      "description": "staging-prerequisite-checks.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-service-map-evidence.json",
+      "exists": true,
+      "sha256": "79bc790e3e0d531d44c8d49cdd3facf9a0958fcf1294f5c853234d11e9fee20e",
+      "description": "staging-service-map-evidence.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-identity-boundary-evidence.json",
+      "exists": true,
+      "sha256": "b7782cfb65a543123d7607a04f69659616ede92e8d5e84d2122681d222c0fe6b",
+      "description": "staging-identity-boundary-evidence.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-secrets-boundary-evidence.json",
+      "exists": true,
+      "sha256": "b48722473762eb91db859182f9e507cf2109e50d37ff39c9b22d82b02a200b41",
+      "description": "staging-secrets-boundary-evidence.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-policy-path-evidence.json",
+      "exists": true,
+      "sha256": "668c22e48dca5a37b9ae4e7878de6a25f43ad3ca8a7f56d9db4081e5e2b5de08",
+      "description": "staging-policy-path-evidence.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-rag-path-evidence.json",
+      "exists": true,
+      "sha256": "72e2140ea8489300b02f774690517e93ed96dda01bce96180e9783c460809bf6",
+      "description": "staging-rag-path-evidence.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-agent-path-evidence.json",
+      "exists": true,
+      "sha256": "f52a79e527bd37d21e5ea9cecd9566ca075fb29efb95468ad5ecfa995cb0aa07",
+      "description": "staging-agent-path-evidence.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-observability-path-evidence.json",
+      "exists": true,
+      "sha256": "15edf8617140040f8dfb923753728f80276d69c3765941001d5089e1420fb930",
+      "description": "staging-observability-path-evidence.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-evidence-artifact-index.json",
+      "exists": true,
+      "sha256": "134ed366926c8d8046de572f53ce41e3565015e2531b2cb6a2fca61c2b5fc688",
+      "description": "staging-evidence-artifact-index.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/staging-launch-gate-result.json",
+      "exists": true,
+      "sha256": "577fa1ff25fabeb3ae2b89bf22eac830786161ffe2b829832c367b5821cb9bb4",
+      "description": "staging-launch-gate-result.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/validation-result.txt",
+      "exists": true,
+      "sha256": "aa45d944a30ef1fd40e022b91e2ae77d3d044b77c2258d638d028e80a9d9b9e4",
+      "description": "validation-result.txt"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-3-staging-demo/blockers.md",
+      "exists": true,
+      "sha256": "22a3136a2f1d5177be2e2d244acf09dc72bfae7c917015fba19cac65a679a932",
+      "description": "blockers.md"
+    }
+  ]
+}

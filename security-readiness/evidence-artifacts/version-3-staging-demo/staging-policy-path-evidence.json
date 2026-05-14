@@ -1,0 +1,41 @@
+{
+  "version": "3",
+  "gate": "STAGING_DEMO",
+  "policy_path_status": "PASS",
+  "policy_engine": "opa_style_policy_path",
+  "real_opa_runtime_verified": false,
+  "controls": [
+    {
+      "control_id": "STAGE-POL-001",
+      "name": "RAG retrieval policy decision path",
+      "mapped_version_2_evidence": [
+        "rag-policy-decisions.json",
+        "policy-correlation.json"
+      ],
+      "staging_expectation": "Retrieval requests must pass through policy decision before context/citation exposure.",
+      "result": "PASS"
+    },
+    {
+      "control_id": "STAGE-POL-002",
+      "name": "Agent tool authorization path",
+      "mapped_version_2_evidence": [
+        "tool-authorization-decisions.json"
+      ],
+      "staging_expectation": "Agent tool calls must pass through tool authorization before execution.",
+      "result": "PASS"
+    },
+    {
+      "control_id": "STAGE-POL-003",
+      "name": "Fail-closed policy behavior",
+      "mapped_version_2_evidence": [
+        "RAG-2A-007",
+        "AGENT-2D-004",
+        "AGENT-2D-005"
+      ],
+      "staging_expectation": "Missing policy, unknown tools, and missing identity fail closed.",
+      "result": "PASS"
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

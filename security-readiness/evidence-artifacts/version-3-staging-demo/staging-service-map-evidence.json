@@ -1,0 +1,66 @@
+{
+  "version": "3",
+  "gate": "STAGING_DEMO",
+  "harness_type": "STAGING_DEMO_LOCAL_HARNESS",
+  "service_map_status": "PASS",
+  "services": [
+    {
+      "service_name": "identity_provider",
+      "implementation": "mock_oidc_or_keycloak_placeholder",
+      "required": true,
+      "runtime_verified": false,
+      "design_verified": true,
+      "evidence_reference": "staging-identity-boundary-evidence.json"
+    },
+    {
+      "service_name": "policy_engine",
+      "implementation": "opa_style_policy_path",
+      "required": true,
+      "runtime_verified": false,
+      "design_verified": true,
+      "evidence_reference": "staging-policy-path-evidence.json"
+    },
+    {
+      "service_name": "secrets_manager",
+      "implementation": "vault_or_openbao_boundary_placeholder",
+      "required": true,
+      "runtime_verified": false,
+      "design_verified": true,
+      "evidence_reference": "staging-secrets-boundary-evidence.json"
+    },
+    {
+      "service_name": "rag_runtime",
+      "implementation": "onyx_rag_runtime_or_local_rag_harness",
+      "required": true,
+      "runtime_verified": false,
+      "design_verified": true,
+      "evidence_reference": "staging-rag-path-evidence.json"
+    },
+    {
+      "service_name": "agent_runtime",
+      "implementation": "local_agent_runtime_harness_or_langgraph_placeholder",
+      "required": true,
+      "runtime_verified": false,
+      "design_verified": true,
+      "evidence_reference": "staging-agent-path-evidence.json"
+    },
+    {
+      "service_name": "retrieval_store",
+      "implementation": "qdrant_or_pgvector_placeholder",
+      "required": true,
+      "runtime_verified": false,
+      "design_verified": true,
+      "evidence_reference": "staging-rag-path-evidence.json"
+    },
+    {
+      "service_name": "observability",
+      "implementation": "otel_style_local_trace_export_or_dashboard_query_view",
+      "required": true,
+      "runtime_verified": false,
+      "design_verified": true,
+      "evidence_reference": "staging-observability-path-evidence.json"
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}
