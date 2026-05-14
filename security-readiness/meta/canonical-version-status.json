@@ -1,15 +1,24 @@
 {
   "project_name": "onyxGitex",
-  "canonical_status_version": "v2.1-artifact-aware-track",
+  "canonical_status_version": "v2.2-execution-track",
   "last_updated_utc": "2026-05-14T00:00:00Z",
   "overall_positioning": "Portfolio lab with production-track starter-kit artifacts; V2.1 in progress; no staging/production/client verification.",
   "production_ready": false,
   "client_verified": false,
   "staging_verified": false,
   "versions": {
-    "v1_portfolio_lab": {"status": "STRONG", "evidence_level": "STATIC_REVIEW"},
-    "v1_5_evidence_consistency": {"status": "ACHIEVED", "evidence_level": "LOCAL_RUNTIME"},
-    "v2_alpha_production_track_starter_kit": {"status": "IN_PROGRESS", "evidence_level": "CI_RUNTIME"},
+    "v1_portfolio_lab": {
+      "status": "STRONG",
+      "evidence_level": "STATIC_REVIEW"
+    },
+    "v1_5_evidence_consistency": {
+      "status": "ACHIEVED",
+      "evidence_level": "LOCAL_RUNTIME"
+    },
+    "v2_alpha_production_track_starter_kit": {
+      "status": "IN_PROGRESS",
+      "evidence_level": "CI_RUNTIME"
+    },
     "v2_1_artifact_aware_validator_and_p0_proof_pack": {
       "status": "IN_PROGRESS",
       "evidence_level": "ARTIFACT_AWARE_METADATA_AND_P0_PROOF_STRUCTURE",
@@ -36,8 +45,34 @@
         "Production and client evidence remain missing."
       ]
     },
-    "v3_staging_demo": {"status": "BLOCKED_NOT_VERIFIED", "evidence_level": "DESIGN_ONLY"},
-    "v4_client_production_template": {"status": "TEMPLATE_ONLY", "evidence_level": "TEMPLATE_ONLY"}
+    "v3_staging_demo": {
+      "status": "BLOCKED_NOT_VERIFIED",
+      "evidence_level": "DESIGN_ONLY"
+    },
+    "v4_client_production_template": {
+      "status": "TEMPLATE_ONLY",
+      "evidence_level": "TEMPLATE_ONLY"
+    },
+    "v2_2_execute_p0_runtime_boundary_proof": {
+      "status": "PARTIAL",
+      "evidence_level": "LOCAL_RUNTIME_PARTIAL",
+      "production_ready": false,
+      "client_verified": false,
+      "staging_verified": false,
+      "launch_go": false,
+      "allowed_claims": [
+        "V2.2 attempted P0 runtime boundary proof and captured outcomes."
+      ],
+      "blocked_claims": [
+        "V2.2 proves production/client/staging/compliance/safe-launch outcomes."
+      ],
+      "open_gaps": [
+        "Fix failed P0 controls",
+        "Replay in CI (V2.3)"
+      ]
+    }
   },
-  "global_launch_gate": {"decision": "NO_GO"}
+  "global_launch_gate": {
+    "decision": "NO_GO"
+  }
 }
