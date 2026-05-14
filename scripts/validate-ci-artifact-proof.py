@@ -54,11 +54,36 @@ def mode_local_contract() -> int:
                 errors.append("Version 2B status must keep production_ready=false")
             if s.get("go_decision") is not False:
                 errors.append("Version 2B status must keep go_decision=false")
-            if s.get("ci_artifact_verified") is True:
-                if not (V2B_DIR / "workflow-run-evidence.json").exists():
-                    errors.append("ci_artifact_verified=true requires workflow-run-evidence.json")
-                if not (V2B_DIR / "artifact-download-evidence.json").exists():
-                    errors.append("ci_artifact_verified=true requires artifact-download-evidence.json")
+            status = s.get("status")
+            workflow = s.get("workflow", {})
+            artifacts = s.get("artifacts", {})
+            if s.get("production_ready") is True or s.get("go_decision") is True:
+                errors.append("Version 2B must not claim production_ready/go_decision true")
+            if status == "CI_ARTIFACT_VERIFIED":
+                for rf in ["workflow-run-evidence.json", "artifact-download-evidence.json", "artifact-file-list.txt", "verified-artifact-manifest.json"]:
+                    if not (V2B_DIR / rf).exists():
+                        errors.append(f"CI_ARTIFACT_VERIFIED requires {rf}")
+                if workflow.get("run_id") in (None, ""):
+                    errors.append("CI_ARTIFACT_VERIFIED requires workflow.run_id")
+                if workflow.get("job_status") != "success":
+                    errors.append("CI_ARTIFACT_VERIFIED requires workflow.job_status=success")
+                if artifacts.get("artifact_id") in (None, ""):
+                    errors.append("CI_ARTIFACT_VERIFIED requires artifacts.artifact_id")
+                if artifacts.get("artifact_download_verified") is not True:
+                    errors.append("CI_ARTIFACT_VERIFIED requires artifacts.artifact_download_verified=true")
+                if artifacts.get("required_files_verified_in_downloaded_artifact") is not True:
+                    errors.append("CI_ARTIFACT_VERIFIED requires artifacts.required_files_verified_in_downloaded_artifact=true")
+            if status == "CI_WORKFLOW_CONFIGURED_NOT_VERIFIED":
+                if s.get("ci_artifact_verified") is not False:
+                    errors.append("CI_WORKFLOW_CONFIGURED_NOT_VERIFIED requires ci_artifact_verified=false")
+                if workflow.get("run_verified") is not False:
+                    errors.append("CI_WORKFLOW_CONFIGURED_NOT_VERIFIED requires workflow.run_verified=false")
+                if artifacts.get("artifact_download_verified") is not False:
+                    errors.append("CI_WORKFLOW_CONFIGURED_NOT_VERIFIED requires artifacts.artifact_download_verified=false")
+            serialized = json.dumps(s).upper()
+            for forbidden in ["\"STAGING_VERIFIED\": TRUE", "\"CLIENT_VERIFIED\": TRUE", "\"GO\""]:
+                if forbidden in serialized:
+                    errors.append(f"forbidden claim detected: {forbidden}")
         except Exception as e:
             errors.append(f"invalid Version 2B status JSON: {e}")
 

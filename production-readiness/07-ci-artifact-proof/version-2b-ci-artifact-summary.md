@@ -3,35 +3,29 @@
 ## Current Status
 CI_WORKFLOW_CONFIGURED_NOT_VERIFIED
 
-## What Was Configured
-Version 2B workflow, CI artifact contracts, expected artifact file list, and local validation scripts were configured.
+## Workflow Run Verification
+- Workflow file is configured: `.github/workflows/version-2b-rag-runtime-evidence.yml`.
+- Real GitHub Actions run verification is **not** available in this repository execution environment.
+- No verified run ID is recorded.
 
-## Workflow File
-.github/workflows/version-2b-rag-runtime-evidence.yml
+## Artifact Download Verification
+- Artifact download verification is **not** available.
+- No verified artifact ID is recorded.
 
-## Required Commands
-- python scripts/run-rag-runtime-evidence.py
-- python scripts/validate-rag-runtime-evidence.py
-- python scripts/print-rag-runtime-status.py
+## Artifact File Verification
+- Downloaded artifact file-list verification has **not** been completed.
+- Required Version 2A artifact files are defined in `expected-artifact-file-list.txt`.
 
-## Expected Artifacts
-- version-2a-rag-runtime-evidence
-- version-2b-ci-artifact-proof
+## Version 2A Evidence Validation
+- Local Version 2A evidence generation/validation commands can be run.
+- CI-transported artifact evidence has not been verified from GitHub Actions artifacts.
 
-## Expected Artifact Files
-See expected-artifact-file-list.txt.
+## Production Readiness Status
+- `production_ready` remains `false`.
+- Version 2B does not establish production readiness.
 
-## Local Contract Validation Result
-Use python scripts/validate-ci-artifact-proof.py --mode local-ci-contract.
-
-## Whether Real CI Run Was Verified
-No.
-
-## Whether Artifact Download Was Verified
-No.
-
-## Why Production Ready Remains False
-Version 2B only configures and validates CI artifact proof contracts and does not establish staging/client/production verification.
+## GO Decision Status
+- `go_decision` remains `false`.
 
 ## Blocked Claims
 - production_ready
@@ -47,5 +41,3 @@ Version 2B only configures and validates CI artifact proof contracts and does no
 
 ## Next Required Action
 Run GitHub Actions workflow and verify downloadable artifacts.
-
-Real GitHub Actions artifact verification has not been completed in this commit. This status is CI_WORKFLOW_CONFIGURED_NOT_VERIFIED, not CI_ARTIFACT_VERIFIED.
