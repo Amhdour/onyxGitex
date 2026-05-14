@@ -1,5 +1,4 @@
-# Client-Specific Production Template
+# Client Go No Go Decision Template
 
-Non-production template only.
 CLIENT_SPECIFIC_VALUE_REQUIRED
 TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE

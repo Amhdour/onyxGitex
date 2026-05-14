@@ -1,0 +1,41 @@
+{
+  "version": "4",
+  "gate": "CLIENT_SPECIFIC_PRODUCTION_TEMPLATE",
+  "template_status": "PASS",
+  "prerequisite_checks": [
+    {
+      "name": "version_2a_rag_runtime_evidence",
+      "required_status": "PARTIAL_RUNTIME_EVIDENCE",
+      "actual_status": "PARTIAL_RUNTIME_EVIDENCE",
+      "result": "PASS"
+    },
+    {
+      "name": "version_2b_ci_artifact_proof",
+      "required_status": "CI_ARTIFACT_VERIFIED",
+      "actual_status": "CI_ARTIFACT_VERIFIED",
+      "result": "PASS"
+    },
+    {
+      "name": "version_2c_observability_proof",
+      "required_status": "OBSERVABILITY_EVIDENCE_VERIFIED",
+      "actual_status": "OBSERVABILITY_EVIDENCE_VERIFIED",
+      "result": "PASS"
+    },
+    {
+      "name": "version_2d_agent_runtime_evidence",
+      "required_status": "AGENT_RUNTIME_EVIDENCE_VERIFIED",
+      "actual_status": "AGENT_RUNTIME_EVIDENCE_VERIFIED",
+      "result": "PASS"
+    },
+    {
+      "name": "version_3_staging_demo",
+      "required_status": "STAGING_DEMO_EVIDENCE_VERIFIED",
+      "actual_status": "STAGING_DEMO_EVIDENCE_VERIFIED",
+      "result": "PASS"
+    }
+  ],
+  "required_template_files_present": true,
+  "fake_client_evidence_detected": false,
+  "production_ready": false,
+  "go_decision": false
+}

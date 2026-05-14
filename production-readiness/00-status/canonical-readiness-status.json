@@ -20,7 +20,7 @@
     "status": "STAGING_DEMO_EVIDENCE_VERIFIED"
   },
   "version_4_client_specific_production": {
-    "status": "TEMPLATE_ONLY"
+    "status": "CLIENT_PRODUCTION_TEMPLATE_READY"
   },
   "blocked_claims": [
     "production_ready",
@@ -30,5 +30,5 @@
     "full_observability_integration_verified",
     "client_specific_go_decision"
   ],
-  "next_required_action": "Prepare Version 4 Client-Specific Production Template"
+  "next_required_action": "Fill Version 4 template with real client evidence before any production decision"
 }

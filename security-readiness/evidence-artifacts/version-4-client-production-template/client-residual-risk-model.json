@@ -1,0 +1,34 @@
+{
+  "version": "4",
+  "gate": "CLIENT_SPECIFIC_PRODUCTION_TEMPLATE",
+  "residual_risk_status": "TEMPLATE_ONLY",
+  "risk_acceptance_recorded": false,
+  "risk_items": [
+    {
+      "risk_id": "CLIENT-RISK-001",
+      "title": "Client data boundary mismatch",
+      "severity": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "owner": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "treatment": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "accepted": false
+    },
+    {
+      "risk_id": "CLIENT-RISK-002",
+      "title": "Tool authorization gap",
+      "severity": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "owner": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "treatment": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "accepted": false
+    },
+    {
+      "risk_id": "CLIENT-RISK-003",
+      "title": "Observability coverage gap",
+      "severity": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "owner": "CLIENT_SPECIFIC_VALUE_REQUIRED",
+      "treatment": "TO_BE_FILLED_WITH_REAL_CLIENT_EVIDENCE",
+      "accepted": false
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}
