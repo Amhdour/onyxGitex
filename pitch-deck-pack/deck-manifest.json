@@ -118,8 +118,8 @@
     },
     {
       "path": "deck-manifest.json",
-      "exists": false,
-      "sha256": null,
+      "exists": true,
+      "sha256": "SELF_REFERENTIAL_MANIFEST_HASH_NOT_APPLICABLE",
       "description": "Pitch deck pack file: deck-manifest.json"
     },
     {
