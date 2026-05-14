@@ -1,0 +1,80 @@
+{
+  "version": "2C",
+  "gate": "OBSERVABILITY_PROOF",
+  "generated_at_utc": "2026-05-14T13:09:57+00:00",
+  "canonical_evidence_directory": "security-readiness/evidence-artifacts/version-2c-observability-proof",
+  "required_artifacts": [
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/version-2c-observability-status.json",
+      "exists": true,
+      "sha256": "c91c4ebdf73c8637e26c46efa2426b1c49b267d167ca36d878ad69728717ce69",
+      "description": "version-2c-observability-status.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/observability-evidence-summary.md",
+      "exists": true,
+      "sha256": "564440609fce5ad999298ddfb4679a57b32ecfbb304fc0b6cf0538ed98b7f226",
+      "description": "observability-evidence-summary.md"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/trace-events.json",
+      "exists": true,
+      "sha256": "9f0d5dff119539731b8493bc312f4440cdb0ae073229a97138b15a081ffbed61",
+      "description": "trace-events.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/audit-correlation.json",
+      "exists": true,
+      "sha256": "a9b952fb45ff6365d2771a36dbc2b4ad2e28ffa309f4eea42a61e2e94a7be72f",
+      "description": "audit-correlation.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/policy-correlation.json",
+      "exists": true,
+      "sha256": "a8a4fa4868169e98ae4836bd7b30a3dea027276fa917794fa2a4ffad05a1cf78",
+      "description": "policy-correlation.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/retrieval-correlation.json",
+      "exists": true,
+      "sha256": "fad9da3045f178b10850942aa323c5bb4e09750af92d3d27804b307ed6c8b489",
+      "description": "retrieval-correlation.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/citation-correlation.json",
+      "exists": true,
+      "sha256": "f990f00f0cf89e73304cfc681f0a9b63741e772543e5e50d0d7d7c534968a273",
+      "description": "citation-correlation.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/launch-gate-correlation.json",
+      "exists": true,
+      "sha256": "2fff2cde2966462f7435e3f16072fbf609e68b4d0ed5d04191a7ba7b3324ec34",
+      "description": "launch-gate-correlation.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/incident-timeline.json",
+      "exists": true,
+      "sha256": "8c90012a14a143319bab3261d38ac869a738f3f243e0de5f83beb96db6e583c7",
+      "description": "incident-timeline.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/dashboard-query-view.json",
+      "exists": true,
+      "sha256": "83335e8639a14d37531eefd1e2120107058fcd480b67dd0c0e620e698cef1945",
+      "description": "dashboard-query-view.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/validation-result.txt",
+      "exists": true,
+      "sha256": "10dee940e08d011b3476d2bc3df6a6169b248993acec8e3dd583a98119fc6bb5",
+      "description": "validation-result.txt"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2c-observability-proof/blockers.md",
+      "exists": true,
+      "sha256": "57ade709d739a14677f4d8fbe5245e57836cf52d5e6c5f734f9ccc43977c14c0",
+      "description": "blockers.md"
+    }
+  ]
+}

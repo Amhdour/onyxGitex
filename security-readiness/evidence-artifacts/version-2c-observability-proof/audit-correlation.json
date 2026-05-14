@@ -1,0 +1,80 @@
+{
+  "version": "2C",
+  "gate": "OBSERVABILITY_PROOF",
+  "correlation_type": "audit_events",
+  "correlation_status": "PASS",
+  "records": [
+    {
+      "trace_id": "trace-v2c-rag-2a-001",
+      "scenario_id": "RAG-2A-001",
+      "audit_event_id": "audit-v2c-rag-2a-001-001",
+      "event_type": "retrieval_allowed",
+      "decision": "ALLOW",
+      "reason": "authorized_document_access",
+      "timestamp_utc": "2026-05-14T13:09:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-002",
+      "scenario_id": "RAG-2A-002",
+      "audit_event_id": "audit-v2c-rag-2a-002-001",
+      "event_type": "retrieval_blocked",
+      "decision": "DENY",
+      "reason": "unauthorized_document_access",
+      "timestamp_utc": "2026-05-14T13:10:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-003",
+      "scenario_id": "RAG-2A-003",
+      "audit_event_id": "audit-v2c-rag-2a-003-001",
+      "event_type": "retrieval_blocked",
+      "decision": "DENY",
+      "reason": "cross_department_access_denied",
+      "timestamp_utc": "2026-05-14T13:11:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-004",
+      "scenario_id": "RAG-2A-004",
+      "audit_event_id": "audit-v2c-rag-2a-004-001",
+      "event_type": "retrieval_blocked",
+      "decision": "DENY",
+      "reason": "prompt_injection_policy_override_denied",
+      "timestamp_utc": "2026-05-14T13:12:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-005",
+      "scenario_id": "RAG-2A-005",
+      "audit_event_id": "audit-v2c-rag-2a-005-001",
+      "event_type": "retrieval_blocked",
+      "decision": "DENY",
+      "reason": "citation_leakage_blocked",
+      "timestamp_utc": "2026-05-14T13:13:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-006",
+      "scenario_id": "RAG-2A-006",
+      "audit_event_id": "audit-v2c-rag-2a-006-001",
+      "event_type": "retrieval_blocked",
+      "decision": "DENY",
+      "reason": "missing_identity_fail_closed",
+      "timestamp_utc": "2026-05-14T13:14:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-007",
+      "scenario_id": "RAG-2A-007",
+      "audit_event_id": "audit-v2c-rag-2a-007-001",
+      "event_type": "retrieval_blocked",
+      "decision": "DENY",
+      "reason": "missing_policy_decision_fail_closed",
+      "timestamp_utc": "2026-05-14T13:15:57+00:00"
+    },
+    {
+      "trace_id": "trace-v2c-rag-2a-008",
+      "scenario_id": "RAG-2A-008",
+      "audit_event_id": "audit-v2c-rag-2a-008-001",
+      "event_type": "launch_gate_review",
+      "decision": "ALLOW",
+      "reason": "launch_gate_evidence_review",
+      "timestamp_utc": "2026-05-14T13:16:57+00:00"
+    }
+  ]
+}

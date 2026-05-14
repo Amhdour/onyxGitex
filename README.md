@@ -96,6 +96,14 @@ CI_ARTIFACT_VERIFIED
 
 Version 2B verifies CI artifact transport and evidence preservation for Version 2A only. Production readiness remains blocked.
 
+
+Version 2C Observability Proof:
+- Status: OBSERVABILITY_EVIDENCE_VERIFIED
+- Canonical evidence directory:
+  security-readiness/evidence-artifacts/version-2c-observability-proof/
+- External observability connected: false
+- Production claim remains blocked.
+
 ---
 
 **[Onyx](https://www.onyx.app/?utm_source=onyx_repo&utm_medium=github&utm_campaign=readme)** is the application layer for LLMs - bringing a feature-rich interface that can be easily hosted by anyone.

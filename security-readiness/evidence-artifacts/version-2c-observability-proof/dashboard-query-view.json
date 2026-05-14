@@ -1,0 +1,58 @@
+{
+  "version": "2C",
+  "gate": "OBSERVABILITY_PROOF",
+  "view_type": "local_query_view",
+  "external_dashboard_connected": false,
+  "queries": [
+    {
+      "query_id": "q-v2c-001",
+      "title": "Denied retrieval attempts by scenario",
+      "description": "List denied retrieval attempts with trace ID, user ID, document ID, and policy reason.",
+      "source_files": [
+        "trace-events.json",
+        "policy-correlation.json",
+        "retrieval-correlation.json",
+        "audit-correlation.json"
+      ],
+      "expected_fields": [
+        "trace_id",
+        "scenario_id",
+        "user_id",
+        "decision",
+        "reason",
+        "audit_event_id"
+      ]
+    },
+    {
+      "query_id": "q-v2c-002",
+      "title": "Citation leakage checks",
+      "description": "List all citation checks and confirm unauthorized citations were blocked.",
+      "source_files": [
+        "citation-correlation.json"
+      ],
+      "expected_fields": [
+        "trace_id",
+        "scenario_id",
+        "unauthorized_citations_present",
+        "result"
+      ]
+    },
+    {
+      "query_id": "q-v2c-003",
+      "title": "Fail-closed events",
+      "description": "List missing identity and missing policy decision fail-closed events.",
+      "source_files": [
+        "policy-correlation.json",
+        "audit-correlation.json"
+      ],
+      "expected_fields": [
+        "trace_id",
+        "scenario_id",
+        "fail_closed",
+        "reason"
+      ]
+    }
+  ],
+  "production_ready": false,
+  "go_decision": false
+}

@@ -1,0 +1,18 @@
+{
+  "version": "2C",
+  "gate": "OBSERVABILITY_PROOF",
+  "correlation_type": "launch_gate",
+  "correlation_status": "PASS",
+  "records": [
+    {
+      "trace_id": "trace-v2c-rag-2a-008",
+      "scenario_id": "RAG-2A-008",
+      "launch_gate_event_id": "launch-v2c-rag-2a-008",
+      "launch_status": "PARTIAL_RUNTIME_EVIDENCE",
+      "production_ready": false,
+      "go_decision": false,
+      "reason": "local_and_ci_evidence_exist_but_observability_staging_client_proof_incomplete",
+      "timestamp_utc": "2026-05-14T13:17:57+00:00"
+    }
+  ]
+}
