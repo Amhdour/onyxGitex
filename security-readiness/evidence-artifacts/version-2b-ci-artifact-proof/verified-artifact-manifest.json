@@ -1,0 +1,77 @@
+{
+  "version": "2B",
+  "gate": "CI_ARTIFACT_PROOF",
+  "artifact_name": "version-2a-rag-runtime-evidence",
+  "artifact_id": 6993717057,
+  "workflow_run_id": 25858591333,
+  "verification_status": "PASS",
+  "required_files_present": true,
+  "required_json_valid": true,
+  "version_2a_status_valid": true,
+  "pytest_output_valid": true,
+  "production_ready_false": true,
+  "go_decision_false": true,
+  "verified_at_utc": "2026-05-14T12:18:00Z",
+  "files": [
+    {
+      "path": "blockers.md",
+      "required": true,
+      "present": true,
+      "sha256": "c81a3b2dde7ada870bbf02a0163da8be3630cc03b4ca0860c9e3967e9960ca12"
+    },
+    {
+      "path": "evidence-manifest.json",
+      "required": true,
+      "present": true,
+      "sha256": "061a7b1c1a91660c04418a320b1b1366d77ca3d518853bd31b0bb6fab3064a63"
+    },
+    {
+      "path": "evidence-summary.md",
+      "required": true,
+      "present": true,
+      "sha256": "4e24b0fda49c5567b45f1a1fe2911b51a58830513d437a2d8df763e219644b5c"
+    },
+    {
+      "path": "rag-audit-events.json",
+      "required": true,
+      "present": true,
+      "sha256": "36f3dd1d2fefc6fe77ce6c795a466ba42108cfded55fae8a5f00ac11ae4a95f9"
+    },
+    {
+      "path": "rag-citation-check.json",
+      "required": true,
+      "present": true,
+      "sha256": "1521d06455ceb042a1d35152bc65b3b9178c2cfbf84887ba414b5ad35370c6aa"
+    },
+    {
+      "path": "rag-launch-gate-result.json",
+      "required": true,
+      "present": true,
+      "sha256": "9caa36cf8369d328e9719c925749801b954afc4468d7c5cbaf560f3f9f8e540a"
+    },
+    {
+      "path": "rag-policy-decisions.json",
+      "required": true,
+      "present": true,
+      "sha256": "4f3b0566de0a55ce839ce3677a0db58b16695376f827701f876567b61d137de5"
+    },
+    {
+      "path": "rag-pytest-output.txt",
+      "required": true,
+      "present": true,
+      "sha256": "175f30e256ccd7d5d30977ae458f5954a5d1bef6c35bc50f054d60d19d5cb861"
+    },
+    {
+      "path": "rag-retrieval-log.json",
+      "required": true,
+      "present": true,
+      "sha256": "ec177a133bc10d6a3b4f6e07cfee204771f342db90e00f7271118f6062f0de12"
+    },
+    {
+      "path": "rag-runtime-final-status.json",
+      "required": true,
+      "present": true,
+      "sha256": "ea3798ca93d711fb6222075e51058efbff42e79341691bf9cb1fd29781b87cd3"
+    }
+  ]
+}
