@@ -2,15 +2,16 @@
 
 | claim ID | claim text | claim type | status | evidence path | evidence quality | limitation | external-safe wording | forbidden wording |
 |---|---|---|---|---|---|---|---|---|
-| CLM-V21-001 | V2.1 defines an artifact-aware evidence validation model. | allowed | ALLOWED | security-readiness/scripts/validate_readiness_evidence.py | STATIC_REVIEW | Does not prove runtime pass | Artifact-aware validation is implemented | Production readiness proven |
-| CLM-V21-002 | V2.1 defines P0 runtime proof-pack structure and acceptance criteria. | allowed | ALLOWED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/ | P0_PROOF_STRUCTURE_ONLY | Tests not executed | P0 proof structure exists | P0 runtime controls passed |
-| CLM-V21-003 | V2.1 improves reviewability of RAG/agent readiness evidence. | allowed | ALLOWED | START_HERE.md; VERSION_STATUS.md | STATIC_REVIEW | Reviewability != runtime verification | Reviewability improved | Staging or production verified |
-| CLM-V21-004 | V2.1 proves all P0 controls pass. | blocked | BLOCKED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json | NONE | controls NOT_EXECUTED | Not claimed | All P0 controls pass |
-| CLM-V21-005 | V2.1 proves production readiness. | blocked | BLOCKED | security-readiness/meta/canonical-version-status.json | NONE | production evidence missing | Not claimed | Production-ready |
-| CLM-V21-006 | V2.1 proves client readiness. | blocked | BLOCKED | security-readiness/meta/canonical-version-status.json | NONE | client evidence missing | Not claimed | Client-verified |
-| CLM-V21-007 | V2.1 proves staging runtime verification. | blocked | BLOCKED | security-readiness/meta/canonical-version-status.json | NONE | staging evidence missing | Not claimed | Staging-verified |
-| CLM-V21-008 | V2.1 proves compliance certification. | blocked | BLOCKED | N/A | NONE | no certification evidence | Not claimed | Compliance-certified |
-
-
-## V2.2.2 Update (2026-05-14)
-LOCAL_HARNESS tests under `tests/security_readiness/` produced 4 PASSED controls (P0-CL-001, P0-PI-001, P0-TA-001, P0-FC-001), with 3 controls still BLOCKED_IMPORT_DEPENDENCY (P0-RA-001, P0-AL-001, P0-TT-001). Launch decision remains NO_GO. Production/client/staging claims remain false.
+| CLM-V222H-001 | V2.2.2 produced LOCAL_HARNESS evidence for four P0 controls. | allowed | ALLOWED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json | LOCAL_HARNESS_PARTIAL | Helper-level evidence only | Four controls passed in local harness scope | Full runtime proven |
+| CLM-V222H-002 | V2.2.2-hotfix corrected stale aggregate wording to reflect the mixed result. | allowed | ALLOWED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json | STATUS_WORDING_CORRECTION | Metadata correction only | Mixed-result wording corrected | All controls blocked/no control passed |
+| CLM-V222H-003 | Four P0 controls reached assertions and passed at helper-level. | allowed | ALLOWED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json | LOCAL_HARNESS_PARTIAL | Not LOCAL_RUNTIME | Four helper-level controls passed | Full runtime passed |
+| CLM-V222H-004 | Three P0 controls remain blocked by import/dependency setup. | allowed | ALLOWED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json | BLOCKED_IMPORT_DEPENDENCY | Missing fastapi_users | Three controls remain blocked | All controls passed |
+| CLM-V222H-005 | Launch remains NO_GO. | allowed | ALLOWED | security-readiness/launch-gates/canonical-launch-gate-decision.json | LAUNCH_GATE_CANONICAL | P0 blockers remain | Launch remains NO_GO | Launch GO supported |
+| CLM-V222H-006 | All seven P0 controls passed. | blocked | BLOCKED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json | NONE | Contradicted by counters | Not claimed | All seven passed |
+| CLM-V222H-007 | All seven P0 controls have full runtime proof. | blocked | BLOCKED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/final-status.json | NONE | controls_local_runtime_passed = 0 | Not claimed | Full runtime proof exists |
+| CLM-V222H-008 | The project is production ready. | blocked | BLOCKED | security-readiness/meta/canonical-version-status.json | NONE | production_ready false | Not claimed | Production ready |
+| CLM-V222H-009 | The project is client ready. | blocked | BLOCKED | security-readiness/meta/canonical-version-status.json | NONE | client_verified false | Not claimed | Client verified |
+| CLM-V222H-010 | The project is staging verified. | blocked | BLOCKED | security-readiness/meta/canonical-version-status.json | NONE | staging_verified false | Not claimed | Staging verified |
+| CLM-V222H-011 | The project is compliance certified. | blocked | BLOCKED | N/A | NONE | No certification evidence | Not claimed | Compliance certified |
+| CLM-V222H-012 | The project is safe to launch. | blocked | BLOCKED | security-readiness/launch-gates/canonical-launch-gate-decision.json | NONE | NO_GO | Not claimed | Safe to launch |
+| CLM-V222H-013 | LOCAL_HARNESS evidence is equivalent to full runtime evidence. | blocked | BLOCKED | security-readiness/evidence-artifacts/p0-runtime-boundary-proof/result-taxonomy.md | NONE | Taxonomy forbids equivalence | Not claimed | Equivalent evidence levels |

@@ -1,12 +1,10 @@
 # START HERE
 
-- V2.2 execution was attempted.
-- Current blocker: import/dependency setup (`fastapi_users` missing in active test environment).
-- P0 controls are not proven passed.
-- P0 controls are not functionally proven failed.
-- Launch gate remains NO_GO.
-- Next milestone: V2.2.2 pass lightweight local harness tests after dependency/test isolation fix.
-
-
-## V2.2.2 Update (2026-05-14)
-LOCAL_HARNESS tests under `tests/security_readiness/` produced 4 PASSED controls (P0-CL-001, P0-PI-001, P0-TA-001, P0-FC-001), with 3 controls still BLOCKED_IMPORT_DEPENDENCY (P0-RA-001, P0-AL-001, P0-TT-001). Launch decision remains NO_GO. Production/client/staging claims remain false.
+## V2.2.2-hotfix Status (2026-05-14)
+- Current status includes partial LOCAL_HARNESS evidence.
+- Four P0 controls passed helper-level assertions (P0-CL-001, P0-PI-001, P0-TA-001, P0-FC-001).
+- Three P0 controls remain blocked by import/dependency setup (P0-RA-001, P0-AL-001, P0-TT-001).
+- The stale “no P0 control proven passed” wording has been corrected.
+- Launch remains NO_GO.
+- Production/client/staging claims remain blocked.
+- Next milestone: V2.2.3 real Onyx runtime / integration P0 tests.

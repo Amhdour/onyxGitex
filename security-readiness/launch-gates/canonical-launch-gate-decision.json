@@ -1,12 +1,21 @@
 {
   "decision": "NO_GO",
-  "current_version_focus": "V2.2.1",
-  "reason": "P0 controls did not reach meaningful security assertions because pytest collection/import failed due to missing dependency fastapi_users.",
-  "v2_2_1_result": {
-    "controls_passed": 0,
-    "controls_failed_assertion": 0,
-    "controls_blocked_import_dependency": 7
+  "current_version_focus": "V2.2.2-hotfix",
+  "reason": "Four P0 controls passed at LOCAL_HARNESS while three remain BLOCKED_IMPORT_DEPENDENCY; full runtime evidence remains incomplete.",
+  "v2_2_2_hotfix_result": {
+    "controls_passed": 4,
+    "controls_blocked_import_dependency": 3,
+    "assertions_reached": 4,
+    "controls_local_harness_passed": 4,
+    "controls_local_runtime_passed": 0
   },
+  "blocking_reasons": [
+    "P0-RA-001 retrieval authorization runtime/integration proof remains blocked.",
+    "P0-AL-001 audit logging runtime/integration proof remains blocked.",
+    "P0-TT-001 telemetry tracing runtime/integration proof remains blocked.",
+    "LOCAL_HARNESS evidence does not equal full runtime evidence.",
+    "CI/staging/production/client evidence remains missing."
+  ],
   "still_blocked": [
     "GO",
     "production-ready",

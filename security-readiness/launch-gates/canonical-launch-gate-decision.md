@@ -2,10 +2,11 @@
 
 Decision: **NO_GO**.
 
-## V2.2.1 Failure Classification Correction
-- Previous V2.2 output marked seven controls as FAILED.
-- Corrected interpretation: tests were blocked by import/setup dependency before assertions.
-- No control is proven passed.
-- No control is functionally proven failed.
-- Launch remains NO_GO.
+## V2.2.2-hotfix Mixed P0 Result Correction
+- Four P0 controls passed as LOCAL_HARNESS.
+- Three P0 controls remain BLOCKED_IMPORT_DEPENDENCY.
+- Four assertions reached.
+- Zero LOCAL_RUNTIME controls passed.
+- Launch decision remains NO_GO.
 - Production/client/staging claims remain blocked.
+- Full Onyx runtime proof remains missing.
