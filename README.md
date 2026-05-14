@@ -66,6 +66,34 @@ For details, see:
 
 This repository must not be described as production-ready. It is a portfolio lab and production-track readiness project. Production readiness requires verified runtime evidence, CI artifacts, observability proof, staging validation, and client-specific approval.
 
+
+## Evidence Workflows
+
+[![Version 2B - RAG Runtime Evidence CI Artifact Proof](https://github.com/Amhdour/onyxGitex/actions/workflows/version-2b-rag-runtime-evidence.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/version-2b-rag-runtime-evidence.yml)
+
+[![Evidence Artifact Validation](https://github.com/Amhdour/onyxGitex/actions/workflows/evidence-artifact-validation.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/evidence-artifact-validation.yml)
+
+[![Tier 4 Runtime Collection](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml)
+
+[![Readiness CI](https://github.com/Amhdour/onyxGitex/actions/workflows/readiness-ci.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/readiness-ci.yml)
+
+Workflow meanings:
+
+- Version 2B CI Artifact Proof: runs the Version 2A RAG runtime evidence command, validates Version 2A evidence, validates the Version 2B CI artifact contract, and uploads evidence artifacts.
+- Evidence Artifact Validation: validates evidence artifact structure, JSON parseability, consistency checks, and forbidden-claim safety.
+- Tier 4 Runtime Collection: collects backend/runtime collection evidence and dependency/import/pytest collection logs. It does not assert runtime PASS or GO.
+- Readiness CI: checks readiness/launch-gate documentation and uploads readiness evidence artifacts.
+
+Important boundary:
+
+Workflow badges show CI workflow status only. They do not by themselves prove production readiness, GO launch status, staging verification, client-specific approval, or full runtime security.
+
+Current Version 2B status remains:
+
+CI_WORKFLOW_CONFIGURED_NOT_VERIFIED
+
+Real GitHub Actions artifact verification is still required before Version 2B can become CI_ARTIFACT_VERIFIED.
+
 ---
 
 **[Onyx](https://www.onyx.app/?utm_source=onyx_repo&utm_medium=github&utm_campaign=readme)** is the application layer for LLMs - bringing a feature-rich interface that can be easily hosted by anyone.
@@ -173,6 +201,4 @@ Start here:
 
 These materials describe scope, controls, evidence, and launch-gate decision framing with explicit boundaries on what is proven versus not proven.
 
-Tier 4 Runtime Collection CI visibility:
-- [![Tier 4 Runtime Collection](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml/badge.svg)](https://github.com/Amhdour/onyxGitex/actions/workflows/tier4-runtime-collection.yml)
-- Badge is CI visibility evidence only; it does **not** claim runtime PASS, does **not** claim GO, and launch posture remains **NOT_ENOUGH_EVIDENCE**.
+For workflow visibility and evidence-boundary explanations, see the Evidence Workflows section near the top of this README.
