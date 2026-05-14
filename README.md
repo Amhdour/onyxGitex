@@ -263,3 +263,16 @@ It explains the problem, evidence chain, RAG readiness, CI artifact proof, obser
 
 Boundary:
 The pitch deck pack does not claim production readiness, client GO, or real client evidence. Real client evidence is required before any production decision.
+
+## Presentation Export
+
+A presentation export package is available at:
+
+presentation-export/
+
+It contains a PowerPoint-ready slide source, speaker notes, one-page handout, claim boundaries, and export status.
+
+The source is PowerPoint-ready, but binary .pptx generation must be completed with available presentation tooling.
+
+Boundary:
+The presentation export does not claim production readiness, client GO, or real client evidence. Real client evidence is required before any production decision.

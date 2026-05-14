@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+import json
+from pathlib import Path
+p = Path('presentation-export/export-status.json')
+data = json.loads(p.read_text())
+print(f"pack: {data.get('pack')}")
+print(f"status: {data.get('status')}")
+print(f"source_pack: {data.get('source_pack')}")
+print(f"source_pack_status: {data.get('source_pack_status')}")
+print(f"slide_count: {data.get('slide_count')}")
+print(f"pptx_generated: {data.get('pptx_generated')}")
+print(f"pptx_path: {data.get('pptx_path')}")
+print(f"pdf_generated: {data.get('pdf_generated')}")
+print(f"pdf_path: {data.get('pdf_path')}")
+print(f"one_page_handout_pdf_generated: {data.get('one_page_handout_pdf_generated')}")
+print(f"production_ready: {data.get('production_ready')}")
+print(f"go_decision: {data.get('go_decision')}")
+print(f"client_evidence_verified: {data.get('client_evidence_verified')}")
+cs=data.get('claim_safety',{})
+print(f"production_claim_allowed: {cs.get('production_claim_allowed')}")
+print(f"go_claim_allowed: {cs.get('go_claim_allowed')}")
+print(f"client_go_claim_allowed: {cs.get('client_go_claim_allowed')}")
+print(f"next_required_action: {data.get('next_required_action')}")

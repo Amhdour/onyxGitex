@@ -140,3 +140,23 @@ No.
 
 Next action:
 Use this pitch deck pack for client and partner presentations, then fill Version 4 with real client evidence before any production decision.
+
+## Presentation Export
+
+Status:
+POWERPOINT_DECK_SOURCE_READY
+
+Purpose:
+Provide presentation-ready materials for client and partner meetings.
+
+Production claim:
+No.
+
+GO claim:
+No.
+
+Client evidence claim:
+No.
+
+Next action:
+Use the deck for client and partner presentations, then fill Version 4 with real client evidence before any production decision.
