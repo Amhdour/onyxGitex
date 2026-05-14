@@ -1,13 +1,11 @@
 # Canonical Launch Gate Decision
 
-- **Current decision:** NO_GO
-- **Current focus:** V2.2
-- **Reason:** P0 runtime boundary proof was executed, but one or more controls failed.
+Decision: **NO_GO**.
 
-## V2.2 P0 Runtime Boundary Proof Result
-- controls passed: 0
-- controls failed: 7
-- controls blocked: 0
-- controls not executed: 0
-- launch impact: NO_GO remains
-- remaining blockers: failed controls + missing higher-environment evidence
+## V2.2.1 Failure Classification Correction
+- Previous V2.2 output marked seven controls as FAILED.
+- Corrected interpretation: tests were blocked by import/setup dependency before assertions.
+- No control is proven passed.
+- No control is functionally proven failed.
+- Launch remains NO_GO.
+- Production/client/staging claims remain blocked.
