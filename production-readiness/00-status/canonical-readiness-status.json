@@ -14,7 +14,7 @@
     "version_2a_rag_runtime_evidence": "PARTIAL_RUNTIME_EVIDENCE",
     "version_2b_ci_artifact_proof": "CI_ARTIFACT_VERIFIED",
     "version_2c_observability_proof": "OBSERVABILITY_EVIDENCE_VERIFIED",
-    "version_2d_agent_runtime_evidence": "NOT_VERIFIED"
+    "version_2d_agent_runtime_evidence": "AGENT_RUNTIME_EVIDENCE_VERIFIED"
   },
   "version_3_staging_demo": {
     "status": "NOT_STARTED"
@@ -30,5 +30,5 @@
     "full_observability_integration_verified",
     "client_specific_go_decision"
   ],
-  "next_required_action": "Complete Version 2D Agent Runtime Evidence Gate"
+  "next_required_action": "Prepare Version 3 Staging Demo"
 }

@@ -61,7 +61,7 @@ NOT_ENOUGH_EVIDENCE / NO_GO for production
 
 ## Required Next Move
 
-Complete Version 2D Agent Runtime Evidence Gate.
+Prepare Version 3 Staging Demo.
 
 ## Version Roadmap
 
@@ -78,7 +78,7 @@ Version 2C:
 Observability Proof — OBSERVABILITY_EVIDENCE_VERIFIED. Local trace, audit, policy, retrieval, citation, launch-gate, and incident-timeline correlation evidence is generated and validated. Production readiness remains blocked.
 
 Version 2D:
-Agent Runtime Evidence Gate
+Agent Runtime Evidence Gate — AGENT_RUNTIME_EVIDENCE_VERIFIED. Local deterministic agent identity, tool authorization, human approval, fail-closed, prompt-injection escalation blocking, sandbox/no-side-effect, audit timeline, and launch-gate evidence is generated and validated. Production readiness remains blocked.
 
 Version 3:
 Staging Demo

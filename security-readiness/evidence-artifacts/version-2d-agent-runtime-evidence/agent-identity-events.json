@@ -1,0 +1,113 @@
+{
+  "version": "2D",
+  "gate": "AGENT_RUNTIME_EVIDENCE_GATE",
+  "identity_status": "PASS",
+  "records": [
+    {
+      "identity_event_id": "identity-v2d-agent-001",
+      "trace_id": "trace-v2d-agent-001",
+      "scenario_id": "AGENT-2D-001",
+      "agent_id": "agent_internal_assistant",
+      "user_id": "finance_analyst",
+      "identity_present": true,
+      "roles": [
+        "finance_reader"
+      ],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    },
+    {
+      "identity_event_id": "identity-v2d-agent-002",
+      "trace_id": "trace-v2d-agent-002",
+      "scenario_id": "AGENT-2D-002",
+      "agent_id": "agent_internal_assistant",
+      "user_id": "finance_analyst",
+      "identity_present": true,
+      "roles": [
+        "finance_reader"
+      ],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    },
+    {
+      "identity_event_id": "identity-v2d-agent-003",
+      "trace_id": "trace-v2d-agent-003",
+      "scenario_id": "AGENT-2D-003",
+      "agent_id": "agent_internal_assistant",
+      "user_id": "finance_analyst",
+      "identity_present": true,
+      "roles": [
+        "finance_reader"
+      ],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    },
+    {
+      "identity_event_id": "identity-v2d-agent-004",
+      "trace_id": "trace-v2d-agent-004",
+      "scenario_id": "AGENT-2D-004",
+      "agent_id": "agent_internal_assistant",
+      "user_id": "finance_analyst",
+      "identity_present": true,
+      "roles": [
+        "finance_reader"
+      ],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    },
+    {
+      "identity_event_id": "identity-v2d-agent-005",
+      "trace_id": "trace-v2d-agent-005",
+      "scenario_id": "AGENT-2D-005",
+      "agent_id": "agent_internal_assistant",
+      "user_id": null,
+      "identity_present": false,
+      "roles": [],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    },
+    {
+      "identity_event_id": "identity-v2d-agent-006",
+      "trace_id": "trace-v2d-agent-006",
+      "scenario_id": "AGENT-2D-006",
+      "agent_id": "agent_internal_assistant",
+      "user_id": "finance_analyst",
+      "identity_present": true,
+      "roles": [
+        "finance_reader"
+      ],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    },
+    {
+      "identity_event_id": "identity-v2d-agent-007",
+      "trace_id": "trace-v2d-agent-007",
+      "scenario_id": "AGENT-2D-007",
+      "agent_id": "agent_internal_assistant",
+      "user_id": "finance_analyst",
+      "identity_present": true,
+      "roles": [
+        "finance_reader"
+      ],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    },
+    {
+      "identity_event_id": "identity-v2d-agent-008",
+      "trace_id": "trace-v2d-agent-008",
+      "scenario_id": "AGENT-2D-008",
+      "agent_id": "agent_internal_assistant",
+      "user_id": "finance_analyst",
+      "identity_present": true,
+      "roles": [
+        "finance_reader"
+      ],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    },
+    {
+      "identity_event_id": "identity-v2d-agent-009",
+      "trace_id": "trace-v2d-agent-009",
+      "scenario_id": "AGENT-2D-009",
+      "agent_id": "agent_internal_assistant",
+      "user_id": "finance_analyst",
+      "identity_present": true,
+      "roles": [
+        "finance_reader"
+      ],
+      "timestamp_utc": "2026-05-14T13:27:14Z"
+    }
+  ]
+}

@@ -73,3 +73,37 @@ Hard rules:
 - Version 2C cannot claim external observability integration unless real external evidence exists.
 - Version 2C cannot claim staging or client-specific readiness.
 - Version 2C only proves local observability evidence and correlation for Version 2A/2B evidence.
+
+
+# Version 2D Agent Runtime Evidence Gate Contract
+
+Inputs:
+- version-2d-agent-runtime-status.json
+- agent-scenario-results.json
+- agent-trace-events.json
+- agent-identity-events.json
+- tool-authorization-decisions.json
+- human-approval-events.json
+- unknown-tool-events.json
+- prompt-injection-tool-escalation-results.json
+- sandbox-side-effect-checks.json
+- agent-audit-events.json
+- agent-incident-timeline.json
+- agent-launch-gate-result.json
+- agent-runtime-evidence-manifest.json
+
+Outputs:
+- AGENT_RUNTIME_EVIDENCE_VERIFIED when all local agent runtime artifacts validate.
+- AGENT_RUNTIME_EVIDENCE_GENERATED when artifacts exist but validation is incomplete.
+- LANGGRAPH_RUNTIME_VERIFIED only when real LangGraph runtime proof exists.
+- NOT_ENOUGH_EVIDENCE when required artifacts are missing.
+- NO_GO when agent runtime scenarios, fail-closed behavior, timeline reconstruction, or claim-safety validation fails.
+
+Hard rules:
+- production_ready must remain false.
+- go_decision must remain false.
+- Version 2D cannot produce GO.
+- Version 2D cannot claim real LangGraph runtime unless LangGraph proof exists.
+- Version 2D cannot claim MCP hardening unless MCP proof exists.
+- Version 2D cannot claim staging or client-specific readiness.
+- Version 2D only proves local deterministic agent runtime evidence unless stronger runtime proof is actually present.

@@ -1,0 +1,98 @@
+{
+  "version": "2D",
+  "gate": "AGENT_RUNTIME_EVIDENCE_GATE",
+  "generated_at_utc": "2026-05-14T13:27:14Z",
+  "canonical_evidence_directory": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence",
+  "required_artifacts": [
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/version-2d-agent-runtime-status.json",
+      "exists": true,
+      "sha256": "30f73322b1698907a6e903f174234d10d826cd678aaea67885959391b83a867c",
+      "description": "version-2d-agent-runtime-status.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/agent-runtime-evidence-summary.md",
+      "exists": true,
+      "sha256": "c7ec3a483388d117eff44aba44c6bc6b32c5e016c810b45ba731244e11fd2831",
+      "description": "agent-runtime-evidence-summary.md"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/agent-scenario-results.json",
+      "exists": true,
+      "sha256": "52270818e41c74b6c9d308596237e8cda74abe41336f1104f2e7f4686b4e5cb5",
+      "description": "agent-scenario-results.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/agent-trace-events.json",
+      "exists": true,
+      "sha256": "51aeab54df10568d51b279fe702fbe0e1fe793c0a6a108774d95b0e2a3b4c20d",
+      "description": "agent-trace-events.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/agent-identity-events.json",
+      "exists": true,
+      "sha256": "c9ee9895401aa83da3b4f6eb6e848cc5e7edc82f4949f31aa34af5017100d4a7",
+      "description": "agent-identity-events.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/tool-authorization-decisions.json",
+      "exists": true,
+      "sha256": "e9d010ab75a67c0998decefbe482b80d9acbfc3ae3be3ae597a961009ae11954",
+      "description": "tool-authorization-decisions.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/human-approval-events.json",
+      "exists": true,
+      "sha256": "55053d7e69c5644b6d5e490d2938a58bc1df765e2129c6a83af1d5a760e4f8a4",
+      "description": "human-approval-events.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/unknown-tool-events.json",
+      "exists": true,
+      "sha256": "519cdf57c842f2b6954a805da2580d6f5a6d7ca3b58263304fbd26bde0a901f0",
+      "description": "unknown-tool-events.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/prompt-injection-tool-escalation-results.json",
+      "exists": true,
+      "sha256": "12742bba4877c1f067b8088d7d3f9de83f5923be43e4d83aba82133686da981c",
+      "description": "prompt-injection-tool-escalation-results.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/sandbox-side-effect-checks.json",
+      "exists": true,
+      "sha256": "9aea8dea974fe94f3496d10b2188328d637cd96f4ac6341412062ad15f066ce8",
+      "description": "sandbox-side-effect-checks.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/agent-audit-events.json",
+      "exists": true,
+      "sha256": "68e4b1e38159f7b991d177f2d925157d67b05cb295e7a442fa934d2731bae398",
+      "description": "agent-audit-events.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/agent-incident-timeline.json",
+      "exists": true,
+      "sha256": "bf836661eaaa6498adc8dda971ce7745276d86761fbbd528299cfc4a76a24095",
+      "description": "agent-incident-timeline.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/agent-launch-gate-result.json",
+      "exists": true,
+      "sha256": "13d5e079fe94ca7affb11656dff3f321e361db3110ba81b76baa1a668172d7b6",
+      "description": "agent-launch-gate-result.json"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/validation-result.txt",
+      "exists": true,
+      "sha256": "539814bb5c74ba8e0487e4dc8b04940c84d20579fac9322438527a5dd33c1864",
+      "description": "validation-result.txt"
+    },
+    {
+      "path": "security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/blockers.md",
+      "exists": true,
+      "sha256": "7684b7f59f64c47881e0372cc6cc483c903cdee5a3ff396276691d0ae603b769",
+      "description": "blockers.md"
+    }
+  ]
+}
