@@ -1,1 +1,1 @@
-python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_p0_prompt_injection_boundary.py
+PYTHONPATH=backend python3 -m pytest -q tests/security_readiness/test_p0_prompt_injection_boundary.py

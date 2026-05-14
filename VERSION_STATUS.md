@@ -12,3 +12,7 @@
 - **Next milestone:** V2.2.2 Pass Lightweight Local Harness Tests.
 
 Required wording: V2.2.1 corrects the interpretation of the V2.2 run. The seven P0 controls were not proven functionally failed; pytest collection/import failed before meaningful security assertions due to the missing fastapi_users dependency. The current launch gate remains NO_GO.
+
+
+## V2.2.2 Update (2026-05-14)
+LOCAL_HARNESS tests under `tests/security_readiness/` produced 4 PASSED controls (P0-CL-001, P0-PI-001, P0-TA-001, P0-FC-001), with 3 controls still BLOCKED_IMPORT_DEPENDENCY (P0-RA-001, P0-AL-001, P0-TT-001). Launch decision remains NO_GO. Production/client/staging claims remain false.

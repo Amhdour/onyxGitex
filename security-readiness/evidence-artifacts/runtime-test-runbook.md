@@ -11,3 +11,7 @@ For each control below, expected test path is `TO_BE_IDENTIFIED` unless already 
 - **P0-FC-001 Fail-Closed Behavior**: purpose = deny on missing policy/identity/session/metadata; outputs = deny logs + result; pass = no missing-context allow path; local pass still blocks staging/production/client claims.
 - **P0-AL-001 Audit Logging**: purpose = structured allow/deny events; outputs = audit events + result; pass = fields present and no sensitive content leak; local pass still blocks staging/production/client claims.
 - **P0-TT-001 Telemetry Tracing**: purpose = request traceability across decision points; outputs = trace + result; pass = trace links policy/retrieval/tool paths; local pass still blocks staging/production/client claims.
+
+
+## V2.2.2 Update (2026-05-14)
+LOCAL_HARNESS tests under `tests/security_readiness/` produced 4 PASSED controls (P0-CL-001, P0-PI-001, P0-TA-001, P0-FC-001), with 3 controls still BLOCKED_IMPORT_DEPENDENCY (P0-RA-001, P0-AL-001, P0-TT-001). Launch decision remains NO_GO. Production/client/staging claims remain false.
