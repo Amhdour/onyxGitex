@@ -43,7 +43,6 @@ NOT_ENOUGH_EVIDENCE / NO_GO for production
 - Full citation leakage prevention
 - Full prompt-injection resistance
 - Full real LangGraph runtime proof
-- Full CI artifact verification
 - Full observability integration
 - Full staging deployment
 - Client-specific production readiness
@@ -62,7 +61,7 @@ NOT_ENOUGH_EVIDENCE / NO_GO for production
 
 ## Required Next Move
 
-Verify downloadable artifact contents for Version 2B CI Artifact Proof.
+Complete Version 2C Observability Proof.
 
 ## Version Roadmap
 
@@ -73,7 +72,7 @@ Version 2A:
 RAG Runtime Evidence Gate — PARTIAL_RUNTIME_EVIDENCE local harness completed. CI proof still required.
 
 Version 2B:
-CI Artifact Proof — CI_ARTIFACT_GENERATED_UNVERIFIED. Real GitHub Actions workflow run, job success, and artifact metadata are recorded, but downloaded artifact contents and file list are not yet fully verified.
+CI Artifact Proof — CI_ARTIFACT_VERIFIED. Real GitHub Actions workflow run, job success, artifact metadata, downloaded artifact file list, and Version 2A artifact contents are verified. Production readiness remains blocked.
 
 Version 2C:
 Observability Proof
