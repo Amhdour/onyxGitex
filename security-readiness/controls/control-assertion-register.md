@@ -1,0 +1,19 @@
+# Control Assertion Register
+
+| Control ID | Assertion | Status | Enforcement point | Evidence path | Test path | Known limitation | Required next step | Claim supported |
+|---|---|---|---|---|---|---|---|---|
+| CTRL-01 | Identity/session boundary enforced | PARTIAL | Authn/authz paths | security-readiness/00-repo-audit/onyx-auth-access-paths.md | NOT_VERIFIED | Runtime proof incomplete | Add runtime boundary tests | Design + partial local |
+| CTRL-02 | Retrieval authorization enforced | PARTIAL | Retrieval guard path | security-readiness/evidence-artifacts/rag-boundary-001/control-result.json | security-readiness/evidence-artifacts/rag-boundary-001/test-command.txt | Local-only | CI/staging replay | Partial local runtime |
+| CTRL-03 | Document-set access boundary | DESIGN_ONLY | Policy contracts | production-readiness/03-policy-layer/retrieval-policy-contract.md | NOT_VERIFIED | Contract-only | Implement + execute tests | Design-only |
+| CTRL-04 | Citation leakage prevention | PARTIAL | Citation filter path | security-readiness/evidence-artifacts/citation-source-leakage/test-output.txt | security-readiness/evidence-artifacts/citation-source-leakage/test-command.txt | Limited scenarios | Expand abuse cases | Partial local runtime |
+| CTRL-05 | Prompt-injection boundary | PARTIAL | Guardrails | security-readiness/evidence-artifacts/prompt-injection-boundary-001/prompt-injection-results.json | security-readiness/evidence-artifacts/prompt-injection-boundary-001/test-command.txt | Local-only | Staging runtime proof | Partial local runtime |
+| CTRL-06 | Tool authorization | PARTIAL | Tool policy layer | security-readiness/evidence-artifacts/tool-authorization/test-output.txt | security-readiness/evidence-artifacts/tool-authorization/test-command.txt | Coverage incomplete | Add CI/staging coverage | Partial local runtime |
+| CTRL-07 | MCP/tool execution boundary | PARTIAL | Deny-before-dispatch | security-readiness/evidence-artifacts/mcp-deny-before-dispatch/test-output.txt | same dir test command | Narrow scope | Expand tool matrix | Partial local runtime |
+| CTRL-08 | Secret handling | DESIGN_ONLY | Secret docs | security-readiness/14-secrets-credentials/secrets-access-policy.md | NOT_VERIFIED | No runtime checks captured | Add secrets misuse tests | Design-only |
+| CTRL-09 | Policy decision logging | PARTIAL | Policy log schemas | production-readiness/08-observability/policy-decision-log-schema.md | NOT_VERIFIED | Schema vs runtime gap | Produce runtime traces | Partial design |
+| CTRL-10 | Runtime telemetry | PARTIAL | Observability artifacts | security-readiness/evidence-artifacts/version-2c-observability-proof/trace-events.json | validation-result.txt | Local-only | CI/staging trace capture | Partial local runtime |
+| CTRL-11 | Audit event taxonomy | DESIGN_ONLY | Audit schema docs | production-readiness/08-observability/audit-event-id-model.md | NOT_VERIFIED | No full runtime verification | Execute taxonomy checks | Design-only |
+| CTRL-12 | Incident readiness | DESIGN_ONLY | IR playbooks | production-readiness/09-incident-response/*.md | NOT_VERIFIED | Tabletop/runtime missing | Conduct exercise evidence | Design-only |
+| CTRL-13 | Launch-gate decisioning | PARTIAL | Launch scripts | security-readiness/scripts/validate-launch-evidence.py | script outputs | Scope-limited checks | Canonical validation integration | Partial local |
+| CTRL-14 | Evidence integrity | PARTIAL | Evidence manifest process | security-readiness/24-versioning-evidence-integrity/evidence-manifest.json | generate_evidence_manifest.py | Canonical merge pending | Use canonical manifest | Partial |
+| CTRL-15 | CI evidence collection | PARTIAL | CI workflows | .github/workflows/readiness-ci.yml | version-2b-ci artifacts | Incomplete critical coverage | Expand CI controls | Partial CI runtime |

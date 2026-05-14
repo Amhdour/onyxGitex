@@ -1,0 +1,15 @@
+{
+  "validation_status": "PASS",
+  "validation_scope": "metadata_consistency_only_not_production_readiness",
+  "allow_go": false,
+  "production_ready": false,
+  "client_verified": false,
+  "errors": [],
+  "warnings": [],
+  "checked_files": [
+    "/workspace/onyxGitex/security-readiness/meta/canonical-version-status.json",
+    "/workspace/onyxGitex/security-readiness/launch-gates/canonical-launch-gate-decision.json",
+    "/workspace/onyxGitex/security-readiness/evidence-artifacts/canonical-evidence-manifest.json"
+  ],
+  "timestamp_utc": "2026-05-14T16:52:39+00:00"
+}
