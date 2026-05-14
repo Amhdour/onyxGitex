@@ -62,7 +62,7 @@ NOT_ENOUGH_EVIDENCE / NO_GO for production
 
 ## Required Next Move
 
-Run Version 2B GitHub Actions workflow and verify downloadable artifacts for the Version 2A evidence gate
+Verify downloadable artifact contents for Version 2B CI Artifact Proof.
 
 ## Version Roadmap
 
@@ -73,7 +73,7 @@ Version 2A:
 RAG Runtime Evidence Gate — PARTIAL_RUNTIME_EVIDENCE local harness completed. CI proof still required.
 
 Version 2B:
-CI Artifact Proof — CI_WORKFLOW_CONFIGURED_NOT_VERIFIED. Workflow and artifact contracts exist, but real GitHub Actions artifact verification is still required.
+CI Artifact Proof — CI_ARTIFACT_GENERATED_UNVERIFIED. Real GitHub Actions workflow run, job success, and artifact metadata are recorded, but downloaded artifact contents and file list are not yet fully verified.
 
 Version 2C:
 Observability Proof
