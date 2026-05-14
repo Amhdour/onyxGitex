@@ -70,8 +70,8 @@
     },
     {
       "path": "presentation-export/generated/onyxgitex-ai-trust-security-readiness-deck.pptx",
-      "exists": false,
-      "sha256": null,
+      "exists": true,
+      "sha256": "01d8d93a59867534ebaa9f8c44d5a59a5be80f0b85b8abfebebfcbd800a8dd99",
       "description": "Generated PowerPoint deck"
     },
     {

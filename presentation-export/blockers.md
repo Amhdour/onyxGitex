@@ -1,9 +1,6 @@
 # Presentation Export Blockers
 
-PowerPoint source pack is ready, but .pptx generation was not completed.
-
-Reason:
-- No module named 'pptx'
+No PowerPoint deck export blockers detected.
 
 Verified:
 - PowerPoint source content exists.
@@ -11,9 +8,14 @@ Verified:
 - Speaker notes export exists.
 - One-page handout exists.
 - Claim boundaries exist.
+- PowerPoint file generated.
 - Production readiness remains blocked.
 - GO decision remains false.
 - Client evidence remains unverified.
 
-Next action:
-Generate the .pptx using available presentation tooling.
+Remaining blockers before any production claim:
+- Real client evidence is not present.
+- Real client runtime proof is not present.
+- Real client compliance review is not present.
+- Real client approver signoff is not present.
+- Version 4 must be filled with real client evidence before any production decision.
