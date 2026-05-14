@@ -120,3 +120,23 @@ No.
 
 Next action:
 Use this pack for client walkthroughs, then fill Version 4 with real client evidence before any production decision.
+
+## Pitch Deck Pack
+
+Status:
+PITCH_DECK_PACK_READY
+
+Purpose:
+Provide a 10-slide client and partner presentation structure for explaining the onyxGitex AI Trust & Security Readiness evidence chain.
+
+Production claim:
+No.
+
+GO claim:
+No.
+
+Client evidence claim:
+No.
+
+Next action:
+Use this pitch deck pack for client and partner presentations, then fill Version 4 with real client evidence before any production decision.

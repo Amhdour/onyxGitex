@@ -1,0 +1,138 @@
+{
+  "pack": "pitch-deck-pack",
+  "generated_at_utc": "2026-05-14T14:28:18Z",
+  "required_files": [
+    {
+      "path": "README.md",
+      "exists": true,
+      "sha256": "6b5f20f7201613975dd5459dd85bf22355d7d80c8b791fa5c0353f3b8591d36f",
+      "description": "Pitch deck pack file: README.md"
+    },
+    {
+      "path": "00-deck-overview.md",
+      "exists": true,
+      "sha256": "25496dc22a68a15b169def95cc9b80a80ff007ae58274664364b075c843ce7aa",
+      "description": "Pitch deck pack file: 00-deck-overview.md"
+    },
+    {
+      "path": "01-slide-title.md",
+      "exists": true,
+      "sha256": "f46db85e3bccbfffd0dd0d44656c9c4169d261b8ce14cbbaf7ceeff90459370c",
+      "description": "Pitch deck pack file: 01-slide-title.md"
+    },
+    {
+      "path": "02-slide-problem.md",
+      "exists": true,
+      "sha256": "9bc8a542b96bb3648ed30e99c067507087dde6eb961ccae2d6ee5f39249b5b99",
+      "description": "Pitch deck pack file: 02-slide-problem.md"
+    },
+    {
+      "path": "03-slide-solution.md",
+      "exists": true,
+      "sha256": "bf283e2a6600820ce273927eeb59b2f8292e5c3fd02d8b2f2212834bd7d45dfb",
+      "description": "Pitch deck pack file: 03-slide-solution.md"
+    },
+    {
+      "path": "04-slide-evidence-chain.md",
+      "exists": true,
+      "sha256": "7064e6aa51ded9da5ab0e39efe2c2cd0165caf448e18f7d4e1e4a72ff0a6efd3",
+      "description": "Pitch deck pack file: 04-slide-evidence-chain.md"
+    },
+    {
+      "path": "05-slide-rag-readiness.md",
+      "exists": true,
+      "sha256": "89d4db3f000296505abe9ed00f15266b019e4a3890e522c4459dbd9f8f453bcf",
+      "description": "Pitch deck pack file: 05-slide-rag-readiness.md"
+    },
+    {
+      "path": "06-slide-observability-and-ci.md",
+      "exists": true,
+      "sha256": "18c974a4383bf1dc9a4fd282a63259b4a49672524abcff8146dc2110c746f739",
+      "description": "Pitch deck pack file: 06-slide-observability-and-ci.md"
+    },
+    {
+      "path": "07-slide-agent-runtime-safety.md",
+      "exists": true,
+      "sha256": "4b902425f6c7d3183f55f37275a0c79d11eb5e34f1791741ac707968953f05bc",
+      "description": "Pitch deck pack file: 07-slide-agent-runtime-safety.md"
+    },
+    {
+      "path": "08-slide-staging-demo.md",
+      "exists": true,
+      "sha256": "98229406d95b6df554b9f2ea749bb501f8fb89f9b93488bb215c62a3eb52b5d6",
+      "description": "Pitch deck pack file: 08-slide-staging-demo.md"
+    },
+    {
+      "path": "09-slide-client-production-template.md",
+      "exists": true,
+      "sha256": "22b8cc0d9cf4787b3d49243715c6939001c18003c377b5262c5108f7384fe1ac",
+      "description": "Pitch deck pack file: 09-slide-client-production-template.md"
+    },
+    {
+      "path": "10-slide-next-step.md",
+      "exists": true,
+      "sha256": "60c13dc56aab3b101c3d9f598285d0cfc3a2e518c562e71a4acee311f53dc93f",
+      "description": "Pitch deck pack file: 10-slide-next-step.md"
+    },
+    {
+      "path": "speaker-notes.md",
+      "exists": true,
+      "sha256": "78da34fed6095d8c8062856f6dc6512b5432f8e02b3343a25922f80229a0c43e",
+      "description": "Pitch deck pack file: speaker-notes.md"
+    },
+    {
+      "path": "demo-flow.md",
+      "exists": true,
+      "sha256": "e0908f637b64f97a590ca2e7b56d28eacb3864a869a3c0477637150ab887cc72",
+      "description": "Pitch deck pack file: demo-flow.md"
+    },
+    {
+      "path": "visual-style-guide.md",
+      "exists": true,
+      "sha256": "4ad34b08d835da97ac29276dc3d7bafc02b571b38887533f38b0b93226346b99",
+      "description": "Pitch deck pack file: visual-style-guide.md"
+    },
+    {
+      "path": "slide-by-slide-script.md",
+      "exists": true,
+      "sha256": "2af8d4fcc49c2b9311c4395b9a012f13b711d27f752f72d300519b214f2a5f2c",
+      "description": "Pitch deck pack file: slide-by-slide-script.md"
+    },
+    {
+      "path": "deck-claim-boundaries.md",
+      "exists": true,
+      "sha256": "244f17c6ac3476413e796481e22d431aa6f0cdfeef20d2dfb042be9c23bd3924",
+      "description": "Pitch deck pack file: deck-claim-boundaries.md"
+    },
+    {
+      "path": "deck-one-page-summary.md",
+      "exists": true,
+      "sha256": "152eb3a0fa86dcbda117bddc570b53d518e51958230ab8e6286a4e29ac5d8196",
+      "description": "Pitch deck pack file: deck-one-page-summary.md"
+    },
+    {
+      "path": "deck-status.json",
+      "exists": true,
+      "sha256": "97814bd27a33657a42986cc266fd5c2b1a206939237e4db8dc6c1a6868e65e83",
+      "description": "Pitch deck pack file: deck-status.json"
+    },
+    {
+      "path": "deck-manifest.json",
+      "exists": false,
+      "sha256": null,
+      "description": "Pitch deck pack file: deck-manifest.json"
+    },
+    {
+      "path": "validation-result.txt",
+      "exists": true,
+      "sha256": "0c9a17851cec650705d2f04b450f81b30ad38136894ace5acbfe3d8fb4316c76",
+      "description": "Pitch deck pack file: validation-result.txt"
+    },
+    {
+      "path": "blockers.md",
+      "exists": true,
+      "sha256": "438d36ab6e3f9a0bf07d3cc299aefc008e37e522ae4225a9a03f06fd51368fa4",
+      "description": "Pitch deck pack file: blockers.md"
+    }
+  ]
+}

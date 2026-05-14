@@ -252,3 +252,14 @@ It explains the evidence chain, client engagement workflow, demo scripts, sales 
 
 Boundary:
 The walkthrough pack does not claim production readiness or client GO. Real client evidence is required before any production decision.
+
+## Pitch Deck Pack
+
+A 10-slide pitch deck content pack is available at:
+
+pitch-deck-pack/
+
+It explains the problem, evidence chain, RAG readiness, CI artifact proof, observability, agent runtime safety, staging-demo evidence, client-specific production template, and next client step.
+
+Boundary:
+The pitch deck pack does not claim production readiness, client GO, or real client evidence. Real client evidence is required before any production decision.
