@@ -51,6 +51,17 @@ Version 2A RAG Runtime Evidence:
   tests/version_2a/test_rag_runtime_evidence_gate.py
 - Production claim remains blocked.
 
+
+Version 2B CI Artifact Proof:
+- Status: CI_WORKFLOW_CONFIGURED_NOT_VERIFIED
+- Workflow:
+  .github/workflows/version-2b-rag-runtime-evidence.yml
+- Expected primary artifact:
+  version-2a-rag-runtime-evidence
+- Canonical proof directory:
+  security-readiness/evidence-artifacts/version-2b-ci-artifact-proof/
+- Production claim remains blocked.
+
 For details, see:
 - VERSION_STATUS.md
 - portfolio-lab/

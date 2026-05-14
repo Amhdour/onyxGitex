@@ -1,5 +1,5 @@
-# PLACEHOLDER / NOT_VERIFIED
+# Version 2B Contract
 
-Status: DESIGN_ONLY
+Status: CI_WORKFLOW_CONFIGURED_NOT_VERIFIED
 
-NOT_ENOUGH_EVIDENCE
+This contract defines required CI evidence for Version 2B and does not claim production readiness or GO.
