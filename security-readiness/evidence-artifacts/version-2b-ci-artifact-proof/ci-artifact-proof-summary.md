@@ -1,7 +1,7 @@
 # Version 2B CI Artifact Proof Summary
 
 ## Current Status
-CI_ARTIFACT_GENERATED_UNVERIFIED
+CI_ARTIFACT_VERIFIED
 
 ## Workflow Run Verification
 - Workflow file is configured: `.github/workflows/version-2b-rag-runtime-evidence.yml`.
@@ -13,7 +13,7 @@ CI_ARTIFACT_GENERATED_UNVERIFIED
 ## Job Verification
 - Job `version-2b-rag-runtime-evidence` was verified.
 - Job ID: `75982497452`.
-- Job status/conclusion: `completed` / `success`.
+- Job status/conclusion: `success` / `success`.
 - Required workflow steps completed successfully, including Version 2A evidence generation, Version 2A validation, Version 2A status printing, Version 2B local CI contract validation, and artifact upload steps.
 
 ## Artifact Discovery
@@ -25,23 +25,25 @@ CI_ARTIFACT_GENERATED_UNVERIFIED
 - Secondary artifact digest: `sha256:d344779c6b406d3991bfc22ea8984ffaacaa3273047e39ed36793bd6edd8925b`.
 
 ## Artifact Download Verification
-- Artifact metadata is verified.
-- Downloaded artifact contents have not been fully inspected in this repo update.
-- `artifact_download_verified` remains `false`.
+- Artifact download verification completed for `version-2a-rag-runtime-evidence.zip`.
+- `artifact_download_verified` is `true`.
 
 ## Artifact File Verification
-- Downloaded artifact file-list verification has not been completed.
-- Required Version 2A artifact files remain defined in `expected-artifact-file-list.txt`.
-- `required_files_verified_in_downloaded_artifact` remains `false`.
+- Downloaded artifact file-list verification completed.
+- All required Version 2A artifact files were present.
+- `required_files_verified_in_downloaded_artifact` is `true`.
 
 ## Version 2A Evidence Validation
 - Version 2A evidence generation and validation passed in the GitHub Actions job.
-- The job printed Version 2A status showing `run_status=COMPLETED`, `tests_total=8`, `tests_passed=8`, `tests_failed=0`, and `launch_status=PARTIAL_RUNTIME_EVIDENCE`.
-- Version 2A evidence inside the downloaded artifact has not yet been independently validated from extracted artifact contents.
+- The downloaded artifact contained the required Version 2A evidence files.
+- Artifact-directory validation passed against the extracted artifact contents.
+- `rag-runtime-final-status.json` showed `run_status=COMPLETED`, `tests_total=8`, `tests_passed=8`, `tests_failed=0`, and `launch_status=PARTIAL_RUNTIME_EVIDENCE`.
+- `rag-pytest-output.txt` showed `8 passed`.
 
 ## Production Readiness Status
 - `production_ready` remains `false`.
-- Version 2B does not establish production readiness.
+- Version 2B verifies CI artifact transport and evidence preservation only.
+- Version 2B does not establish production readiness, staging proof, or client-specific readiness.
 
 ## GO Decision Status
 - `go_decision` remains `false`.
@@ -54,9 +56,9 @@ CI_ARTIFACT_GENERATED_UNVERIFIED
 - full_rag_runtime_security_proven_in_production
 
 ## Allowed Claims
-- version_2b_workflow_run_verified
-- version_2b_artifact_metadata_recorded
+- version_2b_ci_artifact_verified
+- version_2a_evidence_generated_in_ci
 - production_readiness_not_claimed
 
 ## Next Required Action
-Verify downloadable artifact contents.
+Complete Version 2C Observability Proof.
