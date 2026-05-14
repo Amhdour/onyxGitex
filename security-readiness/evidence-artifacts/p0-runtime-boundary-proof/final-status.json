@@ -1,5 +1,5 @@
 {
-  "milestone": "V2.2.2 \u2014 Pass Lightweight Local Harness Tests",
+  "milestone": "V2.2.2-hotfix \u2014 Correct Mixed-Result P0 Status Wording",
   "p0_runtime_boundary_proof_status": "PARTIAL_LOCAL_HARNESS",
   "all_p0_controls_passed": false,
   "any_assertion_failures": false,
@@ -54,7 +54,7 @@
       ],
       "recommended_fix": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
       "next_required_action": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
-      "timestamp_utc": "2026-05-14T17:58:10+00:00"
+      "timestamp_utc": "2026-05-14T18:10:01+00:00"
     },
     {
       "control_id": "P0-CL-001",
@@ -82,7 +82,7 @@
       "blockers": [],
       "recommended_fix": "Replay in CI to strengthen evidence.",
       "next_required_action": "Replay in CI to strengthen evidence.",
-      "timestamp_utc": "2026-05-14T17:58:11+00:00"
+      "timestamp_utc": "2026-05-14T18:10:01+00:00"
     },
     {
       "control_id": "P0-PI-001",
@@ -110,7 +110,7 @@
       "blockers": [],
       "recommended_fix": "Replay in CI to strengthen evidence.",
       "next_required_action": "Replay in CI to strengthen evidence.",
-      "timestamp_utc": "2026-05-14T17:58:12+00:00"
+      "timestamp_utc": "2026-05-14T18:10:02+00:00"
     },
     {
       "control_id": "P0-TA-001",
@@ -138,7 +138,7 @@
       "blockers": [],
       "recommended_fix": "Replay in CI to strengthen evidence.",
       "next_required_action": "Replay in CI to strengthen evidence.",
-      "timestamp_utc": "2026-05-14T17:58:12+00:00"
+      "timestamp_utc": "2026-05-14T18:10:02+00:00"
     },
     {
       "control_id": "P0-FC-001",
@@ -166,7 +166,7 @@
       "blockers": [],
       "recommended_fix": "Replay in CI to strengthen evidence.",
       "next_required_action": "Replay in CI to strengthen evidence.",
-      "timestamp_utc": "2026-05-14T17:58:13+00:00"
+      "timestamp_utc": "2026-05-14T18:10:03+00:00"
     },
     {
       "control_id": "P0-AL-001",
@@ -202,7 +202,7 @@
       ],
       "recommended_fix": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
       "next_required_action": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
-      "timestamp_utc": "2026-05-14T17:58:14+00:00"
+      "timestamp_utc": "2026-05-14T18:10:03+00:00"
     },
     {
       "control_id": "P0-TT-001",
@@ -238,11 +238,11 @@
       ],
       "recommended_fix": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
       "next_required_action": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
-      "timestamp_utc": "2026-05-14T17:58:14+00:00"
+      "timestamp_utc": "2026-05-14T18:10:03+00:00"
     }
   ],
-  "blocking_reason": "P0 commands were attempted but pytest collection/import failed because required dependency fastapi_users is missing.",
-  "corrected_interpretation": "No P0 control is proven passed and no P0 control is functionally proven failed; execution is blocked before meaningful security assertions.",
-  "next_required_action": "Install/resolve required test dependencies or isolate lightweight harness tests from heavy backend conftest, then rerun P0 proof.",
-  "timestamp_utc": "2026-05-14T17:58:14+00:00"
+  "blocking_reason": "Some P0 controls passed at LOCAL_HARNESS level while others remain blocked by import/dependency setup.",
+  "corrected_interpretation": "4 P0 controls have LOCAL_HARNESS evidence with assertions reached and passed. 3 P0 controls remain blocked by import/dependency setup. No full runtime, CI, staging, production, client, compliance, or launch-GO claim is supported.",
+  "next_required_action": "Resolve blockers for remaining controls and execute real runtime/integration evidence in V2.2.3.",
+  "timestamp_utc": "2026-05-14T18:10:03+00:00"
 }

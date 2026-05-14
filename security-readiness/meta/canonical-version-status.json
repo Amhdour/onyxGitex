@@ -1,7 +1,7 @@
 {
   "project_name": "onyxGitex",
   "canonical_status_version": "v2.2-execution-track",
-  "last_updated_utc": "2026-05-14T17:44:30Z",
+  "last_updated_utc": "2026-05-14T00:00:00Z",
   "overall_positioning": "Portfolio lab with production-track starter-kit artifacts; V2.1 in progress; no staging/production/client verification.",
   "production_ready": false,
   "client_verified": false,
@@ -96,6 +96,35 @@
         "Execute real Onyx runtime/integration tests.",
         "Replay P0 evidence in CI."
       ]
+    },
+    "v2_2_2_hotfix_correct_mixed_result_p0_status_wording": {
+      "status": "ACHIEVED",
+      "evidence_level": "STATUS_WORDING_CORRECTION",
+      "production_ready": false,
+      "client_verified": false,
+      "staging_verified": false,
+      "launch_go": false,
+      "allowed_claims": [
+        "V2.2.2-hotfix corrects stale aggregate status wording for the mixed P0 result.",
+        "V2.2.2-hotfix preserves the valid LOCAL_HARNESS passes for four controls.",
+        "V2.2.2-hotfix preserves blockers for three remaining P0 controls.",
+        "V2.2.2-hotfix preserves NO_GO and blocks production/client/staging claims."
+      ],
+      "blocked_claims": [
+        "V2.2.2-hotfix proves full Onyx runtime enforcement.",
+        "V2.2.2-hotfix proves all seven P0 controls passed.",
+        "V2.2.2-hotfix proves CI evidence.",
+        "V2.2.2-hotfix proves staging verification.",
+        "V2.2.2-hotfix proves production readiness.",
+        "V2.2.2-hotfix proves client readiness.",
+        "V2.2.2-hotfix supports launch GO."
+      ],
+      "open_gaps": [
+        "Resolve remaining P0-RA/P0-AL/P0-TT blockers.",
+        "Run real Onyx runtime/integration P0 tests.",
+        "Replay evidence in CI.",
+        "Collect staging evidence before any staging claim."
+      ]
     }
   },
   "global_launch_gate": {
@@ -122,5 +151,6 @@
       "P0-AL-001 blocked import dependency",
       "P0-TT-001 blocked import dependency"
     ]
-  }
+  },
+  "current_status": "V2.2.2 partial local harness evidence with hotfix-corrected mixed result wording; launch remains NO_GO."
 }

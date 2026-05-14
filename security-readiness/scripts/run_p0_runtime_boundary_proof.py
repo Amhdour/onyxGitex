@@ -93,29 +93,57 @@ counts = {
 }
 all_passed = counts["controls_passed"] == len(CONTROLS)
 
+total = len(CONTROLS)
+passed = counts["controls_passed"]
+blocked_import_dependency = counts["controls_blocked_import_dependency"]
 controls_local_harness_passed = sum(1 for r in results if r["status"]=="PASSED" and r["evidence_level"]=="LOCAL_HARNESS")
 controls_local_runtime_passed = sum(1 for r in results if r["status"]=="PASSED" and r["evidence_level"]=="LOCAL_RUNTIME")
 assertions_reached = sum(1 for r in results if r["assertions_reached"])
-if counts["controls_failed_assertion"]:
-    overall = "FAILED_ASSERTION"
-elif counts["controls_blocked_import_dependency"] and counts["controls_passed"]==0:
-    overall = "BLOCKED_IMPORT_DEPENDENCY"
-elif controls_local_harness_passed and counts["controls_passed"] < len(CONTROLS):
+
+if controls_local_harness_passed > 0 and blocked_import_dependency > 0:
     overall = "PARTIAL_LOCAL_HARNESS"
-elif controls_local_harness_passed and counts["controls_passed"]==len(CONTROLS):
-    overall = "LOCAL_HARNESS_ALL_TARGETED_PASSED"
+    blocking_reason = "Some P0 controls passed at LOCAL_HARNESS level while others remain blocked by import/dependency setup."
+    corrected_interpretation = f"{controls_local_harness_passed} P0 controls have LOCAL_HARNESS evidence with assertions reached and passed. {blocked_import_dependency} P0 controls remain blocked by import/dependency setup. No full runtime, CI, staging, production, client, compliance, or launch-GO claim is supported."
+    next_required_action = "Resolve blockers for remaining controls and execute real runtime/integration evidence in V2.2.3."
+elif controls_local_harness_passed == 0 and blocked_import_dependency > 0:
+    overall = "BLOCKED_IMPORT_DEPENDENCY"
+    blocking_reason = "Pytest collection/import is blocked by missing dependency fastapi_users."
+    corrected_interpretation = "No P0 control is proven passed and no P0 control is functionally proven failed; execution is blocked before meaningful security assertions."
+    next_required_action = "Install/resolve dependency blockers, rerun P0 proof, then execute validator."
+elif controls_local_runtime_passed == total:
+    overall = "LOCAL_RUNTIME_COMPLETE"
+    blocking_reason = "All P0 controls reached assertions and passed at LOCAL_RUNTIME level."
+    corrected_interpretation = "All seven P0 controls have LOCAL_RUNTIME evidence, but CI/staging/production/client claims remain blocked unless those environments produce evidence."
+    next_required_action = "Replay P0 proof in CI and staging before readiness claims can increase."
+elif controls_local_harness_passed == total:
+    overall = "LOCAL_HARNESS_COMPLETE"
+    blocking_reason = "All P0 controls reached assertions and passed at LOCAL_HARNESS level."
+    corrected_interpretation = "All seven P0 controls have LOCAL_HARNESS evidence, but full runtime, CI, staging, production, client, compliance, and launch-GO claims remain blocked."
+    next_required_action = "Convert LOCAL_HARNESS evidence to LOCAL_RUNTIME and CI/staging evidence before readiness claims can increase."
 else:
-    overall = "MIXED"
+    overall = "PARTIAL_OR_FAILED"
+    blocking_reason = "Some controls passed while others failed or remained blocked."
+    corrected_interpretation = "Mixed control outcomes detected; launch remains NO_GO until all required P0 controls pass with appropriate evidence level."
+    next_required_action = "Resolve failures/blockers, rerun P0 proof, and validate canonical artifacts."
+
 final = {
-    "milestone": "V2.2.2 — Pass Lightweight Local Harness Tests",
+    "milestone": "V2.2.2-hotfix — Correct Mixed-Result P0 Status Wording",
     "p0_runtime_boundary_proof_status": overall,
     "all_p0_controls_passed": all_passed,
     "any_assertion_failures": counts["controls_failed_assertion"] > 0,
-    "supports_launch_go": False, "supports_production_ready": False, "supports_client_verified": False, "supports_staging_verified": False,
-    "controls_total": len(CONTROLS), **counts, "controls_local_harness_passed": controls_local_harness_passed, "controls_local_runtime_passed": controls_local_runtime_passed, "assertions_reached": assertions_reached, "control_results": results,
-    "blocking_reason": "P0 commands were attempted but pytest collection/import failed because required dependency fastapi_users is missing." if counts["controls_blocked_import_dependency"] else "One or more controls are not PASSED.",
-    "corrected_interpretation": "No P0 control is proven passed and no P0 control is functionally proven failed; execution is blocked before meaningful security assertions.",
-    "next_required_action": "Install/resolve required test dependencies or isolate lightweight harness tests from heavy backend conftest, then rerun P0 proof.",
+    "supports_launch_go": False,
+    "supports_production_ready": False,
+    "supports_client_verified": False,
+    "supports_staging_verified": False,
+    "controls_total": total,
+    **counts,
+    "controls_local_harness_passed": controls_local_harness_passed,
+    "controls_local_runtime_passed": controls_local_runtime_passed,
+    "assertions_reached": assertions_reached,
+    "control_results": results,
+    "blocking_reason": blocking_reason,
+    "corrected_interpretation": corrected_interpretation,
+    "next_required_action": next_required_action,
     "timestamp_utc": now(),
 }
 write_json(BASE / "final-status.json", final)
