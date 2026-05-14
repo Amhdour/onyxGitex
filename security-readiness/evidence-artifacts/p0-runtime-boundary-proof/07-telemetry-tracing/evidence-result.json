@@ -1,0 +1,15 @@
+{
+  "control_id": "P0-TT-001",
+  "control_name": "Telemetry Tracing",
+  "status": "NOT_EXECUTED",
+  "evidence_level": "P0_PROOF_STRUCTURE_ONLY",
+  "test_executed": false,
+  "test_command": "",
+  "runtime_log_path": "",
+  "pytest_output_path": "",
+  "supports_go_claim": false,
+  "supports_production_claim": false,
+  "supports_client_claim": false,
+  "limitations": [],
+  "next_required_action": "Execute runtime test and populate evidence paths."
+}
