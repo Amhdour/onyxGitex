@@ -104,6 +104,16 @@ Version 2C Observability Proof:
 - External observability connected: false
 - Production claim remains blocked.
 
+
+Version 2D Agent Runtime Evidence:
+- Status: AGENT_RUNTIME_EVIDENCE_VERIFIED
+- Harness type: LOCAL_AGENT_RUNTIME_HARNESS
+- Canonical evidence directory:
+  security-readiness/evidence-artifacts/version-2d-agent-runtime-evidence/
+- Real LangGraph runtime verified: false
+- External tool execution enabled: false.
+- Production claim remains blocked.
+
 ---
 
 **[Onyx](https://www.onyx.app/?utm_source=onyx_repo&utm_medium=github&utm_campaign=readme)** is the application layer for LLMs - bringing a feature-rich interface that can be easily hosted by anyone.

@@ -1,5 +1,3 @@
-# PLACEHOLDER / NOT_VERIFIED
+# Unknown Tool Fail-Closed Contract
 
-Status: DESIGN_ONLY
-
-NOT_ENOUGH_EVIDENCE
+Unknown tools are denied with fail_closed=true and no execution.
