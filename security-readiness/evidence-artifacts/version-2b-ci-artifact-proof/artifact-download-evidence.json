@@ -1,0 +1,16 @@
+{
+  "version": "2B",
+  "gate": "CI_ARTIFACT_PROOF",
+  "artifact_download_verified": true,
+  "artifact_name": "version-2a-rag-runtime-evidence",
+  "artifact_id": 6993717057,
+  "download_source": "GitHub Actions artifact",
+  "downloaded_at_utc": "2026-05-14T12:18:00Z",
+  "download_status": "success",
+  "required_files_verified": true,
+  "validation_command": "python scripts/validate-ci-artifact-proof.py --mode artifact-directory --artifact-dir /mnt/data/v2a_artifact",
+  "notes": [
+    "The uploaded artifact ZIP version-2a-rag-runtime-evidence.zip was extracted and inspected.",
+    "The repository artifact-directory validator passed against the extracted artifact contents."
+  ]
+}
