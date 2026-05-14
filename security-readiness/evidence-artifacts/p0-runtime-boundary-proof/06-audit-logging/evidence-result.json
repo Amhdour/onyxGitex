@@ -7,6 +7,8 @@
   "assertions_reached": false,
   "test_command": "python3 -m pytest -q backend/tests/unit/onyx/security_readiness/test_control_layer.py -k \"audit\"",
   "exit_code": 4,
+  "timeout_seconds": 120,
+  "timed_out": false,
   "pytest_output_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/pytest-output.txt",
   "runtime_log_path": "security-readiness/evidence-artifacts/p0-runtime-boundary-proof/06-audit-logging/runtime-log.txt",
   "failure_classification": "missing_python_dependency",
@@ -32,5 +34,5 @@
   ],
   "recommended_fix": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
   "next_required_action": "Install/resolve fastapi-users dependency per repository dependency workflow and rerun.",
-  "timestamp_utc": "2026-05-14T18:10:03+00:00"
+  "timestamp_utc": "2026-05-14T18:33:20+00:00"
 }
