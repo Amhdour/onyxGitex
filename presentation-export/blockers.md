@@ -3,7 +3,7 @@
 PowerPoint source pack is ready, but .pptx generation was not completed.
 
 Reason:
-- `python-pptx` is not available in the current environment, so automated `.pptx` build could not run.
+- No module named 'pptx'
 
 Verified:
 - PowerPoint source content exists.
