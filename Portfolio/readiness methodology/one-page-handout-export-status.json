@@ -1,0 +1,11 @@
+{
+  "artifact": "one-page-handout-pdf",
+  "status": "ONE_PAGE_HANDOUT_PDF_GENERATED",
+  "source": "presentation-export/one-page-handout.md",
+  "pdf_path": "onyxgitex-ai-trust-security-readiness-one-page-handout.pdf",
+  "pdf_size_bytes": 3683,
+  "pdf_sha256": "6d766f10df5c7005e7fef5cb2ce1294107f6837e85937ffdfc25d7ebffeb1d4c",
+  "production_ready": false,
+  "go_decision": false,
+  "client_evidence_verified": false
+}
