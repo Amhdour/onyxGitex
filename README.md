@@ -53,8 +53,10 @@ Version 2A RAG Runtime Evidence:
 
 
 Version 2B CI Artifact Proof:
-- Status: CI_WORKFLOW_CONFIGURED_NOT_VERIFIED
-- Real GitHub Actions artifact verification is still required.
+- Status: CI_ARTIFACT_VERIFIED
+- Workflow run ID: 25858591333
+- Artifact ID: 6993717057
+- Artifact download and required file-list verification completed.
 - Production claim remains blocked.
 
 For details, see:
@@ -88,11 +90,11 @@ Important boundary:
 
 Workflow badges show CI workflow status only. They do not by themselves prove production readiness, GO launch status, staging verification, client-specific approval, or full runtime security.
 
-Current Version 2B status remains:
+Current Version 2B status:
 
-CI_WORKFLOW_CONFIGURED_NOT_VERIFIED
+CI_ARTIFACT_VERIFIED
 
-Real GitHub Actions artifact verification is still required before Version 2B can become CI_ARTIFACT_VERIFIED.
+Version 2B verifies CI artifact transport and evidence preservation for Version 2A only. Production readiness remains blocked.
 
 ---
 
