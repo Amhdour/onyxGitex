@@ -5,8 +5,9 @@ CI_WORKFLOW_CONFIGURED_NOT_VERIFIED
 
 ## Workflow Run Verification
 - Workflow file is configured: `.github/workflows/version-2b-rag-runtime-evidence.yml`.
-- Real GitHub Actions run verification is **not** available in this repository execution environment.
-- `gh` CLI is not installed and no GitHub token is configured (`GITHUB_TOKEN`/`GH_TOKEN` missing).
+- Real GitHub Actions run verification is **not** available in this execution environment.
+- `gh` CLI is not installed (`gh: command not found`).
+- No GitHub token is configured (`GITHUB_TOKEN`/`GH_TOKEN` unset).
 - No verified run ID is recorded.
 
 ## Job Verification
@@ -27,7 +28,7 @@ CI_WORKFLOW_CONFIGURED_NOT_VERIFIED
 - Required Version 2A artifact files are defined in `expected-artifact-file-list.txt`.
 
 ## Version 2A Evidence Validation
-- Local Version 2A evidence generation/validation commands were executed in this environment.
+- Local Version 2A evidence generation/validation commands were executed and passed.
 - CI-transported artifact evidence has not been verified from GitHub Actions artifacts.
 
 ## Production Readiness Status
