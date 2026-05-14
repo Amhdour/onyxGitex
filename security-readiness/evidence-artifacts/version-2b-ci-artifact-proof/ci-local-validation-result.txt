@@ -1,11 +1,3 @@
-FAIL
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-runtime-final-status.json
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-pytest-output.txt
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-audit-events.json
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-policy-decisions.json
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-retrieval-log.json
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-citation-check.json
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/rag-launch-gate-result.json
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/evidence-manifest.json
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/evidence-summary.md
-missing required file: /workspace/onyxGitex/security-readiness/evidence-artifacts/version-2a-rag-runtime/blockers.md
+PASS
+mode=local-ci-contract
+timestamp_utc=2026-05-14T03:02:49.350863+00:00
