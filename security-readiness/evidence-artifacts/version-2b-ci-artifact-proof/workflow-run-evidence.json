@@ -1,0 +1,22 @@
+{
+  "version": "2B",
+  "gate": "CI_ARTIFACT_PROOF",
+  "workflow_file": ".github/workflows/version-2b-rag-runtime-evidence.yml",
+  "workflow_name": "Version 2B - RAG Runtime Evidence CI Artifact Proof",
+  "run_verified": true,
+  "run_id": 25858591333,
+  "run_url": "https://github.com/Amhdour/onyxGitex/actions/runs/25858591333",
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "job_id": 75982497452,
+  "job_name": "version-2b-rag-runtime-evidence",
+  "job_status": "completed",
+  "job_conclusion": "success",
+  "commit_sha": "ff4abcb41df24dfadb38731933cc82e18efbeb7e",
+  "branch": "main",
+  "verified_at_utc": "2026-05-14T12:05:00Z",
+  "notes": [
+    "Workflow run and job success were verified through GitHub workflow job metadata.",
+    "Artifact download/content verification is not completed in this record."
+  ]
+}
