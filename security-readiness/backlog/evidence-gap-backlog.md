@@ -18,3 +18,23 @@
 
 ## V2.2.2 Update (2026-05-14)
 LOCAL_HARNESS tests under `tests/security_readiness/` produced 4 PASSED controls (P0-CL-001, P0-PI-001, P0-TA-001, P0-FC-001), with 3 controls still BLOCKED_IMPORT_DEPENDENCY (P0-RA-001, P0-AL-001, P0-TT-001). Launch decision remains NO_GO. Production/client/staging claims remain false.
+
+## V2.2.3 Gap Addendum (2026-05-20)
+
+### Newly Tracked Gaps (Repository-Level)
+
+| Priority | Gap | Evidence basis | Why this matters | Current status | Owner recommendation |
+|---|---|---|---|---|---|
+| P0 | Tier 4 runtime evidence remains missing for critical controls (retrieval authorization, citation leakage, prompt-injection boundary, tool runtime wiring/full enforcement) | `security-readiness/final-control-status-canonical.md` control table + launch decision | Blocks GO decision because dependency-light/runtime-adjacent PASS cannot substitute for full runtime proof | OPEN | Security readiness lead + backend test owners |
+| P0 | Launch-gate CI remains non-blocking during rollout (`continue-on-error: true`) | `security-readiness/19-ci-cd-secure-delivery/launch-gate-ci-check.md` | Allows pipeline success while critical evidence is incomplete; increases risk of false confidence | OPEN | CI/platform owner |
+| P1 | Evidence semantics can drift across status surfaces if "Verified" labels are not consistently scoped (runtime vs local vs template) | `security-readiness/meta/status-contradiction-audit.md` contradiction findings | Misleading language can overstate readiness and weaken audit defensibility | OPEN | Documentation/evidence governance owner |
+| P1 | Security-readiness folder architecture is rich but not consistently mapped to canonical phase baseline (`01-09` + per-phase README/assumptions/evidence/risks index) | `AGENTS.md` recommended baseline structure | Raises audit navigation cost and can obscure phase ownership/evidence boundaries | OPEN | Program PM + documentation owner |
+
+### Suggested Actions (Do Not Skip)
+
+| Priority | Suggestion | Scope | Acceptance criteria | Evidence required | Claim impact |
+|---|---|---|---|---|---|
+| P0 | Close P0 Tier 4 runtime proofs before adding new summary docs | Runtime tests + artifact publication for blocked critical controls | For each blocked control, validator-consumable PASS artifact exists and maps to canonical status | test command + output + artifact path + updated canonical status reference | Enables movement from NOT_ENOUGH_EVIDENCE toward GO eligibility |
+| P0 | Promote launch-gate from non-blocking rollout mode to blocking mode once signed criteria are complete | CI workflow + launch-gate script/result parsing | CI fails on missing/failed critical evidence without `continue-on-error` bypass | workflow diff + CI run output + launch-gate result artifact | Reduces false-positive release posture |
+| P1 | Normalize claim language across all status artifacts using strict classes: Verified, Partially Confirmed, Unknown | Readiness status docs, dashboards, canonical manifests | No contradictory wording between top-level status and control/evidence artifacts | contradiction audit rerun + updated status references | Improves audit consistency and client trust |
+| P1 | Add lightweight phase index files to align repository organization with canonical lifecycle baseline | `security-readiness/` phase directories and index docs | Each phase has clear scope/objective + assumptions + evidence + risks linkage | file references + reviewer checklist pass | Improves traceability and review velocity |
