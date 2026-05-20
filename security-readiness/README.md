@@ -8,3 +8,6 @@
 - Launch remains NO_GO.
 - Production/client/staging claims remain blocked.
 - Next milestone: V2.2.3 real Onyx runtime / integration P0 tests.
+
+## Readiness Gaps and Suggestions (2026-05-20)
+- See `security-readiness/10-decision/readiness-gaps-and-suggestions-2026-05-20.md` for consolidated gaps, impacts, and prioritized remediation actions.
